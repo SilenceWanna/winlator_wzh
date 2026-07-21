@@ -1,0 +1,25 @@
+# Gradle / Android build artifacts
+.gradle/
+build/
+*/build/
+.cxx/
+*/.cxx/
+.externalNativeBuild/
+*/.externalNativeBuild/
+
+# Local config
+local.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keystore / signing (do not commit secrets)
+*.jks
+*.keystore
+keystore.properties
