@@ -26,6 +26,12 @@ android {
         checkReleaseBuilds false
     }
 
+    packagingOptions {
+        jniLibs {
+            pickFirsts += ['**/*.so']
+        }
+    }
+
     ndkVersion '24.0.8215888'
 
     externalNativeBuild {

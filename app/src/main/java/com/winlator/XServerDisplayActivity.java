@@ -69,6 +69,7 @@ import com.winlator.renderer.GLRenderer;
 import com.winlator.widget.FrameRating;
 import com.winlator.widget.InputControlsView;
 import com.winlator.widget.MagnifierView;
+import com.winlator.widget.ShutdownBallView;
 import com.winlator.widget.TouchpadView;
 import com.winlator.widget.XServerView;
 import com.winlator.winhandler.GamepadHandler;
@@ -131,6 +132,7 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
     private float globalCursorSpeed = 1.0f;
     private boolean capturePointerOnExternalMouse = true;
     private MagnifierView magnifierView;
+    private ShutdownBallView shutdownBallView;
     private DebugDialog debugDialog;
     private int frameRatingWindowId = -1;
     private Win32AppWorkarounds win32AppWorkarounds;
@@ -608,6 +610,11 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         }
 
         if (MainActivity.DEBUG_MODE) rootView.addView(AppUtils.createDebugMsgTextView(this));
+
+        shutdownBallView = new ShutdownBallView(this);
+        shutdownBallView.setOnClickCallback(() -> ContentDialog.confirm(this, R.string.shutdown_confirm_message, this::exit));
+        rootView.addView(shutdownBallView);
+
         AppUtils.observeSoftKeyboardVisibility(drawerLayout, renderer::setScreenOffsetYRelativeToCursor);
     }
 

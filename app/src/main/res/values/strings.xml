@@ -21,6 +21,8 @@
     <string name="keyboard">Keyboard</string>
     <string name="toggle_fullscreen">Toggle Fullscreen</string>
     <string name="exit">Exit</string>
+    <string name="shutdown">关机</string>
+    <string name="shutdown_confirm_message">确定要关机吗？未保存的进度将丢失。</string>
     <string name="no_control_element_selected">No control element selected</string>
     <string name="scale">Scale</string>
     <string name="shape">Shape</string>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/BTShutdown"
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:background="@drawable/shutdown_ball_background"
+    android:gravity="center"
+    android:text="@string/shutdown"
+    android:textColor="#FFFFFFFF"
+    android:textSize="14sp"
+    android:textStyle="bold" />
