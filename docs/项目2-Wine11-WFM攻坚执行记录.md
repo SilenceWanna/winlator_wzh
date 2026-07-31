@@ -272,3 +272,20 @@ APK 校验结果：ZIP 对齐通过；包名 `com.winlator`，版本 `11.1 (28)`
 SHA-256 AC50B87395745A142476517F5ED60C9441B1100E3AF22607C07748ADE21061AA
 ```
 
+### 6.6 Wine 10.10 成功基线与 Wine 版本回归定界
+
+直装修订版在真机上安装 Wine 10.10 成功，新建容器可正常进入桌面，并成功启动与 Wine 11 测试相同的 E 盘 Stardew Valley 1.5.6。成功日志为 `logs/stardew-valley/logs_stardew_wine10_clean.txt`，长度 652860 字节，SHA-256 为 `EFBEF935E9839C043BC9C10C1A42895D7EFB0E1681331C3B1159D8DC1ED07BDC`。
+
+日志对照结果：
+
+- Wine 10.10 于 12:45:26 启动游戏，12:46:05 进入 WGL context flush，12:46:19 首次进入 `x11drv_swap_buffers`。日志期间共有 215 次 swap、2206 次 context flush，到 12:48:10 仍在持续提交画面。
+- Wine 11 于 18:30:08 启动同一游戏，18:30:47 开始 surface flush，到日志结束仅有 55 次 `x11drv_surface_flush`、51 次 context flush，始终为 0 次 `win32u_wglSwapBuffers` 和 0 次 `x11drv_surface_swap`。
+- 成功的 Wine 10.10 日志同样有 16 条 `e0434352`、8 条 `e06d7363`，数量与 Wine 11 完全一致，且后续正常出帧；这两类已捕获异常可确定为非致命探测路径。
+- Wine 10.10 成功路径里 `set_swap_interval` 警告出现 2420 次，因此该警告也不是黑屏原因。
+- Wine 11 日志末尾有一条 `0058` 线程的 `handle_syscall_fault c0000005`，而 Stardew 主线程标识为 `00dc`；它不是游戏主线程的未处理异常，不能用来解释游戏黑屏。
+- Wine 10.10 在首帧前继续加载 `crypt32`、`netapi32`、`secur32`、`kerberos` 等组件，Wine 11 日志则停在 `dnsapi` / `ws2_32` 附近。这是一个可追踪的分歧点，但当前日志通道不足以判定是网络调用阻塞还是其他初始化状态未满足。
+
+该对照已同时排除游戏文件、E 盘挂载、Turnip/Zink、Box64 0.4.3 Stability 预设、旧 prefix 残留和 Steam 网络开关为主因。结论从“Wine 11 环境中的游戏兼容问题”收窄为“Wine 10.10 到 11.0 之间引入的版本回归”。Wine 11 的 WGL 探针可正常 swap，而 Stardew 在调用首次 SwapBuffers 之前就停住，所以现阶段不应直接将根因写成 X11 的 swap 实现错误。
+
+下一阶段停止叠加 ICU、Box64 和窗口环境变量，改用 Wine 官方发布点做版本二分。优先构建 10.15、10.18、10.20 和 11.0-rc3，每个版本仅应用 Android `server_dir` 双侧补丁和现有编译约束，通过可选 Wine 容器运行同一份游戏。按结果继续缩小到首个失效的 Wine 发布点，再对该区间的 OpenGL/WGL、win32u/window 和 winsock/dns 变更做源码级二分。
+
