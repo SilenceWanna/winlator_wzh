@@ -251,3 +251,24 @@ APK 校验结果：ZIP 对齐通过；包名 `com.winlator`，版本 `11.1 (28)`
 
 真机复测必须先删除失败的 Wine 10.10 容器，再在 `Settings -> Wine Version` 移除旧 Wine 10.10，随后用同一份 `wine-10.10-winlator-custom-addon.tar.xz` 重新安装。旧 `container-pattern-10.10.tzst` 已经损坏，单纯覆盖 APK 或新建容器不会替换它。重新安装后新建 Wine 10.10 容器，继续使用 Zink、原 Turnip 和 Box64 Stability，不添加 ICU、dynarec 或其他环境变量；先确认能进入桌面，再运行同一份 E 盘 Stardew Valley。
 
+### 6.5 Wine 10.10 安装第二阶段返回 Settings
+
+真机覆盖安装上述版本后，Wine 10.10 安装在 Wine Configuration 点击 `OK` 后显示 `Starting up`，随后直接返回 Settings，Wine 版本没有安装成功。手机未生成新的可导出日志；原 UI 的成功与失败路径都会重启回 Settings，因此该现象本身无法区分 `wineserver -k -w`、注册表校验或文件移动中的具体失败点。
+
+重新评估安装结构后确认：这份 Wine 10.10 已经有与其同源、从稳定回退 APK 提取并校验的 win64 container pattern，再让手机启动 X Server、运行 winecfg、等待 wineserver，然后把 prefix 重新压缩一遍既重复又引入竞态。直装任务若放在 `XServerDisplayActivity` 内，还会与 Activity 自己的 guest launcher 和退出/重启生命周期竞争。
+
+第二次修订：
+
+- 对定制 Wine 10.10 的 `bin/wine`、`bin/wineserver`、`x86_64-unix/ntdll.so` 做 SHA-256 指纹校验，只有三项均与已验证包一致才启用直装。
+- 指纹匹配后直接在 Settings 后台复制已验证模板，并事务移动 Wine 目录；不再进入 `Starting up`、Wine Configuration 或 X Server。
+- 模板复制完成后从归档重新读取 `system.reg` 与 `user.reg`，确认有效注册表头与 `#arch=win64` 后才提交安装。
+- 指纹不匹配的其他 Wine 10.10 构建仍使用通用 winecfg + `wineserver -k -w` + 注册表校验流程，不会错误套用该模板。
+- 安装完成回调显式切回 Android 主线程，再关闭进度框、显示错误或重启 Settings。
+
+直装修订测试 APK：
+
+```text
+../../artifacts/apks/wine11/app-debug-wine11-wine10-direct-install.apk
+SHA-256 AC50B87395745A142476517F5ED60C9441B1100E3AF22607C07748ADE21061AA
+```
+

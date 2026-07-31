@@ -384,6 +384,24 @@ public class SettingsFragment extends Fragment {
             return;
         }
 
+        if (WineInstaller.isVerifiedWine10_10(wineInfo)) {
+            preloaderDialog.show(R.string.finishing_installation);
+            WineInstaller.installVerifiedWine10_10Async(context, wineInfo, (success) -> {
+                getActivity().runOnUiThread(() -> {
+                    preloaderDialog.close();
+                    if (!success) {
+                        AppUtils.showToast(context, R.string.unable_to_install_wine);
+                        return;
+                    }
+
+                    AppUtils.RestartApplicationOptions options = new AppUtils.RestartApplicationOptions();
+                    options.selectedMenuItemId = R.id.menu_item_settings;
+                    AppUtils.restartApplication(getActivity(), options);
+                });
+            });
+            return;
+        }
+
         Intent intent = new Intent(context, XServerDisplayActivity.class);
         intent.putExtra("generate_wineprefix", true);
         intent.putExtra("wine_info", wineInfo);

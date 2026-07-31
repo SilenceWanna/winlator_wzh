@@ -16,6 +16,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
@@ -24,22 +27,22 @@ import java.util.regex.Pattern;
 
 public abstract class WineInstaller {
     private static final String WINE_10_10_CONTAINER_PATTERN_ASSET = "wine/container_pattern-10.10.tzst";
+    private static final String[][] VERIFIED_WINE_10_10_FILES = new String[][]{
+            {"bin/wine", "1D21E085E2FEBB15F3BE3F6E51459CF5E6C543ABECE9B463773CC03EEDAB2263"},
+            {"bin/wineserver", "F91A57493829473F3C08DC4F8976A47646B7DF736C352C0359E26F2C1CB9784F"},
+            {"lib/wine/x86_64-unix/ntdll.so", "39F254917B939051AB32FE2DF6357ACC47B22B39E0C62DCE4766E052286BDB0F"}
+    };
 
     public static void generateWineprefix(WineInfo wineInfo, XEnvironment environment) {
         Activity activity = (Activity)environment.getContext();
         RootFS rootFS = environment.getRootFS();
-        final File rootDir = rootFS.getRootDir();
         final File installedWineDir = rootFS.getInstalledWineDir();
         rootFS.setWinePath(wineInfo.path);
+        final File rootDir = rootFS.getRootDir();
 
         final File containerPatternDir = new File(installedWineDir, "/preinstall/container-pattern");
         if (containerPatternDir.isDirectory()) FileUtils.delete(containerPatternDir);
         containerPatternDir.mkdirs();
-
-        String containerPatternAsset = getContainerPatternAsset(wineInfo);
-        if (containerPatternAsset != null && !TarCompressorUtils.extract(TarCompressorUtils.Type.ZSTD, activity, containerPatternAsset, containerPatternDir)) {
-            FileUtils.clear(containerPatternDir);
-        }
 
         File linkFile = new File(rootDir, RootFS.HOME_PATH);
         FileUtils.symlink(containerPatternDir.getPath(), linkFile.getPath());
@@ -70,8 +73,82 @@ public abstract class WineInstaller {
         });
     }
 
-    private static String getContainerPatternAsset(WineInfo wineInfo) {
-        return wineInfo.fullVersion().equals("10.10") ? WINE_10_10_CONTAINER_PATTERN_ASSET : null;
+    public static boolean isVerifiedWine10_10(WineInfo wineInfo) {
+        if (!wineInfo.fullVersion().equals("10.10")) return false;
+        File wineDir = new File(wineInfo.path);
+        for (String[] fileInfo : VERIFIED_WINE_10_10_FILES) {
+            if (!sha256(new File(wineDir, fileInfo[0])).equals(fileInfo[1])) return false;
+        }
+        return true;
+    }
+
+    private static String sha256(File file) {
+        if (!file.isFile()) return "";
+        try (InputStream inputStream = new java.io.FileInputStream(file)) {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] buffer = new byte[StreamUtils.BUFFER_SIZE];
+            int count;
+            while ((count = inputStream.read(buffer)) != -1) digest.update(buffer, 0, count);
+
+            StringBuilder result = new StringBuilder();
+            for (byte value : digest.digest()) result.append(String.format("%02X", value));
+            return result.toString();
+        }
+        catch (IOException | NoSuchAlgorithmException e) {
+            return "";
+        }
+    }
+
+    public static void installVerifiedWine10_10Async(Context context, WineInfo wineInfo, Callback<Boolean> callback) {
+        Executors.newSingleThreadExecutor().execute(() -> {
+            RootFS rootFS = RootFS.find(context);
+            boolean success = isVerifiedWine10_10(wineInfo) && installVerifiedWine10_10(context, rootFS, wineInfo);
+            if (!success) FileUtils.delete(new File(rootFS.getInstalledWineDir(), "/preinstall"));
+            if (callback != null) callback.call(success);
+        });
+    }
+
+    private static boolean installVerifiedWine10_10(Context context, RootFS rootFS, WineInfo wineInfo) {
+        File installedWineDir = rootFS.getInstalledWineDir();
+        File preinstallDir = new File(installedWineDir, "/preinstall");
+        File tempContainerPattern = new File(preinstallDir, "container-pattern-"+wineInfo.fullVersion()+".tzst");
+        File installedContainerPattern = new File(installedWineDir, tempContainerPattern.getName());
+        File sourceWineDir = new File(wineInfo.path);
+        File installedWineVersionDir = new File(installedWineDir, wineInfo.identifier());
+
+        if (!copyAsset(context, WINE_10_10_CONTAINER_PATTERN_ASSET, tempContainerPattern) ||
+                !isValidContainerPattern(tempContainerPattern)) return false;
+        if (!tempContainerPattern.renameTo(installedContainerPattern)) return false;
+        if (!sourceWineDir.renameTo(installedWineVersionDir)) {
+            installedContainerPattern.delete();
+            return false;
+        }
+
+        FileUtils.delete(preinstallDir);
+        return true;
+    }
+
+    private static boolean copyAsset(Context context, String assetPath, File destination) {
+        File parent = destination.getParentFile();
+        if (parent == null || (!parent.isDirectory() && !parent.mkdirs())) return false;
+        try (InputStream inputStream = context.getAssets().open(assetPath);
+             java.io.FileOutputStream outputStream = new java.io.FileOutputStream(destination)) {
+            if (!StreamUtils.copy(inputStream, outputStream)) {
+                destination.delete();
+                return false;
+            }
+            return true;
+        }
+        catch (IOException e) {
+            destination.delete();
+            return false;
+        }
+    }
+
+    private static boolean isValidContainerPattern(File containerPattern) {
+        byte[] systemRegistry = TarCompressorUtils.read(TarCompressorUtils.Type.ZSTD, containerPattern, "*.wine/system.reg");
+        byte[] userRegistry = TarCompressorUtils.read(TarCompressorUtils.Type.ZSTD, containerPattern, "*.wine/user.reg");
+        return isValidWin64Registry(systemRegistry) && isValidWin64Registry(userRegistry);
     }
 
     private static boolean finishWineInstallation(RootFS rootFS, WineInfo wineInfo) {
@@ -133,6 +210,12 @@ public abstract class WineInstaller {
             return false;
         }
         return validHeader && win64Architecture;
+    }
+
+    private static boolean isValidWin64Registry(byte[] registryData) {
+        if (registryData == null || registryData.length == 0) return false;
+        String registry = new String(registryData, java.nio.charset.StandardCharsets.UTF_8);
+        return registry.startsWith("WINE REGISTRY Version 2") && registry.contains("\n#arch=win64\n");
     }
 
     private static void failWineInstallation(Activity activity, File installedWineDir, PreloaderDialog preloaderDialog) {
