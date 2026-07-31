@@ -1,0 +1,24 @@
+diff --git a/dlls/ntdll/unix/server.c b/dlls/ntdll/unix/server.c
+--- a/dlls/ntdll/unix/server.c
++++ b/dlls/ntdll/unix/server.c
+@@ -1308,6 +1308,3 @@ static const char *init_server_dir( dev_t dev, ino_t ino )
+-#ifdef __ANDROID__  /* there's no /tmp dir on Android */
++    /* Winlator patch: no writable /tmp in Android app sandbox; use the wineprefix. */
+     asprintf( &dir, "%s/.wineserver/server-%llx-%llx", config_dir, (unsigned long long)dev, (unsigned long long)ino );
+-#else
+-    asprintf( &dir, "/tmp/.wine-%u/server-%llx-%llx", getuid(), (unsigned long long)dev, (unsigned long long)ino );
+-#endif
+     return dir;
+diff --git a/server/request.c b/server/request.c
+--- a/server/request.c
++++ b/server/request.c
+@@ -643,8 +643,4 @@ static char *create_server_dir( int force )
+-#ifdef __ANDROID__  /* there's no /tmp dir on Android */
++    /* Winlator patch: no writable /tmp in Android app sandbox; use the wineprefix. */
+     if (asprintf( &base_dir, "%s/.wineserver", config_dir ) == -1)
+         fatal_error( "out of memory\n" );
+-#else
+-    if (asprintf( &base_dir, "/tmp/.wine-%u", getuid() ) == -1)
+-        fatal_error( "out of memory\n" );
+-#endif
+     create_dir( base_dir, &st2 );

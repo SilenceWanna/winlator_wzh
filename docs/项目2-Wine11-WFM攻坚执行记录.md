@@ -289,3 +289,27 @@ SHA-256 AC50B87395745A142476517F5ED60C9441B1100E3AF22607C07748ADE21061AA
 
 下一阶段停止叠加 ICU、Box64 和窗口环境变量，改用 Wine 官方发布点做版本二分。优先构建 10.15、10.18、10.20 和 11.0-rc3，每个版本仅应用 Android `server_dir` 双侧补丁和现有编译约束，通过可选 Wine 容器运行同一份游戏。按结果继续缩小到首个失效的 Wine 发布点，再对该区间的 OpenGL/WGL、win32u/window 和 winsock/dns 变更做源码级二分。
 
+### 6.7 Wine 10.18 二分包
+
+首个中间版本选择 Wine 10.18，官方 tag 提交为 `1e998672`。独立源码工作树只修改 `dlls/ntdll/unix/server.c` 和 `server/request.c`，双侧强制使用 `<WINEPREFIX>/.wineserver`。可复用补丁已保存为 `wine_patches/winlator-server-dir.patch`。
+
+构建与验证：
+
+- configure 参数与 Wine 11 保持一致：`--enable-archs=i386,x86_64 --disable-tests --without-oss`；已确认产生 i386/x86_64 WoW64 目录，`SONAME_LIBVULKAN` 为 `libvulkan.so.1`。
+- 首次 `make -j12` 因外层命令达到一小时超时被中止，日志无编译错误；保留增量对象后续跑 `make -j12` 成功，末尾为 `Wine build complete.`。
+- `make install` 后体积约 1.5 GB。统一 strip 了 808 个 PE32、758 个 PE32+ 和 38 个 ELF，体积降至 470 MB；之后才排除 headers/manpages 生成 408 MB 运行时 staging。
+- staging 包含 2511 个普通文件和 14 个符号链接；`i386-windows` 1058 个文件、`x86_64-windows` 1007 个文件、`x86_64-unix` 278 个文件。Wine Vulkan、OpenGL、X11、wined3d 以及 dnsapi/ws2_32/winhttp/crypt32/secur32 均保留。
+- WSL 干净 prefix 的 `wineboot -i` 以 0 退出，实际创建 `.wineserver/server-*`，`system.reg` 和 `user.reg` 头均有 `#arch=win64`。后续无 X Server 的 `wineboot -u` 超过 10 分钟未退出，已终止该验证 wineserver，未将部分更新的 WSL prefix 打入安装包。
+- 新 WoW64 prefix 的 `syswow64` 目录可为空；直接运行 `i386-windows/cmd.exe` 成功输出 `32BIT_OK` 并以 0 退出，证明 32 位 PE 从 Wine 的 `i386-windows` 目录加载，不是 i386 构建缺失。
+- XZ 完整性、归档路径安全和解包后逐文件 `diff` 均通过；归档不含绝对路径、`..`、headers 或 manpages。
+
+真机二分包：
+
+```text
+../../artifacts/wine-packages/wine-10.18-winlator-custom-addon.tar.xz
+Size 56521976 bytes
+SHA-256 C8DE32911703B8A91FBCB222D04F9153D0D67F35BA1C8FA6EC4D480AFBDA200A
+```
+
+该包在当前直装修订 APK 中不匹配 Wine 10.10 专用指纹，因此会故意走通用 `winecfg -> wineserver -k -w -> prefix 校验` 路径。安装成功后必须新建 `Wine Version = Wine 10.18` 容器，保持与 10.10 成功基线相同的 Zink/Turnip、Box64 Stability 和游戏文件，不添加环境变量。
+
