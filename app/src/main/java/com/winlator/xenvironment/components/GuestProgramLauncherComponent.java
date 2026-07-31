@@ -24,6 +24,8 @@ import java.io.File;
 import java.util.List;
 
 public class GuestProgramLauncherComponent extends EnvironmentComponent {
+    private static final String DESKTOP_SHELL_ENV_VAR = "WINLATOR_DESKTOP_SHELL";
+    private static final String WFM_INTERPRETER_ENV_VAR = "WINLATOR_WFM_INTERPRETER";
     private String guestExecutable;
     private static int pid = -1;
     private EnvVars envVars;
@@ -101,6 +103,8 @@ public class GuestProgramLauncherComponent extends EnvironmentComponent {
         envVars.put("ANDROID_SYSVSHM_SERVER", rootDir+UnixSocketConfig.SYSVSHM_SERVER_PATH);
 
         if (this.envVars != null) envVars.putAll(this.envVars);
+        envVars.remove(DESKTOP_SHELL_ENV_VAR);
+        envVars.remove(WFM_INTERPRETER_ENV_VAR);
 
         File shmDir = new File(rootDir, "/tmp/shm");
         if (!shmDir.isDirectory()) shmDir.mkdirs();
@@ -130,7 +134,13 @@ public class GuestProgramLauncherComponent extends EnvironmentComponent {
     private void copyDefaultBox64RCFile() {
         Context context = environment.getContext();
         RootFS rootFS = environment.getRootFS();
-        FileUtils.copy(context, "box64/default.box64rc", new File(rootFS.getRootDir(), "/etc/config.box64rc"));
+        File box64RCFile = new File(rootFS.getRootDir(), "/etc/config.box64rc");
+        FileUtils.copy(context, "box64/default.box64rc", box64RCFile);
+
+        if (envVars != null && envVars.get(WFM_INTERPRETER_ENV_VAR).equals("1")) {
+            String config = FileUtils.readString(box64RCFile);
+            FileUtils.writeString(box64RCFile, config+"\n[wfm.exe]\nBOX64_DYNAREC=0\n");
+        }
     }
 
     private void addBox64EnvVars(EnvVars envVars) {

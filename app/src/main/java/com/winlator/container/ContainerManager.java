@@ -233,26 +233,29 @@ public class ContainerManager {
         return null;
     }
 
-    private void copyCommonDlls(String srcName, String dstName, JSONObject commonDlls, File containerDir) throws JSONException {
-        File srcDir = new File(RootFS.find(context).getRootDir(), "/opt/wine/lib/wine/"+srcName);
+    private boolean copyCommonDlls(File wineDir, String srcName, String dstName, JSONObject commonDlls, File containerDir) throws JSONException {
+        File srcDir = new File(wineDir, "lib/wine/"+srcName);
         JSONArray dlnames = commonDlls.getJSONArray(dstName);
 
         for (int i = 0; i < dlnames.length(); i++) {
             String dlname = dlnames.getString(i);
             File dstFile = new File(containerDir, ".wine/drive_c/windows/"+dstName+"/"+dlname);
-            FileUtils.copy(new File(srcDir, dlname), dstFile);
+            if (!FileUtils.copy(new File(srcDir, dlname), dstFile)) return false;
         }
+        return true;
     }
 
     private boolean extractContainerPatternFile(String wineVersion, File containerDir) {
+        RootFS rootFS = RootFS.find(context);
         if (WineInfo.isMainWineVersion(wineVersion)) {
             boolean result = TarCompressorUtils.extract(TarCompressorUtils.Type.ZSTD, context, "container_pattern.tzst", containerDir);
 
             if (result) {
                 try {
                     JSONObject commonDlls = new JSONObject(FileUtils.readString(context, "common_dlls.json"));
-                    copyCommonDlls("x86_64-windows", "system32", commonDlls, containerDir);
-                    copyCommonDlls("i386-windows", "syswow64", commonDlls, containerDir);
+                    File wineDir = new File(rootFS.getRootDir(), "/opt/wine");
+                    if (!copyCommonDlls(wineDir, "x86_64-windows", "system32", commonDlls, containerDir) ||
+                            !copyCommonDlls(wineDir, "i386-windows", "syswow64", commonDlls, containerDir)) return false;
                 }
                 catch (JSONException e) {
                     return false;
@@ -262,10 +265,24 @@ public class ContainerManager {
             return result;
         }
         else {
-            File installedWineDir = RootFS.find(context).getInstalledWineDir();
+            File installedWineDir = rootFS.getInstalledWineDir();
             WineInfo wineInfo = WineInfo.fromIdentifier(context, wineVersion);
             File file = new File(installedWineDir, "container-pattern-"+wineInfo.fullVersion()+".tzst");
-            return TarCompressorUtils.extract(TarCompressorUtils.Type.ZSTD, file, containerDir);
+            boolean result = TarCompressorUtils.extract(TarCompressorUtils.Type.ZSTD, file, containerDir);
+
+            if (result && wineInfo.fullVersion().equals("10.10")) {
+                try {
+                    JSONObject commonDlls = new JSONObject(FileUtils.readString(context, "wine/common_dlls-10.10.json"));
+                    File wineDir = new File(installedWineDir, wineInfo.identifier());
+                    if (!copyCommonDlls(wineDir, "x86_64-windows", "system32", commonDlls, containerDir) ||
+                            !copyCommonDlls(wineDir, "i386-windows", "syswow64", commonDlls, containerDir)) return false;
+                }
+                catch (JSONException e) {
+                    return false;
+                }
+            }
+
+            return result;
         }
     }
 }

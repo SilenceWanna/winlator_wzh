@@ -103,6 +103,8 @@ import java.util.Iterator;
 import java.util.concurrent.Executors;
 
 public class XServerDisplayActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String DESKTOP_SHELL_ENV_VAR = "WINLATOR_DESKTOP_SHELL";
+    private static final String WFM_INTERPRETER_ENV_VAR = "WINLATOR_WFM_INTERPRETER";
     private XServerView xServerView;
     private InputControlsView inputControlsView;
     private TouchpadView touchpadView;
@@ -496,13 +498,13 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         if (container != null) {
             if (container.getHUDMode() == FrameRating.Mode.FULL.ordinal()) envVars.put("X11_WND_GPU_INFO", "1");
 
-            String desktopName = shortcut != null || getIntent().hasExtra("exec_path") ? "nogui" : "shell";
-            String guestExecutable = "wine explorer /desktop="+desktopName+","+xServer.screenInfo+" "+getWineStartCommand();
-            guestProgramLauncherComponent.setGuestExecutable(guestExecutable);
-
             envVars.putAll(container.getEnvVars());
             if (shortcut != null) envVars.putAll(shortcut.getExtra("envVars"));
             if (!envVars.has("WINEESYNC")) envVars.put("WINEESYNC", "1");
+
+            String desktopName = shortcut != null || getIntent().hasExtra("exec_path") ? "nogui" : "shell";
+            String guestExecutable = "wine explorer /desktop="+desktopName+","+xServer.screenInfo+" "+getWineStartCommand();
+            guestProgramLauncherComponent.setGuestExecutable(guestExecutable);
 
             guestProgramLauncherComponent.setBox64Preset(shortcut != null ? shortcut.getExtra("box64Preset", container.getBox64Preset()) : container.getBox64Preset());
         }
@@ -977,13 +979,25 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             cmdArgs = "/dir "+StringUtils.escapeDOSPath(execDir)+" \""+filename+"\""+execArgs;
         }
 
-        if (cmdArgs.isEmpty()) cmdArgs = "/dir C:\\windows \"wfm.exe\"";
+        if (cmdArgs.isEmpty()) cmdArgs = getDesktopShellCommand();
 
         if (overrideEnvVars != null && overrideEnvVars.has("EXTRA_EXEC_ARGS")) {
             cmdArgs += " "+overrideEnvVars.get("EXTRA_EXEC_ARGS");
             overrideEnvVars.remove("EXTRA_EXEC_ARGS");
         }
         return "C:\\windows\\winhandler.exe "+cmdArgs;
+    }
+
+    private String getDesktopShellCommand() {
+        String desktopShell = envVars.get(DESKTOP_SHELL_ENV_VAR);
+        if (desktopShell.equalsIgnoreCase("winefile") || desktopShell.equalsIgnoreCase("winefile.exe")) {
+            return "/dir C:\\windows\\system32 \"winefile.exe\"";
+        }
+
+        if (wineInfo != null && wineInfo.isVersionAtLeast(11, 0) && !envVars.has(WFM_INTERPRETER_ENV_VAR)) {
+            envVars.put(WFM_INTERPRETER_ENV_VAR, "1");
+        }
+        return "/dir C:\\windows \"wfm.exe\"";
     }
 
     public XServer getXServer() {

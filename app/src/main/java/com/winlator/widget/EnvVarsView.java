@@ -42,6 +42,8 @@ public class EnvVarsView extends FrameLayout {
         {"MESA_EXTENSION_MAX_YEAR", "NUMBER"},
         {"MESA_GL_VERSION_OVERRIDE", "TEXT"},
         {"PULSE_LATENCY_MSEC", "NUMBER"},
+        {"WINLATOR_DESKTOP_SHELL", "SELECT", "wfm", "winefile"},
+        {"WINLATOR_WFM_INTERPRETER", "CHECKBOX", "0", "1"},
     };
     private final LinearLayout container;
     private final TextView emptyTextView;

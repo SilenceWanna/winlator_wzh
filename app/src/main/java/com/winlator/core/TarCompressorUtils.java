@@ -33,25 +33,19 @@ public abstract class TarCompressorUtils {
         File onExtractFile(File destination, long size);
     }
 
-    private static void addFile(ArchiveOutputStream tar, File file, String entryName) {
-        try {
-            tar.putArchiveEntry(tar.createArchiveEntry(file, entryName));
-            try (BufferedInputStream inStream = new BufferedInputStream(new FileInputStream(file), StreamUtils.BUFFER_SIZE)) {
-                StreamUtils.copy(inStream, tar);
-            }
-            tar.closeArchiveEntry();
+    private static void addFile(ArchiveOutputStream tar, File file, String entryName) throws IOException {
+        tar.putArchiveEntry(tar.createArchiveEntry(file, entryName));
+        try (BufferedInputStream inStream = new BufferedInputStream(new FileInputStream(file), StreamUtils.BUFFER_SIZE)) {
+            if (!StreamUtils.copy(inStream, tar)) throw new IOException("Unable to add file to archive: "+file.getPath());
         }
-        catch (Exception e) {}
+        tar.closeArchiveEntry();
     }
 
-    private static void addLinkFile(ArchiveOutputStream tar, File file, String entryName) {
-        try {
-            TarArchiveEntry entry = new TarArchiveEntry(entryName, TarConstants.LF_SYMLINK);
-            entry.setLinkName(FileUtils.readSymlink(file));
-            tar.putArchiveEntry(entry);
-            tar.closeArchiveEntry();
-        }
-        catch (Exception e) {}
+    private static void addLinkFile(ArchiveOutputStream tar, File file, String entryName) throws IOException {
+        TarArchiveEntry entry = new TarArchiveEntry(entryName, TarConstants.LF_SYMLINK);
+        entry.setLinkName(FileUtils.readSymlink(file));
+        tar.putArchiveEntry(entry);
+        tar.closeArchiveEntry();
     }
 
     private static void addDirectory(ArchiveOutputStream tar, File folder, String basePath) throws IOException {
@@ -71,15 +65,15 @@ public abstract class TarCompressorUtils {
         }
     }
 
-    public static void compress(Type type, File file, File destination) {
-        compress(type, file, destination, 3);
+    public static boolean compress(Type type, File file, File destination) {
+        return compress(type, file, destination, 3);
     }
 
-    public static void compress(Type type, File file, File destination, int level) {
-        compress(type, new File[]{file}, destination, level);
+    public static boolean compress(Type type, File file, File destination, int level) {
+        return compress(type, new File[]{file}, destination, level);
     }
 
-    public static void compress(Type type, File[] files, File destination, int level) {
+    public static boolean compress(Type type, File[] files, File destination, int level) {
         try (OutputStream outStream = getCompressorOutputStream(type, destination, level);
              TarArchiveOutputStream tar = new TarArchiveOutputStream(outStream)) {
             tar.setLongFileMode(TarArchiveOutputStream.LONGFILE_GNU);
@@ -100,8 +94,12 @@ public abstract class TarCompressorUtils {
                 else addFile(tar, file, file.getName());
             }
             tar.finish();
+            return true;
         }
-        catch (IOException e) {}
+        catch (IOException e) {
+            destination.delete();
+            return false;
+        }
     }
 
     public static boolean extract(Type type, Context context, String assetFile, File destination) {
