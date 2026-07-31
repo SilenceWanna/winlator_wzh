@@ -342,3 +342,33 @@ JBR 17 下 `compileDebugJavaWithJavac` 与 `assembleDebug` 均通过。APK ZIP �
 
 下一轮覆盖安装该 APK 后，直接启动原 Wine 10.18 容器，保留 `WINLATOR_WFM_INTERPRETER=1`。若能够进入桌面，再运行同一份 E 盘 Stardew Valley；无论结果如何都导出新日志，以继续判定 Wine 10.18 的桌面兼容性和游戏回归边界。
 
+### 6.9 Wine 10.18 EGL 失败后的错误回退
+
+覆盖安装 wineserver 清理版 APK 后，原 Wine 10.18 容器成功进入桌面并保持稳定。日志确认 `wfm.exe` 使用 `BOX64_DYNAREC=0`，因此 Wine 10.18 与 WFM 解释器方案可以协同工作，上一轮的桌面闪退已经解决。
+
+同一容器从 E 盘启动 Stardew Valley 后没有显示窗口。日志 `logs/stardew-valley/logs_wine10_18_stardew.txt` 长度为 103140 字节，SHA-256 为 `C21A02016DF43500C575DFB5D0C395DAFB11EFB1DD236EC44FF295A60C1D547D`。游戏于 16:57:44 启动，16:58:22 完成 GLX 4.6 / Zink / Turnip 探测，但四次 `set_dc_pixel_format` 都从本机地址 `0x3f0302aa5b` 返回 `c0000005`。它没有创建任何 GL context，也没有 surface flush 或 SwapBuffers，随后于 16:58:23 明确退出：
+
+```text
+Microsoft.Xna.Framework.Graphics.NoSuitableGraphicsDeviceException: Failed to create graphics device!
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at MonoGame.OpenGL.GL.LoadExtensions()
+```
+
+这与 Wine 11 的“已创建三个 context、完成扩展加载，但首帧前停止”不是同一故障。Wine 10.18 的直接问题位于更早的 WGL context 创建阶段。
+
+源码与日志对应后定位到 Wine 10.18 的上游缺陷：`winex11.drv` 默认 `use_egl = TRUE`；Android rootfs 中 `libEGL.so.1` 无法加载时，10.18 会继续在 `visual_from_pixel_format()` 中走 EGL 路径。Wine 上游提交 `eecf70ac7ac2109d037b16b2239113a4918762db`（`winex11.drv: Set use_egl to false if it is unavailable.`）在 GLX fallback 前显式执行 `use_egl = FALSE`，专门避免该错误路径。Wine 11 已包含此提交，解释了它在同样报告 EGL 加载失败后仍能继续创建 context。
+
+已将该上游两行修复保存为 `wine_patches/wine-10.18-egl-fallback.patch`，回移到现有 Wine 10.18 源码。增量 `make -j12` 仅重编 `dlls/winex11.drv/opengl.o` 和 `winex11.so`，以 `Wine build complete.` 成功结束。新 addon 只替换 `lib/wine/x86_64-unix/winex11.so`；strip 后大小仍为 458448 字节，SHA-256 从 `E98D80696C221A24F92C384598DA0A379D4A0DFB0A421E5306B0942074DF9DA1` 变为 `1F202077C67554AAD80A49E87D06B3CF63ADEB86259D764A42B77990BFCF4100`，ELF 依赖列表没有变化。
+
+修复包：
+
+```text
+../../artifacts/wine-packages/wine-10.18-winlator-egl-fallback-addon.tar.xz
+Size 54460984 bytes
+SHA-256 9C4547F1E0B095BFBB51678F7A6134EC472EE9BCB3DC4000BD473717C36F3EF1
+```
+
+XZ 完整性检查通过；最终归档重新解包后有 2497 个普通文件和 14 个符号链接，不安全路径数为 0，解包目录与打包 staging 完全一致。归档内新 `winex11.so` 哈希与 staging 相同，Wine Vulkan 文件齐全；`ntdll.so` 与 `wineserver` 仍只包含 `<WINEPREFIX>/.wineserver` 路径，没有回退到 `/tmp/.wine-*`。
+
+因为 Settings 禁止移除仍被容器引用的 Wine，且禁止覆盖安装同名 `wine-10.18`，真机复测需要先删除当前 Wine 10.18 测试容器，再从 `Settings -> Wine Version` 移除旧 Wine 10.18，安装上述 EGL fallback 包并新建 Wine 10.18 容器。继续使用 Zink、原 Turnip、Box64 Stability 和 `WINLATOR_WFM_INTERPRETER=1`，先确认桌面，再运行同一份 E 盘 Stardew Valley。若游戏成功，则原始兼容回归位于 10.18 到 11.0 之间；若越过 context 创建后复现 Wine 11 的首帧前停止，则下一步构建 10.15 继续向前二分。
+
