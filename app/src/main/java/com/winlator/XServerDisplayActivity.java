@@ -172,6 +172,9 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             container = containerManager.getContainerById(getIntent().getIntExtra("container_id", 0));
             containerManager.activateContainer(container);
 
+            // The Wine server directory is host runtime state and must be recreated with mode 0700.
+            FileUtils.delete(new File(container.getRootDir(), ".wine/.wineserver"));
+
             boolean wineprefixNeedsUpdate = container.getExtra("wineprefixNeedsUpdate").equals("t");
             if (wineprefixNeedsUpdate) {
                 preloaderDialog.show(R.string.updating_system_files);

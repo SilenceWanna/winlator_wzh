@@ -313,3 +313,32 @@ SHA-256 C8DE32911703B8A91FBCB222D04F9153D0D67F35BA1C8FA6EC4D480AFBDA200A
 
 该包在当前直装修订 APK 中不匹配 Wine 10.10 专用指纹，因此会故意走通用 `winecfg -> wineserver -k -w -> prefix 校验` 路径。安装成功后必须新建 `Wine Version = Wine 10.18` 容器，保持与 10.10 成功基线相同的 Zink/Turnip、Box64 Stability 和游戏文件，不添加环境变量。
 
+### 6.8 Wine 10.18 首次启动的 wineserver 权限修复
+
+Wine 10.18 安装和新容器创建成功，但加入 `WINLATOR_WFM_INTERPRETER=1` 后仍在进入桌面前闪退。日志 `logs/stardew-valley/logs_wine10_18_wfm_interpreter.txt` 长度为 9116 字节，SHA-256 为 `BCF5CC56ADE79F94635AD002CCD9680443252F87BF7215960388A1BB093FAA90`，最终错误为：
+
+```text
+wineserver: /data/user/0/com.winlator/files/rootfs/home/xuser/.wine/.wineserver must not be accessible by other users
+```
+
+日志确认实际加载的是 `/opt/installed-wine/wine-10.18`。虽然启动参数已经包含 `wfm.exe`，但 wineserver 在 16:28:35 初始化阶段立即退出，尚未运行到 WFM，因此本轮不能用于判断 Wine 10.18 与 WFM 或 Box64 解释器是否兼容。
+
+根因是 Wine 安装阶段生成 prefix 时留下了运行期目录 `.wine/.wineserver`，随后该目录被一起压入 `container-pattern-10.18.tzst`。`TarCompressorUtils.extract()` 会把解出的每个条目统一设为 `0771`，而 wineserver 明确要求自己的服务目录不能允许 group/other 访问，导致每个由该模板新建的容器都在启动时触发安全检查并退出。
+
+修复采用双层清理：
+
+- `WineInstaller.finishWineInstallation()` 在验证 prefix 后、压缩 container pattern 前删除 `.wine/.wineserver`，避免后续通用 Wine 安装包继续携带运行期状态。
+- `XServerDisplayActivity` 在激活容器后、启动 Wine 前删除当前 prefix 的 `.wine/.wineserver`，由 wineserver 以正确的 `0700` 权限重新创建。这一层同时修复手机上已经安装的 Wine 10.18 和已经创建的容器，不需要删除或重新安装。
+
+修复测试 APK：
+
+```text
+../../artifacts/apks/wine11/app-debug-wine11-wine10.18-wineserver-cleanup.apk
+Size 248394622 bytes
+SHA-256 F71DE3E267AF1605E5BCF4EA14B49C8BA47770373D67148C32D5436097389319
+```
+
+JBR 17 下 `compileDebugJavaWithJavac` 与 `assembleDebug` 均通过。APK ZIP 对齐通过；包名 `com.winlator`，版本 `11.1 (28)`；V2 签名有效，证书 SHA-256 仍为 `b6396f6cd549475dec0893ac0cab0e03770f403fb37679bae02418a492270b07`，可以直接覆盖安装。与上一真机 APK 逐项比较后，`rootfs.tzst`、主 `container_pattern.tzst`、`common_dlls.json` 和 Wine 10.10 模板的长度及 SHA-256 全部一致，本轮没有改动内置 Wine 或容器资源。
+
+下一轮覆盖安装该 APK 后，直接启动原 Wine 10.18 容器，保留 `WINLATOR_WFM_INTERPRETER=1`。若能够进入桌面，再运行同一份 E 盘 Stardew Valley；无论结果如何都导出新日志，以继续判定 Wine 10.18 的桌面兼容性和游戏回归边界。
+

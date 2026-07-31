@@ -157,6 +157,7 @@ public abstract class WineInstaller {
         File wineprefix = new File(rootDir, RootFS.WINEPREFIX);
         if (!isValidWin64Wineprefix(wineprefix)) return false;
 
+        FileUtils.delete(new File(wineprefix, ".wineserver"));
         FileUtils.writeString(new File(wineprefix, ".update-timestamp"), "disable\n");
 
         File userDir = new File(wineprefix, "drive_c/users/xuser");
