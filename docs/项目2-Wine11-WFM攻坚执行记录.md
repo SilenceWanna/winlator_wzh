@@ -372,3 +372,38 @@ XZ 完整性检查通过；最终归档重新解包后有 2497 个普通文件�
 
 因为 Settings 禁止移除仍被容器引用的 Wine，且禁止覆盖安装同名 `wine-10.18`，真机复测需要先删除当前 Wine 10.18 测试容器，再从 `Settings -> Wine Version` 移除旧 Wine 10.18，安装上述 EGL fallback 包并新建 Wine 10.18 容器。继续使用 Zink、原 Turnip、Box64 Stability 和 `WINLATOR_WFM_INTERPRETER=1`，先确认桌面，再运行同一份 E 盘 Stardew Valley。若游戏成功，则原始兼容回归位于 10.18 到 11.0 之间；若越过 context 创建后复现 Wine 11 的首帧前停止，则下一步构建 10.15 继续向前二分。
 
+### 6.10 Wine 10.18 通过与 Wine 10.20 二分包
+
+安装 EGL fallback 包后，Wine 10.18 容器成功进入桌面并启动 Stardew Valley。成功日志 `logs/stardew-valley/logs_wine10_18_egl_fallback_stardew.txt` 长度为 428459 字节，SHA-256 为 `38519A512670E6792957CDBC25B76937C38E67561A4947EEC3F14A524672C1F8`。
+
+日志证据：
+
+- 游戏于 18:07:31 启动；18:08:08 仍报告 `libEGL.so.1` 无法加载，但同一秒正确回退到 GLX 4.6 / Zink / Turnip。
+- 18:08:09 至 18:08:10 成功返回 64 个 `win32u_wglGetProcAddress` 地址，证明 MonoGame 已越过此前崩溃的 `GL.LoadExtensions()`。
+- 18:08:24 首次执行 `win32u_wglSwapBuffers` 和 `x11drv_surface_swap`；截至 18:08:56 共 19 次 swap、286 次 context flush，画面持续提交。
+- 日志有 54 次 `x11drv_surface_flush`，但没有 `c0000005`、`NoSuitableGraphicsDeviceException` 或未处理异常。
+- 16 个 `e0434352` 和 8 个 `e06d7363` 与 Wine 10.10 成功基线数量一致，再次确认它们是被程序处理的正常探测路径。
+
+这一结果证明 Wine 10.18 已使用与 Wine 11 相同的 `x11drv_surface_swap` 路径并能正常出帧，因此 Wine 11 黑屏不能归因于新 surface swap 架构本身。有效通过点是 Wine 10.18 加 Android `server_dir` 双侧补丁和上游 `eecf70a` EGL fallback；后者属于让 Android 缺少 `libEGL.so.1` 时正确进入 GLX 的平台修复，不改变 Stardew 的游戏逻辑。
+
+下一枚二分版本选择 Wine 10.20，官方 tag 提交为 `4dfbf077cf708e4bbffa8e086d78d6652bbd69d8`。该版本源码原生包含 `use_egl = FALSE`，因此只应用现有 `wine_patches/winlator-server-dir.patch`，没有叠加其他行为补丁。
+
+构建与验证：
+
+- configure 参数与 10.18 完全一致：`--enable-archs=i386,x86_64 --disable-tests --without-oss`，确认 `PE_ARCHS = i386 x86_64`，`SONAME_LIBEGL`、`SONAME_LIBGL` 和 `SONAME_LIBVULKAN` 均为对应 `.so.1`。
+- `make -j12` 用时约 60 分钟并以 0 退出；第二次无增量 make 明确输出 `Wine build complete.`。Bison conflict 和 GCC column-tracking 信息均为上游警告，没有编译或链接失败。
+- `make install` 后安装树约 1.5 GB，PE 和 ELF 仍含调试段。统一 strip 了 813 个 PE32、763 个 PE32+ 和 38 个 ELF，体积降至 472 MB；抽查确认 `.debug_*` 与 `.symtab` 已移除。
+- 排除 headers 和 manpages 后运行时 staging 为 409 MB，包含 2510 个普通文件和 14 个符号链接；`i386-windows` 1064 个文件、`x86_64-windows` 1013 个文件、`x86_64-unix` 279 个文件。
+- WSL 无 X Server 的 `wineboot -i` 在 300 秒超时，但已生成具有正确头和 `#arch=win64` 的 `system.reg`、`user.reg`；`.wineserver` 及 server 子目录权限均为 0700。清理 wineserver 后，直接运行 i386 `cmd.exe` 成功输出 `32BIT_OK`。
+- 最终归档 XZ 完整性和路径安全检查通过；重新解包后与 staging 零差异，版本为 `wine-10.20`。`ntdll.so` 与 `wineserver` 只包含 `<WINEPREFIX>/.wineserver` 路径，Wine Vulkan 的 i386、x86_64 和 Unix bridge 齐全。
+
+真机二分包：
+
+```text
+../../artifacts/wine-packages/wine-10.20-winlator-custom-addon.tar.xz
+Size 54739864 bytes
+SHA-256 BC69DCACD5C7355CA5EAF6F35BE97520C8D930BA0007A65C38FF8B0951FB747C
+```
+
+Wine 10.20 与 10.18 的 identifier 不同，可以并存安装，不需要删除已验证的 10.18 容器或 Wine。继续使用当前 wineserver 清理版 APK，安装 10.20 后新建 `Wine Version = Wine 10.20` 容器，保持相同的 Zink、Turnip、Box64 Stability、`WINLATOR_WFM_INTERPRETER=1` 和 E 盘游戏。若 10.20 成功，回归范围缩到 10.20 与 11.0；若失败，则缩到 10.18 与 10.20。
+
