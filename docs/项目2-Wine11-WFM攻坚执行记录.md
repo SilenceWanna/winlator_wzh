@@ -407,3 +407,13 @@ SHA-256 BC69DCACD5C7355CA5EAF6F35BE97520C8D930BA0007A65C38FF8B0951FB747C
 
 Wine 10.20 与 10.18 的 identifier 不同，可以并存安装，不需要删除已验证的 10.18 容器或 Wine。继续使用当前 wineserver 清理版 APK，安装 10.20 后新建 `Wine Version = Wine 10.20` 容器，保持相同的 Zink、Turnip、Box64 Stability、`WINLATOR_WFM_INTERPRETER=1` 和 E 盘游戏。若 10.20 成功，回归范围缩到 10.20 与 11.0；若失败，则缩到 10.18 与 10.20。
 
+### 6.11 Wine 10.20 的 ICU stub 干扰项
+
+Wine 10.20 新容器可以正常进入桌面，但点击 Stardew Valley 后没有显示窗口。用户等待超过 5 分钟后导出的日志为 `logs/stardew-valley/logs_wine10_20_stardew.txt`，长度 72134 字节，SHA-256 为 `C7EBE1E379EE2F6D5A7F0C0558B6B661D241E41B035D025EAF5FB59346669DB9`。
+
+这次不是图形初始化卡死。日志时间线显示游戏进程于 12:36:47 启动，12:36:49 调用 Wine 10.20 内置 `icu.dll` 的 `ulocdata_getCLDRVersion`，该导出是未实现 stub，Wine 因而抛出 `EXCEPTION_WINE_STUB`。CoreCLR 随后在 `System.Globalization.GlobalizationMode.LoadIcu()` 中发生资源查找无限递归并调用 `Environment.FailFast()`，12:36:50 以未处理异常 `80131623` 结束。进程实际只运行约 3 秒，之后桌面没有错误窗口，所以外部表现为长时间无响应。日志没有进入 WGL context 创建、扩展加载或 swap 阶段。
+
+源码对比确认 `dlls/icu` 在 Wine 10.18 中不存在，而 Wine 10.20 release 提交 `4dfbf077` 新增 `icu.dll`，其 1059 个导出均为 stub；`Makefile.in` 使用 `EXTRADLLFLAGS = -Wb,--prefer-native`。游戏目录也没有可加载的原生 `icu.dll`。Wine 10.18 因检测不到 ICU 而让 .NET 5 回退到 Windows NLS，所以没有触发此故障。
+
+这是 10.20 新增不完整兼容模块造成的独立干扰项，不能据此将 Stardew 的原始首帧回归边界缩到 10.18 至 10.20。下一轮不更换 APK、Wine 包或容器，仅在 Wine 10.20 容器的 Environment Variables 中添加 `WINEDLLOVERRIDES=icu=n`。该设置要求只加载 native ICU；本游戏不携带 native ICU，因此会让模块加载失败并恢复 Wine 10.18 的 NLS 路径。若随后成功出帧，则继续把原始回归范围缩到 10.20 至 11.0；若越过 ICU 后出现新的停点，再根据新日志判定。
+
