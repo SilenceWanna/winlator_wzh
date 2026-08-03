@@ -417,3 +417,37 @@ Wine 10.20 新容器可以正常进入桌面，但点击 Stardew Valley 后没�
 
 这是 10.20 新增不完整兼容模块造成的独立干扰项，不能据此将 Stardew 的原始首帧回归边界缩到 10.18 至 10.20。下一轮不更换 APK、Wine 包或容器，仅在 Wine 10.20 容器的 Environment Variables 中添加 `WINEDLLOVERRIDES=icu=n`。该设置要求只加载 native ICU；本游戏不携带 native ICU，因此会让模块加载失败并恢复 Wine 10.18 的 NLS 路径。若随后成功出帧，则继续把原始回归范围缩到 10.20 至 11.0；若越过 ICU 后出现新的停点，再根据新日志判定。
 
+### 6.12 Wine 10.20 通过与 Wine 11.0-rc3 二分包
+
+在同一个 Wine 10.20 容器中加入 `WINEDLLOVERRIDES=icu=n` 后，Stardew Valley 成功启动。日志实际文件名为 `logs/stardew-valley/logs_wine10_20_icu_native.txt.txt`，长度 439508 字节，SHA-256 为 `72E667E117E10742441C4E66E507138FEFD643C9438477C928965C05ECB93AFE`。
+
+日志证据：
+
+- Stardew 进程于 13:00:05 启动，进程环境变量数由失败样本的 80 增加到 81；`icu.dll` 未实现调用、`GlobalizationMode.LoadIcu()` 和 `FailFast` 均为 0。
+- 13:00:43 加载 `libEGL.so.1` 失败后正确回退 GLX，成功创建三个 `x11drv_context`；13:00:44 至 13:00:45 成功返回全部 64 个 `win32u_wglGetProcAddress` 地址。
+- 13:00:59 首次执行 `win32u_wglSwapBuffers` 和 `x11drv_surface_swap`，截至 13:01:33 各执行 20 次；同时有 296 次 `win32u_wgl_context_flush` 和 48 次 `x11drv_surface_flush`，证明画面持续提交。
+- `c0000005`、`NoSuitableGraphicsDeviceException` 和未处理异常均为 0；16 个 `e0434352` 与 8 个 `e06d7363` 与 Wine 10.18 和 10.10 的成功基线相同。
+
+Wine 10.20 因而成为确认通过点，原始“完成扩展加载但首帧前停止”回归范围正式缩到 Wine 10.20 与 Wine 11.0 之间。10.20 的 ICU stub 是可被单变量隔离的独立问题，不应混入 WGL/OpenGL 二分结论。
+
+下一枚版本选择 Wine 11.0-rc3，官方 tag 提交为 `72b941ef7393c0052b0288e0dbb7185201296a09`。源码只应用 `wine_patches/winlator-server-dir.patch`，修改 `dlls/ntdll/unix/server.c` 和 `server/request.c`；没有加入其他行为补丁。rc3 源码已经删除 10.20 的 `dlls/icu` 全 stub 模块，但真机仍保留 `WINEDLLOVERRIDES=icu=n`，以维持与 10.20 成功样本相同的容器变量。
+
+构建与验证：
+
+- configure 参数为 `--enable-archs=i386,x86_64 --disable-tests --without-oss`，确认 `PE_ARCHS = i386 x86_64`，`SONAME_LIBEGL`、`SONAME_LIBGL`、`SONAME_LIBVULKAN` 均为 `.so.1`；rc3 原生包含 EGL 不可用时设置 `use_egl = FALSE` 的回退修复。
+- `make -j12` 用时 4322 秒并明确输出 `Wine build complete.`；第二次无增量 make 用时 14 秒并再次输出同一完成标志。`make install` 用时 510 秒，未裁剪安装树为 1.5 GB。
+- 按文件类型 strip 了 811 个 PE32、760 个 PE32+ 和 38 个 ELF，安装树降至 471 MB；抽查 PE/ELF 已无 `.debug_*` 和 `.symtab`。
+- 运行时 staging 为 408 MB，包含 2505 个普通文件和 14 个符号链接；`i386-windows` 1062 个文件、`x86_64-windows` 1010 个文件、`x86_64-unix` 279 个文件。
+- WSL 无 X 环境下成功创建带 `#arch=win64` 的 prefix；`.wineserver` 及 server 子目录权限为 0700，socket/lock 为 0600；i386 `cmd.exe` 成功输出 `32BIT_OK`。
+- `wineserver` 与 `ntdll.so` 只包含 `<WINEPREFIX>/.wineserver` 路径；i386、x86_64 PE 与 Unix bridge 三套 WineVulkan 齐全。XZ 完整性和路径安全检查通过，最终归档重新解包后与 staging 零差异。
+
+真机二分包：
+
+```text
+../../artifacts/wine-packages/wine-11.0-rc3-winlator-custom-addon.tar.xz
+Size 56765472 bytes
+SHA-256 48764F60ACBF2FECEE18424D1624890720E6E44F88CD412B666D0B6A34728E77
+```
+
+Wine 11.0-rc3 可与现有 Wine 10.18、10.20 并存，不需要重装 APK 或删除通过容器。安装 addon 后新建 `Wine Version = Wine 11.0-rc3` 容器，保持 Zink、原 Turnip、Box64 Stability、`WINLATOR_WFM_INTERPRETER=1`、`WINEDLLOVERRIDES=icu=n` 和同一份 E 盘游戏。若 rc3 成功，回归范围缩到 rc3 与 11.0 正式版；若复现黑屏，则缩到 10.20 与 rc3。
+
