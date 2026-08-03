@@ -477,3 +477,28 @@ SHA-256 78B483A4A8603421DCC716BECEEF14037030EF804D4B0CA45867743B483F63F5
 
 Wine 11.0-rc5 可与 rc3、10.20 并存，不需要重装 APK 或删除通过的容器。安装 addon 后新建 `Wine Version = Wine 11.0-rc5` 容器，保持相同图形设置和两个环境变量，先确认桌面，再运行同一份 E 盘 Stardew Valley。若 rc5 成功，回归范围缩到 rc5 与 Wine 11.0 正式版；若 rc5 黑屏或出现 0 次 swap，则下一枚测试 rc4。
 
+### 6.14 Wine 11.0-rc5 安装失败根因与修复（2026-08-03）
+
+真机在导入 `wine-11.0-rc5-winlator-custom-addon.tar.xz` 后，先弹出 `Wine Configuration`，点 `OK` 立刻回到设置页并提示 `Unable to install Wine`。这次没有继续归因到图形或桌面 shell，而是把安装器的版本识别链路重新核对了一遍，确认问题出在 rc 标签被安装器吃掉了。
+
+根因有两处，且必须同时修：
+
+- `WineInstaller.findWineVersionAsync()` 里旧正则只接受纯数字子版本，`wine-11.0-rc3`、`wine-11.0-rc5` 都会被截成 `11.0`。
+- `WineInfo.fromIdentifier()` 里旧正则同样只认数字子版本，导致已安装目录名也会被读成同一个 `wine-11.0`。
+
+这会让 rc3 和 rc5 撞成同一个安装标识，后续 `finishWineInstallation()` 在重命名安装目录时撞上已有目录，最终只剩下同一个泛化报错 `Unable to install Wine`。
+
+这次修复已经落在两处：
+
+- `WineInfo` 的识别正则扩展到可解析 rc / beta 这类子版本，同时保留 `x86` / `x86_64` 架构后缀的原义。
+- `WineInstaller` 的 `wine --version` 解析也同步放宽，让导入时能把 `wine-11.0-rc5` 识别成独立版本，而不是再压成 `wine-11.0`。
+
+本地回归验证已经通过：`wine-11.0-rc3` 和 `wine-11.0-rc5` 可以分别解析，`10.10` 仍正常，`-x86` / `-x86_64` 仍然只被当作架构后缀。APK 也已重新构建并验签通过，产物是 `app/build/outputs/apk/debug/app-debug.apk`，SHA-256 为 `95370D1369DDF5467CDF569952A4D27D8DCAE41346588251A73AE6D8D668B3FE`。
+
+后续手机侧按这条链路重试：
+
+1. 直接覆盖安装新的 APK。
+2. 保留已有可用的 rc3 容器，不要卸载。
+3. 重新导入 rc5 addon，再点一次 `Wine Configuration` 的 `OK`。
+4. 预期结果是 rc5 以独立条目安装完成，目录名会是 `wine-11.0-rc5`。
+

@@ -298,7 +298,10 @@ public abstract class WineInstaller {
 
         final AtomicReference<WineInfo> wineInfoRef = new AtomicReference<>();
         Callback<String> debugCallback = (line) -> {
-            Pattern pattern = Pattern.compile("^wine\\-([0-9\\.]+)\\-?([0-9\\.]+)?", Pattern.CASE_INSENSITIVE);
+            Pattern pattern = Pattern.compile(
+                    "^wine\\-([0-9]+(?:\\.[0-9]+)*)(?:\\-([A-Za-z0-9\\.]+))?",
+                    Pattern.CASE_INSENSITIVE
+            );
             Matcher matcher = pattern.matcher(line);
             if (matcher.find()) {
                 String version = matcher.group(1);
