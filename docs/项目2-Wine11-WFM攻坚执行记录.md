@@ -540,3 +540,37 @@ SHA-256 951BE692675A3773CD7F3FB925AA91CD88235642540AB5087B4FA16BDEA88718
 
 若新正式版能出帧并启动游戏，则此前的最终版问题属于旧构建/打包产物差异，新包可替代旧正式版继续验证。若它仍稳定复现 0 次 swap 或 `c0000005`，则差异不在 rc5 与正式版的 WGL 源码，而在最终版的版本标识、发布元数据或仍未对齐的构建产物；下一步只针对该窄范围做最小实验，不再回退 rc3 或 rc5。
 
+### 6.16 正式版对照失败与 f11 等长版本布局实验（2026-08-03）
+
+同流水线正式版对照包已能进入 Wine 桌面，但 Stardew Valley 未能启动。日志 `logs/stardew-valley/logs_wine11_final_from_rc5_stardew.txt` 长度 187497 字节，SHA-256 为 `B66F09407CC01E3DB1980F7DB9F5ADF44F75722F317B24C966148D0708A22D72`。它与旧正式版的失败特征一致：创建 WGL context 并成功返回 64 个 `win32u_wglGetProcAddress` 地址后，`win32u_wglSwapBuffers` 和 `x11drv_surface_swap` 均为 0；有 55 次 surface flush、51 次 context flush，随后在本机地址 `0x3f03008533` 触发两次 `c0000005`。因此“旧正式版只是 out-of-tree 构建产物问题”的假设已经排除。
+
+两个游戏进程的 Box64 运行参数逐项一致：均为同一 Box64 0.4.3、Zink/Turnip、Stability 参数集，且 Stardew 进程都使用 `BOX64_DYNAREC=1`；`WINLATOR_WFM_INTERPRETER=1` 只让 `wfm.exe` 使用解释器，并未改变游戏进程。rc5 成功样本则在相同设置下执行了 4 次 swap，没有 `c0000005`。
+
+二进制比较进一步收紧了差异：
+
+- `winex11.so`、`opengl32.so`、`win32u.so` 以及对应 x86_64 PE 的 `.text` 代码均与 rc5 一致，正式版没有出现图形路径机器码变化。
+- Unix `ntdll.so` 的实际控制流也没有变化，但正式版的 `Wine version 11.0` 和 `PACKAGE_VERSION=11.0` 比 rc5 的 `11.0-rc5` 短。字符串缩短使 ntdll 中大量 RIP 相对数据引用的立即数变化，虽然函数语义不变，却改变了 Box64 实际翻译到的 guest 代码字节和数据布局。
+
+这使“Box64 dynarec 对 Wine 11.0 正式版 ntdll 的版本数据布局敏感”成为当前最窄、可验证的假设，而不是把问题继续归因到 Wine WGL 源码。为验证它，正式版提交保持不变，仅将构建标识替换成和 `rc5` 等长的 `f11`：本地 annotated tag 使 `git describe` 生成 `wine-11.0-f11`，生成的 `PACKAGE_VERSION` / `PACKAGE_STRING` 同步为 `11.0-f11` / `Wine 11.0-f11`。没有修改正式版的 Wine 功能源码或 Android 工程源码。
+
+该变体的 x86_64 Unix `ntdll.so` `.text` 原始哈希为 `BFA085F88DD465D02C98B31B1705D028DCEA6B3FCC6EC08155C947CA2BD2EED2`，与 rc5 完全相同；`.text` 与 `.rodata` 的起始地址、长度也完全一致。f11 staging 以正式版对照包为基线，只替换该一个 ntdll 文件，因此与正式版 staging 的差异恰为该文件。它的 `wine --version` 返回 `wine-11.0-f11`，可被现有 rc/beta 子版本解析修复识别为独立 identifier `wine-11.0-f11`。
+
+f11 真机验证包：
+
+```text
+../../artifacts/wine-packages/wine-11.0-f11-winlator-custom-addon.tar.xz
+Size 54688900 bytes
+SHA-256 B12A756888B33CE6D1F6E7FA83A6A571AB748825C3609F56E0A348EFC21E9217
+```
+
+XZ 完整性检查通过；归档 2533 个条目全部位于 `opt/` 下，不安全路径数为 0。fresh 解包后有 2505 个普通文件、14 个符号链接，与 staging 零差异；解包后仍返回 `wine-11.0-f11`，ntdll `.text` 哈希保持与 rc5 一致。WSL 无 X 的 `wineboot -i` 在 180 秒上限内留下预期的显示/wineusb 噪声，但已经创建带 `#arch=win64` 的有效 registry，`.wineserver` 目录为 0700、socket/lock 为 0600；停止临时 wineserver 后，i386 `cmd.exe` 成功输出 `F11_32BIT_OK`。
+
+手机侧验证步骤：
+
+1. 保留 rc3、rc5、旧 `Wine 11.0` 正式版和已有容器，f11 的 identifier 是 `wine-11.0-f11`，可全部并存，不需要删除任何现有 Wine。
+2. 在 `Settings -> Wine Version` 导入上述 f11 addon，完成 `Wine Configuration`；预期新增独立条目 `Wine 11.0-f11`，安装目录为 `wine-11.0-f11`。
+3. 新建 f11 测试容器，使用与 rc5 和正式版对照相同的 Zink、原 Turnip、Box64 Stability、`WINLATOR_WFM_INTERPRETER=1`、`WINEDLLOVERRIDES=icu=n` 以及同一份 E 盘游戏。
+4. 先确认桌面，再启动 Stardew Valley，导出为 `logs_wine11_f11_stardew.txt`，不要覆盖 rc5 或正式版日志。
+
+若 f11 能执行 swap 并启动游戏，即可确认故障由正式版缩短版本元数据触发的 ntdll/Box64 布局兼容性，而非 Wine 11.0 最终图形源码；f11 可作为可并存的最终版源码临时工作版本。若 f11 仍复现相同的 `c0000005`，则该布局假设被推翻，下一步只继续检查正式版 configure 元数据和运行时加载差异。
+
