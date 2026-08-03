@@ -449,5 +449,31 @@ Size 56765472 bytes
 SHA-256 48764F60ACBF2FECEE18424D1624890720E6E44F88CD412B666D0B6A34728E77
 ```
 
-Wine 11.0-rc3 可与现有 Wine 10.18、10.20 并存，不需要重装 APK 或删除通过容器。安装 addon 后新建 `Wine Version = Wine 11.0-rc3` 容器，保持 Zink、原 Turnip、Box64 Stability、`WINLATOR_WFM_INTERPRETER=1`、`WINEDLLOVERRIDES=icu=n` 和同一份 E 盘游戏。若 rc3 成功，回归范围缩到 rc3 与 11.0 正式版；若复现黑屏，则缩到 10.20 与 rc3。
+Wine 11.0-rc3 可与现有 Wine 10.18、10.20 并存，不需要重装 APK 或删除通过的容器。安装 addon 后新建 `Wine Version = Wine 11.0-rc3` 容器，保持 Zink、原 Turnip、Box64 Stability、`WINLATOR_WFM_INTERPRETER=1`、`WINEDLLOVERRIDES=icu=n` 和同一份 E 盘游戏。若 rc3 成功，回归范围缩到 rc3 与 11.0 正式版；若复现黑屏，则缩到 10.20 与 rc3。
+
+### 6.13 Wine 11.0-rc3 通过与 Wine 11.0-rc5 二分包
+
+Wine 11.0-rc3 容器在保持 `WINEDLLOVERRIDES=icu=n`、Zink、原 Turnip、Box64 Stability 和 `WINLATOR_WFM_INTERPRETER=1` 的条件下成功启动 Stardew Valley。日志 `logs/stardew-valley/logs_wine11_rc3_stardew.txt` 长度 317920 字节，SHA-256 为 `D48E905528DC825A29F4995CC32D4914E55081166CE712DA57800CC8A54F13AA`。
+
+日志时间线显示游戏于 12:38:06 启动；12:38:44 EGL 加载失败后仍创建 3 个 `x11drv_context`，12:38:44 至 12:38:46 返回 64 个 `win32u_wglGetProcAddress` 地址；12:39:00 至 12:39:14 执行 10 次 `win32u_wglSwapBuffers` 和 `x11drv_surface_swap`。全日志有 53 次 `x11drv_surface_flush`、185 次 `win32u_wgl_context_flush`，没有 `c0000005`、`NoSuitableGraphicsDeviceException`、ICU stub 或 `FailFast`。正式 Wine 11 在同一路径为 0 次 swap、2 次 `c0000005`，因此 rc3 是可靠通过点，回归范围收缩到 rc3 与正式版之间。
+
+剩余候选为 rc4、rc5 和正式版，按二分选择 Wine 11.0-rc5，官方 tag 提交为 `b3319fa671a1f9f7b7aa09e9d9016b250cb848cb`。rc5 源码相对 rc3 变化涉及 85 个文件，直接命中当前图形路径的包括 `dlls/opengl32/unix_thunks.c`、`unix_wgl.c`、`dlls/win32u/opengl.c` 和 `dlls/winex11.drv/opengl.c`。在已验证 rc3 构建树上切换 tag 并重新 configure，`make` 按依赖重建变化对象；fresh `make install` 目录和后续 staging 均独立，避免旧安装文件混入。
+
+构建与验证：
+
+- configure 参数仍为 `--enable-archs=i386,x86_64 --disable-tests --without-oss`，确认 `PE_ARCHS = i386 x86_64`，EGL/GL/Vulkan SONAME 均为 `.so.1`；配置耗时 128 秒。
+- rc5 受控增量 `make -j12` 用时 3861 秒并输出 `Wine build complete.`；第二次无增量 make 用时 4 秒并再次输出完成标志。fresh `make install` 用时 698 秒，未裁剪树为 1.5 GB。
+- 统一 strip 了 811 个 PE32、760 个 PE32+ 和 38 个 ELF，安装树降至 471 MB；运行时 staging 为 408 MB，包含 2505 个普通文件和 14 个符号链接，三套架构文件数为 1062/1010/279。
+- WSL 无 X 环境下成功创建 `#arch=win64` prefix；`.wineserver` 及 server 子目录为 0700，socket/lock 为 0600；i386 `cmd.exe` 输出 `32BIT_OK`。WineVulkan 三件套齐全，`wineserver` 与 `ntdll.so` 只包含 `<WINEPREFIX>/.wineserver`，没有 `/tmp/.wine`。
+- XZ 完整性和路径安全检查通过；最终归档重新解包后与 staging 零差异，版本为 `wine-11.0-rc5`。
+
+真机二分包：
+
+```text
+../../artifacts/wine-packages/wine-11.0-rc5-winlator-custom-addon.tar.xz
+Size 56749700 bytes
+SHA-256 78B483A4A8603421DCC716BECEEF14037030EF804D4B0CA45867743B483F63F5
+```
+
+Wine 11.0-rc5 可与 rc3、10.20 并存，不需要重装 APK 或删除通过的容器。安装 addon 后新建 `Wine Version = Wine 11.0-rc5` 容器，保持相同图形设置和两个环境变量，先确认桌面，再运行同一份 E 盘 Stardew Valley。若 rc5 成功，回归范围缩到 rc5 与 Wine 11.0 正式版；若 rc5 黑屏或出现 0 次 swap，则下一枚测试 rc4。
 
