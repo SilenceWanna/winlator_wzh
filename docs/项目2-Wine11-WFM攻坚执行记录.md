@@ -502,3 +502,41 @@ Wine 11.0-rc5 可与 rc3、10.20 并存，不需要重装 APK 或删除通过的
 3. 重新导入 rc5 addon，再点一次 `Wine Configuration` 的 `OK`。
 4. 预期结果是 rc5 以独立条目安装完成，目录名会是 `wine-11.0-rc5`。
 
+### 6.15 Wine 11.0-rc5 通过与同流水线正式版对照包（2026-08-03）
+
+修复 rc 标签安装识别后，Wine 11.0-rc5 已在真机成功启动 Stardew Valley。成功日志为 `logs/stardew-valley/logs_wine11_rc5_stardew.txt`，长度 233257 字节，SHA-256 为 `E7CBB74A53CC902C4A7546165625BCA0EC1B5811A1B471237E61F226937EE6A5`。
+
+日志证据：
+
+- 游戏于 16:22:34 启动；EGL 加载失败后正确走到 GLX 4.6 / Zink / Turnip（Adreno 725）。
+- 成功创建 3 个 `x11drv_context`，完成 64 个 `win32u_wglGetProcAddress`；执行 4 次 `win32u_wglSwapBuffers` 和 4 次 `x11drv_surface_swap`，并有 56 次 surface flush、105 次 context flush。
+- `c0000005`、`NoSuitableGraphicsDeviceException`、`NullReferenceException`、未处理异常、`FailFast` 和 ICU stub 均为 0；用户也确认画面实际启动。
+
+因此 rc5 是确定通过点。此前 Wine 11.0 正式版日志的 0 次 swap / `c0000005` 现象，回归范围收缩到 rc5 与正式版之间。上游源码进一步核对后发现，rc5 tag 提交 `b3319fa671a1f9f7b7aa09e9d9016b250cb848cb` 到正式版提交 `db11d0fe6a169c457e23d007e20404643d067aa8` 之间只有一个发布提交，改动仅涉及 `ANNOUNCE.md`、`VERSION` 和 `configure`，没有 WGL、OpenGL、win32u 或 winex11 图形路径的源代码改动；11.0 没有 rc6 tag。
+
+这说明旧正式版故障不能直接归因为 rc5 到正式版的图形源码回归。旧的正式版包是在另一套 out-of-tree 构建目录中生成，虽然源码补丁与 configure 选项一致，但二进制 build-id 和关键模块哈希与 rc5 构建树不同。为排除这项构建布局变量，已在已验证的 rc5 源码树中切换到正式版提交，保留同一份 Android `server_dir` 双侧补丁、configure 选项、工具链和打包流程，重新生成独立的 Wine 11.0 正式版对照包。
+
+对照包构建与本地验证：
+
+- configure 参数为 `--enable-archs=i386,x86_64 --disable-tests --without-oss`，确认 `PE_ARCHS = i386 x86_64`；完整 `make -j12` 与后续无增量 `make` 均成功，后者明确输出 `Wine build complete.`。
+- fresh `make install` 到独立前缀后，统一 strip 了 811 个 PE32、760 个 PE32+ 和 38 个 ELF；排除 headers 与 manpages 后的运行时 staging 为 408 MB，含 2505 个普通文件和 14 个符号链接，三套架构文件数为 1062 / 1010 / 279，与 rc5 一致。
+- WSL 无 X Server 条件下，`wineboot -i` 会产生预期的显示和 wineusb 噪声，但已生成有效的 `#arch=win64` registry；清理该临时 prefix 的残留 wineserver 后，i386 `cmd.exe` 成功输出 `32BIT_OK`。`.wineserver` 目录、socket 和 lock 权限也符合预期。
+- 归档已通过 `xz -t`、路径安全检查和 fresh 解包逐文件对比。归档共 2533 个条目，全部位于 `opt/` 下；重新解包的 `wine --version` 为 `wine-11.0`，与 staging 零差异，WineVulkan 的 i386、x86_64 和 Unix bridge 均存在。
+
+新的真机正式版对照包：
+
+```text
+../../artifacts/wine-packages/wine-11.0-final-from-rc5-winlator-custom-addon.tar.xz
+Size 44561216 bytes
+SHA-256 951BE692675A3773CD7F3FB925AA91CD88235642540AB5087B4FA16BDEA88718
+```
+
+手机侧验证步骤：
+
+1. 保留已经通过的 rc3、rc5 及其容器，不要删除或覆盖它们。
+2. 如手机中仍安装旧的 `Wine 11.0` 正式版，先确认没有容器引用它；只移除这个旧正式版条目。rc3、rc5 的 identifier 分别为 `wine-11.0-rc3`、`wine-11.0-rc5`，不会受此操作影响。若旧正式版仍被测试容器引用，先保留该容器或完成备份，再处理该容器，避免误删数据。
+3. 在 `Settings -> Wine Version` 导入上述对照包，完成 `Wine Configuration`。它应作为独立的 `Wine 11.0` 条目安装到 `wine-11.0`，而不是覆盖 rc3 或 rc5。
+4. 新建一个正式版测试容器，保持 rc5 成功样本的 Zink、原 Turnip、Box64 Stability、`WINLATOR_WFM_INTERPRETER=1`、`WINEDLLOVERRIDES=icu=n` 和同一份 E 盘游戏。先确认桌面，再启动 Stardew Valley，导出日志为新的、不覆盖 rc5 的文件名。
+
+若新正式版能出帧并启动游戏，则此前的最终版问题属于旧构建/打包产物差异，新包可替代旧正式版继续验证。若它仍稳定复现 0 次 swap 或 `c0000005`，则差异不在 rc5 与正式版的 WGL 源码，而在最终版的版本标识、发布元数据或仍未对齐的构建产物；下一步只针对该窄范围做最小实验，不再回退 rc3 或 rc5。
+
