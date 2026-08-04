@@ -122,7 +122,7 @@ public abstract class GeneralComponents {
 
         switch (type) {
             case BOX64:
-                items = new String[]{DefaultVersion.BOX64};
+                items = new String[]{DefaultVersion.BOX64, "0.4.3"};
                 break;
             case TURNIP:
                 items = new String[]{DefaultVersion.TURNIP};

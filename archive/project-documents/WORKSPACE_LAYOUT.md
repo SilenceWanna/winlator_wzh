@@ -1,0 +1,22 @@
+# Winlator workspace layout
+
+- `artifacts/apks/wine10`: Wine 10.10 rollback APKs.
+- `artifacts/apks/wine11`: Wine 11 experiment and test APKs.
+- `artifacts/wine-packages`: Installable/custom Wine archives.
+- `artifacts/source-archives`: Downloaded source snapshots.
+- `build-logs/android`: Android and Gradle build logs.
+- `build-logs/box64`: Box64 build logs.
+- `build-logs/dxvk`: DXVK build logs.
+- `build-logs/vkd3d`: VKD3D build logs.
+- `build-logs/turnip`: Turnip and glslang build logs.
+- `build-logs/toolchains`: GCC, MinGW, NDK, LLVM-MinGW, and Vulkan SDK logs.
+- `build-logs/wsl`: WSL setup and build logs.
+- `logs/stardew-valley`: Stardew Valley runtime diagnostics.
+- `logs/graphics-tests`: D3D and WGL runtime diagnostics.
+- `project-documents`: Project briefs and workspace documentation.
+- `test/graphics`: D3D and WGL probes.
+- `test/stardew`: Stardew-specific test files.
+- `games`: Local game test data.
+- `winlator_wzh_new`: Modified source repository.
+- `winlator-main`: Upstream source reference.
+- `work-cache`: Temporary extraction data and retained command output.

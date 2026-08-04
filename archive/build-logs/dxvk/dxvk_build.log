@@ -1,0 +1,43 @@
+libdisplay-info| C linker for the host machine: x86_64-w64-mingw32-gcc ld.bfd 2.38
+libdisplay-info| C compiler for the build machine: cc (gcc 11.4.0 "cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0")
+libdisplay-info| C linker for the build machine: cc ld.bfd 2.38
+libdisplay-info| Program tool/gen-search-table.py found: YES (/root/dxvk_src/subprojects/libdisplay-info/tool/gen-search-table.py)
+libdisplay-info| Library m found: YES
+libdisplay-info| Compiler for C supports arguments -Wundef: YES
+libdisplay-info| Compiler for C supports arguments -Wmissing-prototypes: YES
+libdisplay-info| Compiler for C supports arguments -Walloca: YES
+libdisplay-info| Compiler for C supports arguments -Wdeclaration-after-statement: YES
+libdisplay-info| Compiler for C supports arguments -Wconversion: YES
+libdisplay-info| Compiler for C supports arguments -Wno-unused-parameter: YES
+libdisplay-info| Compiler for C supports arguments -Wno-missing-field-initializers: YES
+libdisplay-info| Compiler for C supports arguments -Werror=implicit: YES
+libdisplay-info| Build targets in project: 2
+libdisplay-info| Subproject libdisplay-info finished.
+
+Dependency libdisplay-info from subproject subprojects/libdisplay-info found: YES 0.0.0
+Library d3d9 found: YES
+Library d3d11 found: YES
+Library dxgi found: YES
+Library gdi32 found: YES
+Library version found: YES
+Program x86_64-w64-mingw32-windres found: YES
+
+Executing subproject dxbc-spirv 
+
+
+subprojects/dxbc-spirv/meson.build:1:0: ERROR: Meson version is 0.61.2 but project requires >= 1.0
+
+A full log can be found at /root/dxvk_out/dxvk-3.0.2/build.64/meson-logs/meson-log.txt
+=== 产物结构 ===
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-logs/meson-log.txt
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-private/meson.lock
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-private/sanitycheckc.exe
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-private/sanitycheckc.c
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-private/sanitycheckcpp.exe
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-private/sanitycheckcpp.cc
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-private/sanitycheckc_cross.exe
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-private/sanitycheckcpp_cross.exe
+/root/dxvk_out/dxvk-3.0.2/build.64/meson-info/meson-info.json
+/root/dxvk_out/dxvk-3.0.2/build.64/.hgignore
+/root/dxvk_out/dxvk-3.0.2/build.64/.gitignore
+DXVK_BUILD_OK

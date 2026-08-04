@@ -1,0 +1,79 @@
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/0/bus"
+declare -x DISPLAY=":0"
+declare -x HOME="/root"
+declare -x HOSTTYPE="x86_64"
+declare -x LANG="C.UTF-8"
+declare -x LOGNAME="root"
+declare -x NAME="ZB-PW06WPC7"
+declare -x OLDPWD
+declare -x PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files/JoyPrinter:/mnt/d/software/Git/cmd:/mnt/d/software/Node.js/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Python/bin:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Python/pythoncore-3.14-64/Scripts:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Roaming/npm:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Programs/Ollama:/snap/bin"
+declare -x PULSE_SERVER="unix:/mnt/wslg/PulseServer"
+declare -x PWD="/mnt/d/agent/Winlator"
+declare -x SHELL="/bin/bash"
+declare -x SHLVL="2"
+declare -x TERM="xterm-256color"
+declare -x USER="root"
+declare -x WAYLAND_DISPLAY="wayland-0"
+declare -x WSL2_GUI_APPS_ENABLED="1"
+declare -x WSLENV=""
+declare -x WSL_DISTRO_NAME="Ubuntu"
+declare -x WSL_INTEROP="/run/WSL/158774_interop"
+declare -x XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/snapd/desktop"
+declare -x XDG_RUNTIME_DIR="/run/user/0/"
+E: Unable to locate package gcc-13-aarch64-linux-gnu:amd64
+E: Unable to locate package g++-13-aarch64-linux-gnu:amd64
+E: Couldn't find any package by regex 'g++-13-aarch64-linux-gnu'
+---验证arch---
+/usr/bin/aarch64-linux-gnu-gcc-13: ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=a6312434b1fd88cf826f9ef0d6d6f51a1cfd1909, for GNU/Linux 3.7.0, stripped
+  libubsan1-arm64-cross linux-libc-dev-arm64-cross
+Use 'apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 14 not upgraded.
+meson.build:4:0: ERROR: Failed running 'aarch64-linux-gnu-gcc-13', binary or interpreter not executable.
+Possibly wrong architecture or the executable bit is not set.
+
+A full log can be found at /root/mesa_src/build-turnip/meson-logs/meson-log.txt
+=== compiling ===
+ninja: error: loading 'build.ninja': No such file or directory
+=== 产物 ===
+size: 
+size: 4096
+size: 4096
+size: 4096
+size: 4096
+size: 0
+size: 137
+size: 376
+size: 496
+size: 641
+size: 4096
+size: 2295
+size: 102
+size: 4096
+size: 66
+size: 4096
+size: 4096
+size: 16614
+size: 71
+size: 31507
+size: 4096
+size: 12267
+size: 1563297
+size: 297
+size: 3842
+size: 1720
+size: 7
+size: 4096
+size: 4096
+size: 4096
+size: 4096
+size: 84
+size: 270
+size: 4096
+size: 4096
+size: 4096
+size: 89412
+size: 21593
+size: 17
+size: 4096
+size: 4096
+TURNIP_GCC13_DONE

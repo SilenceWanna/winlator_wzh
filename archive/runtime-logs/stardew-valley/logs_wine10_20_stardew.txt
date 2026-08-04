@@ -1,0 +1,876 @@
+[12:36:15]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:15]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:15]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:15]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:15]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[12:36:15]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:15]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:15]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:15]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:15]  [BOX64] Detected running wine with "explorer"
+[12:36:15]  [BOX64] Counted 77 Env var
+[12:36:15]  [BOX64] Library search path: 
+[12:36:15]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:15]  [BOX64] Looking for wine
+[12:36:15]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:15]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:15]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:15]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:15]  	BOX64_DYNAREC_FORWARD=128
+[12:36:15]  	BOX64_DYNAREC_MISSING=1
+[12:36:15]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:15]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:15]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:15]  	BOX64_DYNAREC_WAIT=0
+[12:36:15]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:15]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:15]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:15]  	BOX64_LOG=1
+[12:36:15]  	BOX64_NOBANNER=0
+[12:36:15]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:15]  	BOX64_UNITYPLAYER=0
+[12:36:15]  	BOX64_DYNAREC=1
+[12:36:15]  	BOX64_DYNAREC_CALLRET=0
+[12:36:15]  [BOX64] argv[1]="explorer"
+[12:36:15]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[12:36:15]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[12:36:15]  [BOX64] argv[4]="/dir"
+[12:36:15]  [BOX64] argv[5]="C:\windows"
+[12:36:15]  [BOX64] argv[6]=""wfm.exe""
+[12:36:15]  [BOX64] Rename process to "wine"
+[12:36:15]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:15]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:15]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:15]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:15]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:15]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:16]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/../lib/wine/x86_64-unix/ntdll.so
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:16]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:16]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:16]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:16]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:16]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:16]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[12:36:16]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:16]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:16]  [BOX64] Detected running wine with "explorer"
+[12:36:16]  [BOX64] Counted 78 Env var
+[12:36:16]  [BOX64] Library search path: 
+[12:36:16]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:16]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:16]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:16]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:16]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:16]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:16]  	BOX64_DYNAREC_FORWARD=128
+[12:36:16]  	BOX64_DYNAREC_MISSING=1
+[12:36:16]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:16]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:16]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:16]  	BOX64_DYNAREC_WAIT=0
+[12:36:16]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:16]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:16]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:16]  	BOX64_LOG=1
+[12:36:16]  	BOX64_NOBANNER=0
+[12:36:16]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:16]  	BOX64_UNITYPLAYER=0
+[12:36:16]  	BOX64_DYNAREC=1
+[12:36:16]  	BOX64_DYNAREC_CALLRET=0
+[12:36:16]  [BOX64] argv[1]="explorer"
+[12:36:16]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[12:36:16]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[12:36:16]  [BOX64] argv[4]="/dir"
+[12:36:16]  [BOX64] argv[5]="C:\windows"
+[12:36:16]  [BOX64] argv[6]=""wfm.exe""
+[12:36:16]  [BOX64] Rename process to "wine"
+[12:36:16]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:16]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:16]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:16]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:16]  [BOX64] posix_spawn(0x7d1318d6cc, "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/../../bin/wineserver", (nil), (nil), 0x7d1318d6d0["/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/../../bin/wineserver", "", ...], 0x7d1318da88), IsX64=1, IsX86=0 IsScript=0 IsPython=0 envp is context->envv
+[12:36:16]  [BOX64]  => posix_spawn(0x7d1318d6cc, "/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", (nil), (nil), 0x7ff73ccd20 ["/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/../../bin/wineserver", ""...:1], 0x7ff73cd548)
+[12:36:16]  [BOX64] posix_spawn returned 0
+[12:36:16]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:16]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:16]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:16]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:16]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:16]  [BOX64] Counted 77 Env var
+[12:36:16]  [BOX64] Library search path: 
+[12:36:16]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:16]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/../../bin/wineserver
+[12:36:16]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:16]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:16]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:16]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:16]  	BOX64_DYNAREC_FORWARD=128
+[12:36:16]  	BOX64_DYNAREC_MISSING=1
+[12:36:16]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:16]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:16]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:16]  	BOX64_DYNAREC_WAIT=0
+[12:36:16]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:16]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:16]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:16]  	BOX64_LOG=1
+[12:36:16]  	BOX64_NOBANNER=0
+[12:36:16]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:16]  	BOX64_UNITYPLAYER=0
+[12:36:16]  	BOX64_DYNAREC=1
+[12:36:16]  	BOX64_DYNAREC_CALLRET=0
+[12:36:16]  [BOX64] Rename process to "wineserver"
+[12:36:16]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:16]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:16]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:16]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:16]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:16]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:16]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:16]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:16]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:16]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140024000"
+[12:36:16]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:16]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x140000000:0x140024000 done
+[12:36:16]  [BOX64] Detected running wine with "wineboot.exe"
+[12:36:16]  [BOX64] Counted 80 Env var
+[12:36:16]  [BOX64] Library search path: 
+[12:36:16]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:16]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:16]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:16]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:16]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:16]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:16]  	BOX64_DYNAREC_FORWARD=128
+[12:36:16]  	BOX64_DYNAREC_MISSING=1
+[12:36:16]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:16]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:16]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:16]  	BOX64_DYNAREC_WAIT=0
+[12:36:16]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:16]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:16]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:16]  	BOX64_LOG=1
+[12:36:16]  	BOX64_NOBANNER=0
+[12:36:16]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:16]  	BOX64_UNITYPLAYER=0
+[12:36:16]  	BOX64_DYNAREC=1
+[12:36:16]  	BOX64_DYNAREC_CALLRET=0
+[12:36:16]  [BOX64] argv[1]="C:\windows\system32\wineboot.exe"
+[12:36:16]  [BOX64] argv[2]="--init"
+[12:36:16]  [BOX64] Rename process to "wine"
+[12:36:16]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:16]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:16]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:16]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ws2_32.so
+[12:36:16]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:16]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:16]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:16]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:16]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:16]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140017000"
+[12:36:16]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:16]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x140000000:0x140017000 done
+[12:36:16]  [BOX64] Detected running wine with "services.exe"
+[12:36:16]  [BOX64] Counted 80 Env var
+[12:36:16]  [BOX64] Library search path: 
+[12:36:16]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:16]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:16]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:16]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:16]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:16]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:16]  	BOX64_DYNAREC_FORWARD=128
+[12:36:16]  	BOX64_DYNAREC_MISSING=1
+[12:36:16]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:16]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:16]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:16]  	BOX64_DYNAREC_WAIT=0
+[12:36:16]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:16]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:16]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:16]  	BOX64_LOG=1
+[12:36:16]  	BOX64_NOBANNER=0
+[12:36:16]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:16]  	BOX64_UNITYPLAYER=0
+[12:36:16]  	BOX64_DYNAREC=1
+[12:36:16]  	BOX64_DYNAREC_CALLRET=0
+[12:36:16]  [BOX64] argv[1]="C:\windows\system32\services.exe"
+[12:36:16]  [BOX64] Rename process to "wine"
+[12:36:16]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:16]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:16]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:16]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:16]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:16]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:16]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:16]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:16]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:16]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[12:36:16]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:16]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:16]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[12:36:16]  [BOX64] Detected running wine with "winedevice.exe"
+[12:36:16]  [BOX64] Counted 80 Env var
+[12:36:16]  [BOX64] Library search path: 
+[12:36:16]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:16]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:16]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:16]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:16]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:16]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:16]  	BOX64_DYNAREC_FORWARD=128
+[12:36:16]  	BOX64_DYNAREC_MISSING=1
+[12:36:16]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:16]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:16]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:16]  	BOX64_DYNAREC_WAIT=0
+[12:36:16]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:16]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:16]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:16]  	BOX64_LOG=1
+[12:36:16]  	BOX64_NOBANNER=0
+[12:36:16]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:16]  	BOX64_UNITYPLAYER=0
+[12:36:16]  	BOX64_DYNAREC=1
+[12:36:16]  	BOX64_DYNAREC_CALLRET=0
+[12:36:16]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[12:36:16]  [BOX64] Rename process to "wine"
+[12:36:16]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:16]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:16]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:16]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:16]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:16]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/mountmgr.so
+[12:36:16]  [[31mBOX64[0m] Error initializing native libdbus-1.so.3 (last dlerror is libdbus-1.so.3: cannot open shared object file: No such file or directory)
+[12:36:16]  [BOX64] Error loading needed lib libdbus-1.so.3
+[12:36:16]  [BOX64] Warning: Cannot dlopen("libdbus-1.so.3"/0x3f02006270, 2)
+[12:36:16]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/win32u.so
+[12:36:16]  [BOX64] Using native(wrapped) libm.so.6
+[12:36:16]  [BOX64] Using native(wrapped) libfreetype.so.6
+[12:36:17]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/win32u.so
+[12:36:17]  [BOX64] Using native(wrapped) libm.so.6
+[12:36:17]  [BOX64] Using native(wrapped) libfreetype.so.6
+[12:36:17]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:17]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:17]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:17]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:17]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:17]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140022000"
+[12:36:17]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:17]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:17]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:17]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:17]  [BOX64] WINE prereserve of 0x140000000:0x140022000 done
+[12:36:17]  [BOX64] Detected running wine with "explorer.exe"
+[12:36:17]  [BOX64] Counted 80 Env var
+[12:36:17]  [BOX64] Library search path: 
+[12:36:17]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:17]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:17]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:17]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:17]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:17]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:17]  	BOX64_DYNAREC_FORWARD=128
+[12:36:17]  	BOX64_DYNAREC_MISSING=1
+[12:36:17]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:17]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:17]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:17]  	BOX64_DYNAREC_WAIT=0
+[12:36:17]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:17]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:17]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:17]  	BOX64_LOG=1
+[12:36:17]  	BOX64_NOBANNER=0
+[12:36:17]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:17]  	BOX64_UNITYPLAYER=0
+[12:36:17]  	BOX64_DYNAREC=1
+[12:36:17]  	BOX64_DYNAREC_CALLRET=0
+[12:36:17]  [BOX64] argv[1]="C:\windows\system32\explorer.exe"
+[12:36:17]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[12:36:17]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[12:36:17]  [BOX64] argv[4]="/dir"
+[12:36:17]  [BOX64] argv[5]="C:\windows"
+[12:36:17]  [BOX64] argv[6]=""wfm.exe""
+[12:36:17]  [BOX64] Rename process to "wine"
+[12:36:17]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:17]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:17]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:17]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:17]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:17]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:17]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:17]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:17]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/win32u.so
+[12:36:17]  [BOX64] Using native(wrapped) libm.so.6
+[12:36:17]  [BOX64] Using native(wrapped) libfreetype.so.6
+[12:36:17]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/winex11.so
+[12:36:17]  [BOX64] Using native(wrapped) libXext.so.6
+[12:36:17]  [BOX64] Using native(wrapped) libX11.so.6
+[12:36:17]  [BOX64] Using native(wrapped) libxcb.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libXau.so.6
+[12:36:17]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[12:36:17]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[12:36:17]  [BOX64] Error loading needed lib libXinerama.so.1
+[12:36:17]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0305e8a1, 2)
+[12:36:17]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libXrender.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libXrandr.so.2
+[12:36:17]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libXi.so.6
+[12:36:17]  [BOX64] Using native(wrapped) libvulkan.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libXcursor.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libXfixes.so.3
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:17]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:17]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:17]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:17]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:17]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:17]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140014000"
+[12:36:17]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:17]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:17]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:17]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:17]  [BOX64] WINE prereserve of 0x140000000:0x140014000 done
+[12:36:17]  [BOX64] Detected running wine with "winhandler.exe"
+[12:36:17]  [BOX64] Counted 80 Env var
+[12:36:17]  [BOX64] Library search path: 
+[12:36:17]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:17]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:17]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:17]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:17]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:17]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:17]  	BOX64_DYNAREC_FORWARD=128
+[12:36:17]  	BOX64_DYNAREC_MISSING=1
+[12:36:17]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:17]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:17]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:17]  	BOX64_DYNAREC_WAIT=0
+[12:36:17]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:17]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:17]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:17]  	BOX64_LOG=1
+[12:36:17]  	BOX64_NOBANNER=0
+[12:36:17]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:17]  	BOX64_UNITYPLAYER=0
+[12:36:17]  	BOX64_DYNAREC=1
+[12:36:17]  	BOX64_DYNAREC_CALLRET=0
+[12:36:17]  [BOX64] argv[1]="C:\windows\winhandler.exe"
+[12:36:17]  [BOX64] argv[2]="/dir"
+[12:36:17]  [BOX64] argv[3]="C:\windows"
+[12:36:17]  [BOX64] argv[4]=""wfm.exe""
+[12:36:17]  [BOX64] Rename process to "wine"
+[12:36:17]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:17]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:17]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:17]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:17]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:17]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:17]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:17]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:17]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:18]  0068:trace:seh:dispatch_exception code=6ba (RPC_S_SERVER_UNAVAILABLE) flags=0 addr=000000027FBDD887
+[12:36:18]  0068:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=00000000801ed5e0 rbp=0000000000000005 eflags=00000202
+[12:36:18]  0068:trace:seh:dispatch_exception rax=00000000801ed600 rbx=00000000801ee480 rcx=00000000801ed600 rdx=0000000000000000
+[12:36:18]  0068:trace:seh:dispatch_exception rsi=0000000000000064 rdi=00000000807e5470  r8=0000000000000000  r9=0000000000000000
+[12:36:18]  0068:trace:seh:dispatch_exception r10=00000000807e5ba0 r11=0000000000000010 r12=00000000801ee480 r13=000000027f3b2754
+[12:36:18]  0068:trace:seh:dispatch_exception r14=0000000000000000 r15=00000000801ed790 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:18]  0068:trace:seh:call_seh_handlers calling TEB handler 000000027F7380A0 (rec=00000000801ED600 frame=00000000801ED810 context=00000000801ED100 dispatch=00000000801EC9E0) sp=801ee190
+[12:36:18]  0068:trace:seh:call_seh_handlers TEB handler at 000000027F7380A0 returned 1
+[12:36:18]  0068:trace:seh:call_seh_handlers calling TEB handler 000000027F396500 (rec=00000000801ED600 frame=00000000801EECF0 context=00000000801ED100 dispatch=00000000801EC9E0) sp=801eee40
+[12:36:18]  0068:trace:seh:RtlUnwindEx code=6ba flags=2 end_frame=00000000801EECF0 target_ip=000000027F384E3A
+[12:36:18]  0068:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=00000000801ebce0 rbp=00000000801ebe50 eflags=00000202
+[12:36:18]  0068:trace:seh:RtlUnwindEx rax=00000000801ed810 rbx=00000000801ed600 rcx=00000000801ec3a0 rdx=000000027f384e3a
+[12:36:18]  0068:trace:seh:RtlUnwindEx rsi=00000000801ec3a0 rdi=00000000801ebe50  r8=00000000801ed600  r9=000000027f3a6c20
+[12:36:18]  0068:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=00000000801ed600
+[12:36:18]  0068:trace:seh:RtlUnwindEx r14=00000000801ec3a0 r15=00000000801ecb10 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:18]  0068:trace:seh:RtlUnwindEx calling TEB handler 000000027F7380A0 (rec=00000000801ED600, frame=00000000801ED810 context=00000000801EC3A0, dispatch=00000000801EBD60)
+[12:36:18]  0068:trace:seh:RtlUnwindEx handler at 000000027F7380A0 returned 1
+[12:36:18]  0068:trace:seh:RtlRestoreContext returning to 000000027F384E3A stack 00000000801EECB0
+[12:36:18]  0068:err:ole:start_rpcss Failed to open RpcSs service
+[12:36:18]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/win32u.so
+[12:36:18]  [BOX64] Using native(wrapped) libm.so.6
+[12:36:18]  [BOX64] Using native(wrapped) libfreetype.so.6
+[12:36:18]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ws2_32.so
+[12:36:18]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:18]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:18]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:18]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:18]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:18]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14004c000"
+[12:36:18]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:18]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:18]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:18]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:18]  [BOX64] WINE prereserve of 0x140000000:0x14004c000 done
+[12:36:18]  [BOX64] Detected running wine with "wfm.exe"
+[12:36:18]  [BOX64] Counted 80 Env var
+[12:36:18]  [BOX64] Library search path: 
+[12:36:18]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:18]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:18]  [BOX64] Applied settings from rcfile
+[12:36:18]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:18]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:18]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:18]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:18]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:18]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:18]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:18]  	BOX64_DYNAREC_FORWARD=128
+[12:36:18]  	BOX64_DYNAREC_MISSING=1
+[12:36:18]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:18]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:18]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:18]  	BOX64_DYNAREC_WAIT=0
+[12:36:18]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:18]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:18]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:18]  	BOX64_LOG=1
+[12:36:18]  	BOX64_NOBANNER=0
+[12:36:18]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:18]  	BOX64_UNITYPLAYER=0
+[12:36:18]  	BOX64_DYNAREC=0
+[12:36:18]  	BOX64_DYNAREC_CALLRET=0
+[12:36:18]  [BOX64] argv[1]="C:\windows\wfm.exe"
+[12:36:18]  [BOX64] Rename process to "wine"
+[12:36:18]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:18]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:18]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:18]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:18]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:18]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:18]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:18]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:18]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:18]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:18]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/win32u.so
+[12:36:18]  [BOX64] Using native(wrapped) libm.so.6
+[12:36:18]  [BOX64] Using native(wrapped) libfreetype.so.6
+[12:36:18]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/winex11.so
+[12:36:18]  [BOX64] Using native(wrapped) libXext.so.6
+[12:36:18]  [BOX64] Using native(wrapped) libX11.so.6
+[12:36:18]  [BOX64] Using native(wrapped) libxcb.so.1
+[12:36:18]  [BOX64] Using native(wrapped) libXau.so.6
+[12:36:18]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[12:36:18]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[12:36:18]  [BOX64] Error loading needed lib libXinerama.so.1
+[12:36:18]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0305e8a1, 2)
+[12:36:18]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[12:36:18]  [BOX64] Using native(wrapped) libXrender.so.1
+[12:36:18]  [BOX64] Using native(wrapped) libXrandr.so.2
+[12:36:18]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[12:36:18]  [BOX64] Using native(wrapped) libXi.so.6
+[12:36:18]  [BOX64] Using native(wrapped) libXcursor.so.1
+[12:36:18]  [BOX64] Using native(wrapped) libXfixes.so.3
+[12:36:18]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:18]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:19]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:19]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:23]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:23]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:47]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[12:36:47]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[12:36:47]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[12:36:47]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[12:36:47]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine" directly
+[12:36:47]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140027000"
+[12:36:47]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[12:36:47]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[12:36:47]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[12:36:47]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[12:36:47]  [BOX64] WINE prereserve of 0x140000000:0x140027000 done
+[12:36:47]  [BOX64] Detected running wine with "Stardew Valley.exe"
+[12:36:47]  [BOX64] Counted 80 Env var
+[12:36:47]  [BOX64] Library search path: 
+[12:36:47]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[12:36:47]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/wine
+[12:36:47]  [BOX64] BOX64ENV: Variables overridden:
+[12:36:47]  	BOX64_DYNAREC_BIGBLOCK=0
+[12:36:47]  	BOX64_DYNAREC_FASTNAN=0
+[12:36:47]  	BOX64_DYNAREC_FASTROUND=0
+[12:36:47]  	BOX64_DYNAREC_FORWARD=128
+[12:36:47]  	BOX64_DYNAREC_MISSING=1
+[12:36:47]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[12:36:47]  	BOX64_DYNAREC_SAFEFLAGS=2
+[12:36:47]  	BOX64_DYNAREC_STRONGMEM=2
+[12:36:47]  	BOX64_DYNAREC_WAIT=0
+[12:36:47]  	BOX64_DYNAREC_WEAKBARRIER=0
+[12:36:47]  	BOX64_DYNAREC_X87DOUBLE=1
+[12:36:47]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[12:36:47]  	BOX64_LOG=1
+[12:36:47]  	BOX64_NOBANNER=0
+[12:36:47]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[12:36:47]  	BOX64_UNITYPLAYER=0
+[12:36:47]  	BOX64_DYNAREC=1
+[12:36:47]  	BOX64_DYNAREC_CALLRET=0
+[12:36:47]  [BOX64] argv[1]="E:\Stardew Valley(no mods)\Stardew Valley.exe"
+[12:36:47]  [BOX64] Rename process to "wine"
+[12:36:47]  [BOX64] Using native(wrapped) libdl.so.2
+[12:36:47]  [BOX64] Using native(wrapped) libc.so.6
+[12:36:47]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[12:36:47]  [BOX64] Using native(wrapped) libpthread.so.0
+[12:36:47]  [BOX64] Using native(wrapped) libutil.so.1
+[12:36:47]  [BOX64] Using native(wrapped) libresolv.so.2
+[12:36:47]  [BOX64] Using native(wrapped) librt.so.1
+[12:36:47]  [BOX64] Using native(wrapped) libbsd.so.0
+[12:36:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/ntdll.so
+[12:36:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[12:36:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/win32u.so
+[12:36:47]  [BOX64] Using native(wrapped) libm.so.6
+[12:36:47]  [BOX64] Using native(wrapped) libfreetype.so.6
+[12:36:47]  0094:fixme:heap:GetNumaHighestNodeNumber semi-stub: 000000008016EF58
+[12:36:47]  0094:fixme:seh:WerRegisterRuntimeExceptionModule (L"E:\\Stardew Valley(no mods)\\mscordaccore.dll", 000000027E870000) stub
+[12:36:47]  0094:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+[12:36:48]  0094:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 0000000140338A88, 34) stub
+[12:36:48]  0094:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 0000000140338428, 17) stub
+[12:36:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/winex11.so
+[12:36:48]  [BOX64] Using native(wrapped) libXext.so.6
+[12:36:48]  [BOX64] Using native(wrapped) libX11.so.6
+[12:36:48]  [BOX64] Using native(wrapped) libxcb.so.1
+[12:36:48]  [BOX64] Using native(wrapped) libXau.so.6
+[12:36:48]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[12:36:48]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[12:36:48]  [BOX64] Error loading needed lib libXinerama.so.1
+[12:36:48]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0305e8a1, 2)
+[12:36:48]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[12:36:48]  [BOX64] Using native(wrapped) libXrender.so.1
+[12:36:48]  [BOX64] Using native(wrapped) libXrandr.so.2
+[12:36:48]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[12:36:48]  [BOX64] Using native(wrapped) libXi.so.6
+[12:36:48]  [BOX64] Using native(wrapped) libXcursor.so.1
+[12:36:48]  [BOX64] Using native(wrapped) libXfixes.so.3
+[12:36:49]  00a8:trace:seh:dispatch_exception code=6ba (RPC_S_SERVER_UNAVAILABLE) flags=0 addr=000000027FBDD887
+[12:36:49]  00a8:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000081bde450 rbp=0000000000000001 eflags=00000206
+[12:36:49]  00a8:trace:seh:dispatch_exception rax=0000000081bde470 rbx=0000000081bdf2f0 rcx=0000000081bde470 rdx=0000000000000000
+[12:36:49]  00a8:trace:seh:dispatch_exception rsi=0000000000000000 rdi=000000008162e9b0  r8=0000000000000000  r9=0000000000000000
+[12:36:49]  00a8:trace:seh:dispatch_exception r10=0000000000000000 r11=00000000801a1800 r12=0000000081bdf2f0 r13=000000027f9348dc
+[12:36:49]  00a8:trace:seh:dispatch_exception r14=0000000000000000 r15=0000000081bde600 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  00a8:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=6ba flags=0
+[12:36:49]  00a8:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:49]  00a8:trace:seh:call_seh_handlers calling TEB handler 000000027E6F80A0 (rec=0000000081BDE470 frame=0000000081BDE680 context=0000000081BDDF70 dispatch=0000000081BDD850) sp=81bdf000
+[12:36:49]  00a8:trace:seh:call_seh_handlers TEB handler at 000000027E6F80A0 returned 1
+[12:36:49]  00a8:trace:seh:call_seh_handlers calling TEB handler 000000027F929290 (rec=0000000081BDE470 frame=0000000081BDFBC0 context=0000000081BDDF70 dispatch=0000000081BDD850) sp=81bdff80
+[12:36:49]  00a8:trace:seh:RtlUnwindEx code=6ba flags=2 end_frame=0000000081BDFBC0 target_ip=000000027F92322A
+[12:36:49]  00a8:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=0000000081bdcb50 rbp=0000000081bdccc0 eflags=00000206
+[12:36:49]  00a8:trace:seh:RtlUnwindEx rax=0000000081bde680 rbx=0000000081bde470 rcx=0000000081bdd210 rdx=000000027f92322a
+[12:36:49]  00a8:trace:seh:RtlUnwindEx rsi=0000000081bdd210 rdi=0000000081bdccc0  r8=0000000081bde470  r9=000000027f92e630
+[12:36:49]  00a8:trace:seh:RtlUnwindEx r10=0000000081bdd620 r11=0000000000000000 r12=0000000000000000 r13=0000000081bde470
+[12:36:49]  00a8:trace:seh:RtlUnwindEx r14=0000000081bdd210 r15=0000000081bdd980 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  00a8:trace:seh:RtlUnwindEx calling TEB handler 000000027E6F80A0 (rec=0000000081BDE470, frame=0000000081BDE680 context=0000000081BDD210, dispatch=0000000081BDCBD0)
+[12:36:49]  00a8:trace:seh:RtlUnwindEx handler at 000000027E6F80A0 returned 1
+[12:36:49]  00a8:trace:seh:RtlRestoreContext returning to 000000027F92322A stack 0000000081BDFB00
+[12:36:49]  00a8:err:service:device_notify_proc failed to open RPC handle, error 1722
+[12:36:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[12:36:49]  0094:fixme:win:RegisterTouchWindow hwnd 000000000001011C, flags 0x3 stub!
+[12:36:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/installed-wine/wine-10.20/lib/wine/x86_64-unix/bcrypt.so
+[12:36:49]  [BOX64] Using native(wrapped) libgnutls.so.30
+[12:36:49]  0094:fixme:ntdll:NtQuerySystemInformation SystemLeapSecondInformation - stub
+[12:36:49]  wine: Call from 000000027FBDD887 to unimplemented function icu.dll.ulocdata_getCLDRVersion, aborting
+[12:36:49]  0094:trace:seh:dispatch_exception code=80000100 (EXCEPTION_WINE_STUB) flags=1 addr=000000027FBDD887
+[12:36:49]  0094:trace:seh:dispatch_exception  info[0]=000000027DF22000
+[12:36:49]  0094:trace:seh:dispatch_exception  info[1]=000000027DF24DA8
+[12:36:49]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000080169c40 rbp=0000000080169ec0 eflags=00000202
+[12:36:49]  0094:trace:seh:dispatch_exception rax=0000000080169c88 rbx=000000027fd1fc28 rcx=0000000080169c60 rdx=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rsi=0000000080169d30 rdi=000000021f0f5498  r8=000000027df24da8  r9=0000000080169d38
+[12:36:49]  0094:trace:seh:dispatch_exception r10=0000000000000000 r11=0000000000000009 r12=0000000000000001 r13=00000000807eb330
+[12:36:49]  0094:trace:seh:dispatch_exception r14=0000000000000003 r15=0000000000000001 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=80000100 flags=1
+[12:36:49]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:49]  0094:trace:seh:call_seh_handlers calling handler 000000027E9C0700 (rec=0000000080169C60, frame=80169dc0 context=0000000080169760, dispatch=0000000080169040)
+[12:36:49]  0094:trace:seh:call_seh_handlers handler at 000000027E9C0700 returned 1
+[12:36:49]  0094:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=0000000080169C60, frame=80169ee0 context=0000000080169760, dispatch=0000000080169040)
+[12:36:49]  0094:fixme:nls:get_dummy_preferred_ui_language (0x8 0x409 00000000801686C0 0000000000000000 00000000801686B8) returning a dummy value (current locale)
+[12:36:49]  0094:fixme:nls:get_dummy_preferred_ui_language (0x8 0x409 00000000801686C0 0000000080168610 00000000801686B8) returning a dummy value (current locale)
+[12:36:49]  0094:trace:seh:dispatch_exception code=c0000005 (EXCEPTION_ACCESS_VIOLATION) flags=0 addr=00000001609D023F
+[12:36:49]  0094:trace:seh:dispatch_exception  info[0]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception  info[1]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rip=00000001609d023f rsp=0000000080168720 rbp=00000000801687a0 eflags=00010202
+[12:36:49]  0094:trace:seh:dispatch_exception rax=0000000000000000 rbx=000000014035bc70 rcx=0000000000000000 rdx=00000000807f3960
+[12:36:49]  0094:trace:seh:dispatch_exception rsi=000000014035acb0 rdi=0000000000000000  r8=0000000080168590  r9=0000000000000001
+[12:36:49]  0094:trace:seh:dispatch_exception r10=000000021ee20020 r11=0000000080168630 r12=0000000000000000 r13=0000000080169e01
+[12:36:49]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=0000000000000130 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=c0000005 flags=0
+[12:36:49]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned ffffffff
+[12:36:49]  0094:trace:seh:dispatch_exception code=c0000005 (EXCEPTION_ACCESS_VIOLATION) flags=0 addr=000000027FBDD887
+[12:36:49]  0094:trace:seh:dispatch_exception  info[0]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception  info[1]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=00000000801680f0 rbp=00000000801687a0 eflags=00000206
+[12:36:49]  0094:trace:seh:dispatch_exception rax=0000000080168138 rbx=000000014035bc70 rcx=0000000080168110 rdx=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rsi=000000014035acb0 rdi=0000000000000000  r8=0000000000000000  r9=000000027ed12818
+[12:36:49]  0094:trace:seh:dispatch_exception r10=000000027e870000 r11=000000027e9bc7c5 r12=0000000000000000 r13=0000000080169e01
+[12:36:49]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=0000000000000130 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=c0000005 flags=0
+[12:36:49]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:49]  0094:trace:seh:call_seh_handlers calling handler 000000027EB83298 (rec=0000000080168110, frame=801681f0 context=0000000080167C10, dispatch=00000000801674F0)
+[12:36:49]  0094:trace:seh:call_seh_handlers handler at 000000027E94EEC0 returned 3
+[12:36:49]  0094:trace:seh:call_seh_handlers calling handler 000000027E94EEC0 (rec=0000000080168110, frame=80168720 context=0000000080167C10, dispatch=00000000801674F0)
+[12:36:49]  0094:trace:seh:dispatch_exception code=c0000005 (EXCEPTION_ACCESS_VIOLATION) flags=0 addr=00000001609D023F
+[12:36:49]  0094:trace:seh:dispatch_exception  info[0]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception  info[1]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rip=00000001609d023f rsp=0000000080166bd0 rbp=0000000080166c50 eflags=00010206
+[12:36:49]  0094:trace:seh:dispatch_exception rax=0000000000000001 rbx=000000014035bc70 rcx=0000000000000000 rdx=0000000000000401
+[12:36:49]  0094:trace:seh:dispatch_exception rsi=000000014035acb0 rdi=0000000000000000  r8=0000000080166a40  r9=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception r10=000000021ee20020 r11=0000000080166ae0 r12=0000000000000000 r13=0000000080168701
+[12:36:49]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=0000000000000130 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=c0000005 flags=0
+[12:36:49]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned ffffffff
+[12:36:49]  0094:trace:seh:dispatch_exception code=c0000005 (EXCEPTION_ACCESS_VIOLATION) flags=0 addr=000000027FBDD887
+[12:36:49]  0094:trace:seh:dispatch_exception  info[0]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception  info[1]=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=00000000801665a0 rbp=0000000080166c50 eflags=00000206
+[12:36:49]  0094:trace:seh:dispatch_exception rax=00000000801665e8 rbx=000000014035bc70 rcx=00000000801665c0 rdx=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rsi=000000014035acb0 rdi=0000000000000000  r8=0000000000000000  r9=000000027ed12818
+[12:36:49]  0094:trace:seh:dispatch_exception r10=000000027e870000 r11=000000027e9bc7c5 r12=0000000000000000 r13=0000000080168701
+[12:36:49]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=0000000000000130 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=c0000005 flags=0
+[12:36:49]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:49]  0094:trace:seh:call_seh_handlers calling handler 000000027EB83298 (rec=00000000801665C0, frame=801666a0 context=00000000801660C0, dispatch=00000000801659A0)
+[12:36:49]  0094:trace:seh:call_seh_handlers handler at 000000027E94EEC0 returned 3
+[12:36:49]  0094:trace:seh:call_seh_handlers calling handler 000000027E94EEC0 (rec=00000000801665C0, frame=80166bd0 context=00000000801660C0, dispatch=00000000801659A0)
+[12:36:49]  0094:warn:seh:OutputDebugStringW L"CLR: Managed code called FailFast, saying \""
+[12:36:49]  0094:warn:seh:dispatch_exception L"CLR: Managed code called FailFast, saying \""
+[12:36:49]  0094:trace:seh:dispatch_exception code=4001000a (DBG_PRINTEXCEPTION_WIDE_C) flags=0 addr=000000027FBDD887
+[12:36:49]  0094:trace:seh:dispatch_exception  info[0]=000000000000002C
+[12:36:49]  0094:trace:seh:dispatch_exception  info[1]=000000027EC96D00
+[12:36:49]  0094:trace:seh:dispatch_exception  info[2]=000000000000002C
+[12:36:49]  0094:trace:seh:dispatch_exception  info[3]=00000000807848F0
+[12:36:49]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000080164ae0 rbp=0000000080164e70 eflags=00000202
+[12:36:49]  0094:trace:seh:dispatch_exception rax=0000000080164b38 rbx=00000000807848f0 rcx=0000000080164b00 rdx=0000000000000000
+[12:36:49]  0094:trace:seh:dispatch_exception rsi=0000000000000000 rdi=0000000000000106  r8=00000000807848f0  r9=0000000080164c18
+[12:36:49]  0094:trace:seh:dispatch_exception r10=00000000807848f0 r11=000000000000002b r12=000000007ffc0000 r13=000000008077a580
+[12:36:49]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=00000001608a806e mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=4001000a flags=0
+[12:36:49]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:49]  0094:trace:seh:call_seh_handlers calling TEB handler 000000027FC499E0 (rec=0000000080164B00 frame=0000000080164C20 context=0000000080164600 dispatch=0000000080163EE0) sp=80164d70
+[12:36:49]  0094:trace:seh:RtlUnwindEx code=4001000a flags=2 end_frame=0000000080164C20 target_ip=000000027FBDF51A
+[12:36:49]  0094:trace:seh:RtlUnwindEx  info[0]=000000000000002c
+[12:36:49]  0094:trace:seh:RtlUnwindEx  info[1]=000000027ec96d00
+[12:36:49]  0094:trace:seh:RtlUnwindEx  info[2]=000000000000002c
+[12:36:49]  0094:trace:seh:RtlUnwindEx  info[3]=00000000807848f0
+[12:36:49]  0094:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=00000000801631e0 rbp=0000000080163350 eflags=00000202
+[12:36:49]  0094:trace:seh:RtlUnwindEx rax=0000000080164c20 rbx=0000000080164b00 rcx=00000000801638a0 rdx=000000027fbdf51a
+[12:36:49]  0094:trace:seh:RtlUnwindEx rsi=00000000801638a0 rdi=0000000080163350  r8=0000000080164b00  r9=000000027fc5c580
+[12:36:49]  0094:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=0000000080164b00
+[12:36:49]  0094:trace:seh:RtlUnwindEx r14=00000000801638a0 r15=0000000080164010 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:49]  0094:trace:seh:RtlRestoreContext returning to 000000027FBDF51A stack 0000000080164BB0
+[12:36:49]  0094:warn:seh:OutputDebugStringA "CLR: Managed code called FailFast, saying \""
+[12:36:49]  0094:warn:seh:dispatch_exception "CLR: Managed code called FailFast, saying \""
+[12:36:49]  0094:trace:seh:dispatch_exception code=40010006 (DBG_PRINTEXCEPTION_C) flags=0 addr=000000027FBDD887
+[12:36:50]  0094:trace:seh:dispatch_exception  info[0]=000000000000002C
+[12:36:50]  0094:trace:seh:dispatch_exception  info[1]=00000000807848F0
+[12:36:50]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000080164920 rbp=0000000080164e70 eflags=00000202
+[12:36:50]  0094:trace:seh:dispatch_exception rax=0000000080164968 rbx=000000007ffc0000 rcx=0000000080164940 rdx=0000000000000000
+[12:36:50]  0094:trace:seh:dispatch_exception rsi=0000000000000000 rdi=0000000000000106  r8=00000000807848f0  r9=0000000080164a38
+[12:36:50]  0094:trace:seh:dispatch_exception r10=0000003f00091540 r11=0000000000000000 r12=0000000080164be0 r13=000000008077a580
+[12:36:50]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=00000001608a806e mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=40010006 flags=0
+[12:36:50]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:50]  0094:trace:seh:call_seh_handlers calling TEB handler 000000027FC499E0 (rec=0000000080164940 frame=0000000080164A40 context=0000000080164440 dispatch=0000000080163D20) sp=80164bb0
+[12:36:50]  0094:trace:seh:RtlUnwindEx code=40010006 flags=2 end_frame=0000000080164A40 target_ip=000000027FBDF51A
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[0]=000000000000002c
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[1]=00000000807848f0
+[12:36:50]  0094:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=0000000080163020 rbp=0000000080163190 eflags=00000202
+[12:36:50]  0094:trace:seh:RtlUnwindEx rax=0000000080164a40 rbx=0000000080164940 rcx=00000000801636e0 rdx=000000027fbdf51a
+[12:36:50]  0094:trace:seh:RtlUnwindEx rsi=00000000801636e0 rdi=0000000080163190  r8=0000000080164940  r9=000000027fc5c580
+[12:36:50]  0094:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=0000000080164940
+[12:36:50]  0094:trace:seh:RtlUnwindEx r14=00000000801636e0 r15=0000000080163e50 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:RtlRestoreContext returning to 000000027FBDF51A stack 00000000801649F0
+[12:36:50]  0094:warn:seh:OutputDebugStringW L"Infinite recursion during resource lookup within System.Private.CoreLib.  This may be a bug in System.Private.CoreLib, or potentially in certain extensibility points such as assembly resolve events or CultureInfo names.  Resource name: Arg_NullReferenceException"
+[12:36:50]  0094:warn:seh:dispatch_exception L"Infinite recursion during resource lookup within System.Private.CoreLib.  This may be a bug in System.Private.CoreLib, or potentially in certain extensibility points such as assembly resolve events or CultureInfo names.  Resource name: Arg_NullReferenceException"
+[12:36:50]  0094:trace:seh:dispatch_exception code=4001000a (DBG_PRINTEXCEPTION_WIDE_C) flags=0 addr=000000027FBDD887
+[12:36:50]  0094:trace:seh:dispatch_exception  info[0]=0000000000000107
+[12:36:50]  0094:trace:seh:dispatch_exception  info[1]=000000008162DAD0
+[12:36:50]  0094:trace:seh:dispatch_exception  info[2]=0000000000000107
+[12:36:50]  0094:trace:seh:dispatch_exception  info[3]=0000000081690820
+[12:36:50]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000080164ae0 rbp=0000000080164e70 eflags=00000202
+[12:36:50]  0094:trace:seh:dispatch_exception rax=0000000080164b38 rbx=0000000081690820 rcx=0000000080164b00 rdx=0000000000000000
+[12:36:50]  0094:trace:seh:dispatch_exception rsi=0000000000000000 rdi=0000000000000106  r8=0000000081690820  r9=0000000080164c18
+[12:36:50]  0094:trace:seh:dispatch_exception r10=0000000081690820 r11=0000000000000106 r12=000000007ffc0000 r13=000000008077a580
+[12:36:50]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=00000001608a806e mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=4001000a flags=0
+[12:36:50]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:50]  0094:trace:seh:call_seh_handlers calling TEB handler 000000027FC499E0 (rec=0000000080164B00 frame=0000000080164C20 context=0000000080164600 dispatch=0000000080163EE0) sp=80164d70
+[12:36:50]  0094:trace:seh:RtlUnwindEx code=4001000a flags=2 end_frame=0000000080164C20 target_ip=000000027FBDF51A
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[0]=0000000000000107
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[1]=000000008162dad0
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[2]=0000000000000107
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[3]=0000000081690820
+[12:36:50]  0094:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=00000000801631e0 rbp=0000000080163350 eflags=00000202
+[12:36:50]  0094:trace:seh:RtlUnwindEx rax=0000000080164c20 rbx=0000000080164b00 rcx=00000000801638a0 rdx=000000027fbdf51a
+[12:36:50]  0094:trace:seh:RtlUnwindEx rsi=00000000801638a0 rdi=0000000080163350  r8=0000000080164b00  r9=000000027fc5c580
+[12:36:50]  0094:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=0000000080164b00
+[12:36:50]  0094:trace:seh:RtlUnwindEx r14=00000000801638a0 r15=0000000080164010 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:RtlRestoreContext returning to 000000027FBDF51A stack 0000000080164BB0
+[12:36:50]  0094:warn:seh:OutputDebugStringA "Infinite recursion during resource lookup within System.Private.CoreLib.  This may be a bug in System.Private.CoreLib, or potentially in certain extensibility points such as assembly resolve events or CultureInfo names.  Resource name: Arg_NullReferenceException"
+[12:36:50]  0094:warn:seh:dispatch_exception "Infinite recursion during resource lookup within System.Private.CoreLib.  This may be a bug in System.Private.CoreLib, or potentially in certain extensibility points such as assembly resolve events or CultureInfo names.  Resource name: Arg_NullReferenceException"
+[12:36:50]  0094:trace:seh:dispatch_exception code=40010006 (DBG_PRINTEXCEPTION_C) flags=0 addr=000000027FBDD887
+[12:36:50]  0094:trace:seh:dispatch_exception  info[0]=0000000000000107
+[12:36:50]  0094:trace:seh:dispatch_exception  info[1]=0000000081690820
+[12:36:50]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000080164920 rbp=0000000080164e70 eflags=00000202
+[12:36:50]  0094:trace:seh:dispatch_exception rax=0000000080164968 rbx=000000007ffc0000 rcx=0000000080164940 rdx=0000000000000000
+[12:36:50]  0094:trace:seh:dispatch_exception rsi=0000000000000000 rdi=0000000000000106  r8=0000000081690820  r9=0000000080164a38
+[12:36:50]  0094:trace:seh:dispatch_exception r10=0000003f00091540 r11=0000000000000000 r12=0000000080164be0 r13=000000008077a580
+[12:36:50]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=00000001608a806e mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=40010006 flags=0
+[12:36:50]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:50]  0094:trace:seh:call_seh_handlers calling TEB handler 000000027FC499E0 (rec=0000000080164940 frame=0000000080164A40 context=0000000080164440 dispatch=0000000080163D20) sp=80164bb0
+[12:36:50]  0094:trace:seh:RtlUnwindEx code=40010006 flags=2 end_frame=0000000080164A40 target_ip=000000027FBDF51A
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[0]=0000000000000107
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[1]=0000000081690820
+[12:36:50]  0094:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=0000000080163020 rbp=0000000080163190 eflags=00000202
+[12:36:50]  0094:trace:seh:RtlUnwindEx rax=0000000080164a40 rbx=0000000080164940 rcx=00000000801636e0 rdx=000000027fbdf51a
+[12:36:50]  0094:trace:seh:RtlUnwindEx rsi=00000000801636e0 rdi=0000000080163190  r8=0000000080164940  r9=000000027fc5c580
+[12:36:50]  0094:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=0000000080164940
+[12:36:50]  0094:trace:seh:RtlUnwindEx r14=00000000801636e0 r15=0000000080163e50 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:RtlRestoreContext returning to 000000027FBDF51A stack 00000000801649F0
+[12:36:50]  0094:warn:seh:OutputDebugStringW L"\"\r\n"
+[12:36:50]  0094:warn:seh:dispatch_exception L"\"\r\n"
+[12:36:50]  0094:trace:seh:dispatch_exception code=4001000a (DBG_PRINTEXCEPTION_WIDE_C) flags=0 addr=000000027FBDD887
+[12:36:50]  0094:trace:seh:dispatch_exception  info[0]=0000000000000004
+[12:36:50]  0094:trace:seh:dispatch_exception  info[1]=000000027EC96D58
+[12:36:50]  0094:trace:seh:dispatch_exception  info[2]=0000000000000004
+[12:36:50]  0094:trace:seh:dispatch_exception  info[3]=0000000081693410
+[12:36:50]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000080164ae0 rbp=0000000080164e70 eflags=00000202
+[12:36:50]  0094:trace:seh:dispatch_exception rax=0000000080164b38 rbx=0000000081693410 rcx=0000000080164b00 rdx=0000000000000000
+[12:36:50]  0094:trace:seh:dispatch_exception rsi=0000000000000000 rdi=0000000000000106  r8=0000000081693410  r9=0000000080164c18
+[12:36:50]  0094:trace:seh:dispatch_exception r10=0000000081693410 r11=0000000000000003 r12=000000007ffc0000 r13=000000008077a580
+[12:36:50]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=00000001608a806e mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=4001000a flags=0
+[12:36:50]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:50]  0094:trace:seh:call_seh_handlers calling TEB handler 000000027FC499E0 (rec=0000000080164B00 frame=0000000080164C20 context=0000000080164600 dispatch=0000000080163EE0) sp=80164d70
+[12:36:50]  0094:trace:seh:RtlUnwindEx code=4001000a flags=2 end_frame=0000000080164C20 target_ip=000000027FBDF51A
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[0]=0000000000000004
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[1]=000000027ec96d58
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[2]=0000000000000004
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[3]=0000000081693410
+[12:36:50]  0094:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=00000000801631e0 rbp=0000000080163350 eflags=00000202
+[12:36:50]  0094:trace:seh:RtlUnwindEx rax=0000000080164c20 rbx=0000000080164b00 rcx=00000000801638a0 rdx=000000027fbdf51a
+[12:36:50]  0094:trace:seh:RtlUnwindEx rsi=00000000801638a0 rdi=0000000080163350  r8=0000000080164b00  r9=000000027fc5c580
+[12:36:50]  0094:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=0000000080164b00
+[12:36:50]  0094:trace:seh:RtlUnwindEx r14=00000000801638a0 r15=0000000080164010 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:RtlRestoreContext returning to 000000027FBDF51A stack 0000000080164BB0
+[12:36:50]  0094:warn:seh:OutputDebugStringA "\"\r\n"
+[12:36:50]  0094:warn:seh:dispatch_exception "\"\r\n"
+[12:36:50]  0094:trace:seh:dispatch_exception code=40010006 (DBG_PRINTEXCEPTION_C) flags=0 addr=000000027FBDD887
+[12:36:50]  0094:trace:seh:dispatch_exception  info[0]=0000000000000004
+[12:36:50]  0094:trace:seh:dispatch_exception  info[1]=0000000081693410
+[12:36:50]  0094:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000080164920 rbp=0000000080164e70 eflags=00000202
+[12:36:50]  0094:trace:seh:dispatch_exception rax=0000000080164968 rbx=000000007ffc0000 rcx=0000000080164940 rdx=0000000000000000
+[12:36:50]  0094:trace:seh:dispatch_exception rsi=0000000000000000 rdi=0000000000000106  r8=0000000081693410  r9=0000000080164a38
+[12:36:50]  0094:trace:seh:dispatch_exception r10=0000003f00091540 r11=0000000000000000 r12=0000000080164be0 r13=000000008077a580
+[12:36:50]  0094:trace:seh:dispatch_exception r14=000000008077a580 r15=00000001608a806e mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=40010006 flags=0
+[12:36:50]  0094:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[12:36:50]  0094:trace:seh:call_seh_handlers calling TEB handler 000000027FC499E0 (rec=0000000080164940 frame=0000000080164A40 context=0000000080164440 dispatch=0000000080163D20) sp=80164bb0
+[12:36:50]  0094:trace:seh:RtlUnwindEx code=40010006 flags=2 end_frame=0000000080164A40 target_ip=000000027FBDF51A
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[0]=0000000000000004
+[12:36:50]  0094:trace:seh:RtlUnwindEx  info[1]=0000000081693410
+[12:36:50]  0094:trace:seh:RtlUnwindEx rip=000000027fda6ced rsp=0000000080163020 rbp=0000000080163190 eflags=00000202
+[12:36:50]  0094:trace:seh:RtlUnwindEx rax=0000000080164a40 rbx=0000000080164940 rcx=00000000801636e0 rdx=000000027fbdf51a
+[12:36:50]  0094:trace:seh:RtlUnwindEx rsi=00000000801636e0 rdi=0000000080163190  r8=0000000080164940  r9=000000027fc5c580
+[12:36:50]  0094:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=0000000080164940
+[12:36:50]  0094:trace:seh:RtlUnwindEx r14=00000000801636e0 r15=0000000080163e50 mxcsr=00001f80 cs=0033 ss=002b
+[12:36:50]  0094:trace:seh:RtlRestoreContext returning to 000000027FBDF51A stack 00000000801649F0
+[12:36:50]  0094:fixme:advapi:RegisterEventSourceW ((null),L".NET Runtime"): stub
+[12:36:50]  0094:fixme:advapi:ReportEventW (00000000CAFE4242,0x0001,0x0000,0x00000401,0000000000000000,0x0001,0x00000000,0000000080163A50,0000000000000000): stub
+[12:36:50]  0094:err:eventlog:ReportEventW L"Application: Stardew Valley.exe\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"CoreCLR Version: 5.0.721.25508\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L".NET Version: 5.0.7\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"Description: The application requested process termination through System.Environment.FailFast(string message).\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"Message: Infinite recursion during resource lookup within System.Private.CoreLib.  This may be a bug in System.Private.CoreLib, or potentially in certain extensibility points such as assembly resolve events or CultureInfo names.  Resource name: Arg_NullReferenceException\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"Stack:\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Environment.FailFast(System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.SR.InternalGetResourceString(System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.SR.GetResourceString(System.String, System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.NullReferenceException..ctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Resources.ResourceManager.GetFirstResourceSet(System.Globalization.CultureInfo)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Resources.ResourceManager.GetString(System.String, System.Globalization.CultureInfo)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.SR.InternalGetResourceString(System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.SR.GetResourceString(System.String, System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.NullReferenceException..ctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Resources.ResourceManager.GetFirstResourceSet(System.Globalization.CultureInfo)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Resources.ResourceManager.GetString(System.String, System.Globalization.CultureInfo)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.SR.InternalGetResourceString(System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.SR.GetResourceString(System.String, System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Runtime.InteropServices.SEHException..ctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Globalization.GlobalizationMode.LoadIcu()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Globalization.GlobalizationMode..cctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Globalization.CultureData.CreateCultureWithInvariantData()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Globalization.CultureData.get_Invariant()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Globalization.CultureInfo..cctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Globalization.CultureInfo.get_CachedCulturesByName()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Globalization.CultureInfo.GetCultureInfo(System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Reflection.RuntimeAssembly.GetLocale()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Reflection.RuntimeAssembly.GetName(Boolean)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Reflection.Assembly.GetName()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Xml.Serialization.TempAssembly.LoadGeneratedAssembly(System.Type, System.String, System.Xml.Serialization.XmlSerializerImplementation ByRef)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at System.Xml.Serialization.XmlSerializer..ctor(System.Type, System.String)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at StardewValley.SaveGame.GetSerializer(System.Type)\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at StardewValley.SerializableDictionary`2[[System.Int64, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.__Canon, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]..cctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at StardewValley.SerializableDictionary`2[[System.Int64, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.__Canon, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]..ctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at StardewValley.Game1..cctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at StardewValley.GameRunner..ctor()\n"
+[12:36:50]  0094:err:eventlog:ReportEventW L"   at StardewValley.Program.Main(System.String[])\n"
+[12:36:50]  0094:fixme:advapi:DeregisterEventSource (00000000CAFE4242) stub
+[12:36:50]  0094:warn:seh:RaiseFailFastException (00000000801647A0, 0000000080164840, 0)
+[12:36:50]  0094:err:seh:NtRaiseException Unhandled exception code 80131623 flags 0 addr 0x1608a806e

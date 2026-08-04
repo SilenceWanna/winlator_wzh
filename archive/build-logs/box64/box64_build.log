@@ -1,0 +1,403 @@
+[1/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx.c.o
+[2/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx0f38.c.o
+[3/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx0f.c.o
+[4/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runde.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runde.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[5/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66f30f.c.o
+[6/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf20f.c.o
+[7/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66f20f.c.o
+[8/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx660f.c.o
+[9/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66d9.c.o
+[10/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run.c.o
+[11/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66.c.o
+[12/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rund8.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rund8.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[13/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rund9.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rund9.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[14/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66dd.c.o
+[15/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run66f0.c.o
+[16/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runde.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runde.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[17/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundf.c.o
+[18/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundc.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rundc.c:19:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[19/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundb.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rundb.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[20/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run660f.c.o
+[21/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64rundd.c.o
+[22/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runda.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runda.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[23/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64run0f.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64run0f.c:1860:39: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                            tmp64u2 = ED->q[1];
+                                      ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include/regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64run0f.c:1864:33: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                                ED->q[1] = R_RCX;
+                                ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include/regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+2 warnings generated.
+[24/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runf30f.c.o
+[25/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runf20f.c.o
+[26/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runf0.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runf0.c:920:42: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                                tmp64u2= ED->q[1];
+                                         ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include\regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runf0.c:924:37: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                                    ED->q[1] = R_RCX;
+                                    ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include\regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+2 warnings generated.
+[27/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundb.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rundb.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[28/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64rund9.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rund9.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[29/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runda.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runda.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[30/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundd.c.o
+[31/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf20f38.c.o
+[32/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf30f38.c.o
+[33/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf30f.c.o
+[34/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundc.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rundc.c:19:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[35/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf20f3a.c.o
+[36/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavxf30f3a.c.o
+[37/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx660f3a.c.o
+[38/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66f20f.c.o
+[39/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66f30f.c.o
+[40/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64rund8.c.o
+In file included from C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64rund8.c:20:
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x87emu_setround.h:3:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+1 warning generated.
+[41/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66.c.o
+[42/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66dd.c.o
+[43/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run0f.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64run0f.c:1860:39: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                            tmp64u2 = ED->q[1];
+                                      ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include/regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64run0f.c:1864:33: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                                ED->q[1] = R_RCX;
+                                ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include/regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+2 warnings generated.
+[44/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66f0.c.o
+[45/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run66d9.c.o
+[46/577] Building C object CMakeFiles/test_interpreter.dir/src/emu/x64runavx660f38.c.o
+[47/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runf30f.c.o
+[48/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx.c.o
+[49/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run.c.o
+[50/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64run660f.c.o
+[51/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64rundf.c.o
+[52/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runf20f.c.o
+[53/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx0f38.c.o
+[54/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx0f.c.o
+[55/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runf0.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runf0.c:832:51: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                                        tmp64u2 = ED->q[1];
+                                                  ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include\regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64runf0.c:838:49: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+                                                ED->q[1] = R_RCX;
+                                                ^     ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/modrm.h:70:13: note: expanded from macro 'ED'
+#define ED  oped
+            ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include\regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+2 warnings generated.
+[56/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf20f.c.o
+[57/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf20f3a.c.o
+[58/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf30f.c.o
+[59/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf30f38.c.o
+[60/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf30f3a.c.o
+[61/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavxf20f38.c.o
+[62/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx660f3a.c.o
+[63/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx660f.c.o
+[64/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynablock.c.o
+[65/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynacache_reloc.c.o
+[66/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynacache_compress.c.o
+[67/577] Building C object CMakeFiles/dynarec_native.dir/src/emu/x64test.c.o
+[68/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynarec_native_functions.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:54:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:61:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:116:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:127:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:133:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:140:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:160:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:165:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:172:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:179:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynarec/dynarec_native_functions.c:186:14: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+#pragma STDC FENV_ACCESS ON
+             ^
+11 warnings generated.
+[69/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/dynarec_native.c.o
+[70/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/arm64_immenc.c.o
+[71/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/dynarec_arm64_consts.c.o
+[72/577] Building ASM object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/arm64_epilog.S.o
+[73/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/dynarec_arm64_arch.c.o
+[74/577] Building C object CMakeFiles/interpreter.dir/src/emu/x64runavx660f38.c.o
+[75/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/dynarec_arm64_jmpnext.c.o
+[76/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/dynarec_arm64_functions.c.o
+[77/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/updateflags_arm64.c.o
+[78/577] Building C object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/arm64_printer.c.o
+[79/577] Building ASM object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/arm64_prolog.S.o
+[80/577] Building ASM object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/arm64_lock.S.o
+[81/577] Building ASM object CMakeFiles/dynarec_native.dir/src/dynarec/arm64/arm64_next.S.o
+[82/577] cmd.exe /C "cd /D C:\Users\wangzihe.18.360BUYAD\AppData\Local\Temp\box64_src\build_android && C:\Users\wangzihe.18.360BUYAD\AppData\Local\Python\bin\python3.exe C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/tools/gen_dynacache_hashes.py --root C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src --output C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynacache_hashes.h"
+[83/577] Generating ../src/wrapped/generated/functions_list.txt
+[84/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[85/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[86/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/dynarec_native_pass.c.o
+[87/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[88/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[89/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[90/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[91/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[92/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[93/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[94/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[95/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[96/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[97/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[98/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[99/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[100/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[101/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[102/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[103/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[104/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[105/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[106/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[107/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[108/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[109/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[110/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[111/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[112/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[113/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[114/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[115/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[116/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[117/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[118/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[119/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[120/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[121/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[122/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[123/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[124/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[125/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[126/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[127/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[128/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[129/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+[130/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[131/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[132/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[133/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[134/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[135/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[136/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[137/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[138/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[139/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/dynarec_native_pass.c.o
+[140/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[141/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[142/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[143/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[144/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[145/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[146/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[147/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[148/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[149/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[150/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[151/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[152/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[153/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[154/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[155/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[156/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[157/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[158/577] Building C object CMakeFiles/native_pass0.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[159/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[160/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[161/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[162/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[163/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[164/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[165/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[166/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[167/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[168/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[169/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[170/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[171/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[172/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+[173/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[174/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/dynarec_native_pass.c.o
+[175/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[176/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[177/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[178/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[179/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[180/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[181/577] Building C object CMakeFiles/native_pass1.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[182/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[183/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[184/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[185/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_dc.c.o
+[186/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[187/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_db.c.o
+[188/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[189/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[190/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[191/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_dd.c.o
+[192/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66f20f.c.o
+[193/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_df.c.o
+[194/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_de.c.o
+[195/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[196/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_f0.c.o
+[197/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66f0.c.o
+[198/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_66f30f.c.o
+[199/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_tests.c.o
+[200/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_logic.c.o
+[201/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_math.c.o
+[202/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[203/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_660f.c.o
+[204/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_d8.c.o
+[205/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_da.c.o
+[206/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_helper.c.o
+[207/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_emit_shift.c.o
+[208/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_d9.c.o
+[209/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+[210/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_0f.c.o
+[211/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_0f38.c.o
+[212/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_f20f.c.o
+[213/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx.c.o
+[214/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_f30f.c.o
+[215/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f.c.o
+[216/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f3a.c.o
+[217/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f3a.c.o
+[218/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f2_0f38.c.o
+[219/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f.c.o
+[220/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f.c.o
+[221/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_f3_0f38.c.o
+[222/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/updateflags_arm64_pass.c.o
+[223/577] Generating ../src/git_head.h
+FAILED: ../src/git_head.h C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/git_head.h 
+cmd.exe /C "cd /D C:\Users\wangzihe.18.360BUYAD\AppData\Local\Temp\box64_src\build_android && sh -c "echo \#define GITREV \\\"$(git rev-parse --short HEAD)\\\">\"C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/git_head.h\"""
+'sh' is not recognized as an internal or external command,
+operable program or batch file.
+[224/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/dynarec_native_pass.c.o
+[225/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_66.c.o
+[226/577] Building C object CMakeFiles/native_pass2.dir/src/dynarec/arm64/dynarec_arm64_avx_66_0f38.c.o
+[227/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_0f.c.o
+[228/577] Building C object CMakeFiles/native_pass3.dir/src/dynarec/arm64/dynarec_arm64_00.c.o
+ninja: build stopped: subcommand failed.

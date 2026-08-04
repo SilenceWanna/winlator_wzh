@@ -1,0 +1,15 @@
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+cmake: cmake version 4.4.0
+-- Found Threads: TRUE
+-- Configuring done (6.8s)
+-- Generating done (0.2s)
+-- Build files have been written to: /root/glslang_src/build
+[440/442] Linking CXX executable StandAlone/spirv-remap
+[441/442] Building CXX object StandAlone/CMakeFiles/glslang-standalone.dir/StandAlone.cpp.o
+[442/442] Linking CXX executable StandAlone/glslang
+-- Installing: /usr/local/lib/cmake/glslang/glslang-config.cmake
+-- Installing: /usr/local/lib/cmake/glslang/glslang-config-version.cmake
+=== 版本确认 ===
+Glslang Version: 11:15.1.0
+ESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.1.0
+GLSLANG_OK2

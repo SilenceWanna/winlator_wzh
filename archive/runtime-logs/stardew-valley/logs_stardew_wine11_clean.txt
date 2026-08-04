@@ -1,0 +1,1904 @@
+[18:29:39]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:39]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:39]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:39]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:39]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[18:29:39]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:39]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:39]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:39]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:39]  [BOX64] Detected running wine with "explorer"
+[18:29:39]  [BOX64] Counted 78 Env var
+[18:29:39]  [BOX64] Library search path: 
+[18:29:39]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:39]  [BOX64] Looking for wine
+[18:29:39]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:39]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:39]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:39]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:39]  	BOX64_DYNAREC_FORWARD=128
+[18:29:39]  	BOX64_DYNAREC_MISSING=1
+[18:29:39]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:39]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:39]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:39]  	BOX64_DYNAREC_WAIT=0
+[18:29:39]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:39]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:39]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:39]  	BOX64_LOG=1
+[18:29:39]  	BOX64_NOBANNER=0
+[18:29:39]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:39]  	BOX64_UNITYPLAYER=0
+[18:29:39]  	BOX64_DYNAREC=1
+[18:29:39]  	BOX64_DYNAREC_CALLRET=0
+[18:29:39]  [BOX64] argv[1]="explorer"
+[18:29:39]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[18:29:39]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[18:29:39]  [BOX64] argv[4]="/dir"
+[18:29:39]  [BOX64] argv[5]="C:\windows"
+[18:29:39]  [BOX64] argv[6]=""wfm.exe""
+[18:29:39]  [BOX64] Rename process to "wine"
+[18:29:39]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:39]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:39]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:39]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:39]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/bin/../lib/wine/x86_64-unix/ntdll.so
+[18:29:39]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:39]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:39]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:39]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:39]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:39]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:39]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[18:29:39]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:39]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:39]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:39]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:39]  [BOX64] Detected running wine with "explorer"
+[18:29:39]  [BOX64] Counted 79 Env var
+[18:29:39]  [BOX64] Library search path: 
+[18:29:39]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:39]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:39]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:39]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:39]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:39]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:39]  	BOX64_DYNAREC_FORWARD=128
+[18:29:39]  	BOX64_DYNAREC_MISSING=1
+[18:29:39]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:39]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:39]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:39]  	BOX64_DYNAREC_WAIT=0
+[18:29:39]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:39]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:39]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:39]  	BOX64_LOG=1
+[18:29:39]  	BOX64_NOBANNER=0
+[18:29:39]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:39]  	BOX64_UNITYPLAYER=0
+[18:29:39]  	BOX64_DYNAREC=1
+[18:29:39]  	BOX64_DYNAREC_CALLRET=0
+[18:29:39]  [BOX64] argv[1]="explorer"
+[18:29:39]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[18:29:39]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[18:29:39]  [BOX64] argv[4]="/dir"
+[18:29:39]  [BOX64] argv[5]="C:\windows"
+[18:29:39]  [BOX64] argv[6]=""wfm.exe""
+[18:29:39]  [BOX64] Rename process to "wine"
+[18:29:39]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:39]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:39]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:39]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:39]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:39]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:39]  [BOX64] posix_spawn(0x75a27ed6ec, "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", (nil), (nil), 0x75a27ed6f0["/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", "", ...], 0x75a27edaa0), IsX64=1, IsX86=0 IsScript=0 IsPython=0 envp is context->envv
+[18:29:39]  [BOX64]  => posix_spawn(0x75a27ed6ec, "/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", (nil), (nil), 0x7fcadf7070 ["/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", ""...:1], 0x7fcadf7898)
+[18:29:39]  [BOX64] posix_spawn returned 0
+[18:29:39]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:39]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:39]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:39]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:39]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:39]  [BOX64] Counted 78 Env var
+[18:29:39]  [BOX64] Library search path: 
+[18:29:39]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:39]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver
+[18:29:39]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:39]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:39]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:39]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:39]  	BOX64_DYNAREC_FORWARD=128
+[18:29:39]  	BOX64_DYNAREC_MISSING=1
+[18:29:39]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:39]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:39]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:39]  	BOX64_DYNAREC_WAIT=0
+[18:29:39]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:39]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:39]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:39]  	BOX64_LOG=1
+[18:29:39]  	BOX64_NOBANNER=0
+[18:29:39]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:39]  	BOX64_UNITYPLAYER=0
+[18:29:39]  	BOX64_DYNAREC=1
+[18:29:39]  	BOX64_DYNAREC_CALLRET=0
+[18:29:39]  [BOX64] Rename process to "wineserver"
+[18:29:39]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:39]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:39]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:39]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:39]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:39]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:39]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:39]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:39]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:39]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140024000"
+[18:29:39]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:39]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:39]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:39]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:39]  [BOX64] WINE prereserve of 0x140000000:0x140024000 done
+[18:29:39]  [BOX64] Detected running wine with "wineboot.exe"
+[18:29:39]  [BOX64] Counted 81 Env var
+[18:29:39]  [BOX64] Library search path: 
+[18:29:39]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:39]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:39]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:39]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:39]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:39]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:39]  	BOX64_DYNAREC_FORWARD=128
+[18:29:39]  	BOX64_DYNAREC_MISSING=1
+[18:29:39]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:39]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:39]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:39]  	BOX64_DYNAREC_WAIT=0
+[18:29:39]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:39]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:39]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:39]  	BOX64_LOG=1
+[18:29:39]  	BOX64_NOBANNER=0
+[18:29:39]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:39]  	BOX64_UNITYPLAYER=0
+[18:29:39]  	BOX64_DYNAREC=1
+[18:29:39]  	BOX64_DYNAREC_CALLRET=0
+[18:29:39]  [BOX64] argv[1]="C:\windows\system32\wineboot.exe"
+[18:29:39]  [BOX64] argv[2]="--init"
+[18:29:39]  [BOX64] Rename process to "wine"
+[18:29:39]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:39]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:39]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:39]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:39]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:39]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:39]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:39]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[18:29:40]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:40]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:40]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:40]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:40]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:40]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140029000"
+[18:29:40]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:40]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x140000000:0x140029000 done
+[18:29:40]  [BOX64] Detected running wine with "winemenubuilder.exe"
+[18:29:40]  [BOX64] Counted 81 Env var
+[18:29:40]  [BOX64] Library search path: 
+[18:29:40]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:40]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:40]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:40]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:40]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:40]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:40]  	BOX64_DYNAREC_FORWARD=128
+[18:29:40]  	BOX64_DYNAREC_MISSING=1
+[18:29:40]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:40]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:40]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:40]  	BOX64_DYNAREC_WAIT=0
+[18:29:40]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:40]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:40]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:40]  	BOX64_LOG=1
+[18:29:40]  	BOX64_NOBANNER=0
+[18:29:40]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:40]  	BOX64_UNITYPLAYER=0
+[18:29:40]  	BOX64_DYNAREC=1
+[18:29:40]  	BOX64_DYNAREC_CALLRET=0
+[18:29:40]  [BOX64] argv[1]="C:\windows\system32\winemenubuilder.exe"
+[18:29:40]  [BOX64] argv[2]="-a"
+[18:29:40]  [BOX64] argv[3]="-r"
+[18:29:40]  [BOX64] Rename process to "wine"
+[18:29:40]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:40]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:40]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:40]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:40]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:40]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:40]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:40]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:40]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:40]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140017000"
+[18:29:40]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:40]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x140000000:0x140017000 done
+[18:29:40]  [BOX64] Detected running wine with "services.exe"
+[18:29:40]  [BOX64] Counted 81 Env var
+[18:29:40]  [BOX64] Library search path: 
+[18:29:40]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:40]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:40]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:40]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:40]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:40]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:40]  	BOX64_DYNAREC_FORWARD=128
+[18:29:40]  	BOX64_DYNAREC_MISSING=1
+[18:29:40]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:40]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:40]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:40]  	BOX64_DYNAREC_WAIT=0
+[18:29:40]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:40]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:40]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:40]  	BOX64_LOG=1
+[18:29:40]  	BOX64_NOBANNER=0
+[18:29:40]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:40]  	BOX64_UNITYPLAYER=0
+[18:29:40]  	BOX64_DYNAREC=1
+[18:29:40]  	BOX64_DYNAREC_CALLRET=0
+[18:29:40]  [BOX64] argv[1]="C:\windows\system32\services.exe"
+[18:29:40]  [BOX64] Rename process to "wine"
+[18:29:40]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:40]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:40]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:40]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:40]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:40]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:40]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:40]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:40]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:40]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:40]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:40]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[18:29:40]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:40]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[18:29:40]  [BOX64] Detected running wine with "winedevice.exe"
+[18:29:40]  [BOX64] Counted 81 Env var
+[18:29:40]  [BOX64] Library search path: 
+[18:29:40]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:40]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:40]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:40]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:40]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:40]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:40]  	BOX64_DYNAREC_FORWARD=128
+[18:29:40]  	BOX64_DYNAREC_MISSING=1
+[18:29:40]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:40]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:40]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:40]  	BOX64_DYNAREC_WAIT=0
+[18:29:40]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:40]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:40]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:40]  	BOX64_LOG=1
+[18:29:40]  	BOX64_NOBANNER=0
+[18:29:40]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:40]  	BOX64_UNITYPLAYER=0
+[18:29:40]  	BOX64_DYNAREC=1
+[18:29:40]  	BOX64_DYNAREC_CALLRET=0
+[18:29:40]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[18:29:40]  [BOX64] Rename process to "wine"
+[18:29:40]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:40]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:40]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:40]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/mountmgr.so
+[18:29:40]  [[31mBOX64[0m] Error initializing native libdbus-1.so.3 (last dlerror is libdbus-1.so.3: cannot open shared object file: No such file or directory)
+[18:29:40]  [BOX64] Error loading needed lib libdbus-1.so.3
+[18:29:40]  [BOX64] Warning: Cannot dlopen("libdbus-1.so.3"/0x3f02006270, 2)
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/nsiproxy.so
+[18:29:40]  006c:err:nsi:poll_events bind failed, errno 13.
+[18:29:40]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:40]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:40]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:40]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:40]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:40]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[18:29:40]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:40]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:40]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[18:29:40]  [BOX64] Detected running wine with "winedevice.exe"
+[18:29:40]  [BOX64] Counted 81 Env var
+[18:29:40]  [BOX64] Library search path: 
+[18:29:40]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:40]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:40]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:40]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:40]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:40]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:40]  	BOX64_DYNAREC_FORWARD=128
+[18:29:40]  	BOX64_DYNAREC_MISSING=1
+[18:29:40]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:40]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:40]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:40]  	BOX64_DYNAREC_WAIT=0
+[18:29:40]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:40]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:40]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:40]  	BOX64_LOG=1
+[18:29:40]  	BOX64_NOBANNER=0
+[18:29:40]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:40]  	BOX64_UNITYPLAYER=0
+[18:29:40]  	BOX64_DYNAREC=1
+[18:29:40]  	BOX64_DYNAREC_CALLRET=0
+[18:29:40]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[18:29:40]  [BOX64] Rename process to "wine"
+[18:29:40]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:40]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:40]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:40]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:40]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:40]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:40]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:41]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebus.so
+[18:29:41]  [[31mBOX64[0m] Error initializing native libudev.so.1 (last dlerror is libudev.so.0: cannot open shared object file: No such file or directory)
+[18:29:41]  [BOX64] Error loading needed lib libudev.so.1
+[18:29:41]  [BOX64] Error loading one of needed lib
+[18:29:41]  [BOX64] Error initializing needed lib /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebus.so
+[18:29:41]  007c:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebus": c0000135
+[18:29:41]  003c:fixme:service:scmdatabase_autostart_services Auto-start service L"winebus" failed to start: 126
+[18:29:41]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:41]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:41]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:41]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:41]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:41]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[18:29:41]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:41]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:41]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:41]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:41]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[18:29:41]  [BOX64] Detected running wine with "winedevice.exe"
+[18:29:41]  [BOX64] Counted 81 Env var
+[18:29:41]  [BOX64] Library search path: 
+[18:29:41]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:41]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:41]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:41]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:41]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:41]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:41]  	BOX64_DYNAREC_FORWARD=128
+[18:29:41]  	BOX64_DYNAREC_MISSING=1
+[18:29:41]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:41]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:41]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:41]  	BOX64_DYNAREC_WAIT=0
+[18:29:41]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:41]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:41]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:41]  	BOX64_LOG=1
+[18:29:41]  	BOX64_NOBANNER=0
+[18:29:41]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:41]  	BOX64_UNITYPLAYER=0
+[18:29:41]  	BOX64_DYNAREC=1
+[18:29:41]  	BOX64_DYNAREC_CALLRET=0
+[18:29:41]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[18:29:41]  [BOX64] Rename process to "wine"
+[18:29:41]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:41]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:41]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:41]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:41]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:41]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:41]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:41]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:41]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:41]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:41]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebth.so
+[18:29:41]  [[31mBOX64[0m] Error initializing native libdbus-1.so.3 (last dlerror is libdbus-1.so.3: cannot open shared object file: No such file or directory)
+[18:29:41]  [BOX64] Error loading needed lib libdbus-1.so.3
+[18:29:41]  [BOX64] Warning: Cannot dlopen("libdbus-1.so.3"/0x3f0201441b, 2)
+[18:29:41]  009c:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c00000e5
+[18:29:41]  003c:fixme:service:scmdatabase_autostart_services Auto-start service L"winebth" failed to start: 1359
+[18:29:41]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:41]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:41]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:41]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:41]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:41]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:42]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:42]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:42]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:42]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:42]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:42]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140022000"
+[18:29:42]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:42]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:42]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:42]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:42]  [BOX64] WINE prereserve of 0x140000000:0x140022000 done
+[18:29:42]  [BOX64] Detected running wine with "explorer.exe"
+[18:29:42]  [BOX64] Counted 81 Env var
+[18:29:42]  [BOX64] Library search path: 
+[18:29:42]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:42]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:42]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:42]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:42]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:42]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:42]  	BOX64_DYNAREC_FORWARD=128
+[18:29:42]  	BOX64_DYNAREC_MISSING=1
+[18:29:42]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:42]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:42]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:42]  	BOX64_DYNAREC_WAIT=0
+[18:29:42]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:42]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:42]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:42]  	BOX64_LOG=1
+[18:29:42]  	BOX64_NOBANNER=0
+[18:29:42]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:42]  	BOX64_UNITYPLAYER=0
+[18:29:42]  	BOX64_DYNAREC=1
+[18:29:42]  	BOX64_DYNAREC_CALLRET=0
+[18:29:42]  [BOX64] argv[1]="C:\windows\system32\explorer.exe"
+[18:29:42]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[18:29:42]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[18:29:42]  [BOX64] argv[4]="/dir"
+[18:29:42]  [BOX64] argv[5]="C:\windows"
+[18:29:42]  [BOX64] argv[6]=""wfm.exe""
+[18:29:42]  [BOX64] Rename process to "wine"
+[18:29:42]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:42]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:42]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:42]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:42]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:42]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:42]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:42]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[18:29:42]  [BOX64] Using native(wrapped) libXext.so.6
+[18:29:42]  [BOX64] Using native(wrapped) libX11.so.6
+[18:29:42]  [BOX64] Using native(wrapped) libxcb.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libXau.so.6
+[18:29:42]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[18:29:42]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[18:29:42]  [BOX64] Error loading needed lib libXinerama.so.1
+[18:29:42]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0305e8e1, 2)
+[18:29:42]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libXrender.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libXrandr.so.2
+[18:29:42]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libXi.so.6
+[18:29:42]  [BOX64] Using native(wrapped) libvulkan.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libXcursor.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libXfixes.so.3
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:42]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:42]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:42]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:42]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:42]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:42]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140014000"
+[18:29:42]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:42]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:42]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:42]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:42]  [BOX64] WINE prereserve of 0x140000000:0x140014000 done
+[18:29:42]  [BOX64] Detected running wine with "winhandler.exe"
+[18:29:42]  [BOX64] Counted 81 Env var
+[18:29:42]  [BOX64] Library search path: 
+[18:29:42]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:42]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:42]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:42]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:42]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:42]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:42]  	BOX64_DYNAREC_FORWARD=128
+[18:29:42]  	BOX64_DYNAREC_MISSING=1
+[18:29:42]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:42]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:42]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:42]  	BOX64_DYNAREC_WAIT=0
+[18:29:42]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:42]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:42]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:42]  	BOX64_LOG=1
+[18:29:42]  	BOX64_NOBANNER=0
+[18:29:42]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:42]  	BOX64_UNITYPLAYER=0
+[18:29:42]  	BOX64_DYNAREC=1
+[18:29:42]  	BOX64_DYNAREC_CALLRET=0
+[18:29:42]  [BOX64] argv[1]="C:\windows\winhandler.exe"
+[18:29:42]  [BOX64] argv[2]="/dir"
+[18:29:42]  [BOX64] argv[3]="C:\windows"
+[18:29:42]  [BOX64] argv[4]=""wfm.exe""
+[18:29:42]  [BOX64] Rename process to "wine"
+[18:29:42]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:42]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:42]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:42]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:42]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:42]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:42]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:42]  00b0:trace:seh:dispatch_exception code=6ba (RPC_S_SERVER_UNAVAILABLE) flags=0 addr=000000027FBDD887
+[18:29:42]  00b0:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=00000000801ed5e0 rbp=0000000000000005 eflags=00000202
+[18:29:42]  00b0:trace:seh:dispatch_exception rax=00000000801ed600 rbx=00000000801ee480 rcx=00000000801ed600 rdx=0000000000000000
+[18:29:42]  00b0:trace:seh:dispatch_exception rsi=0000000000000064 rdi=0000000080819490  r8=0000000000000000  r9=0000000000000000
+[18:29:42]  00b0:trace:seh:dispatch_exception r10=00000000808195d0 r11=0000000000000010 r12=00000000801ee480 r13=000000027f3626d4
+[18:29:42]  00b0:trace:seh:dispatch_exception r14=0000000000000000 r15=00000000801ed790 mxcsr=00001f80 cs=0033 ss=002b
+[18:29:42]  00b0:trace:seh:call_seh_handlers calling TEB handler 000000027F7380A0 (rec=00000000801ED600 frame=00000000801ED810 context=00000000801ED100 dispatch=00000000801EC9E0) sp=801ee190
+[18:29:42]  00b0:trace:seh:call_seh_handlers TEB handler at 000000027F7380A0 returned 1
+[18:29:42]  00b0:trace:seh:call_seh_handlers calling TEB handler 000000027F346500 (rec=00000000801ED600 frame=00000000801EECF0 context=00000000801ED100 dispatch=00000000801EC9E0) sp=801eee40
+[18:29:42]  00b0:trace:seh:RtlUnwindEx code=6ba flags=2 end_frame=00000000801EECF0 target_ip=000000027F334E3A
+[18:29:42]  00b0:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=00000000801ebce0 rbp=00000000801ebe50 eflags=00000202
+[18:29:42]  00b0:trace:seh:RtlUnwindEx rax=00000000801ed810 rbx=00000000801ed600 rcx=00000000801ec3a0 rdx=000000027f334e3a
+[18:29:42]  00b0:trace:seh:RtlUnwindEx rsi=00000000801ec3a0 rdi=00000000801ebe50  r8=00000000801ed600  r9=000000027f356c20
+[18:29:42]  00b0:trace:seh:RtlUnwindEx r10=0000003f00091540 r11=0000000000000000 r12=0000000000000000 r13=00000000801ed600
+[18:29:42]  00b0:trace:seh:RtlUnwindEx r14=00000000801ec3a0 r15=00000000801ecb10 mxcsr=00001f80 cs=0033 ss=002b
+[18:29:42]  00b0:trace:seh:RtlUnwindEx calling TEB handler 000000027F7380A0 (rec=00000000801ED600, frame=00000000801ED810 context=00000000801EC3A0, dispatch=00000000801EBD60)
+[18:29:42]  00b0:trace:seh:RtlUnwindEx handler at 000000027F7380A0 returned 1
+[18:29:42]  00b0:trace:seh:RtlRestoreContext returning to 000000027F334E3A stack 00000000801EECB0
+[18:29:42]  00b0:err:ole:start_rpcss Failed to start RpcSs service
+[18:29:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:43]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:43]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[18:29:43]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:29:43]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:43]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:43]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:43]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:43]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14004c000"
+[18:29:43]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:43]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:43]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:43]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:43]  [BOX64] WINE prereserve of 0x140000000:0x14004c000 done
+[18:29:43]  [BOX64] Detected running wine with "wfm.exe"
+[18:29:43]  [BOX64] Counted 81 Env var
+[18:29:43]  [BOX64] Library search path: 
+[18:29:43]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:43]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:43]  [BOX64] Applied settings from rcfile
+[18:29:43]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:43]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:43]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:43]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:43]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:29:43]  	BOX64_DYNAREC_FASTNAN=0
+[18:29:43]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:43]  	BOX64_DYNAREC_FORWARD=128
+[18:29:43]  	BOX64_DYNAREC_MISSING=1
+[18:29:43]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:43]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:43]  	BOX64_DYNAREC_STRONGMEM=2
+[18:29:43]  	BOX64_DYNAREC_WAIT=0
+[18:29:43]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:29:43]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:43]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:43]  	BOX64_LOG=1
+[18:29:43]  	BOX64_NOBANNER=0
+[18:29:43]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:43]  	BOX64_UNITYPLAYER=0
+[18:29:43]  	BOX64_DYNAREC=0
+[18:29:43]  	BOX64_DYNAREC_CALLRET=0
+[18:29:43]  [BOX64] argv[1]="C:\windows\wfm.exe"
+[18:29:43]  [BOX64] Rename process to "wine"
+[18:29:43]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:43]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:43]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:43]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:43]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:43]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:43]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:43]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:43]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:43]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[18:29:43]  [BOX64] Using native(wrapped) libXext.so.6
+[18:29:43]  [BOX64] Using native(wrapped) libX11.so.6
+[18:29:43]  [BOX64] Using native(wrapped) libxcb.so.1
+[18:29:43]  [BOX64] Using native(wrapped) libXau.so.6
+[18:29:43]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[18:29:43]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[18:29:43]  [BOX64] Error loading needed lib libXinerama.so.1
+[18:29:43]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0305e8e1, 2)
+[18:29:43]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[18:29:43]  [BOX64] Using native(wrapped) libXrender.so.1
+[18:29:43]  [BOX64] Using native(wrapped) libXrandr.so.2
+[18:29:43]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[18:29:43]  [BOX64] Using native(wrapped) libXi.so.6
+[18:29:43]  [BOX64] Using native(wrapped) libXcursor.so.1
+[18:29:43]  [BOX64] Using native(wrapped) libXfixes.so.3
+[18:29:43]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:43]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:44]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:44]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:48]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:48]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:08]  [BOX64] Box64 arm64 v0.4.3 ef8b463 with Dynarec built on Jul 23 2026 13:53:50
+[18:30:08]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:30:08]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:30:08]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:30:08]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:30:08]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140027000"
+[18:30:08]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:30:08]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:30:08]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:30:08]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:30:08]  [BOX64] WINE prereserve of 0x140000000:0x140027000 done
+[18:30:08]  [BOX64] Detected running wine with "Stardew Valley.exe"
+[18:30:08]  [BOX64] Counted 81 Env var
+[18:30:08]  [BOX64] Library search path: 
+[18:30:08]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:30:08]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:30:08]  [BOX64] BOX64ENV: Variables overridden:
+[18:30:08]  	BOX64_DYNAREC_BIGBLOCK=0
+[18:30:08]  	BOX64_DYNAREC_FASTNAN=0
+[18:30:08]  	BOX64_DYNAREC_FASTROUND=0
+[18:30:08]  	BOX64_DYNAREC_FORWARD=128
+[18:30:08]  	BOX64_DYNAREC_MISSING=1
+[18:30:08]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:30:08]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:30:08]  	BOX64_DYNAREC_STRONGMEM=2
+[18:30:08]  	BOX64_DYNAREC_WAIT=0
+[18:30:08]  	BOX64_DYNAREC_WEAKBARRIER=0
+[18:30:08]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:30:08]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:30:08]  	BOX64_LOG=1
+[18:30:08]  	BOX64_NOBANNER=0
+[18:30:08]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:30:08]  	BOX64_UNITYPLAYER=0
+[18:30:08]  	BOX64_DYNAREC=1
+[18:30:08]  	BOX64_DYNAREC_CALLRET=0
+[18:30:08]  [BOX64] argv[1]="E:\Stardew Valley(no mods)\Stardew Valley.exe"
+[18:30:08]  [BOX64] Rename process to "wine"
+[18:30:08]  [BOX64] Using native(wrapped) libdl.so.2
+[18:30:08]  [BOX64] Using native(wrapped) libc.so.6
+[18:30:08]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:30:08]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:30:08]  [BOX64] Using native(wrapped) libutil.so.1
+[18:30:08]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:30:08]  [BOX64] Using native(wrapped) librt.so.1
+[18:30:08]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:30:08]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:30:08]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:30:08]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:30:08]  [BOX64] Using native(wrapped) libm.so.6
+[18:30:08]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:30:08]  00dc:fixme:heap:GetNumaHighestNodeNumber semi-stub: 000000008016EF58
+[18:30:08]  00dc:fixme:seh:WerRegisterRuntimeExceptionModule (L"E:\\Stardew Valley(no mods)\\mscordaccore.dll", 000000027E870000) stub
+[18:30:08]  00dc:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+[18:30:09]  00dc:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 0000000140338A88, 34) stub
+[18:30:09]  00dc:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 0000000140338428, 17) stub
+[18:30:10]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[18:30:10]  [BOX64] Using native(wrapped) libXext.so.6
+[18:30:10]  [BOX64] Using native(wrapped) libX11.so.6
+[18:30:10]  [BOX64] Using native(wrapped) libxcb.so.1
+[18:30:10]  [BOX64] Using native(wrapped) libXau.so.6
+[18:30:10]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[18:30:10]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[18:30:10]  [BOX64] Error loading needed lib libXinerama.so.1
+[18:30:10]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0305e8e1, 2)
+[18:30:10]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[18:30:10]  [BOX64] Using native(wrapped) libXrender.so.1
+[18:30:10]  [BOX64] Using native(wrapped) libXrandr.so.2
+[18:30:10]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[18:30:10]  [BOX64] Using native(wrapped) libXi.so.6
+[18:30:10]  [BOX64] Using native(wrapped) libXcursor.so.1
+[18:30:10]  [BOX64] Using native(wrapped) libXfixes.so.3
+[18:30:10]  00f0:trace:seh:dispatch_exception code=6ba (RPC_S_SERVER_UNAVAILABLE) flags=0 addr=000000027FBDD887
+[18:30:10]  00f0:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=0000000081bee450 rbp=0000000000000001 eflags=00000206
+[18:30:10]  00f0:trace:seh:dispatch_exception rax=0000000081bee470 rbx=0000000081bef2f0 rcx=0000000081bee470 rdx=0000000000000000
+[18:30:10]  00f0:trace:seh:dispatch_exception rsi=0000000000000000 rdi=00000000816b09c0  r8=0000000000000000  r9=0000000000000000
+[18:30:10]  00f0:trace:seh:dispatch_exception r10=0000000000000000 r11=00000000801a1800 r12=0000000081bef2f0 r13=000000027f9348bc
+[18:30:10]  00f0:trace:seh:dispatch_exception r14=0000000000000000 r15=0000000081bee600 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:10]  00f0:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=6ba flags=0
+[18:30:10]  00f0:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:10]  00f0:trace:seh:call_seh_handlers calling TEB handler 000000027E6F80A0 (rec=0000000081BEE470 frame=0000000081BEE680 context=0000000081BEDF70 dispatch=0000000081BED850) sp=81bef000
+[18:30:10]  00f0:trace:seh:call_seh_handlers TEB handler at 000000027E6F80A0 returned 1
+[18:30:10]  00f0:trace:seh:call_seh_handlers calling TEB handler 000000027F929290 (rec=0000000081BEE470 frame=0000000081BEFBC0 context=0000000081BEDF70 dispatch=0000000081BED850) sp=81beff80
+[18:30:10]  00f0:trace:seh:RtlUnwindEx code=6ba flags=2 end_frame=0000000081BEFBC0 target_ip=000000027F92322A
+[18:30:10]  00f0:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=0000000081becb50 rbp=0000000081beccc0 eflags=00000206
+[18:30:10]  00f0:trace:seh:RtlUnwindEx rax=0000000081bee680 rbx=0000000081bee470 rcx=0000000081bed210 rdx=000000027f92322a
+[18:30:10]  00f0:trace:seh:RtlUnwindEx rsi=0000000081bed210 rdi=0000000081beccc0  r8=0000000081bee470  r9=000000027f92e630
+[18:30:10]  00f0:trace:seh:RtlUnwindEx r10=0000000081bed620 r11=0000000000000000 r12=0000000000000000 r13=0000000081bee470
+[18:30:10]  00f0:trace:seh:RtlUnwindEx r14=0000000081bed210 r15=0000000081bed980 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:10]  00f0:trace:seh:RtlUnwindEx calling TEB handler 000000027E6F80A0 (rec=0000000081BEE470, frame=0000000081BEE680 context=0000000081BED210, dispatch=0000000081BECBD0)
+[18:30:10]  00f0:trace:seh:RtlUnwindEx handler at 000000027E6F80A0 returned 1
+[18:30:10]  00f0:trace:seh:RtlRestoreContext returning to 000000027F92322A stack 0000000081BEFB00
+[18:30:10]  00f0:err:service:device_notify_proc failed to open RPC handle, error 1722
+[18:30:10]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:10]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:10]  00dc:fixme:win:RegisterTouchWindow hwnd 0000000000010106, flags 0x3 stub!
+[18:30:10]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/bcrypt.so
+[18:30:10]  [BOX64] Using native(wrapped) libgnutls.so.30
+[18:30:10]  00dc:fixme:ntdll:NtQuerySystemInformation SystemLeapSecondInformation - stub
+[18:30:10]  00dc:trace:seh:dispatch_exception code=e06d7363 (EXCEPTION_WINE_CXX_EXCEPTION) flags=1 addr=000000027FBDD887
+[18:30:10]  00dc:trace:seh:dispatch_exception  info[0]=0000000019930520
+[18:30:10]  00dc:trace:seh:dispatch_exception  info[1]=000000008016C238
+[18:30:10]  00dc:trace:seh:dispatch_exception  info[2]=000000027ED0B228
+[18:30:10]  00dc:trace:seh:dispatch_exception  info[3]=000000027E870000
+[18:30:10]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016c0c0 rbp=000000008016c2f0 eflags=00000206
+[18:30:10]  00dc:trace:seh:dispatch_exception rax=000000008016c118 rbx=000000027ed0b228 rcx=000000008016c0e0 rdx=0000000000000000
+[18:30:10]  00dc:trace:seh:dispatch_exception rsi=000000008016c238 rdi=0000000019930520  r8=000000027e870000  r9=000000008016c1d0
+[18:30:10]  00dc:trace:seh:dispatch_exception r10=000000027e870000 r11=000000027e9bc815 r12=0000000000000001 r13=0000000000000000
+[18:30:10]  00dc:trace:seh:dispatch_exception r14=0000000000000000 r15=0000000000000000 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:10]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e06d7363 flags=1
+[18:30:10]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:10]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016C0E0, frame=8016c6f0 context=000000008016BBE0, dispatch=000000008016B4C0)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx code=80000029 flags=3 end_frame=000000008016C6F0 target_ip=000000027E8C8CDA
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[0]=000000027e9bed50
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[1]=000000008016b138
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[2]=000000027e9eb946
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[4]=000000008016bbe0
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[5]=000000027ea14421
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[6]=000000008016c0e0
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[7]=0000000000000000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[8]=0000000019930520
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[9]=000000027e870000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[10]=0000000000000000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[11]=0000000000000008
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[12]=0000000000000000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[13]=0000000000000000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx  info[14]=0000000000000000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016a910 rbp=000000008016aa80 eflags=00000202
+[18:30:10]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016afd0 rcx=000000008016b5f0 rdx=000000027e8c8cda
+[18:30:10]  00dc:trace:seh:RtlUnwindEx rsi=000000008016b5f0 rdi=000000008016aa80  r8=000000008016afd0  r9=0000000000000000
+[18:30:10]  00dc:trace:seh:RtlUnwindEx r10=000000008016b4c0 r11=000000008016b410 r12=000000008016b410 r13=000000008016b3e0
+[18:30:10]  00dc:trace:seh:RtlUnwindEx r14=000000008016b5f0 r15=000000008016b4c0 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016AFD0, frame=8016afa0 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016AFD0, frame=8016b130 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c1f0 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c490 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c4e0 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c550 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c5b0 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c630 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c6b0 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016AFD0, frame=8016c6f0 context=000000008016B5F0, dispatch=000000008016A990)
+[18:30:10]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:10]  00dc:trace:seh:RtlRestoreContext calling consolidate callback 000000027E9BED50 (rec=000000008016AFD0)
+[18:30:11]  00dc:trace:seh:RtlRestoreContext returning to 000000027EA14421 stack 000000008016C6F0
+[18:30:11]  00dc:trace:seh:dispatch_exception code=e0434352 (unknown) flags=1 addr=000000027FBDD887
+[18:30:11]  00dc:trace:seh:dispatch_exception  info[0]=FFFFFFFF80070002
+[18:30:11]  00dc:trace:seh:dispatch_exception  info[1]=0000000000000000
+[18:30:11]  00dc:trace:seh:dispatch_exception  info[2]=0000000000000000
+[18:30:11]  00dc:trace:seh:dispatch_exception  info[3]=0000000000000000
+[18:30:11]  00dc:trace:seh:dispatch_exception  info[4]=000000027E870000
+[18:30:11]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016c4d0 rbp=000000008016c8a0 eflags=00000202
+[18:30:11]  00dc:trace:seh:dispatch_exception rax=000000008016c530 rbx=000000014035bfb8 rcx=000000008016c4f0 rdx=0000000000000000
+[18:30:11]  00dc:trace:seh:dispatch_exception rsi=0000000000000005 rdi=00000000e0434352  r8=000000027e870000  r9=000000008016c678
+[18:30:11]  00dc:trace:seh:dispatch_exception r10=0000000000000006 r11=000000008016c598 r12=0000000140359c98 r13=00000000807fb4f0
+[18:30:11]  00dc:trace:seh:dispatch_exception r14=0000000000000001 r15=000000008016c658 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:11]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e0434352 flags=1
+[18:30:11]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:11]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BCCA8 (rec=000000008016C4F0, frame=8016c5a0 context=000000008016BFF0, dispatch=000000008016B8D0)
+[18:30:11]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BCCA8 returned 1
+[18:30:11]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016C4F0, frame=8016c6f0 context=000000008016BFF0, dispatch=000000008016B8D0)
+[18:30:11]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BC458 returned 1
+[18:30:11]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016C4F0, frame=8016c7b0 context=000000008016BFF0, dispatch=000000008016B8D0)
+[18:30:11]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:11]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016C4F0, frame=8016c8b0 context=000000008016BFF0, dispatch=000000008016B8D0)
+[18:30:11]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:11]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016C4F0, frame=8016c920 context=000000008016BFF0, dispatch=000000008016B8D0)
+[18:30:11]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:11]  00dc:trace:seh:call_seh_handlers calling handler 0000000161BD76EC (rec=000000008016C4F0, frame=8016c9d0 context=000000008016BFF0, dispatch=000000008016B8D0)
+[18:30:11]  00dc:trace:seh:RtlUnwindEx code=e0434352 flags=3 end_frame=000000008016C9D0 target_ip=000000000000BAD0
+[18:30:11]  00dc:trace:seh:RtlUnwindEx  info[0]=ffffffff80070002
+[18:30:11]  00dc:trace:seh:RtlUnwindEx  info[1]=0000000000000000
+[18:30:11]  00dc:trace:seh:RtlUnwindEx  info[2]=0000000000000000
+[18:30:11]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:30:11]  00dc:trace:seh:RtlUnwindEx  info[4]=000000027e870000
+[18:30:11]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016aa20 rbp=000000008016ab90 eflags=00000202
+[18:30:11]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016c4f0 rcx=000000008016b0e0 rdx=000000000000bad0
+[18:30:11]  00dc:trace:seh:RtlUnwindEx rsi=000000008016b0e0 rdi=000000008016ab90  r8=000000008016c4f0  r9=00000000808053a0
+[18:30:11]  00dc:trace:seh:RtlUnwindEx r10=0000000162187dbb r11=000000008016a220 r12=00000000807c86c0 r13=0000000080801970
+[18:30:11]  00dc:trace:seh:RtlUnwindEx r14=000000008016b0e0 r15=00000000808053a0 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:11]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016C4F0, frame=8016b5f0 context=000000008016B0E0, dispatch=000000008016AAA0)
+[18:30:11]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:11]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016C4F0, frame=8016c6b0 context=000000008016B0E0, dispatch=000000008016AAA0)
+[18:30:11]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:11]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016C4F0, frame=8016c6f0 context=000000008016B0E0, dispatch=000000008016AAA0)
+[18:30:11]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:11]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016C4F0, frame=8016c7b0 context=000000008016B0E0, dispatch=000000008016AAA0)
+[18:30:11]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:11]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016C4F0, frame=8016c8b0 context=000000008016B0E0, dispatch=000000008016AAA0)
+[18:30:11]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:11]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016C4F0, frame=8016c920 context=000000008016B0E0, dispatch=000000008016AAA0)
+[18:30:11]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:11]  00dc:trace:seh:RtlUnwindEx calling handler 0000000161BD76EC (rec=000000008016C4F0, frame=8016c9d0 context=000000008016B0E0, dispatch=000000008016AAA0)
+[18:30:11]  00dc:trace:seh:RtlRestoreContext returning to 0000000162187B55 stack 000000008016C9D0
+[18:30:11]  00dc:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 00000001404CDAE0, 38) stub
+[18:30:12]  00dc:fixme:nls:get_dummy_preferred_ui_language (0x8 0x409 000000008016ACA0 0000000000000000 000000008016AC98) returning a dummy value (current locale)
+[18:30:12]  00dc:fixme:nls:get_dummy_preferred_ui_language (0x8 0x409 000000008016ACA0 000000008016ABF0 000000008016AC98) returning a dummy value (current locale)
+[18:30:45]  00dc:trace:seh:dispatch_exception code=e06d7363 (EXCEPTION_WINE_CXX_EXCEPTION) flags=1 addr=000000027FBDD887
+[18:30:45]  00dc:trace:seh:dispatch_exception  info[0]=0000000019930520
+[18:30:45]  00dc:trace:seh:dispatch_exception  info[1]=000000008016C2A8
+[18:30:45]  00dc:trace:seh:dispatch_exception  info[2]=000000027ED0B228
+[18:30:45]  00dc:trace:seh:dispatch_exception  info[3]=000000027E870000
+[18:30:45]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016c130 rbp=000000008016c360 eflags=00000206
+[18:30:45]  00dc:trace:seh:dispatch_exception rax=000000008016c188 rbx=000000027ed0b228 rcx=000000008016c150 rdx=0000000000000000
+[18:30:46]  00dc:trace:seh:dispatch_exception rsi=000000008016c2a8 rdi=0000000019930520  r8=000000027e870000  r9=000000008016c240
+[18:30:46]  00dc:trace:seh:dispatch_exception r10=000000027e870000 r11=000000027e9bc815 r12=0000000000000001 r13=0000000000000000
+[18:30:46]  00dc:trace:seh:dispatch_exception r14=0000000000000000 r15=0000000000000000 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:46]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e06d7363 flags=1
+[18:30:46]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:46]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016C150, frame=8016c760 context=000000008016BC50, dispatch=000000008016B530)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx code=80000029 flags=3 end_frame=000000008016C760 target_ip=000000027E8C8CDA
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[0]=000000027e9bed50
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[1]=000000008016b1a8
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[2]=000000027e9eb946
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[4]=000000008016bc50
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[5]=000000027ea14421
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[6]=000000008016c150
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[7]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[8]=0000000019930520
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[9]=000000027e870000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[10]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[11]=0000000000000008
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[12]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[13]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[14]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016a980 rbp=000000008016aaf0 eflags=00000202
+[18:30:46]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016b040 rcx=000000008016b660 rdx=000000027e8c8cda
+[18:30:46]  00dc:trace:seh:RtlUnwindEx rsi=000000008016b660 rdi=000000008016aaf0  r8=000000008016b040  r9=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx r10=000000008016b530 r11=000000008016b480 r12=000000008016b480 r13=000000008016b450
+[18:30:46]  00dc:trace:seh:RtlUnwindEx r14=000000008016b660 r15=000000008016b530 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016B040, frame=8016b010 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016B040, frame=8016b1a0 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c260 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c500 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c550 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c5c0 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c620 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c6a0 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c720 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016B040, frame=8016c760 context=000000008016B660, dispatch=000000008016AA00)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlRestoreContext calling consolidate callback 000000027E9BED50 (rec=000000008016B040)
+[18:30:46]  00dc:trace:seh:RtlRestoreContext returning to 000000027EA14421 stack 000000008016C760
+[18:30:46]  00dc:trace:seh:dispatch_exception code=e0434352 (unknown) flags=1 addr=000000027FBDD887
+[18:30:46]  00dc:trace:seh:dispatch_exception  info[0]=FFFFFFFF80070002
+[18:30:46]  00dc:trace:seh:dispatch_exception  info[1]=0000000000000000
+[18:30:46]  00dc:trace:seh:dispatch_exception  info[2]=0000000000000000
+[18:30:46]  00dc:trace:seh:dispatch_exception  info[3]=0000000000000000
+[18:30:46]  00dc:trace:seh:dispatch_exception  info[4]=000000027E870000
+[18:30:46]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016c540 rbp=000000008016c910 eflags=00000202
+[18:30:46]  00dc:trace:seh:dispatch_exception rax=000000008016c5a0 rbx=0000000141a069b0 rcx=000000008016c560 rdx=0000000000000000
+[18:30:46]  00dc:trace:seh:dispatch_exception rsi=0000000000000005 rdi=00000000e0434352  r8=000000027e870000  r9=000000008016c6e8
+[18:30:46]  00dc:trace:seh:dispatch_exception r10=0000000000000006 r11=000000008016c608 r12=0000000141a06150 r13=00000000807fb4f0
+[18:30:46]  00dc:trace:seh:dispatch_exception r14=0000000000000001 r15=000000008016c6c8 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:46]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e0434352 flags=1
+[18:30:46]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:46]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BCCA8 (rec=000000008016C560, frame=8016c610 context=000000008016C060, dispatch=000000008016B940)
+[18:30:46]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BCCA8 returned 1
+[18:30:46]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016C560, frame=8016c760 context=000000008016C060, dispatch=000000008016B940)
+[18:30:46]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016C560, frame=8016c820 context=000000008016C060, dispatch=000000008016B940)
+[18:30:46]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:46]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016C560, frame=8016c920 context=000000008016C060, dispatch=000000008016B940)
+[18:30:46]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:46]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016C560, frame=8016c990 context=000000008016C060, dispatch=000000008016B940)
+[18:30:46]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:46]  00dc:trace:seh:call_seh_handlers calling handler 0000000161BD76EC (rec=000000008016C560, frame=8016ca40 context=000000008016C060, dispatch=000000008016B940)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx code=e0434352 flags=3 end_frame=000000008016CA40 target_ip=000000000000BAD0
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[0]=ffffffff80070002
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[1]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[2]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx  info[4]=000000027e870000
+[18:30:46]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016aa90 rbp=000000008016ac00 eflags=00000206
+[18:30:46]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016c560 rcx=000000008016b150 rdx=000000000000bad0
+[18:30:46]  00dc:trace:seh:RtlUnwindEx rsi=000000008016b150 rdi=000000008016ac00  r8=000000008016c560  r9=00000000808053a0
+[18:30:46]  00dc:trace:seh:RtlUnwindEx r10=0000000162187dbb r11=000000008016a290 r12=00000000807c86c0 r13=0000000080801970
+[18:30:46]  00dc:trace:seh:RtlUnwindEx r14=000000008016b150 r15=00000000808053a0 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016C560, frame=8016b660 context=000000008016B150, dispatch=000000008016AB10)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016C560, frame=8016c720 context=000000008016B150, dispatch=000000008016AB10)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016C560, frame=8016c760 context=000000008016B150, dispatch=000000008016AB10)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016C560, frame=8016c820 context=000000008016B150, dispatch=000000008016AB10)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016C560, frame=8016c920 context=000000008016B150, dispatch=000000008016AB10)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016C560, frame=8016c990 context=000000008016B150, dispatch=000000008016AB10)
+[18:30:46]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:46]  00dc:trace:seh:RtlUnwindEx calling handler 0000000161BD76EC (rec=000000008016C560, frame=8016ca40 context=000000008016B150, dispatch=000000008016AB10)
+[18:30:46]  00dc:trace:seh:RtlRestoreContext returning to 0000000162187B55 stack 000000008016CA40
+[18:30:46]  00dc:fixme:ntdll:RtlGetCurrentProcessorNumberEx (000000008016DAC0) :semi-stub
+[18:30:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/opengl32.so
+[18:30:46]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:46]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:46]  [[31mBOX64[0m] Error initializing native libEGL.so.1 (last dlerror is libEGL.so.1: cannot open shared object file: No such file or directory)
+[18:30:46]  [BOX64] Error loading needed lib libEGL.so.1
+[18:30:46]  [BOX64] Warning: Cannot dlopen("libEGL.so.1"/0x3f02156bf6, 102)
+[18:30:46]  00dc:err:wgl:egl_init Failed to load libEGL.so.1: Cannot dlopen("libEGL.so.1"/0x3f02156bf6, 102)
+[18:30:46]  [BOX64] Using native(wrapped) libGL.so.1
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo GL version             : 4.6 (Compatibility Profile) Mesa 22.2.5.
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo GL renderer            : zink (Turnip Adreno (TM) 725).
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo GLX version            : 1.4.
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo Server GLX version     : 1.4 Mesa 22.2.5.
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo Server GLX vendor:     : Brian Paul.
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo Client GLX version     : 1.4 Mesa 22.2.5.
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo Client GLX vendor:     : Brian Paul.
+[18:30:46]  00dc:trace:wgl:X11DRV_WineGL_InitOpenglInfo Direct rendering enabled: True
+[18:30:46]  00dc:trace:wgl:X11DRV_OpenGLInit GLX is up and running error_base = 128
+[18:30:46]  00dc:trace:wgl:x11drv_init_pixel_formats Found onscreen format FBCONFIG_ID 0x1 corresponding to iPixelFormat 1 at GLX index 0
+[18:30:46]  00dc:trace:wgl:dump_PIXELFORMATDESCRIPTOR size 40 version 1 flags 0x8025 type 0 color 32 8,8,8,8 accum 64 depth 24 stencil 8 aux 0 PFD_DOUBLEBUFFER PFD_DRAW_TO_WINDOW PFD_SUPPORT_OPENGL PFD_SUPPORT_COMPOSITION 
+[18:30:46]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:30:46]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:30:46]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:30:46]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:30:46]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:30:46]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:30:46]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:30:46]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:30:47]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:30:47]  00dc:trace:wgl:register_extension 'WGL_ARB_pixel_format'
+[18:30:47]  00dc:trace:wgl:win32u_wglSetPixelFormat 0x33010049/0x20110 format 1
+[18:30:47]  00dc:trace:wgl:opengl_drawable_create created 0x20110/0x4d9303b0/0x4d930440 (format 1)
+[18:30:47]  00dc:trace:wgl:x11drv_surface_create Created drawable 0x20110/0x4d9303b0/0x4d930440 (format 1) with client window 1800016
+[18:30:47]  00dc:trace:wgl:get_window_unused_drawable hwnd 0x20110, drawable 0x20110/0x4d9303b0/0x4d930440 (format 1)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x20110/0x4d9303b0/0x4d930440 (format 1) increasing refcount to 2
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x20110/0x4d9303b0/0x4d930440 (format 1) increasing refcount to 3
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x20110/0x4d9303b0/0x4d930440 (format 1) decreasing refcount to 2
+[18:30:47]  00dc:trace:wgl:win32u_wgl_context_reset context 0x4dec8e70, hdc 0x33010049, share (nil), attribs (nil)
+[18:30:47]  00dc:trace:wgl:x11drv_context_create (1 (nil) (nil))
+[18:30:47]  00dc:trace:wgl:x11drv_context_create -> 0x4db87cc0
+[18:30:47]  00dc:trace:wgl:win32u_wgl_context_reset reset context 0x4dec8e70, format 1 for driver context 0x4db87cc0
+[18:30:47]  00dc:trace:wgl:win32u_wglMakeContextCurrentARB draw_hdc 0x33010049, read_hdc 0x33010049, context 0x4dec8e70
+[18:30:47]  00dc:trace:wgl:get_dc_opengl_drawable hdc 0x33010049, drawable (null)
+[18:30:47]  00dc:trace:wgl:get_window_unused_drawable hwnd 0x20110, drawable 0x20110/0x4d9303b0/0x4d930440 (format 1)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x20110/0x4d9303b0/0x4d930440 (format 1) increasing refcount to 3
+[18:30:47]  00dc:trace:wgl:context_sync_drawables context 0x4dec8e70, new_draw 0x20110/0x4d9303b0/0x4d930440 (format 1), new_read 0x20110/0x4d9303b0/0x4d930440 (format 1)
+[18:30:47]  00dc:trace:wgl:x11drv_make_current draw 0x20110/0x4d9303b0/0x4d930440 (format 1), read 0x20110/0x4d9303b0/0x4d930440 (format 1), context 0x4db87cc0
+[18:30:47]  00dc:trace:wgl:x11drv_surface_flush 0x20110/0x4d9303b0/0x4d930440 (format 1) flags 0x4
+[18:30:47]  00dc:trace:wgl:x11drv_surface_flush 0x20110/0x4d9303b0/0x4d930440 (format 1) flags 0x8
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x20110/0x4d9303b0/0x4d930440 (format 1) increasing refcount to 4
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x20110/0x4d9303b0/0x4d930440 (format 1) decreasing refcount to 3
+[18:30:47]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetStringi" -> 0x60502a80
+[18:30:47]  00dc:trace:wgl:win32u_wglGetExtensionsStringARB hdc 0x33010049
+[18:30:47]  00dc:trace:wgl:dump_extensions WGL_ARB_pixel_format WGL_ARB_extensions_string WGL_EXT_extensions_string WGL_WINE_pixel_format_passthrough
+[18:30:47]  00dc:trace:wgl:dump_extensions WGL_ARB_create_context WGL_ARB_create_context_no_error WGL_ARB_create_context_profile WGL_ARB_make_current_read WGL_ARB_pbuffer
+[18:30:47]  00dc:trace:wgl:dump_extensions WGL_ARB_render_texture WGL_EXT_swap_control WGL_EXT_swap_control_tear
+[18:30:47]  00dc:trace:wgl:win32u_wglMakeContextCurrentARB draw_hdc (nil), read_hdc (nil), context (nil)
+[18:30:47]  00dc:trace:wgl:context_unset_current context 0x4dec8e70
+[18:30:47]  00dc:trace:wgl:x11drv_make_current draw (null), read (null), context (nil)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x20110/0x4d9303b0/0x4d930440 (format 1) increasing refcount to 4
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x20110/0x4d9303b0/0x4d930440 (format 1) decreasing refcount to 3
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x20110/0x4d9303b0/0x4d930440 (format 1) increasing refcount to 4
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x20110/0x4d9303b0/0x4d930440 (format 1) decreasing refcount to 3
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x20110/0x4d9303b0/0x4d930440 (format 1) decreasing refcount to 2
+[18:30:47]  00dc:trace:wgl:win32u_wgl_context_reset context 0x4dec8e70, hdc (nil), share (nil), attribs (nil)
+[18:30:47]  00dc:trace:wgl:x11drv_context_destroy (0x4db87cc0)
+[18:30:47]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:47]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release (nil)/0x4d9303b0/0x4d930440 (format 1) decreasing refcount to 1
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release (nil)/0x4d9303b0/0x4d930440 (format 1) decreasing refcount to 0
+[18:30:47]  00dc:trace:wgl:x11drv_surface_destroy drawable (nil)/0x4d9303b0/0x4d930440 (format 1)
+[18:30:47]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:47]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:47]  00dc:fixme:win:RegisterTouchWindow hwnd 0000000000030110, flags 0x3 stub!
+[18:30:47]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:30:47]  00dc:trace:wgl:win32u_wglSetPixelFormat 0x601004c/0x2010c format 1
+[18:30:47]  00dc:trace:wgl:opengl_drawable_create created 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1)
+[18:30:47]  00dc:trace:wgl:x11drv_surface_create Created drawable 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) with client window 180001c
+[18:30:47]  00dc:trace:wgl:get_window_unused_drawable hwnd 0x2010c, drawable 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) increasing refcount to 2
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) increasing refcount to 3
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) decreasing refcount to 2
+[18:30:47]  00dc:trace:wgl:win32u_wgl_context_reset context 0x4ddbbe90, hdc 0x601004c, share (nil), attribs (nil)
+[18:30:47]  00dc:trace:wgl:x11drv_context_create (1 (nil) (nil))
+[18:30:47]  00dc:trace:wgl:x11drv_context_create -> 0x4d9304e0
+[18:30:47]  00dc:trace:wgl:win32u_wgl_context_reset reset context 0x4ddbbe90, format 1 for driver context 0x4d9304e0
+[18:30:47]  00dc:trace:wgl:win32u_wglMakeContextCurrentARB draw_hdc 0x601004c, read_hdc 0x601004c, context 0x4ddbbe90
+[18:30:47]  00dc:trace:wgl:get_dc_opengl_drawable hdc 0x601004c, drawable (null)
+[18:30:47]  00dc:trace:wgl:get_window_unused_drawable hwnd 0x2010c, drawable 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) increasing refcount to 3
+[18:30:47]  00dc:trace:wgl:context_sync_drawables context 0x4ddbbe90, new_draw 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1), new_read 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1)
+[18:30:47]  00dc:trace:wgl:x11drv_make_current draw 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1), read 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1), context 0x4d9304e0
+[18:30:47]  00dc:trace:wgl:x11drv_surface_flush 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) flags 0x4
+[18:30:47]  00dc:trace:wgl:x11drv_surface_flush 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) flags 0x8
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) increasing refcount to 4
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) decreasing refcount to 3
+[18:30:47]  00dc:trace:wgl:win32u_wglMakeContextCurrentARB draw_hdc (nil), read_hdc (nil), context (nil)
+[18:30:47]  00dc:trace:wgl:context_unset_current context 0x4ddbbe90
+[18:30:47]  00dc:trace:wgl:x11drv_make_current draw (null), read (null), context (nil)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) increasing refcount to 4
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) decreasing refcount to 3
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) increasing refcount to 4
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) decreasing refcount to 3
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release 0x2010c/0x4dd28d40/0x4dd28dd0 (format 1) decreasing refcount to 2
+[18:30:47]  00dc:trace:wgl:win32u_wgl_context_reset context 0x4ddbbe90, hdc (nil), share (nil), attribs (nil)
+[18:30:47]  00dc:trace:wgl:x11drv_context_destroy (0x4d9304e0)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release (nil)/0x4dd28d40/0x4dd28dd0 (format 1) decreasing refcount to 1
+[18:30:47]  00dc:trace:wgl:opengl_drawable_release (nil)/0x4dd28d40/0x4dd28dd0 (format 1) decreasing refcount to 0
+[18:30:47]  00dc:trace:wgl:x11drv_surface_destroy drawable (nil)/0x4dd28d40/0x4dd28dd0 (format 1)
+[18:30:47]  00dc:trace:wgl:win32u_wglSetPixelFormat 0x33010049/0x30110 format 1
+[18:30:47]  00dc:trace:wgl:opengl_drawable_create created 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:47]  00dc:trace:wgl:x11drv_surface_create Created drawable 0x30110/0x4d9309c0/0x4dec7b70 (format 1) with client window 180001e
+[18:30:47]  00dc:trace:wgl:get_window_unused_drawable hwnd 0x30110, drawable 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 2
+[18:30:47]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 3
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 2
+[18:30:48]  00dc:trace:wgl:win32u_wgl_context_reset context 0x4d936000, hdc 0x33010049, share (nil), attribs (nil)
+[18:30:48]  00dc:trace:wgl:x11drv_context_create (1 (nil) (nil))
+[18:30:48]  00dc:trace:wgl:x11drv_context_create -> 0x4d9304e0
+[18:30:48]  00dc:trace:wgl:win32u_wgl_context_reset reset context 0x4d936000, format 1 for driver context 0x4d9304e0
+[18:30:48]  00dc:trace:wgl:win32u_wglMakeContextCurrentARB draw_hdc 0x33010049, read_hdc 0x33010049, context 0x4d936000
+[18:30:48]  00dc:trace:wgl:get_dc_opengl_drawable hdc 0x33010049, drawable (null)
+[18:30:48]  00dc:trace:wgl:get_window_unused_drawable hwnd 0x30110, drawable 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 3
+[18:30:48]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:48]  00dc:trace:wgl:x11drv_make_current draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), read 0x30110/0x4d9309c0/0x4dec7b70 (format 1), context 0x4d9304e0
+[18:30:48]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x4
+[18:30:48]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x8
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glEnableVertexAttribArray" -> 0x60502aa0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDisableVertexAttribArray" -> 0x60502ac0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDepthRangef" -> 0x60502ae0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBindBuffer" -> 0x60502b00
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDrawBuffers" -> 0x60502b20
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glUniform1i" -> 0x60502b40
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glUniform4fv" -> 0x60502b60
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGenRenderbuffers" -> 0x60502b80
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBindRenderbuffer" -> 0x60502ba0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGenFramebuffers" -> 0x60502bc0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glFramebufferTexture2D" -> 0x60502be0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glFramebufferRenderbuffer" -> 0x60502c00
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glRenderbufferStorage" -> 0x60502c20
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glRenderbufferStorageMultisample" -> 0x60502c40
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGenerateMipmap" -> 0x60502c60
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBlitFramebuffer" -> 0x60502c80
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glCheckFramebufferStatus" -> 0x60502ca0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGenQueries" -> 0x60502cc0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBeginQuery" -> 0x60502ce0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glEndQuery" -> 0x60502d00
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetQueryObjectuiv" -> 0x60502d20
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDeleteQueries" -> 0x60502d40
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glActiveTexture" -> 0x60502d60
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glCreateShader" -> 0x60502d80
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glShaderSource" -> 0x60502da0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glCompileShader" -> 0x60502dc0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetShaderiv" -> 0x60502de0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetShaderInfoLog" -> 0x60502e00
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glIsShader" -> 0x60502e20
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDeleteShader" -> 0x60502e40
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetAttribLocation" -> 0x60502e60
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetUniformLocation" -> 0x60502e80
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glIsProgram" -> 0x60502ea0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDeleteProgram" -> 0x60502ec0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glCreateProgram" -> 0x60502ee0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glAttachShader" -> 0x60502f00
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glUseProgram" -> 0x60502f20
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glLinkProgram" -> 0x60502f40
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetProgramiv" -> 0x60502f60
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetProgramInfoLog" -> 0x60502f80
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDetachShader" -> 0x60502fa0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBlendColor" -> 0x60502fc0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBlendEquationSeparate" -> 0x60502fe0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBlendEquationSeparatei" -> 0x60503000
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBlendFuncSeparate" -> 0x60503020
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBlendFuncSeparatei" -> 0x60503040
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glStencilFuncSeparate" -> 0x60503060
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glStencilOpSeparate" -> 0x60503080
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glCompressedTexImage2D" -> 0x605030a0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glCompressedTexSubImage2D" -> 0x605030c0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGetCompressedTexImage" -> 0x605030e0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glTexImage3D" -> 0x60503100
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glTexSubImage3D" -> 0x60503120
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glGenBuffers" -> 0x60503140
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBufferData" -> 0x60503160
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glMapBuffer" -> 0x60503180
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glUnmapBuffer" -> 0x605031a0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glBufferSubData" -> 0x605031c0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDeleteBuffers" -> 0x605031e0
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glVertexAttribPointer" -> 0x60503200
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDrawElementsInstanced" -> 0x60503220
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glVertexAttribDivisor" -> 0x60503240
+[18:30:48]  00dc:trace:wgl:win32u_wglGetProcAddress "glDrawElementsInstancedBaseInstance" -> 0x60503260
+[18:30:48]  00dc:trace:wgl:win32u_wglSwapIntervalEXT setting window 0x30110 swap interval 1
+[18:30:48]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush (nil), flags 0
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:48]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:48]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x2
+[18:30:48]  00dc:warn:wgl:set_swap_interval Request to adjust swap interval is not handled
+[18:30:48]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush (nil), flags 0
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:48]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:48]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:48]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winealsa.so
+[18:30:49]  [BOX64] Using native(wrapped) libasound.so.2
+[18:30:49]  010c:fixme:avrt:AvSetMmThreadCharacteristicsW (L"Pro Audio",000000016540FEE8): stub
+[18:30:50]  00fc:trace:seh:RtlGetExtendedContextLength2 context_flags 0x4010005b, length 0000000162DFE8C0, compaction_mask 7.
+[18:30:50]  00fc:trace:seh:RtlGetExtendedContextLength2 context_flags 0x4010005b, length 0000000162DFE8C0, compaction_mask 7.
+[18:30:50]  00fc:trace:seh:RtlInitializeExtendedContext2 context 0000000164034F20, context_flags 0x4010005b, context_ex 0000000162DFE8C8, compaction_mask 7.
+[18:30:51]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush (nil), flags 0
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:51]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:51]  00dc:trace:wgl:win32u_wglSwapIntervalEXT setting window 0x30110 swap interval 1
+[18:30:51]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush (nil), flags 0
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:51]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:51]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x4
+[18:30:51]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:51]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:51]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x5
+[18:30:51]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:51]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:51]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:51]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:51]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:51]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:51]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:51]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:52]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:52]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:52]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:52]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:52]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:53]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:53]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:53]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:53]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:54]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:54]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:54]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:54]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:55]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:55]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:55]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:55]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:55]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:55]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:55]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:55]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:55]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:55]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:55]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:56]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:56]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:56]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:56]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:56]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:56]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:56]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:56]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:56]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:56]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:56]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:56]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:56]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:57]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:57]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:57]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:57]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:57]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:57]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:57]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:57]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:57]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:57]  00dc:trace:seh:dispatch_exception code=e06d7363 (EXCEPTION_WINE_CXX_EXCEPTION) flags=1 addr=000000027FBDD887
+[18:30:57]  00dc:trace:seh:dispatch_exception  info[0]=0000000019930520
+[18:30:57]  00dc:trace:seh:dispatch_exception  info[1]=000000008016CF38
+[18:30:57]  00dc:trace:seh:dispatch_exception  info[2]=000000027ED0B228
+[18:30:57]  00dc:trace:seh:dispatch_exception  info[3]=000000027E870000
+[18:30:57]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016cdc0 rbp=000000008016cff0 eflags=00000206
+[18:30:57]  00dc:trace:seh:dispatch_exception rax=000000008016ce18 rbx=000000027ed0b228 rcx=000000008016cde0 rdx=0000000000000000
+[18:30:57]  00dc:trace:seh:dispatch_exception rsi=000000008016cf38 rdi=0000000019930520  r8=000000027e870000  r9=000000008016ced0
+[18:30:57]  00dc:trace:seh:dispatch_exception r10=000000027e870000 r11=000000027e9bc815 r12=0000000000000001 r13=0000000000000000
+[18:30:57]  00dc:trace:seh:dispatch_exception r14=0000000000000000 r15=0000000000000000 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:57]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e06d7363 flags=1
+[18:30:57]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:57]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016CDE0, frame=8016d3f0 context=000000008016C8E0, dispatch=000000008016C1C0)
+[18:30:57]  00dc:trace:seh:RtlUnwindEx code=80000029 flags=3 end_frame=000000008016D3F0 target_ip=000000027E8C8CDA
+[18:30:57]  00dc:trace:seh:RtlUnwindEx  info[0]=000000027e9bed50
+[18:30:57]  00dc:trace:seh:RtlUnwindEx  info[1]=000000008016be38
+[18:30:57]  00dc:trace:seh:RtlUnwindEx  info[2]=000000027e9eb946
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[4]=000000008016c8e0
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[5]=000000027ea14421
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[6]=000000008016cde0
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[7]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[8]=0000000019930520
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[9]=000000027e870000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[10]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[11]=0000000000000008
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[12]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[13]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[14]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016b610 rbp=000000008016b780 eflags=00000202
+[18:30:58]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016bcd0 rcx=000000008016c2f0 rdx=000000027e8c8cda
+[18:30:58]  00dc:trace:seh:RtlUnwindEx rsi=000000008016c2f0 rdi=000000008016b780  r8=000000008016bcd0  r9=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx r10=000000008016c1c0 r11=000000008016c110 r12=000000008016c110 r13=000000008016c0e0
+[18:30:58]  00dc:trace:seh:RtlUnwindEx r14=000000008016c2f0 r15=000000008016c1c0 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016BCD0, frame=8016bca0 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016BCD0, frame=8016be30 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016cef0 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016d190 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016d1e0 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016d250 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016d2b0 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016d330 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016d3b0 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BCD0, frame=8016d3f0 context=000000008016C2F0, dispatch=000000008016B690)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:RtlRestoreContext calling consolidate callback 000000027E9BED50 (rec=000000008016BCD0)
+[18:30:58]  00dc:trace:seh:RtlRestoreContext returning to 000000027EA14421 stack 000000008016D3F0
+[18:30:58]  00dc:trace:seh:dispatch_exception code=e0434352 (unknown) flags=1 addr=000000027FBDD887
+[18:30:58]  00dc:trace:seh:dispatch_exception  info[0]=FFFFFFFF80070002
+[18:30:58]  00dc:trace:seh:dispatch_exception  info[1]=0000000000000000
+[18:30:58]  00dc:trace:seh:dispatch_exception  info[2]=0000000000000000
+[18:30:58]  00dc:trace:seh:dispatch_exception  info[3]=0000000000000000
+[18:30:58]  00dc:trace:seh:dispatch_exception  info[4]=000000027E870000
+[18:30:58]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016d1d0 rbp=000000008016d5a0 eflags=00000202
+[18:30:58]  00dc:trace:seh:dispatch_exception rax=000000008016d230 rbx=0000000140f825a8 rcx=000000008016d1f0 rdx=0000000000000000
+[18:30:58]  00dc:trace:seh:dispatch_exception rsi=0000000000000005 rdi=00000000e0434352  r8=000000027e870000  r9=000000008016d378
+[18:30:58]  00dc:trace:seh:dispatch_exception r10=0000000000000006 r11=000000008016d298 r12=0000000140f81d18 r13=00000000807fb4f0
+[18:30:58]  00dc:trace:seh:dispatch_exception r14=0000000000000001 r15=000000008016d358 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:58]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e0434352 flags=1
+[18:30:58]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:58]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BCCA8 (rec=000000008016D1F0, frame=8016d2a0 context=000000008016CCF0, dispatch=000000008016C5D0)
+[18:30:58]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BCCA8 returned 1
+[18:30:58]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016D1F0, frame=8016d3f0 context=000000008016CCF0, dispatch=000000008016C5D0)
+[18:30:58]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BC458 returned 1
+[18:30:58]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016D1F0, frame=8016d4b0 context=000000008016CCF0, dispatch=000000008016C5D0)
+[18:30:58]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:58]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016D1F0, frame=8016d5b0 context=000000008016CCF0, dispatch=000000008016C5D0)
+[18:30:58]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:58]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016D1F0, frame=8016d620 context=000000008016CCF0, dispatch=000000008016C5D0)
+[18:30:58]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:30:58]  00dc:trace:seh:call_seh_handlers calling handler 0000000161BD76EC (rec=000000008016D1F0, frame=8016d6d0 context=000000008016CCF0, dispatch=000000008016C5D0)
+[18:30:58]  00dc:trace:seh:RtlUnwindEx code=e0434352 flags=3 end_frame=000000008016D6D0 target_ip=000000000000BAD0
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[0]=ffffffff80070002
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[1]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[2]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx  info[4]=000000027e870000
+[18:30:58]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016b720 rbp=000000008016b890 eflags=00000202
+[18:30:58]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016d1f0 rcx=000000008016bde0 rdx=000000000000bad0
+[18:30:58]  00dc:trace:seh:RtlUnwindEx rsi=000000008016bde0 rdi=000000008016b890  r8=000000008016d1f0  r9=00000000808053a0
+[18:30:59]  00dc:trace:seh:RtlUnwindEx r10=0000000162187dbb r11=000000008016af20 r12=00000000807c86c0 r13=0000000080801970
+[18:30:59]  00dc:trace:seh:RtlUnwindEx r14=000000008016bde0 r15=00000000808053a0 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016D1F0, frame=8016c2f0 context=000000008016BDE0, dispatch=000000008016B7A0)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016D1F0, frame=8016d3b0 context=000000008016BDE0, dispatch=000000008016B7A0)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016D1F0, frame=8016d3f0 context=000000008016BDE0, dispatch=000000008016B7A0)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016D1F0, frame=8016d4b0 context=000000008016BDE0, dispatch=000000008016B7A0)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016D1F0, frame=8016d5b0 context=000000008016BDE0, dispatch=000000008016B7A0)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016D1F0, frame=8016d620 context=000000008016BDE0, dispatch=000000008016B7A0)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 0000000161BD76EC (rec=000000008016D1F0, frame=8016d6d0 context=000000008016BDE0, dispatch=000000008016B7A0)
+[18:30:59]  00dc:trace:seh:RtlRestoreContext returning to 0000000162187B55 stack 000000008016D6D0
+[18:30:59]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:59]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:59]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:59]  00dc:trace:seh:RtlRestoreContext returning to 000000021F5F3E4B stack 000000008016E410
+[18:30:59]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:59]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:59]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:59]  00dc:trace:wgl:win32u_wgl_context_flush context 0x4d936000, hwnd 0x30110, interval 1, flush 0x60500b60, flags 0
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 4
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 5
+[18:30:59]  00dc:trace:wgl:context_sync_drawables context 0x4d936000, new_draw 0x30110/0x4d9309c0/0x4dec7b70 (format 1), new_read 0x30110/0x4d9309c0/0x4dec7b70 (format 1)
+[18:30:59]  00dc:trace:wgl:opengl_drawable_add_ref 0x30110/0x4d9309c0/0x4dec7b70 (format 1) increasing refcount to 6
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 5
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 4
+[18:30:59]  00dc:trace:wgl:opengl_drawable_release 0x30110/0x4d9309c0/0x4dec7b70 (format 1) decreasing refcount to 3
+[18:30:59]  00dc:trace:wgl:x11drv_surface_flush 0x30110/0x4d9309c0/0x4dec7b70 (format 1) flags 0x1
+[18:30:59]  00dc:trace:seh:dispatch_exception code=e06d7363 (EXCEPTION_WINE_CXX_EXCEPTION) flags=1 addr=000000027FBDD887
+[18:30:59]  00dc:trace:seh:dispatch_exception  info[0]=0000000019930520
+[18:30:59]  00dc:trace:seh:dispatch_exception  info[1]=000000008016CEA8
+[18:30:59]  00dc:trace:seh:dispatch_exception  info[2]=000000027ED0B228
+[18:30:59]  00dc:trace:seh:dispatch_exception  info[3]=000000027E870000
+[18:30:59]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016cd30 rbp=000000008016cf60 eflags=00000206
+[18:30:59]  00dc:trace:seh:dispatch_exception rax=000000008016cd88 rbx=000000027ed0b228 rcx=000000008016cd50 rdx=0000000000000000
+[18:30:59]  00dc:trace:seh:dispatch_exception rsi=000000008016cea8 rdi=0000000019930520  r8=000000027e870000  r9=000000008016ce40
+[18:30:59]  00dc:trace:seh:dispatch_exception r10=000000027e870000 r11=000000027e9bc815 r12=0000000000000001 r13=0000000000000000
+[18:30:59]  00dc:trace:seh:dispatch_exception r14=0000000000000000 r15=0000000000000000 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:59]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e06d7363 flags=1
+[18:30:59]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:30:59]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016CD50, frame=8016d360 context=000000008016C850, dispatch=000000008016C130)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx code=80000029 flags=3 end_frame=000000008016D360 target_ip=000000027E8C8CDA
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[0]=000000027e9bed50
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[1]=000000008016bda8
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[2]=000000027e9eb946
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[4]=000000008016c850
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[5]=000000027ea14421
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[6]=000000008016cd50
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[7]=0000000000000000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[8]=0000000019930520
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[9]=000000027e870000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[10]=0000000000000000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[11]=0000000000000008
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[12]=0000000000000000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[13]=0000000000000000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx  info[14]=0000000000000000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016b580 rbp=000000008016b6f0 eflags=00000202
+[18:30:59]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016bc40 rcx=000000008016c260 rdx=000000027e8c8cda
+[18:30:59]  00dc:trace:seh:RtlUnwindEx rsi=000000008016c260 rdi=000000008016b6f0  r8=000000008016bc40  r9=0000000000000000
+[18:30:59]  00dc:trace:seh:RtlUnwindEx r10=000000008016c130 r11=000000008016c080 r12=000000008016c080 r13=000000008016c050
+[18:30:59]  00dc:trace:seh:RtlUnwindEx r14=000000008016c260 r15=000000008016c130 mxcsr=00001f80 cs=0033 ss=002b
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016BC40, frame=8016bc10 context=000000008016C260, dispatch=000000008016B600)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:30:59]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9C0700 (rec=000000008016BC40, frame=8016bda0 context=000000008016C260, dispatch=000000008016B600)
+[18:30:59]  00dc:trace:seh:RtlUnwindEx handler 000000027E9C0700 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016ce60 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016d100 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016d150 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016d1c0 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016d220 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016d2a0 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016d320 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016BC40, frame=8016d360 context=000000008016C260, dispatch=000000008016B600)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlRestoreContext calling consolidate callback 000000027E9BED50 (rec=000000008016BC40)
+[18:31:00]  00dc:trace:seh:RtlRestoreContext returning to 000000027EA14421 stack 000000008016D360
+[18:31:00]  00dc:trace:seh:dispatch_exception code=e0434352 (unknown) flags=1 addr=000000027FBDD887
+[18:31:00]  00dc:trace:seh:dispatch_exception  info[0]=FFFFFFFF80070002
+[18:31:00]  00dc:trace:seh:dispatch_exception  info[1]=0000000000000000
+[18:31:00]  00dc:trace:seh:dispatch_exception  info[2]=0000000000000000
+[18:31:00]  00dc:trace:seh:dispatch_exception  info[3]=0000000000000000
+[18:31:00]  00dc:trace:seh:dispatch_exception  info[4]=000000027E870000
+[18:31:00]  00dc:trace:seh:dispatch_exception rip=000000027fbdd887 rsp=000000008016d140 rbp=000000008016d510 eflags=00000202
+[18:31:00]  00dc:trace:seh:dispatch_exception rax=000000008016d1a0 rbx=000000014106cc50 rcx=000000008016d160 rdx=0000000000000000
+[18:31:00]  00dc:trace:seh:dispatch_exception rsi=0000000000000005 rdi=00000000e0434352  r8=000000027e870000  r9=000000008016d2e8
+[18:31:00]  00dc:trace:seh:dispatch_exception r10=0000000000000006 r11=000000008016d208 r12=000000014106c2e0 r13=00000000807fb4f0
+[18:31:00]  00dc:trace:seh:dispatch_exception r14=0000000000000001 r15=000000008016d2c8 mxcsr=00001f80 cs=0033 ss=002b
+[18:31:00]  00dc:trace:seh:call_vectored_handlers calling handler at 000000027E9A4050 code=e0434352 flags=1
+[18:31:00]  00dc:trace:seh:call_vectored_handlers handler at 000000027E9A4050 returned 0
+[18:31:00]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BCCA8 (rec=000000008016D160, frame=8016d210 context=000000008016CC60, dispatch=000000008016C540)
+[18:31:00]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BCCA8 returned 1
+[18:31:00]  00dc:trace:seh:call_seh_handlers calling handler 000000027E9BC458 (rec=000000008016D160, frame=8016d360 context=000000008016CC60, dispatch=000000008016C540)
+[18:31:00]  00dc:trace:seh:call_seh_handlers handler at 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016D160, frame=8016d420 context=000000008016CC60, dispatch=000000008016C540)
+[18:31:00]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:31:00]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016D160, frame=8016d520 context=000000008016CC60, dispatch=000000008016C540)
+[18:31:00]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:31:00]  00dc:trace:seh:call_seh_handlers calling handler 0000000160454783 (rec=000000008016D160, frame=8016d590 context=000000008016CC60, dispatch=000000008016C540)
+[18:31:00]  00dc:trace:seh:call_seh_handlers handler at 0000000160454783 returned 1
+[18:31:00]  00dc:trace:seh:call_seh_handlers calling handler 0000000161BD76EC (rec=000000008016D160, frame=8016d640 context=000000008016CC60, dispatch=000000008016C540)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx code=e0434352 flags=3 end_frame=000000008016D640 target_ip=000000000000BAD0
+[18:31:00]  00dc:trace:seh:RtlUnwindEx  info[0]=ffffffff80070002
+[18:31:00]  00dc:trace:seh:RtlUnwindEx  info[1]=0000000000000000
+[18:31:00]  00dc:trace:seh:RtlUnwindEx  info[2]=0000000000000000
+[18:31:00]  00dc:trace:seh:RtlUnwindEx  info[3]=0000000000000000
+[18:31:00]  00dc:trace:seh:RtlUnwindEx  info[4]=000000027e870000
+[18:31:00]  00dc:trace:seh:RtlUnwindEx rip=000000027fda6d2d rsp=000000008016b690 rbp=000000008016b800 eflags=00000206
+[18:31:00]  00dc:trace:seh:RtlUnwindEx rax=0000000000000000 rbx=000000008016d160 rcx=000000008016bd50 rdx=000000000000bad0
+[18:31:00]  00dc:trace:seh:RtlUnwindEx rsi=000000008016bd50 rdi=000000008016b800  r8=000000008016d160  r9=00000000808053a0
+[18:31:00]  00dc:trace:seh:RtlUnwindEx r10=0000000162187dbb r11=000000008016ae90 r12=00000000807c86c0 r13=0000000080801970
+[18:31:00]  00dc:trace:seh:RtlUnwindEx r14=000000008016bd50 r15=00000000808053a0 mxcsr=00001f80 cs=0033 ss=002b
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016D160, frame=8016c260 context=000000008016BD50, dispatch=000000008016B710)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016D160, frame=8016d320 context=000000008016BD50, dispatch=000000008016B710)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 000000027E9BC458 (rec=000000008016D160, frame=8016d360 context=000000008016BD50, dispatch=000000008016B710)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 000000027E9BC458 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016D160, frame=8016d420 context=000000008016BD50, dispatch=000000008016B710)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016D160, frame=8016d520 context=000000008016BD50, dispatch=000000008016B710)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 0000000160454783 (rec=000000008016D160, frame=8016d590 context=000000008016BD50, dispatch=000000008016B710)
+[18:31:00]  00dc:trace:seh:RtlUnwindEx handler 0000000160454783 returned 1
+[18:31:00]  00dc:trace:seh:RtlUnwindEx calling handler 0000000161BD76EC (rec=000000008016D160, frame=8016d640 context=000000008016BD50, dispatch=000000008016B710)
+[18:31:00]  00dc:trace:seh:RtlRestoreContext returning to 0000000162187B55 stack 000000008016D640
+[18:31:00]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/dnsapi.so
+[18:31:00]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[18:31:00]  0058:trace:seh:handle_syscall_fault code=c0000005 flags=0 addr=0x3f03008533 ip=3f03008533 tid=0058
+[18:31:00]  0058:trace:seh:handle_syscall_fault  info[0]=0000000000000000
+[18:31:00]  0058:trace:seh:handle_syscall_fault  info[1]=0000000000000000
+[18:31:00]  0058:trace:seh:handle_syscall_fault  rax=0000000000000000 rbx=0000000080e0be94 rcx=0000003f030104e0 rdx=0000000000000000
+[18:31:00]  0058:trace:seh:handle_syscall_fault  rsi=00000074d1c36010 rdi=0000003f03010f80 rbp=0000000080e0c094 rsp=000000014030f960
+[18:31:00]  0058:trace:seh:handle_syscall_fault   r8=0000000080e0be94  r9=0000000000000008 r10=0000000000000008 r11=0000000080e1d194
+[18:31:00]  0058:trace:seh:handle_syscall_fault  r12=0000000080bff958 r13=0000000000000000 r14=0000000080e0be90 r15=0000000000000038
+[18:31:00]  0058:trace:seh:handle_syscall_fault returning to user mode ip=000000027f7d23d5 ret=c0000005

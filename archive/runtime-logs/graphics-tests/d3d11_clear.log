@@ -1,0 +1,3 @@
+start
+D3D11CreateDeviceAndSwapChain ok
+CreateRenderTargetView ok

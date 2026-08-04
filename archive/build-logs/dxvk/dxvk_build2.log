@@ -1,0 +1,72 @@
+[208/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_cmdlist.cpp.obj
+FAILED: src/d3d11/d3d11.dll.p/d3d11_cmdlist.cpp.obj 
+x86_64-w64-mingw32-g++ -Isrc/d3d11/d3d11.dll.p -Isrc/d3d11 -I../../../dxvk_src/src/d3d11 -I../../../dxvk_src/include -I../../../dxvk_src/include/vulkan/include -I../../../dxvk_src/include/spirv/include -Isubprojects/dxbc-spirv -I../../../dxvk_src/subprojects/dxbc-spirv -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -std=c++17 -O3 -msse -msse2 -msse3 -mfpmath=sse -Wimplicit-fallthrough -Wno-missing-field-initializers -Wno-unused-parameter -Wno-misleading-indentation -Wno-cast-function-type -Wno-unused-const-variable -Wno-missing-braces -DNOMINMAX -D_WIN32_WINNT=0xa00 -DDXVK_WSI_WIN32 -MD -MQ src/d3d11/d3d11.dll.p/d3d11_cmdlist.cpp.obj -MF src/d3d11/d3d11.dll.p/d3d11_cmdlist.cpp.obj.d -o src/d3d11/d3d11.dll.p/d3d11_cmdlist.cpp.obj -c ../../../dxvk_src/src/d3d11/d3d11_cmdlist.cpp
+In file included from ../../../dxvk_src/src/d3d11/d3d11_on_12.h:3,
+                 from ../../../dxvk_src/src/d3d11/d3d11_buffer.h:10,
+                 from ../../../dxvk_src/src/d3d11/d3d11_context.h:17,
+                 from ../../../dxvk_src/src/d3d11/d3d11_cmdlist.h:5,
+                 from ../../../dxvk_src/src/d3d11/d3d11_cmdlist.cpp:1:
+../../../dxvk_src/src/d3d11/d3d11_on_12_interfaces.h:5:10: fatal error: d3d11on12.h: No such file or directory
+    5 | #include <d3d11on12.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+[209/321] Compiling C++ object src/dxgi/dxgi.dll.p/dxgi_surface.cpp.obj
+[210/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_class_linkage.cpp.obj
+FAILED: src/d3d11/d3d11.dll.p/d3d11_class_linkage.cpp.obj 
+x86_64-w64-mingw32-g++ -Isrc/d3d11/d3d11.dll.p -Isrc/d3d11 -I../../../dxvk_src/src/d3d11 -I../../../dxvk_src/include -I../../../dxvk_src/include/vulkan/include -I../../../dxvk_src/include/spirv/include -Isubprojects/dxbc-spirv -I../../../dxvk_src/subprojects/dxbc-spirv -fdiagnostics-color=always -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -std=c++17 -O3 -msse -msse2 -msse3 -mfpmath=sse -Wimplicit-fallthrough -Wno-missing-field-initializers -Wno-unused-parameter -Wno-misleading-indentation -Wno-cast-function-type -Wno-unused-const-variable -Wno-missing-braces -DNOMINMAX -D_WIN32_WINNT=0xa00 -DDXVK_WSI_WIN32 -MD -MQ src/d3d11/d3d11.dll.p/d3d11_class_linkage.cpp.obj -MF src/d3d11/d3d11.dll.p/d3d11_class_linkage.cpp.obj.d -o src/d3d11/d3d11.dll.p/d3d11_class_linkage.cpp.obj -c ../../../dxvk_src/src/d3d11/d3d11_class_linkage.cpp
+In file included from ../../../dxvk_src/src/d3d11/d3d11_on_12.h:3,
+                 from ../../../dxvk_src/src/d3d11/d3d11_buffer.h:10,
+                 from ../../../dxvk_src/src/d3d11/d3d11_context.h:17,
+                 from ../../../dxvk_src/src/d3d11/d3d11_cmdlist.h:5,
+                 from ../../../dxvk_src/src/d3d11/d3d11_device.h:16,
+                 from ../../../dxvk_src/src/d3d11/d3d11_class_linkage.cpp:4:
+../../../dxvk_src/src/d3d11/d3d11_on_12_interfaces.h:5:10: fatal error: d3d11on12.h: No such file or directory
+    5 | #include <d3d11on12.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+[211/321] Compiling C++ object src/d3d10/d3d10core.dll.p/d3d10_core.cpp.obj
+[212/321] Compiling C++ object src/dxgi/dxgi.dll.p/dxgi_swapchain.cpp.obj
+[213/321] Compiling C++ object src/d3d11/d3d11.dll.p/.._dxgi_dxgi_format.cpp.obj
+ninja: build stopped: subcommand failed.
+=== 产物结构 ===
+/root/dxvk_out/dxvk-3.0.2/build.64/.ninja_deps
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d9/d3d9.dll.p/d3d9_convert_x8l8v8u8.h
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d9/d3d9.dll.p/d3d9_fixed_function_vert.h
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d9/d3d9.dll.p/d3d9_convert_l6v5u5.h
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d9/d3d9.dll.p/d3d9_convert_yuy2_uyvy.h
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d9/d3d9.dll.p/d3d9_fixed_function_frag.h
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d9/d3d9.dll.p/d3d9_fixed_function_frag_sample.h
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_adapter.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_surface.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_enums.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/version.o
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_format.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_output.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_main.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_monitor.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_options.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_factory.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/dxgi/dxgi.dll.p/dxgi_swapchain.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/sdl3_wsi_monitor_sdl3.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/glfw_wsi_monitor_glfw.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/win32_wsi_platform_win32.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/wsi_platform.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/sdl3_wsi_window_sdl3.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/sdl2_wsi_monitor_sdl2.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/sdl2_wsi_platform_sdl2.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/glfw_wsi_window_glfw.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/win32_wsi_window_win32.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/sdl3_wsi_platform_sdl3.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/win32_wsi_monitor_win32.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/wsi_edid.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/sdl2_wsi_window_sdl2.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a.p/glfw_wsi_platform_glfw.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/wsi/libwsi.a
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d10/d3d10core.dll.p/version10_core.o
+/root/dxvk_out/dxvk-3.0.2/build.64/src/d3d10/d3d10core.dll.p/d3d10_core.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/util/libutil.a
+/root/dxvk_out/dxvk-3.0.2/build.64/src/util/libutil.a.p/util_string.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/util/libutil.a.p/util_env.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/util/libutil.a.p/log_log_debug.cpp.obj
+/root/dxvk_out/dxvk-3.0.2/build.64/src/util/libutil.a.p/sync_sync_recursive.cpp.obj
+DXVK_BUILD_OK

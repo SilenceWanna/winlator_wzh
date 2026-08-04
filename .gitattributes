@@ -1,0 +1,5 @@
+# Preserve archived evidence byte-for-byte across platforms.
+archive/** -text -whitespace
+archive/README.md text eol=lf
+archive/artifacts/SHA256SUMS.txt text eol=lf
+wine_patches/*.patch text eol=lf -whitespace

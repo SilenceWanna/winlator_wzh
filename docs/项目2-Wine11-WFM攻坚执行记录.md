@@ -2,7 +2,9 @@
 
 > 执行日期：2026-07-24
 >
-> 结论：原先“wfm.exe 调用 Wine 11 中缺失 API”的判断不成立。同一个 wfm.exe 在 WSL 原生 Wine 11 下可正常加载并持续运行；Android 崩溃只出现在 box64 路径，且异常 RIP 落在指令中间，box64 dynarec 是当前第一嫌疑。已实现 WFM 单程序解释器模式、winefile 兜底，并按无 ADB 条件产出内置 Wine 11 的单 APK 真机候选版。
+> 初始阶段结论（已由 6.26、6.27 更新）：原先“wfm.exe 调用 Wine 11 中缺失 API”的判断不成立。同一个 wfm.exe 在 WSL 原生 Wine 11 下可正常加载并持续运行；Android 崩溃只出现在 box64 路径，且异常 RIP 落在指令中间，box64 dynarec 曾是第一嫌疑。已实现 WFM 单程序解释器模式、winefile 兜底，并按无 ADB 条件产出内置 Wine 11 的单 APK 真机候选版。
+>
+> 2026-08-04 当前结论：正式 Wine 11.0 的直接阻塞点是 `if_nameindex()` 在 Android 权限环境返回 NULL 后，Wine 11.0 `nsiproxy.sys` 缺少空值检查。回移 Wine 上游 `08dbf01a` 后，正式版已分别使用 Box64 0.4.3 和 0.4.5-dev-372739d 通过真机游戏启动；0.4.5 的干净回归也已通过。当前推荐工作版本为带该补丁的正式 Wine 11.0，f11 保留为回退基线，rc3、rc5、f11 均不得删除或覆盖；自 6.28 起 Box64 默认版本切换为 0.4.5-dev-372739d，0.4.3 保留为可选回退。
 
 ## 一、原逆向结论的纠正
 
@@ -599,3 +601,187 @@ SHA-256 B12A756888B33CE6D1F6E7FA83A6A571AB748825C3609F56E0A348EFC21E9217
 - 保留 f11 作为 Wine 11.0 的 Android/WFM 工作包，不改动已经通过的 rc3、rc5。
 - 若要恢复正式 identifier `wine-11.0`，需要修复或升级 Box64 对该 ntdll 布局的处理，再重新验证正式版；直接把 f11 重命名为 `wine-11.0` 会重新触发已确认的失败布局，不作为当前方案。
 - 真机后续日志统一保留 `logs_wine11_f11_stardew.txt` 这类带版本后缀的文件名，避免覆盖 rc5 和正式版失败样本。
+
+### 6.18 Box64 0.4.5-dev 可选变体验证（2026-08-04）
+
+在 f11 已验证可正常进入桌面并启动 Stardew Valley 的前提下，继续收窄变量：只替换 Box64，不改 Wine 11.0-f11 及其 ntdll 布局。新增可选 Box64 产物为 `box64-0.4.5-dev-372739d.tzst`，已纳入 `GeneralComponents.Type.BOX64` 的可安装条目列表，但默认版本仍保持 `0.4.3`，不影响现有 rc3、rc5 与 f11 容器。
+
+Box64 0.4.5-dev 产物核对：
+
+- 归档与仓库内副本 SHA-256 一致：`1F9AD71A608FD1FC7F4AA22B667354D66237FAB870E72F9E07CF83E892E2A083`。
+- ELF 为 `EXEC` / `AArch64`，入口地址 `0x34b24200`。
+- `INTERP` 仍指向 `/data/data/com.winlator/files/rootfs/lib/ld-linux-aarch64.so.1`。
+- `NEEDED` 仅为 `libc.so.6`、`libm.so.6`、`libresolv.so.2`、`ld-linux-aarch64.so.1`，没有新增 `RPATH/RUNPATH`。
+
+本次已生成并验签通过的 APK：
+
+```text
+D:\agent\Winlator\artifacts\apks\wine11\app-debug-wine11-f11-box64-0.4.5-dev.apk
+SHA-256 FFAA76BB7C7F88B8DF9592E4B1BCBFFA68D0299375A3C1DD8752BAE6DE1E0663
+```
+
+手机侧测试建议：
+
+1. 继续保留 rc3、rc5、旧正式版和 f11，不要删除。
+2. 安装上面的新 APK。
+3. 在 `Settings -> Box64` 中若要试 0.4.5-dev，可手动切换到 `0.4.5-dev-372739d`；默认仍是 `0.4.3`。
+4. 若只验证当前已稳定的 f11，不必切换 Box64。
+5. 若切换后复现新的桌面或启动差异，日志请另存为带 `box64045` 后缀的文件名，避免覆盖 f11 样本。
+
+### 6.19 Box64 0.4.5-dev 在 f11 上通过（2026-08-04）
+
+`logs/stardew-valley/logs_wine11_f11_box64045_stardew.txt` 已完成真机验证。日志长度为 326029 字节，SHA-256 为 `6F30F6EF07101C0999C424D7D05EF60ECD7A75F8A99AAB54BB0974DB520D3F78`。
+
+日志首段确认实际加载的是 `Box64 arm64 v0.4.5 372739d`，Wine 路径为 `wine-11.0-f11`。WFM 进程仍显示 `BOX64_DYNAREC=0`，Stardew Valley 进程使用 `BOX64_DYNAREC=1`，per-exe 解释器策略没有被新 Box64 改变。
+
+图形路径完成了与 f11 基线相同的关键阶段：
+
+- 使用 Zink / Turnip Adreno 725，GL 4.6 compatibility profile 初始化成功。
+- 执行 11 次 `win32u_wglSwapBuffers` 和 11 次 `x11drv_surface_swap`，另有 57 次 surface flush；没有停在首帧前。
+- `c0000005`、`NoSuitableGraphicsDeviceException`、`NullReferenceException`、`FailFast` 和未处理异常均为 0。
+- `e0434352` 16 次、`e06d7363` 8 次，与既有 f11 成功样本一致，属于程序处理的正常探测异常。
+
+结论：Box64 `0.4.5-dev-372739d` 在当前 `Wine 11.0-f11` 工作包上通过桌面和 Stardew Valley 图形回归，没有引入可见回归。它继续保持为可选实验项，默认版本仍为 `0.4.3`；本结果尚不能证明正式 `Wine 11.0` 的短版本布局问题已被修复。
+
+下一步最小实验是在同一 APK 中保持 Box64 `0.4.5-dev-372739d`，优先复用此前失败的 `Wine 11.0 final-from-rc5` 对照容器，保持 Zink、Turnip、Stability、`WINLATOR_WFM_INTERPRETER=1`、`WINEDLLOVERRIDES=icu=n` 和同一份 E 盘游戏不变。若该容器已不存在，再使用 `wine-11.0-final-from-rc5-winlator-custom-addon.tar.xz` 新建独立正式版容器。日志另存为 `logs_wine11_final_box64045_stardew.txt`。该实验用于直接判断新版 Box64 是否能处理正式版 ntdll 的短版本布局。
+
+### 6.20 首次正式版复测误选 rc5 容器（2026-08-04）
+
+用户报告桌面和游戏均可启动，导出的日志名为 `logs/stardew-valley/logs_wine11_final_box64045_stardew.txt`，长度 339600 字节，SHA-256 为 `17C404D1F8E553020A9A59EC389671A4FDF7BAB7AFF588D10AE74D31895A74E1`。但日志中的所有 Wine 搜索路径和 ntdll 路径均为 `/opt/installed-wine/wine-11.0-rc5/`；正式版路径 `/opt/installed-wine/wine-11.0/` 出现次数为 0。因此这次实际运行的是 rc5，不是正式版，文件名不能作为版本证据。
+
+rc5 与 Box64 0.4.5-dev 的结果仍是有效通过样本：创建 3 个 GL context，返回 64 个 `win32u_wglGetProcAddress` 地址，执行 12 次 `win32u_wglSwapBuffers` 和 12 次 `x11drv_surface_swap`；`c0000005`、未处理异常和 `FailFast` 均为 0。这说明新 Box64 没有破坏 rc5，但 rc5 在 Box64 0.4.3 下本来就已通过，不能据此判断正式版布局问题是否修复。
+
+下一轮继续保持 Box64 `0.4.5-dev-372739d`，必须启动此前生成 `logs_wine11_final_from_rc5_stardew.txt` 的正式版容器，或在容器设置中明确选择没有 `-rc5`、`-f11` 后缀的 `Wine 11.0` 可选版本。进入桌面后先检查日志开头：`Binary search path` 必须包含 `/opt/installed-wine/wine-11.0/bin/`；若仍出现 `/wine-11.0-rc5/` 或 `/wine-11.0-f11/`，立即停止该轮，避免产生新的误标样本。
+
+### 6.21 Box64 0.4.5-dev 未修复正式版布局回归（2026-08-04）
+
+正式版复测日志为 `logs/stardew-valley/logs_wine11_final_box64045_stardew_retry.txt`，长度 188523 字节，SHA-256 为 `3DCEE18D6075F3D98B5A6D46FF57E3BB9A14504A5B0FCBD8AB4E023B019E0F6A`。日志确认实际加载 `Box64 arm64 v0.4.5 372739d`，Wine 搜索路径和 ntdll 路径均为 `/opt/installed-wine/wine-11.0/`，本轮版本选择正确。
+
+结果与旧正式版 + Box64 0.4.3 失败样本逐项一致：
+
+- 均创建 3 个 `x11drv_context`，返回 64 个 `win32u_wglGetProcAddress` 地址。
+- 均只有 55 次 `x11drv_surface_flush` 和 51 次 `win32u_wgl_context_flush`。
+- `win32u_wglSwapBuffers` 与 `x11drv_surface_swap` 均为 0。
+- 均在本机地址 `0x3f03008533` 记录 `c0000005`，相关计数为 2；没有未处理异常、`FailFast`、`NoSuitableGraphicsDeviceException` 或 ICU stub。
+- `e0434352` 16 次、`e06d7363` 8 次，也与正式版旧失败样本及成功样本一致，不是本次差异来源。
+
+结论：Box64 `0.4.5-dev-372739d` 没有修复正式 Wine 11.0 的短版本 ntdll 布局兼容问题。它在 rc5 和 f11 上均可运行，但没有改变正式版的失败停点，因此不能升级为默认版本；`DefaultVersion.BOX64` 继续保持 `0.4.3`。当前推荐工作组合仍为 Wine `11.0-f11`，rc3、rc5、f11 和正式版失败容器及日志继续保留。
+
+下一阶段停止重复测试相同 Wine/图形参数。若继续攻克正式 identifier `wine-11.0`，应转向 Box64 对地址 `0x3f03008533` 附近翻译/调用路径的源码级定位，或验证包含相关修复的更新 Box64 提交；在确认新 Box64 对正式版有效前，不替换 f11 工作版本，也不改变默认 Box64。
+
+### 6.22 正式版日志的 rc3 标识冲突边界（2026-08-04）
+
+复核后需要补充一个历史兼容性边界：旧版安装器在 rc3/rc5 标识修复前，会把 `wine-11.0-rc3` 截成泛化的 `wine-11.0`。因此，当前正式版复测日志中的 `/opt/installed-wine/wine-11.0/` 只能证明运行时加载了这个目录，不能单凭目录名对二进制做密码学意义上的版本确认；日志也没有记录 `wine --version` 或 Wine 文件哈希。
+
+不过，当前日志与已知正式版失败样本的行为指纹完全一致：0 次 `win32u_wglSwapBuffers`、0 次 `x11drv_surface_swap`、2 次同地址 `c0000005`（`0x3f03008533`）；已验证的 rc3 日志则有 10 次 swap 且没有 `c0000005`。因此当前样本高度符合正式版，而不是 rc3，但要彻底消除历史标识歧义，仍应使用修复后的 APK 导入验签通过的 rc3 包，在新建独立 rc3 容器中重测一次，确认 UI 和日志路径均为 `Wine 11.0-rc3` / `wine-11.0-rc3`。
+
+### 6.23 正式版 Box64 故障栈定位与 rc3 独立复核（2026-08-04）
+
+正式版诊断日志为 `logs/stardew-valley/logs_wine11_final_box64045_diagnostic.txt`，长度 236885 字节，SHA-256 为 `FECB67662B591E9B39873B4030296EB2B4D4F8E48518710F1330808683907A8A`。日志确认加载 Box64 `v0.4.5 372739d` 和 `/opt/installed-wine/wine-11.0/`，并确认 `BOX64_SHOWSEGV=1`、`BOX64_SHOWBT=1`、`BOX64_ROLLING_LOG=256` 已生效。图形阶段仍为 0 次 `win32u_wglSwapBuffers`、0 次 `x11drv_surface_swap` 和 2 次 `c0000005`。
+
+本轮首次取得了可定位的 Box64 故障信息：
+
+- `EmulatedBT` 将故障映射到 `nsiproxy.so+0x8533`，不是 WGL/OpenGL 模块。
+- 对应 dynablock 的 guest 范围为 `0x3f03008520:0x3f03008563`，hash 为 `6617b4e4/6617b4e4`，块状态为 `clean`。
+- rolling log 显示 `if_nameindex()` 在返回地址 `0x3f03008533` 返回 `0x0`；随后寄存器 `RAX=0`。
+- x86_64 指令为 `8B 18`，即 `mov (%rax), %ebx`，因此立即读取空地址并触发 SIGSEGV / `c0000005`。
+- Wine 11.0 源码 `dlls/nsiproxy.sys/ndis.c:update_if_table()` 直接执行 `for (entry = indices; entry->if_index; entry++)`，没有检查 `if_nameindex()` 的空返回。
+
+正式版、rc5、f11 包内 `nsiproxy.so` 完全相同，SHA-256 均为 `2DAA6A2063E75798E7B7ED5625497411E98A55EBD391595F26BD352051E00095`；rc3 的文件整体哈希不同，但 `0x8520` 附近的相关函数指令相同。因此故障不是正式版单独更改了 nsiproxy 代码，而是正式版布局/执行状态下 `if_nameindex()` 返回空，随后被 Wine 11.0 的缺失检查放大为崩溃。
+
+Wine 上游提交 `08dbf01aaa3689f8c8a8a22276658f372b023b03`（`nsiproxy.sys: Avoid null pointer dereference on if_nameindex() failure.`）已经在 2026-04-24 为同一代码增加空值检查和 errno 日志，可作为后续正式版包的最小回移候选。
+
+rc3 独立复核日志为 `logs/stardew-valley/logs_wine11_rc3_box64045_stardew_recheck.txt`，长度 314538 字节，SHA-256 为 `B04A08E877775444F757598B18C3FA6A416ABA4AB58C723344122DD7B60C77BA`。日志明确加载 `/opt/installed-wine/wine-11.0-rc3/` 和同一个 Box64 `v0.4.5 372739d`，执行 10 次 `win32u_wglSwapBuffers` 与 10 次 `x11drv_surface_swap`，`c0000005`、SIGSEGV 和未处理异常均为 0。历史 rc3 标识歧义至此消除：rc3 在 Box64 0.4.5 下仍是通过基线，正式版失败不是误选 rc3 容器。
+
+下一轮先不重编 Wine，只在正式版诊断容器增加：
+
+```text
+BOX64_NODYNAREC=0x3f03008520-0x3f03008563
+```
+
+其余 Wine、Box64 0.4.5、图形设置和三个诊断变量保持不变。该变量只让已定位的 nsiproxy dynablock 使用解释器。若游戏启动，根因落在 Box64 对该块或 `if_nameindex()` 包装返回的 dynarec 路径；若仍在 `nsiproxy.so+0x8533` 看到 `RAX=0`，则直接回移 Wine 上游 `08dbf01a` 的空值保护，构建新的正式版最小对照包。
+
+### 6.24 nsiproxy 解释器对照仍失败（2026-08-04）
+
+解释器对照日志为 `logs/stardew-valley/logs_wine11_final_box64045_nodynarec_nsiproxy.txt`，长度 237757 字节，SHA-256 为 `53740D7524B9A5C7B522135DBCAF433C9A753BEF1AE72311D8D7584449228F86`。日志在所有 Box64 进程中均显示 `BOX64_NODYNAREC on range 0x3f03008520-0x3f03008563`，确认变量和值已经生效。
+
+正式版仍为 0 次 `win32u_wglSwapBuffers`、0 次 `x11drv_surface_swap` 和 2 次 `c0000005`。故障点仍为 `nsiproxy.so+0x8533`，rolling log 再次确认 `if_nameindex()` 返回 `0x0`、`RAX=0`。与上一轮不同，Box64 故障记录明确为 `db=(nil)`、hash `0/0`，说明目标地址当时没有使用 dynablock，已经由解释器执行；故障仍然存在，因此不是该地址范围的 dynarec 翻译错误。
+
+结论：结束继续调整 Box64 dynarec 参数的分支。下一步回移 Wine 上游提交 `08dbf01aaa3689f8c8a8a22276658f372b023b03`，只为 Wine 11.0 正式版 `dlls/nsiproxy.sys/ndis.c:update_if_table()` 增加 `if_nameindex()` 空值保护和 errno 日志，保持 ntdll、版本标识、Box64 与图形配置不变，生成独立的正式版最小对照包。该包若能启动游戏，说明直接阻塞点是 Wine 11.0 对宿主接口枚举失败缺少防御；若越过 nsiproxy 后出现新停点，再以新日志继续分析，不回退已确认的 rc3、rc5 和 f11 基线。
+
+### 6.25 Wine 11.0 nsiproxy 空值保护对照包（2026-08-04）
+
+已将 Wine 上游 `08dbf01aaa3689f8c8a8a22276658f372b023b03` 作为 `wine_patches/wine-11.0-nsiproxy-if-nameindex-null.patch` 回移到正式版构建树。只重编 x86_64 Unix `nsiproxy.so`，没有改动 PE 模块、ntdll、版本标识、Android 工程或 Box64。
+
+构建一致性验证：同一构建树中未打补丁的 `nsiproxy.so` strip 后 SHA-256 为 `2DAA6A2063E75798E7B7ED5625497411E98A55EBD391595F26BD352051E00095`，与原正式版包完全一致；加入空值保护后的模块大小仍为 65200 字节，SHA-256 为 `75E61DB13D2EF1929C085F94AB46605C2C4EBAF0BBB6102CA1F88C6D36BE2F93`。反汇编确认 `if_nameindex()` 返回后先执行 `test %rax,%rax` 和空值跳转，再执行原来的接口表读取。
+
+新 staging 以 `wine-addon-11.0-final-from-rc5` 为基线，逐文件对比只有 `opt/wine/lib/wine/x86_64-unix/nsiproxy.so` 不同。正式版 ntdll SHA-256 仍为 `BCE2D0A3C69B2385D1F8B21BD9A5A5C4F1354E155D9117AA3EF9F237A1CD7002`，包内 `wine --version` 仍严格返回 `wine-11.0`，没有引入 f11 的等长版本布局变量。
+
+真机对照包：
+
+```text
+../../artifacts/wine-packages/wine-11.0-final-nsiproxy-nullguard-winlator-custom-addon.tar.xz
+Size 54689068 bytes
+SHA-256 A81595373E6C3FDAC8C33BEAE8BB1FDB7B7744DA63AF094E6BBECF2BD4A72765
+```
+
+归档已通过 `xz -t`、路径安全检查和 fresh 解包逐文件对比；共有 2533 个条目，全部位于 `opt/` 下，解包后为 2505 个普通文件和 14 个符号链接。
+
+该包为了保持正式版短版本布局，内部 identifier 仍是 `wine-11.0`，不能与手机中现有的未修正式版条目并存。手机侧先保留 rc3、rc5、f11 及其容器，只处理用于失败复现的旧 `Wine 11.0` 条目；日志已经保留，不要删除其他基线。移除旧正式版 Wine 条目后导入本包，完成 `Wine Configuration`，新建或复用正式版测试容器。删除临时 `BOX64_NODYNAREC`，保持 Box64 `0.4.5-dev-372739d`、图形设置和其余诊断变量不变，日志另存为 `logs_wine11_final_nsiproxy_nullguard_box64045_stardew.txt`。
+
+若日志出现 `if_nameindex failed, errno ...` 但不再发生 `nsiproxy.so+0x8533` 崩溃并开始 swap，则该上游补丁解决了当前直接阻塞点；若仍未启动，则按越过 nsiproxy 后的新首个异常继续分析，不再回到 Box64 dynarec 参数实验。
+
+### 6.26 Wine 11.0 nsiproxy 空值保护真机通过（2026-08-04）
+
+真机成功日志为 `logs/stardew-valley/logs_wine11_final_nsiproxy_nullguard_box64045_stardew.txt`，长度 362543 字节，SHA-256 为 `90B09AB06EEF8CD5B4D0B2BDA874E4EF4E00878D621537FFE175AF23A8F481EE`。文件名虽然保留了 `box64045` 后缀，但日志实际加载的是默认 Box64 `v0.4.3 ef8b463`，0.4.5 出现次数为 0；因此本轮同时证明新 Wine 修复不依赖可选 Box64 0.4.5，默认版本无需改变。
+
+版本与结果确认：
+
+- Wine 路径均为 `/opt/installed-wine/wine-11.0/`，rc3、rc5、f11 路径均为 0，正式版身份明确。
+- `BOX64_NODYNAREC` 已删除；Stardew 使用 `BOX64_DYNAREC=1`，WFM 保持既有解释器策略。
+- `update_if_table()` 4 次记录 `if_nameindex failed, errno 13`，另有一次 `poll_events bind failed, errno 13`，确认 Android/容器环境中的网络接口枚举确实被权限拒绝。
+- 空值保护阻止了后续 `mov (%rax), %ebx` 解引用；全日志 `c0000005`、SIGSEGV、未处理异常、`FailFast`、`NoSuitableGraphicsDeviceException` 和 `NullReferenceException` 均为 0。
+- EGL 不可用后正常回退到 GLX 4.6 / Zink / Turnip Adreno 725，创建 3 个 GL context，返回 64 个 `win32u_wglGetProcAddress` 地址。
+- 完成 11 次 `win32u_wglSwapBuffers` 和 11 次 `x11drv_surface_swap`，另有 56 次 surface flush、187 次 context flush；用户确认游戏实际启动。
+
+当前根因结论随新证据修正：正式版的直接阻塞点不是 WGL/OpenGL，也不是目标地址的 Box64 dynarec 翻译错误，而是 `if_nameindex()` 在当前 Android 权限环境返回 NULL 后，Wine 11.0 `nsiproxy.sys` 缺少空值检查。f11 的等长布局和 rc3/rc5 在此前测试中改变了触发时序或运行状态，使该缺陷没有显现；它们仍是有效通过基线，但不能再作为“Box64 对短版本 ntdll 布局必然错误”的根因证明。6.17、6.21 中相应的旧归因被本节取代。
+
+当前正式版候选组合为 Wine 11.0 + 上游 `08dbf01a` 回移 + 默认 Box64 0.4.3。下一轮只需移除 `BOX64_SHOWSEGV`、`BOX64_SHOWBT`、`BOX64_ROLLING_LOG` 三个诊断变量，执行一次冷启动和同一游戏的干净回归；若继续启动并 swap，即可将该正式版补丁包提升为推荐工作版本，同时保留 f11 作为回退基线、0.4.5-dev 继续作为可选实验项。
+
+### 6.27 补丁版正式 Wine 11.0 + Box64 0.4.5 干净回归通过（2026-08-04）
+
+干净回归日志为 `logs/stardew-valley/logs_wine11_final_nsiproxy_nullguard_clean_stardew.txt`，长度 237184 字节，SHA-256 为 `1BD7E40FF4CD66B933B2ADBCC09BCCC14D1AEB68BA6DC12B2A7E7C19A4C69255`。用户确认游戏实际打开。
+
+版本和环境确认：
+
+- Wine 搜索路径均为 `/opt/installed-wine/wine-11.0/`，rc3、rc5、f11 路径出现次数均为 0，确认运行的是带 `nsiproxy` 空值保护的正式 Wine 11.0。
+- 日志明确加载 Box64 `v0.4.5 372739d`，默认 Box64 0.4.3 出现次数为 0。
+- `BOX64_NODYNAREC`、`BOX64_ROLLING_LOG`、`BOX64_SHOWBT`、`BOX64_SHOWSEGV` 均未出现，确认本轮不是依赖解释器绕过或诊断环境变量的成功。
+- `if_nameindex failed, errno 13` 仍记录 4 次，证明 Android 侧接口枚举权限条件没有改变，成功来自 Wine 空值保护正确处理了失败返回。
+- 创建 3 个 GL context，返回 64 个 `win32u_wglGetProcAddress` 地址，完成 3 次 `win32u_wglSwapBuffers` 和 3 次 `x11drv_surface_swap`，另有 57 次 surface flush 和 90 次 context flush。
+- `c0000005`、SIGSEGV、未处理异常、`FailFast`、`NoSuitableGraphicsDeviceException` 和 `NullReferenceException` 均为 0；`e0434352` 16 次、`e06d7363` 8 次仍属于程序已处理的正常探测异常。
+
+本轮与 6.26 共同完成正式版修复的交叉验证：补丁版 Wine 11.0 在默认 Box64 0.4.3 和可选 Box64 0.4.5-dev-372739d 下均能启动游戏，且 0.4.5 已在无诊断变量的干净环境中通过。因此正式版阻塞根因和最小修复均已闭环，原“Box64 dynarec 或短版本 ntdll 布局是直接根因”的归因正式作废。
+
+当前推荐工作版本提升为：
+
+```text
+../../artifacts/wine-packages/wine-11.0-final-nsiproxy-nullguard-winlator-custom-addon.tar.xz
+SHA-256 A81595373E6C3FDAC8C33BEAE8BB1FDB7B7744DA63AF094E6BBECF2BD4A72765
+```
+
+f11 继续作为回退基线，rc3、rc5、f11 及其验证资料继续保留。Box64 默认版本仍为 0.4.3；0.4.5-dev-372739d 已从“待验证实验项”提升为“真机验证通过的可选项”，但本次结果没有提供默认升级的必要性。Stardew Valley 启动链路无需继续重复相同组合，后续只需在发布收口时保留补丁来源、包哈希和版本替换说明；若扩大覆盖面，优先检查依赖网络接口枚举的软件在 `errno 13` 条件下是否存在功能降级。
+
+### 6.28 默认 Box64 切换与最终 APK（2026-08-04）
+
+根据最新一轮 0.4.5-dev 真机通过结果，将 `DefaultVersion.BOX64` 从 `0.4.3` 切换为 `0.4.5-dev-372739d`；`GeneralComponents.Type.BOX64` 保留 `0.4.3` 作为可选回退，未删除任何既有 Box64 资产或 Wine 基线。
+
+最终 APK 使用 JBR 17.0.8.1 和 `assembleDebug` 构建成功。APK 核验结果：
+
+```text
+../../artifacts/apks/wine11/app-debug-wine11-default-box64-0.4.5-dev.apk
+Size 208635201 bytes
+SHA-256 DD06BB1676D1AEF1DA6E3CFD778CF4C716C8CEFA4C433398BA84CC545C02809D
+```
+
+`zipalign -c -v 4` 通过，`apksigner verify --verbose` 显示 V2 签名有效且有 1 个签名者。APK 内同时存在 `assets/box64/box64-0.4.5-dev-372739d.tzst` 和 `assets/box64/box64-0.4.3.tzst`；DEX 中保留两个版本字符串，确认默认升级没有破坏回退选择。该 APK 是默认 Box64 0.4.5 的最终构建候选，正式 Wine 11.0 的 `nsiproxy` 补丁包仍需作为独立 Wine 组件导入，包哈希见 6.25/6.27。

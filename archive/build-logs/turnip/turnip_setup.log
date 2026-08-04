@@ -1,0 +1,16 @@
+Get:26 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe amd64 c-n-f Metadata [30.8 kB]
+Fetched 40.8 MB in 2min 57s (231 kB/s)
+Reading package lists...
+Setting up libexpat1-dev:arm64 (2.4.7-1ubuntu0.7) ...
+Setting up zlib1g-dev:arm64 (1:1.2.11.dfsg-2ubuntu9.2) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.13) ...
+Processing triggers for man-db (2.10.2-1) ...
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+Updating files:  42% (5302/12553)Updating files:  43% (5398/12553)Updating files:  44% (5524/12553)Updating files:  45% (5649/12553)Updating files:  46% (5775/12553)Updating files:  47% (5900/12553)Updating files:  48% (6026/12553)Updating files:  49% (6151/12553)Updating files:  50% (6277/12553)Updating files:  51% (6403/12553)Updating files:  52% (6528/12553)Updating files:  53% (6654/12553)Updating files:  54% (6779/12553)Updating files:  55% (6905/12553)Updating files:  56% (7030/12553)Updating files:  57% (7156/12553)Updating files:  58% (7281/12553)Updating files:  59% (7407/12553)Updating files:  60% (7532/12553)Updating files:  60% (7609/12553)Updating files:  61% (7658/12553)Updating files:  62% (7783/12553)Updating files:  63% (7909/12553)Updating files:  64% (8034/12553)Updating files:  65% (8160/12553)Updating files:  66% (8285/12553)Updating files:  67% (8411/12553)Updating files:  68% (8537/12553)Updating files:  69% (8662/12553)Updating files:  70% (8788/12553)Updating files:  71% (8913/12553)Updating files:  72% (9039/12553)Updating files:  73% (9164/12553)Updating files:  74% (9290/12553)Updating files:  75% (9415/12553)Updating files:  76% (9541/12553)Updating files:  77% (9666/12553)Updating files:  78% (9792/12553)Updating files:  79% (9917/12553)Updating files:  80% (10043/12553)Updating files:  81% (10168/12553)Updating files:  82% (10294/12553)Updating files:  83% (10419/12553)Updating files:  84% (10545/12553)Updating files:  85% (10671/12553)Updating files:  86% (10796/12553)Updating files:  86% (10822/12553)Updating files:  87% (10922/12553)Updating files:  88% (11047/12553)Updating files:  89% (11173/12553)Updating files:  90% (11298/12553)Updating files:  91% (11424/12553)Updating files:  92% (11549/12553)Updating files:  93% (11675/12553)Updating files:  94% (11800/12553)Updating files:  95% (11926/12553)Updating files:  96% (12051/12553)Updating files:  97% (12177/12553)Updating files:  98% (12302/12553)Updating files:  99% (12428/12553)Updating files: 100% (12553/12553)Updating files: 100% (12553/12553), done.
+/root/mesa_src/meson.build
+MESA_SRC_OK
+=== arm64 dev 库确认 ===
+libdrm-dev:arm64 2.4.113-2~ubuntu0.22.04.1
+libxcb1-dev:arm64 1.14-3ubuntu3
+TURNIP_SETUP_OK

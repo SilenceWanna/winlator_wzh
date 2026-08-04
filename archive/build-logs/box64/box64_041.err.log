@@ -1,0 +1,19 @@
+Cloning into 'box64_041'...
+Note: switching to 'c85b3d6252dfee2ed782c3e27fb000da1a266479'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  92% (2357/2542)Updating files:  93% (2365/2542)Updating files:  94% (2390/2542)Updating files:  95% (2415/2542)Updating files:  96% (2441/2542)Updating files:  97% (2466/2542)Updating files:  98% (2492/2542)Updating files:  99% (2517/2542)Updating files: 100% (2542/2542)Updating files: 100% (2542/2542), done.

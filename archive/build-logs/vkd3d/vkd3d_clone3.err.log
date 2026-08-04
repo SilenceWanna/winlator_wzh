@@ -1,0 +1,41 @@
+Cloning into 'vkd3d_src'...
+Note: switching to '3b10bd7a7ec6a7347e616cf8bea59333afec2255'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:   7% (140/1882)Updating files:   8% (151/1882)Updating files:   9% (170/1882)Updating files:  10% (189/1882)Updating files:  11% (208/1882)Updating files:  12% (226/1882)Updating files:  13% (245/1882)Updating files:  14% (264/1882)Updating files:  15% (283/1882)Updating files:  16% (302/1882)Updating files:  17% (320/1882)Updating files:  18% (339/1882)Updating files:  19% (358/1882)Updating files:  20% (377/1882)Updating files:  21% (396/1882)Updating files:  22% (415/1882)Updating files:  23% (433/1882)Updating files:  24% (452/1882)Updating files:  25% (471/1882)Updating files:  26% (490/1882)Updating files:  27% (509/1882)Updating files:  28% (527/1882)Updating files:  29% (546/1882)Updating files:  30% (565/1882)Updating files:  31% (584/1882)Updating files:  32% (603/1882)Updating files:  33% (622/1882)Updating files:  34% (640/1882)Updating files:  35% (659/1882)Updating files:  36% (678/1882)Updating files:  37% (697/1882)Updating files:  38% (716/1882)Updating files:  39% (734/1882)Updating files:  40% (753/1882)Updating files:  41% (772/1882)Updating files:  42% (791/1882)Updating files:  43% (810/1882)Updating files:  44% (829/1882)Updating files:  44% (832/1882)Updating files:  45% (847/1882)Updating files:  46% (866/1882)Updating files:  47% (885/1882)Updating files:  48% (904/1882)Updating files:  49% (923/1882)Updating files:  50% (941/1882)Updating files:  51% (960/1882)Updating files:  52% (979/1882)Updating files:  53% (998/1882)Updating files:  54% (1017/1882)Updating files:  55% (1036/1882)Updating files:  56% (1054/1882)Updating files:  57% (1073/1882)Updating files:  58% (1092/1882)Updating files:  59% (1111/1882)Updating files:  60% (1130/1882)Updating files:  61% (1149/1882)Updating files:  62% (1167/1882)Updating files:  63% (1186/1882)Updating files:  64% (1205/1882)Updating files:  65% (1224/1882)Updating files:  66% (1243/1882)Updating files:  67% (1261/1882)Updating files:  68% (1280/1882)Updating files:  69% (1299/1882)Updating files:  70% (1318/1882)Updating files:  71% (1337/1882)Updating files:  72% (1356/1882)Updating files:  73% (1374/1882)Updating files:  74% (1393/1882)Updating files:  75% (1412/1882)Updating files:  76% (1431/1882)Updating files:  77% (1450/1882)Updating files:  78% (1468/1882)Updating files:  79% (1487/1882)Updating files:  80% (1506/1882)Updating files:  81% (1525/1882)Updating files:  82% (1544/1882)Updating files:  83% (1563/1882)Updating files:  84% (1581/1882)Updating files:  84% (1585/1882)Updating files:  85% (1600/1882)Updating files:  86% (1619/1882)Updating files:  87% (1638/1882)Updating files:  88% (1657/1882)Updating files:  89% (1675/1882)Updating files:  90% (1694/1882)Updating files:  91% (1713/1882)Updating files:  92% (1732/1882)Updating files:  93% (1751/1882)Updating files:  94% (1770/1882)Updating files:  95% (1788/1882)Updating files:  96% (1807/1882)Updating files:  97% (1826/1882)Updating files:  98% (1845/1882)Updating files:  99% (1864/1882)Updating files: 100% (1882/1882)Updating files: 100% (1882/1882), done.
+Submodule 'khronos/SPIRV-Headers' (https://github.com/KhronosGroup/SPIRV-Headers) registered for path 'khronos/SPIRV-Headers'
+Submodule 'khronos/Vulkan-Headers' (https://github.com/KhronosGroup/Vulkan-Headers) registered for path 'khronos/Vulkan-Headers'
+Submodule 'subprojects/dxil-spirv' (https://github.com/HansKristian-Work/dxil-spirv) registered for path 'subprojects/dxil-spirv'
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/khronos/SPIRV-Headers'...
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/khronos/Vulkan-Headers'...
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/subprojects/dxil-spirv'...
+From https://github.com/KhronosGroup/SPIRV-Headers
+ * branch            f88a2d766840fc825af1fc065977953ba1fa4a91 -> FETCH_HEAD
+From https://github.com/KhronosGroup/Vulkan-Headers
+ * branch            ad9ce1235e88dc09287e19171dfac384db8ec32c -> FETCH_HEAD
+From https://github.com/HansKristian-Work/dxil-spirv
+ * branch            62dbb07f771534c8ce924479efdc6c8fa510361d -> FETCH_HEAD
+Submodule 'third_party/dxbc-spirv' (https://github.com/doitsujin/dxbc-spirv) registered for path 'subprojects/dxil-spirv/subprojects/dxbc-spirv'
+Submodule 'third_party/SPIRV-Cross' (https://github.com/KhronosGroup/SPIRV-Cross) registered for path 'subprojects/dxil-spirv/third_party/SPIRV-Cross'
+Submodule 'third_party/SPIRV-Tools' (https://github.com/KhronosGroup/SPIRV-Tools) registered for path 'subprojects/dxil-spirv/third_party/SPIRV-Tools'
+Submodule 'third_party/spirv-headers' (https://github.com/KhronosGroup/SPIRV-Headers) registered for path 'subprojects/dxil-spirv/third_party/spirv-headers'
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/subprojects/dxil-spirv/subprojects/dxbc-spirv'...
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/subprojects/dxil-spirv/third_party/SPIRV-Cross'...
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/subprojects/dxil-spirv/third_party/spirv-headers'...
+fatal: shallow file has changed since we read it
+fatal: Fetched in submodule path 'subprojects/dxil-spirv/subprojects/dxbc-spirv', but it did not contain 29c93aeecd55533a357fdd7c95be5587d1c1f506. Direct fetching of that commit failed.
+fatal: Failed to recurse into submodule path 'subprojects/dxil-spirv'

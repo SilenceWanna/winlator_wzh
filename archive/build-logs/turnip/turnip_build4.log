@@ -1,0 +1,44 @@
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/0/bus"
+declare -x DISPLAY=":0"
+declare -x HOME="/root"
+declare -x HOSTTYPE="x86_64"
+declare -x LANG="C.UTF-8"
+declare -x LOGNAME="root"
+declare -x NAME="ZB-PW06WPC7"
+declare -x OLDPWD
+declare -x PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files/JoyPrinter:/mnt/d/software/Git/cmd:/mnt/d/software/Node.js/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Python/bin:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Python/pythoncore-3.14-64/Scripts:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Roaming/npm:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/wangzihe.18.360BUYAD/AppData/Local/Programs/Ollama:/snap/bin"
+declare -x PULSE_SERVER="unix:/mnt/wslg/PulseServer"
+declare -x PWD="/mnt/d/agent/Winlator"
+declare -x SHELL="/bin/bash"
+declare -x SHLVL="2"
+declare -x TERM="xterm-256color"
+declare -x USER="root"
+declare -x WAYLAND_DISPLAY="wayland-0"
+declare -x WSL2_GUI_APPS_ENABLED="1"
+declare -x WSLENV=""
+declare -x WSL_DISTRO_NAME="Ubuntu"
+declare -x WSL_INTEROP="/run/WSL/152078_interop"
+declare -x XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/snapd/desktop"
+declare -x XDG_RUNTIME_DIR="/run/user/0/"
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for install-info (6.8-4build1) ...
+Run-time dependency lua-5.3 found: NO  (tried pkg-config and cmake)
+Run-time dependency lua found: NO  (tried pkg-config and cmake)
+Run-time dependency libelf found: NO  (tried pkg-config and cmake)
+Library elf found: NO
+Run-time dependency valgrind found: NO  (tried pkg-config)
+Program bison found: YES (/usr/bin/bison)
+Program bison found: YES 3.8.2 3.8.2 (/usr/bin/bison)
+Program flex found: YES (/usr/bin/flex)
+Program ln found: YES (/usr/bin/ln)
+Run-time dependency libunwind found: NO  (tried pkg-config and cmake)
+Run-time dependency xcb found: NO 
+
+meson.build:2220:12: ERROR: Dependency lookup for xcb with method 'pkg-config' failed: Pkg-config for machine host machine not found. Giving up.
+
+A full log can be found at /root/mesa_src/build-turnip/meson-logs/meson-log.txt
+=== meson done, compiling ===
+ninja: Entering directory `build-turnip'
+ninja: error: loading 'build.ninja': No such file or directory
+=== 产物 ===
+TURNIP_BUILD_DONE

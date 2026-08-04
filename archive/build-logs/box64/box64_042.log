@@ -1,0 +1,18 @@
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/box64_042/build_glibc
+[100%] Built target mainobj
+[100%] Linking C executable box64
+[100%] Built target box64
+=== build done ===
+box64: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=e23c37597d738d176dc4b2bf85eaef67f0116251, for GNU/Linux 3.7.0, with debug_info, not stripped
+=== 验证 ===
+ 0x000000000000001d (RUNPATH)            Library runpath: [/data/data/com.winlator/files/rootfs/lib]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libresolv.so.2]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-aarch64.so.1]
+      [Requesting program interpreter: /data/data/com.winlator/files/rootfs/lib/ld-linux-aarch64.so.1]
+  NOTE           0x0000000000021c00 0x0000000034811c00 0x0000000034811c00
+tzst MB: 3.84
+BOX64_042_OK

@@ -1,0 +1,15 @@
+-- Generating done
+-- Build files have been written to: /root/box64_off/build
+[100%] Linking C executable box64
+[100%] Built target box64
+=== build done ===
+=== 验证(应保留.symtab=未strip, 有NEEDED libc.so.6) ===
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libresolv.so.2]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-aarch64.so.1]
+      [Requesting program interpreter: /data/data/com.winlator/files/rootfs/lib/ld-linux-aarch64.so.1]
+  LOAD           0x0000000000010000 0x0000000034800000 0x0000000034800000
+size: 31746192
+tzst MB: 4.52
+BOX64_OFF_OK

@@ -1,0 +1,1 @@
+This file disables the Steam emulator networking layer for diagnosis.

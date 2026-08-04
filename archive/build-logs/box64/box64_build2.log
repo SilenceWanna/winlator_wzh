@@ -1,0 +1,1248 @@
+[1/351] cmd.exe /C "cd /D C:\Users\wangzihe.18.360BUYAD\AppData\Local\Temp\box64_src\build_android && C:\Users\wangzihe.18.360BUYAD\AppData\Local\Python\bin\python3.exe C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/tools/gen_dynacache_hashes.py --root C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src --output C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/dynacache_hashes.h"
+[2/351] Generating ../src/git_head.h
+[3/351] Linking C static library libdynarec.a
+[4/351] Building C object CMakeFiles/mainobj.dir/src/emu/entrypoint.c.o
+[5/351] Building C object CMakeFiles/mainobj.dir/src/elfs/elfdwarf_private.c.o
+[6/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64compstrings.c.o
+[7/351] Building C object CMakeFiles/mainobj.dir/src/elfs/elfhash.c.o
+[8/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64emu.c.o
+[9/351] Building C object CMakeFiles/mainobj.dir/src/emu/x87emu_private.c.o
+[10/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64printer.c.o
+[11/351] Building C object CMakeFiles/mainobj.dir/src/os/hostext_linux.c.o
+[12/351] Building C object CMakeFiles/mainobj.dir/src/os/freq_linux.c.o
+[13/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64primop.c.o
+[14/351] Building C object CMakeFiles/mainobj.dir/src/os/backtrace.c.o
+[15/351] Building C object CMakeFiles/mainobj.dir/src/os/emit_signals_linux.c.o
+[16/351] Building C object CMakeFiles/mainobj.dir/src/os/hostext_common.c.o
+[17/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64int3.c.o
+[18/351] Building C object CMakeFiles/mainobj.dir/src/os/perfmap.c.o
+[19/351] Building C object CMakeFiles/mainobj.dir/src/os/symbolfuncs_linux.c.o
+[20/351] Building C object CMakeFiles/mainobj.dir/src/os/os_linux.c.o
+[21/351] Building C object CMakeFiles/mainobj.dir/src/os/my_cpuid.c.o
+[22/351] Building C object CMakeFiles/mainobj.dir/src/os/random_linux.c.o
+[23/351] Building C object CMakeFiles/mainobj.dir/src/os/sysinfo.c.o
+[24/351] Building C object CMakeFiles/mainobj.dir/src/build_info.c.o
+[25/351] Building C object CMakeFiles/mainobj.dir/src/elfs/elfload_dump.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:23:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PROGBITS);
+        ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:23:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PROGBITS);
+        ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:23:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PROGBITS);
+        ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:23:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PROGBITS);
+        ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:24:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:24:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:24:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:24:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:25:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_STRTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:25:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_STRTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:25:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_STRTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:25:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_STRTAB);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:26:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_RELA);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:26:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_RELA);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:26:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_RELA);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:26:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_RELA);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:27:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HASH);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:27:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HASH);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:27:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HASH);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:27:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HASH);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:28:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNAMIC);
+        ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:28:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNAMIC);
+        ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:28:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNAMIC);
+        ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:28:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNAMIC);
+        ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:29:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOTE);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:29:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOTE);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:29:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOTE);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:29:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOTE);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:30:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOBITS);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:30:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOBITS);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:30:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOBITS);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:30:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NOBITS);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:31:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_REL);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:31:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_REL);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:31:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_REL);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:31:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_REL);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:32:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SHLIB);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:32:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SHLIB);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:32:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SHLIB);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:32:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SHLIB);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:33:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNSYM);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:33:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNSYM);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:33:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNSYM);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:33:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_DYNSYM);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:34:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_INIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:34:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_INIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:34:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_INIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:34:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_INIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:35:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_FINI_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:35:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_FINI_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:35:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_FINI_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:35:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_FINI_ARRAY);
+        ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:36:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PREINIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:36:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PREINIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:36:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PREINIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:36:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_PREINIT_ARRAY);
+        ^~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:37:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_GROUP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:37:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_GROUP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:37:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_GROUP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:37:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_GROUP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:38:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB_SHNDX);
+        ^~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:38:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB_SHNDX);
+        ^~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:38:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB_SHNDX);
+        ^~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:38:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_SYMTAB_SHNDX);
+        ^~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:39:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NUM);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:39:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NUM);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:39:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NUM);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:39:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_NUM);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:40:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:40:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:40:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:40:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:41:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:41:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:41:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:41:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIPROC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:42:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:42:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:42:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:42:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_LOUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:43:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:57: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:43:9: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:71: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                      ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:43:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:83: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                  ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:43:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(SHT_HIUSER);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:21:115: note: expanded from macro 'GO'
+                SST?(SST+s->sh_name):"???", s->sh_name, s->sh_offset, s->sh_size, s->sh_flags, (void*)s->sh_addr, s->sh_addralign, s->sh_link, s->sh_info); \
+                                                                                                                  ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:73:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_NEEDED, 0);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:74:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_PLTRELSZ, 0);
+            ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:75:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_PLTGOT, 1);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:76:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_HASH, 1);
+            ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:77:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_STRTAB, 1);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:78:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_SYMTAB, 1);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:79:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_RELA, 1);
+            ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:80:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_RELASZ, 0);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:81:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_RELAENT, 0);
+            ^~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:82:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_STRSZ, 0);
+            ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:83:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_SYMENT, 0);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:84:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_INIT, 1);
+            ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:85:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_FINI, 1);
+            ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:86:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_SONAME, 0);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:87:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_RPATH, 0);
+            ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:88:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_SYMBOLIC, 0);
+            ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:89:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_REL, 1);
+            ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:90:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_RELSZ, 0);
+            ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:91:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_RELENT, 0);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:92:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_PLTREL, 0);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:93:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_DEBUG, 0);
+            ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:94:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_TEXTREL, 0);
+            ^~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:95:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_JMPREL, 1);
+            ^~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:96:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_BIND_NOW, 1);
+            ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:97:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_INIT_ARRAY, 1);
+            ^~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:98:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_FINI_ARRAY, 1);
+            ^~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:99:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_INIT_ARRAYSZ, 0);
+            ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:100:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_FINI_ARRAYSZ, 0);
+            ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:101:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_RUNPATH, 0);
+            ^~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:102:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_FLAGS, 0);
+            ^~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:103:13: warning: format specifies type 'unsigned long' but the argument has type 'unsigned long long' [-Wformat]
+            GO(DT_ENCODING, 0);
+            ^~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:71:68: note: expanded from macro 'GO'
+            sprintf(buff, #A " %s=0x%" PRIX64, (Add)?"Addr":"Val", (Add)?s->d_un.d_ptr:s->d_un.d_val); \
+                                    ~~~~~~~~~                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:143:57: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Sxword' (aka 'long long') [-Wformat]
+            sprintf(buff, "0x%" PRIX64 " unknown type", s->d_tag);
+                             ~~~~~~~~~                  ^~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:155:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(PT_LOAD);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:157: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                           ~~~~~~~~~                                                                                        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:155:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_LOAD);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:208: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                ~~~~~~~~~                                                                                                      ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:155:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_LOAD);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:221: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                  ~~~~~~~~~                                                                                                 ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:155:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_LOAD);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:245: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                                             ~~~~~~~~~                                                                                              ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:156:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(PT_DYNAMIC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:157: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                           ~~~~~~~~~                                                                                        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:156:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_DYNAMIC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:208: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                ~~~~~~~~~                                                                                                      ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:156:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_DYNAMIC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:221: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                  ~~~~~~~~~                                                                                                 ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:156:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_DYNAMIC);
+        ^~~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:245: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                                             ~~~~~~~~~                                                                                              ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:157:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(PT_INTERP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:157: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                           ~~~~~~~~~                                                                                        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:157:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_INTERP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:208: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                ~~~~~~~~~                                                                                                      ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:157:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_INTERP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:221: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                  ~~~~~~~~~                                                                                                 ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:157:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_INTERP);
+        ^~~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:245: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                                             ~~~~~~~~~                                                                                              ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:158:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(PT_NOTE);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:157: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                           ~~~~~~~~~                                                                                        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:158:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_NOTE);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:208: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                ~~~~~~~~~                                                                                                      ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:158:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_NOTE);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:221: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                  ~~~~~~~~~                                                                                                 ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:158:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_NOTE);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:245: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                                             ~~~~~~~~~                                                                                              ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:159:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(PT_SHLIB);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:157: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                           ~~~~~~~~~                                                                                        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:159:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_SHLIB);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:208: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                ~~~~~~~~~                                                                                                      ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:159:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_SHLIB);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:221: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                  ~~~~~~~~~                                                                                                 ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:159:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_SHLIB);
+        ^~~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:245: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                                             ~~~~~~~~~                                                                                              ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:160:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(PT_PHDR);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:157: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                           ~~~~~~~~~                                                                                        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:160:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_PHDR);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:208: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                ~~~~~~~~~                                                                                                      ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:160:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_PHDR);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:221: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                  ~~~~~~~~~                                                                                                 ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:160:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_PHDR);
+        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:245: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                                             ~~~~~~~~~                                                                                              ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:161:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        GO(PT_TLS);
+        ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:157: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                           ~~~~~~~~~                                                                                        ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:161:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_TLS);
+        ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:208: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                ~~~~~~~~~                                                                                                      ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:161:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_TLS);
+        ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:221: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                  ~~~~~~~~~                                                                                                 ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:161:9: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        GO(PT_TLS);
+        ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:154:245: note: expanded from macro 'GO'
+        #define GO(T) case T: sprintf(buff, "type: %s, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, #T, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break
+                                                                                                                                             ~~~~~~~~~                                                                                              ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:170:151: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Off' (aka 'unsigned long long') [-Wformat]
+        default: sprintf(buff, "type: %x, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, e->p_type, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break;
+                                              ~~~~~~~~~                                                                                               ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:170:202: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        default: sprintf(buff, "type: %x, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, e->p_type, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break;
+                                                                                   ~~~~~~~~~                                                                                                             ^~~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:170:215: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        default: sprintf(buff, "type: %x, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, e->p_type, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break;
+                                                                                                     ~~~~~~~~~                                                                                                        ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:170:239: warning: format specifies type 'unsigned long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        default: sprintf(buff, "type: %x, Off=%" PRIx64 " vaddr=%p paddr=%p filesz=%" PRIu64 " memsz=%" PRIu64 " flags=%x align=%" PRIu64, e->p_type, e->p_offset, (void*)e->p_vaddr, (void*)e->p_paddr, e->p_filesz, e->p_memsz, e->p_flags, e->p_align); break;
+                                                                                                                                ~~~~~~~~~                                                                                                     ^~~~~~~~~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/elfs/elfload_dump.c:238:55: warning: format specifies type 'long' but the argument has type 'Elf64_Xword' (aka 'unsigned long long') [-Wformat]
+        h->DynStr+sym->st_name, (void*)sym->st_value, sym->st_size,
+                                                      ^~~~~~~~~~~~
+149 warnings generated.
+[26/351] Building C object CMakeFiles/mainobj.dir/src/main.c.o
+[27/351] Building C object CMakeFiles/mainobj.dir/src/custommmap.c.o
+[28/351] Building C object CMakeFiles/mainobj.dir/src/box64context.c.o
+[29/351] Building C object CMakeFiles/mainobj.dir/src/elfs/elfhacks.c.o
+[30/351] Building C object CMakeFiles/mainobj.dir/src/core.c.o
+[31/351] Building C object CMakeFiles/mainobj.dir/src/dynarec/dynarec.c.o
+[32/351] Building C object CMakeFiles/mainobj.dir/src/librarian/globalsymbols.c.o
+[33/351] Building C object CMakeFiles/mainobj.dir/src/elfs/elfparser.c.o
+[34/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatk.c.o
+[35/351] Building C object CMakeFiles/mainobj.dir/src/emu/x86syscall.c.o
+[36/351] Building C object CMakeFiles/mainobj.dir/src/test.c.o
+[37/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedalut.c.o
+[38/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedalure.c.o
+[39/351] Building C object CMakeFiles/mainobj.dir/src/custommem.c.o
+[40/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatomic.c.o
+[41/351] Building C object CMakeFiles/mainobj.dir/src/elfs/elfloader.c.o
+[42/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaindicator3.c.o
+[43/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaappindicator3.c.o
+[44/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatkbridge.c.o
+[45/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedatspi.c.o
+[46/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64shaext.c.o
+[47/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64trace.c.o
+[48/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64tls.c.o
+[49/351] Building C object CMakeFiles/mainobj.dir/src/librarian/dictionnary.c.o
+[50/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64syscall.c.o
+[51/351] Building C object CMakeFiles/mainobj.dir/src/libtools/auxval.c.o
+[52/351] Building C object CMakeFiles/mainobj.dir/src/emu/x64run_private.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/emu/x64run_private.c:477:41: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+            ((uint64_t*)test->mem)[1] = ret->q[1];
+                                        ^      ~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/include/regs.h:26:2: note: array 'q' declared here
+        uint64_t q[1];
+        ^
+1 warning generated.
+[53/351] Building C object CMakeFiles/mainobj.dir/src/librarian/symbols.c.o
+[54/351] Building C object CMakeFiles/mainobj.dir/src/librarian/librarian.c.o
+[55/351] Building C object CMakeFiles/mainobj.dir/src/libtools/decopcode.c.o
+[56/351] Building C object CMakeFiles/mainobj.dir/src/libtools/syscall_user_dispatch.c.o
+[57/351] Building C object CMakeFiles/mainobj.dir/src/libtools/sigtools.c.o
+[58/351] Building C object CMakeFiles/mainobj.dir/src/libtools/myalign.c.o
+[59/351] Building C object CMakeFiles/mainobj.dir/src/libtools/signals.c.o
+[60/351] Building C object CMakeFiles/mainobj.dir/src/tools/alternate.c.o
+[61/351] Building C object CMakeFiles/mainobj.dir/src/librarian/library.c.o
+[62/351] Building C object CMakeFiles/mainobj.dir/src/tools/bitutils.c.o
+[63/351] Building C object CMakeFiles/mainobj.dir/src/tools/box64stack.c.o
+[64/351] Building C object CMakeFiles/mainobj.dir/src/tools/bridge.c.o
+[65/351] Building C object CMakeFiles/mainobj.dir/src/tools/fileutils.c.o
+[66/351] Building C object CMakeFiles/mainobj.dir/src/tools/cleanup.c.o
+[67/351] Building C object CMakeFiles/mainobj.dir/src/tools/pathcoll.c.o
+[68/351] Building C object CMakeFiles/mainobj.dir/src/tools/gdbjit.c.o
+[69/351] Building C object CMakeFiles/mainobj.dir/src/libtools/threads.c.o
+[70/351] Building C object CMakeFiles/mainobj.dir/src/tools/callback.c.o
+[71/351] Building C object CMakeFiles/mainobj.dir/src/tools/pe_tools.c.o
+[72/351] Building C object CMakeFiles/mainobj.dir/src/tools/wine_tools.c.o
+[73/351] Building C object CMakeFiles/mainobj.dir/src/tools/dynacache.c.o
+[74/351] Building C object CMakeFiles/mainobj.dir/src/tools/rbtree.c.o
+[75/351] Building C object CMakeFiles/mainobj.dir/src/libtools/sdl1rwops.c.o
+[76/351] Building C object CMakeFiles/mainobj.dir/src/libtools/sdl2rwops.c.o
+[77/351] Building C object CMakeFiles/mainobj.dir/src/steam.c.o
+[78/351] Building C object CMakeFiles/mainobj.dir/src/mallochook.c.o
+[79/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedavahicommon.c.o
+[80/351] Building C object CMakeFiles/mainobj.dir/src/tools/env.c.o
+[81/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedavahiclient.c.o
+[82/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedbz2.c.o
+[83/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedayatanaido3.c.o
+[84/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcairo.c.o
+[85/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcuda.c.o
+[86/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcairogobject.c.o
+[87/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcap.c.o
+[88/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrashhandler.c.o
+[89/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcurl.c.o
+[90/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbus.c.o
+[91/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto3.c.o
+[92/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedcrypto.c.o
+[93/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusmenuglib.c.o
+[94/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddbusglib1.c.o
+[95/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappeddecor0.c.o
+[96/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedevent21.c.o
+[97/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedexpat.c.o
+[98/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfreebl3.c.o
+[99/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfontconfig.c.o
+[100/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfaudio.c.o
+[101/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedfreetype.c.o
+[102/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgcrypt.c.o
+[103/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedflac.c.o
+[104/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdk3.c.o
+[105/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgbm.c.o
+[106/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgconf2.c.o
+[107/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkx112.c.o
+[108/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedglesv2.c.o
+[109/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgdkpixbuf2.c.o
+[110/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgmodule2.c.o
+[111/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgio2.c.o
+[112/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgmp.c.o
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/wrapped/wrappedgmp.c:158:38: warning: passing 'const char *' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+    return my->__gmp_vasprintf(strp, fmt, VARARGS);
+                                     ^~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/wrapped/wrappedgmp.c:165:39: warning: passing 'const char *' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+    return my->__gmp_vfprintf(stream, fmt, VARARGS);
+                                      ^~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/wrapped/wrappedgmp.c:176:38: warning: passing 'const char *' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+    return my->__gmp_vasprintf(strp, fmt, VARARGS);
+                                     ^~~
+C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/box64_src/src/wrapped/wrappedgmp.c:187:39: warning: passing 'const char *' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+    return my->__gmp_vfprintf(stream, fmt, VARARGS);
+                                      ^~~
+4 warnings generated.
+[113/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgnutls.c.o
+[114/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapikrb5.c.o
+[115/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedglib2.c.o
+[116/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstallocators.c.o
+[117/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgomp.c.o
+[118/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstapp.c.o
+[119/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgssapi.c.o
+[120/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcheck.c.o
+[121/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstfft.c.o
+[122/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstcontroller.c.o
+[123/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstaudio.c.o
+[124/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstpbutils.c.o
+[125/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstbase.c.o
+[126/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstriff.c.o
+[127/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstnet.c.o
+[128/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtsp.c.o
+[129/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstgl.c.o
+[130/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstsdp.c.o
+[131/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstrtp.c.o
+[132/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstreamer.c.o
+[133/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgsttag.c.o
+[134/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgthread2.c.o
+[135/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgobject2.c.o
+[136/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedharfbuzzsubset.c.o
+[137/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgstvideo.c.o
+[138/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedldlinux.c.o
+[139/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlcms2.c.o
+[140/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgtk3.c.o
+[141/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibasound.c.o
+[142/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedkrb5.c.o
+[143/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibbsd.c.o
+[144/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavcodec58.c.o
+[145/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibblas.c.o
+[146/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/generated/wrapper.c.o
+[147/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavformat58.c.o
+[148/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcrypt.c.o
+[149/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibavutil56.c.o
+[150/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcmusl.c.o
+[151/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcups.c.o
+[152/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibcupsimage.c.o
+[153/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrm.c.o
+[154/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdrmamdgpu.c.o
+[155/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibdl.c.o
+[156/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibegl.c.o
+[157/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw.c.o
+[158/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibform.c.o
+[159/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedgtkx112.c.o
+[160/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibformw6.c.o
+[161/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxi.c.o
+[162/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxmu.c.o
+[163/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgl.c.o
+[164/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxfixes.c.o
+[165/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibc.c.o
+[166/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxft.c.o
+[167/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpm.c.o
+[168/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrandr.c.o
+[169/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxrender.c.o
+[170/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxss.c.o
+[171/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibfuse.c.o
+[172/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxpresent.c.o
+[173/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlzma.c.o
+[174/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxtst.c.o
+[175/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxt.c.o
+[176/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxxf86vm.c.o
+[177/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibz.c.o
+[178/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglu.c.o
+[179/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglxnvidia.c.o
+[180/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibgpgme.c.o
+[181/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibglx.c.o
+[182/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedliblapack.c.o
+[183/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibm.c.o
+[184/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibibus.c.o
+[185/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibice.c.o
+[186/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw6.c.o
+[187/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibmvec.c.o
+[188/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncursesw.c.o
+[189/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibharfbuzz.c.o
+[190/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses.c.o
+[191/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibogg.c.o
+[192/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibomp.c.o
+[193/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibncurses6.c.o
+[194/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnuma.c.o
+[195/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpanel.c.o
+[196/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibresolv.c.o
+[197/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre.c.o
+[198/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpcre216.c.o
+[199/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpthread.c.o
+[200/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibpci.c.o
+[201/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsm.c.o
+[202/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibrt.c.o
+[203/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsndfile.c.o
+[204/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl.c.o
+[205/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibusb1.c.o
+[206/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssl3.c.o
+[207/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo.c.o
+[208/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibuuid.c.o
+[209/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtinfo6.c.o
+[210/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvdpau.c.o
+[211/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibva.c.o
+[212/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvawayland.c.o
+[213/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvax11.c.o
+[214/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvadrm.c.o
+[215/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvpx.c.o
+[216/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11xcb.c.o
+[217/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibvorbis.c.o
+[218/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbcursor.c.o
+[219/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri2.c.o
+[220/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcb.c.o
+[221/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxau.c.o
+[222/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxaw.c.o
+[223/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbdri3.c.o
+[224/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbicccm.c.o
+[225/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbglx.c.o
+[226/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbkeysyms.c.o
+[227/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrenderutil.c.o
+[228/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbpresent.c.o
+[229/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbimage.c.o
+[230/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrandr.c.o
+[231/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbrender.c.o
+[232/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshape.c.o
+[233/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbutil.c.o
+[234/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbres.c.o
+[235/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbshm.c.o
+[236/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbsync.c.o
+[237/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxkb.c.o
+[238/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinerama.c.o
+[239/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxinput.c.o
+[240/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxfixes.c.o
+[241/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdmcp.c.o
+[242/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcursor.c.o
+[243/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxdamage.c.o
+[244/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcomposite.c.o
+[245/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxcbxtest.c.o
+[246/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednsl.c.o
+[247/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibxext.c.o
+[248/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednotify.c.o
+[249/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednspr4.c.o
+[250/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedmpg123.c.o
+[251/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednssutil3.c.o
+[252/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednvml.c.o
+[253/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappednss3.c.o
+[254/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedopencl.c.o
+[255/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedopenal.c.o
+[256/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpam.c.o
+[257/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpangocairo.c.o
+[258/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpangoft2.c.o
+[259/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpango.c.o
+[260/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpng16.c.o
+[261/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedplds4.c.o
+[262/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpcap.c.o
+[263/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpipewire03.c.o
+[264/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedplc4.c.o
+[265/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsemainloopglib.c.o
+[266/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulsesimple.c.o
+[267/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1.c.o
+[268/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1image.c.o
+[269/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1net.c.o
+[270/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1sound.c.o
+[271/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1mixer.c.o
+[272/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl1ttf.c.o
+[273/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsoftokn3.c.o
+[274/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpulse.c.o
+[275/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibx11.c.o
+[276/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsecret1.c.o
+[277/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2image.c.o
+[278/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg.c.o
+[279/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2mixer.c.o
+[280/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2net.c.o
+[281/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2ttf.c.o
+[282/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedssl3.c.o
+[283/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3.c.o
+[284/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl3ttf.c.o
+[285/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmpeg2.c.o
+[286/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmime3.c.o
+[287/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbbind.c.o
+[288/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedselinux.c.o
+[289/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmalloc.c.o
+[290/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtbbmallocproxy.c.o
+[291/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedudev0.c.o
+[292/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsystemd.c.o
+[293/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedunwind.c.o
+[294/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedudev1.c.o
+[295/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsdl2.c.o
+[296/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedutil.c.o
+[297/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedtcmallocminimal.c.o
+[298/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandegl.c.o
+[299/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedvorbisfile.c.o
+[300/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandcursor.c.o
+[301/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxinerama.c.o
+[302/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbregistry.c.o
+[303/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbfile.c.o
+[304/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommon.c.o
+[305/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxkbcommonx11.c.o
+[306/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxslt.c.o
+[307/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlber.c.o
+[308/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxshmfence.c.o
+[309/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedldapr.c.o
+[310/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n64.c.o
+[311/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedwaylandclient.c.o
+[312/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedvulkan.c.o
+[313/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n66.c.o
+[314/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc64.c.o
+[315/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc67.c.o
+[316/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedd3dadapter9.c.o
+[317/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc68.c.o
+[318/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n67.c.o
+[319/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc66.c.o
+[320/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc72.c.o
+[321/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n72.c.o
+[322/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc73.c.o
+[323/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedxml2.c.o
+[324/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n68.c.o
+[325/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n75.c.o
+[326/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n74.c.o
+[327/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc74.c.o
+[328/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n73.c.o
+[329/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc75.c.o
+[330/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicuuc76.c.o
+[331/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedidn2.c.o
+[332/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibssh2.c.o
+[333/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpsl5.c.o
+[334/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedanl.c.o
+[335/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedicui18n76.c.o
+[336/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtasn1.c.o
+[337/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedp11kit.c.o
+[338/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibunistring2.c.o
+[339/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibtiff5.c.o
+[340/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedbrotlidec.c.o
+[341/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibnettle8.c.o
+[342/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedzstd.c.o
+[343/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibhogweed6.c.o
+[344/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedsmbclient.c.o
+[345/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedproxy.c.o
+[346/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedlibsqlite3.c.o
+[347/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedpixman1.c.o
+[348/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedssh4.c.o
+[349/351] Building C object CMakeFiles/mainobj.dir/src/wrapped/wrappedandroidshmem.c.o
+[350/351] Building C object CMakeFiles/mainobj.dir/src/tools/gtkclass.c.o
+[351/351] Linking C executable box64

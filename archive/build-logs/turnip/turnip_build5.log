@@ -1,0 +1,27 @@
+    libxml2          : YES
+    llvm             : NO
+                       Neither a subproject directory nor a llvm.wrap file was found.
+
+  User defined options
+    Cross files      : cross-aarch64-glibc.txt
+    b_ndebug         : true
+    buildtype        : release
+    freedreno-kmds   : kgsl
+    gallium-drivers  : 
+    platforms        : x11
+    vulkan-drivers   : freedreno
+
+Found ninja-1.10.1 at /usr/bin/ninja
+Generating targets:   0%|          | 0/143 eta ?Generating targets:  20%|█▉        | 28/143 eta 00:00Generating targets:  50%|████▉     | 71/143 eta 00:00Generating targets:  89%|████████▉ | 127/143 eta 00:00                                                      Writing build.ninja:   0%|          | 0/917 eta ?                                                 === meson done, compiling ===
+In file included from src/freedreno/isa/ir3-isa.c:15826:
+../src/compiler/isaspec/isaspec_decode_impl.c: In function ‘decode_error’:
+../src/compiler/isaspec/isaspec_decode_impl.c:196:9: warning: ignoring return value of ‘vasprintf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  196 |         vasprintf(&state->errors[state->num_errors++], fmt, ap);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[585/668] Compiling C object src/freedreno/ir3/libfreedreno_ir3.a.p/ir3_a6xx.c.o
+[586/668] Compiling C object src/freedreno/ir3/libfreedreno_ir3.a.p/ir3_legalize.c.o
+[587/668] Compiling C object src/freedreno/isa/libir3encode.a.p/encode.c.o
+[588/668] Compiling C object src/freedreno/ir3/libfreedreno_ir3.a.p/ir3_compiler_nir.c.o
+ninja: build stopped: subcommand failed.
+=== 产物 ===
+TURNIP_BUILD_DONE

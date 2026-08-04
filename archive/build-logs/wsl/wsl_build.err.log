@@ -1,0 +1,361 @@
+/root/box64_src/src/dynarec/arm64/dynarec_arm64_functions.c: In function ‘inst_name_pass3’:
+/root/box64_src/src/dynarec/arm64/dynarec_arm64_functions.c:894:46: warning: ‘%s’ directive writing up to 4095 bytes into a region of size between 477 and 496 [-Wformat-overflow=]
+  894 |             sprintf(buf2, "; %d: %d opcodes, %s", ninst, dyn->insts[ninst].size / 4, buf);
+      |                                              ^~                                      ~~~
+In file included from /usr/aarch64-linux-gnu/include/stdio.h:894,
+                 from /root/box64_src/src/dynarec/arm64/dynarec_arm64_functions.c:2:
+/usr/aarch64-linux-gnu/include/bits/stdio2.h:38:10: note: ‘__builtin___sprintf_chk’ output between 17 and 4131 bytes into a destination of size 512
+   38 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   39 |                                   __glibc_objsize (__s), __fmt,
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   40 |                                   __va_arg_pack ());
+      |                                   ~~~~~~~~~~~~~~~~~
+/root/box64_src/src/os/os_linux.c: In function ‘PrintfFtrace’:
+/root/box64_src/src/os/os_linux.c:228:9: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  228 |         write(trace_fd, tmp, strlen(tmp));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/os/os_linux.c:235:5: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  235 |     write(trace_fd, tmp, strlen(tmp));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/os/sysinfo.c:9:
+/root/box64_src/src/os/sysinfo.c: In function ‘InitializeSystemInfo’:
+/root/box64_src/src/build_info.h:34:19: warning: ‘%04lu’ directive output may be truncated writing 4 bytes into a region of size between 3 and 31 [-Wformat-truncation=]
+   34 | #define BOX64_STR "Box64"
+      |                   ^~~~~~~
+/root/box64_src/src/build_info.h:42:5: note: in expansion of macro ‘BOX64_STR’
+   42 |     BOX64_STR                         \
+      |     ^~~~~~~~~
+/root/box64_src/src/os/sysinfo.c:194:50: note: in expansion of macro ‘BOX64_BUILD_INFO_STRING_SHORT’
+  194 |             snprintf(branding, sizeof(branding), BOX64_BUILD_INFO_STRING_SHORT " on %.*s @%04" PRIu64 " MHz", 28, box64_sysinfo.cpuname, box64_sysinfo.frequency / 1000000);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/build_info.h:34:19: note: directive argument in the range [0, 1]
+   34 | #define BOX64_STR "Box64"
+      |                   ^~~~~~~
+/root/box64_src/src/build_info.h:42:5: note: in expansion of macro ‘BOX64_STR’
+   42 |     BOX64_STR                         \
+      |     ^~~~~~~~~
+/root/box64_src/src/os/sysinfo.c:194:50: note: in expansion of macro ‘BOX64_BUILD_INFO_STRING_SHORT’
+  194 |             snprintf(branding, sizeof(branding), BOX64_BUILD_INFO_STRING_SHORT " on %.*s @%04" PRIu64 " MHz", 28, box64_sysinfo.cpuname, box64_sysinfo.frequency / 1000000);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/aarch64-linux-gnu/include/stdio.h:894,
+                 from /root/box64_src/src/include/sysinfo.h:3,
+                 from /root/box64_src/src/include/debug.h:8,
+                 from /root/box64_src/src/os/sysinfo.c:7:
+/usr/aarch64-linux-gnu/include/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 27 and 55 bytes into a destination of size 49
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/os/sysinfo.c:9:
+/root/box64_src/src/build_info.h:34:19: warning: ‘%1.2f’ directive output may be truncated writing between 3 and 313 bytes into a region of size between 3 and 31 [-Wformat-truncation=]
+   34 | #define BOX64_STR "Box64"
+      |                   ^~~~~~~
+/root/box64_src/src/build_info.h:42:5: note: in expansion of macro ‘BOX64_STR’
+   42 |     BOX64_STR                         \
+      |     ^~~~~~~~~
+/root/box64_src/src/os/sysinfo.c:192:50: note: in expansion of macro ‘BOX64_BUILD_INFO_STRING_SHORT’
+  192 |             snprintf(branding, sizeof(branding), BOX64_BUILD_INFO_STRING_SHORT " on %.*s @%1.2f GHz", 28, box64_sysinfo.cpuname, box64_sysinfo.frequency / 1000000000.);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/build_info.h:34:19: note: assuming directive output of 4 bytes
+   34 | #define BOX64_STR "Box64"
+      |                   ^~~~~~~
+/root/box64_src/src/build_info.h:42:5: note: in expansion of macro ‘BOX64_STR’
+   42 |     BOX64_STR                         \
+      |     ^~~~~~~~~
+/root/box64_src/src/os/sysinfo.c:192:50: note: in expansion of macro ‘BOX64_BUILD_INFO_STRING_SHORT’
+  192 |             snprintf(branding, sizeof(branding), BOX64_BUILD_INFO_STRING_SHORT " on %.*s @%1.2f GHz", 28, box64_sysinfo.cpuname, box64_sysinfo.frequency / 1000000000.);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/aarch64-linux-gnu/include/stdio.h:894,
+                 from /root/box64_src/src/include/sysinfo.h:3,
+                 from /root/box64_src/src/include/debug.h:8,
+                 from /root/box64_src/src/os/sysinfo.c:7:
+/usr/aarch64-linux-gnu/include/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 26 and 364 bytes into a destination of size 49
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/os/sysinfo.c:9:
+/root/box64_src/src/build_info.h:34:19: warning: ‘%.*s’ directive output may be truncated writing up to 39 bytes into a region of size 33 [-Wformat-truncation=]
+   34 | #define BOX64_STR "Box64"
+      |                   ^~~~~~~
+/root/box64_src/src/build_info.h:42:5: note: in expansion of macro ‘BOX64_STR’
+   42 |     BOX64_STR                         \
+      |     ^~~~~~~~~
+/root/box64_src/src/os/sysinfo.c:189:46: note: in expansion of macro ‘BOX64_BUILD_INFO_STRING_SHORT’
+  189 |         snprintf(branding, sizeof(branding), BOX64_BUILD_INFO_STRING_SHORT " on %.*s", 39, box64_sysinfo.cpuname);
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/aarch64-linux-gnu/include/stdio.h:894,
+                 from /root/box64_src/src/include/sysinfo.h:3,
+                 from /root/box64_src/src/include/debug.h:8,
+                 from /root/box64_src/src/os/sysinfo.c:7:
+/usr/aarch64-linux-gnu/include/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 17 and 56 bytes into a destination of size 49
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+/root/box64_src/src/core.c: In function ‘KillAllInstances’:
+/root/box64_src/src/core.c:377:73: warning: ‘ (deleted)’ directive output may be truncated writing 10 bytes into a region of size between 1 and 4096 [-Wformat-truncation=]
+  377 |     snprintf(self_name_with_deleted, sizeof(self_name_with_deleted), "%s (deleted)", self_name);
+      |                                                                         ^~~~~~~~~~
+In file included from /usr/aarch64-linux-gnu/include/stdio.h:894,
+                 from /root/box64_src/src/core.c:1:
+/usr/aarch64-linux-gnu/include/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 11 and 4106 bytes into a destination of size 4096
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+/root/box64_src/src/core.c:387:49: warning: ‘/exe’ directive output may be truncated writing 4 bytes into a region of size between 1 and 4096 [-Wformat-truncation=]
+  387 |         snprintf(exe_path, sizeof(exe_path), "%s/exe", proc_path);
+      |                                                 ^~~~
+In file included from /usr/aarch64-linux-gnu/include/stdio.h:894,
+                 from /root/box64_src/src/core.c:1:
+/usr/aarch64-linux-gnu/include/bits/stdio2.h:71:10: note: ‘__builtin___snprintf_chk’ output between 5 and 4100 bytes into a destination of size 4096
+   71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   73 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_destroy’:
+/root/box64_src/src/libtools/threads.c:365:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  365 |         int ret = pthread_attr_destroy(PTHREAD_ATTR(attr));
+      |                   ^~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:288:12: note: in a call to function ‘pthread_attr_destroy’ declared ‘nonnull’
+  288 | extern int pthread_attr_destroy (pthread_attr_t *__attr)
+      |            ^~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getstack’:
+/root/box64_src/src/libtools/threads.c:375:23: warning: argument 1 null where non-null expected [-Wnonnull]
+  375 |                 ret = pthread_attr_getstack(PTHREAD_ATTR(attr), stackaddr, stacksize);
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:379:12: note: in a call to function ‘pthread_attr_getstack’ declared ‘nonnull’
+  379 | extern int pthread_attr_getstack (const pthread_attr_t *__restrict __attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setstack’:
+/root/box64_src/src/libtools/threads.c:386:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  386 |         int ret = pthread_attr_setstacksize(PTHREAD_ATTR(attr), stacksize);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:373:12: note: in a call to function ‘pthread_attr_setstacksize’ declared ‘nonnull’
+  373 | extern int pthread_attr_setstacksize (pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setstacksize’:
+/root/box64_src/src/libtools/threads.c:398:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  398 |         int ret = pthread_attr_setstacksize(PTHREAD_ATTR(attr), stacksize);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:373:12: note: in a call to function ‘pthread_attr_setstacksize’ declared ‘nonnull’
+  373 | extern int pthread_attr_setstacksize (pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getdetachstate’:
+/root/box64_src/src/libtools/threads.c:408:16: warning: argument 1 null where non-null expected [-Wnonnull]
+  408 |         return pthread_attr_getdetachstate(PTHREAD_ATTR(attr), state);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:292:12: note: in a call to function ‘pthread_attr_getdetachstate’ declared ‘nonnull’
+  292 | extern int pthread_attr_getdetachstate (const pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getguardsize’:
+/root/box64_src/src/libtools/threads.c:414:16: warning: argument 1 null where non-null expected [-Wnonnull]
+  414 |         return pthread_attr_getguardsize(PTHREAD_ATTR(attr), size);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:303:12: note: in a call to function ‘pthread_attr_getguardsize’ declared ‘nonnull’
+  303 | extern int pthread_attr_getguardsize (const pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getinheritsched’:
+/root/box64_src/src/libtools/threads.c:421:16: warning: argument 1 null where non-null expected [-Wnonnull]
+  421 |         return pthread_attr_getinheritsched(PTHREAD_ATTR(attr), sched);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:333:12: note: in a call to function ‘pthread_attr_getinheritsched’ declared ‘nonnull’
+  333 | extern int pthread_attr_getinheritsched (const pthread_attr_t *__restrict
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getschedparam’:
+/root/box64_src/src/libtools/threads.c:431:16: warning: argument 1 null where non-null expected [-Wnonnull]
+  431 |         return pthread_attr_getschedparam(PTHREAD_ATTR(attr), param);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:314:12: note: in a call to function ‘pthread_attr_getschedparam’ declared ‘nonnull’
+  314 | extern int pthread_attr_getschedparam (const pthread_attr_t *__restrict __attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getschedpolicy’:
+/root/box64_src/src/libtools/threads.c:437:16: warning: argument 1 null where non-null expected [-Wnonnull]
+  437 |         return pthread_attr_getschedpolicy(PTHREAD_ATTR(attr), policy);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:324:12: note: in a call to function ‘pthread_attr_getschedpolicy’ declared ‘nonnull’
+  324 | extern int pthread_attr_getschedpolicy (const pthread_attr_t *__restrict
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getscope’:
+/root/box64_src/src/libtools/threads.c:443:16: warning: argument 1 null where non-null expected [-Wnonnull]
+  443 |         return pthread_attr_getscope(PTHREAD_ATTR(attr), scope);
+      |                ^~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:344:12: note: in a call to function ‘pthread_attr_getscope’ declared ‘nonnull’
+  344 | extern int pthread_attr_getscope (const pthread_attr_t *__restrict __attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getstackaddr’:
+/root/box64_src/src/libtools/threads.c:452:23: warning: argument 1 null where non-null expected [-Wnonnull]
+  452 |                 ret = pthread_attr_getstack(PTHREAD_ATTR(attr), addr, &size);
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:379:12: note: in a call to function ‘pthread_attr_getstack’ declared ‘nonnull’
+  379 | extern int pthread_attr_getstack (const pthread_attr_t *__restrict __attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_getstacksize’:
+/root/box64_src/src/libtools/threads.c:463:23: warning: argument 1 null where non-null expected [-Wnonnull]
+  463 |                 ret = pthread_attr_getstack(PTHREAD_ATTR(attr), &addr, size);
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:379:12: note: in a call to function ‘pthread_attr_getstack’ declared ‘nonnull’
+  379 | extern int pthread_attr_getstack (const pthread_attr_t *__restrict __attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_init’:
+/root/box64_src/src/libtools/threads.c:473:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  473 |         int ret = pthread_attr_init(PTHREAD_ATTR(attr));
+      |                   ^~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:285:12: note: in a call to function ‘pthread_attr_init’ declared ‘nonnull’
+  285 | extern int pthread_attr_init (pthread_attr_t *__attr) __THROW __nonnull ((1));
+      |            ^~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setaffinity_np’:
+/root/box64_src/src/libtools/threads.c:482:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  482 |         int ret = pthread_attr_setaffinity_np(PTHREAD_ATTR(attr), cpusize, cpuset);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:394:12: note: in a call to function ‘pthread_attr_setaffinity_np’ declared ‘nonnull’
+  394 | extern int pthread_attr_setaffinity_np (pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setdetachstate’:
+/root/box64_src/src/libtools/threads.c:495:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  495 |         int ret = pthread_attr_setdetachstate(PTHREAD_ATTR(attr), state);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:297:12: note: in a call to function ‘pthread_attr_setdetachstate’ declared ‘nonnull’
+  297 | extern int pthread_attr_setdetachstate (pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setguardsize’:
+/root/box64_src/src/libtools/threads.c:503:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  503 |         int ret = pthread_attr_setguardsize(PTHREAD_ATTR(attr), size);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:308:12: note: in a call to function ‘pthread_attr_setguardsize’ declared ‘nonnull’
+  308 | extern int pthread_attr_setguardsize (pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setinheritsched’:
+/root/box64_src/src/libtools/threads.c:512:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  512 |         int ret = pthread_attr_setinheritsched(PTHREAD_ATTR(attr), sched);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:338:12: note: in a call to function ‘pthread_attr_setinheritsched’ declared ‘nonnull’
+  338 | extern int pthread_attr_setinheritsched (pthread_attr_t *__attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setschedparam’:
+/root/box64_src/src/libtools/threads.c:524:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  524 |         int ret = pthread_attr_setschedparam(PTHREAD_ATTR(attr), param);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:319:12: note: in a call to function ‘pthread_attr_setschedparam’ declared ‘nonnull’
+  319 | extern int pthread_attr_setschedparam (pthread_attr_t *__restrict __attr,
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setschedpolicy’:
+/root/box64_src/src/libtools/threads.c:532:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  532 |         int ret = pthread_attr_setschedpolicy(PTHREAD_ATTR(attr), policy);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:329:12: note: in a call to function ‘pthread_attr_setschedpolicy’ declared ‘nonnull’
+  329 | extern int pthread_attr_setschedpolicy (pthread_attr_t *__attr, int __policy)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_attr_setscope’:
+/root/box64_src/src/libtools/threads.c:540:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  540 |         int ret = pthread_attr_setscope(PTHREAD_ATTR(attr), scope);
+      |                   ^~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:349:12: note: in a call to function ‘pthread_attr_setscope’ declared ‘nonnull’
+  349 | extern int pthread_attr_setscope (pthread_attr_t *__attr, int __scope)
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_getattr_np’:
+/root/box64_src/src/libtools/threads.c:558:19: warning: argument 2 null where non-null expected [-Wnonnull]
+  558 |         int ret = pthread_getattr_np(thread_id, PTHREAD_ATTR(attr));
+      |                   ^~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:432:12: note: in a call to function ‘pthread_getattr_np’ declared ‘nonnull’
+  432 | extern int pthread_getattr_np (pthread_t __th, pthread_attr_t *__attr)
+      |            ^~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_getattr_default_np’:
+/root/box64_src/src/libtools/threads.c:583:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  583 |         int ret = pthread_getattr_default_np(PTHREAD_ATTR(attr));
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:407:12: note: in a call to function ‘pthread_getattr_default_np’ declared ‘nonnull’
+  407 | extern int pthread_getattr_default_np (pthread_attr_t *__attr)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_setattr_default_np’:
+/root/box64_src/src/libtools/threads.c:591:19: warning: argument 1 null where non-null expected [-Wnonnull]
+  591 |         int ret = pthread_setattr_default_np(PTHREAD_ATTR(attr));
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:426:12: note: in a call to function ‘pthread_setattr_default_np’ declared ‘nonnull’
+  426 | extern int pthread_setattr_default_np (const pthread_attr_t *__attr)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/libtools/threads.c: In function ‘my_pthread_create’:
+/root/box64_src/src/libtools/threads.c:609:20: warning: argument 1 null where non-null expected [-Wnonnull]
+  609 |                 if(pthread_attr_getstacksize(PTHREAD_ATTR(attr), &stsize)==0)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /root/box64_src/src/libtools/threads.c:6:
+/usr/aarch64-linux-gnu/include/pthread.h:366:12: note: in a call to function ‘pthread_attr_getstacksize’ declared ‘nonnull’
+  366 | extern int pthread_attr_getstacksize (const pthread_attr_t *__restrict
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/steam.c: In function ‘create_lib_symlink’:
+/root/box64_src/src/steam.c:35:5: warning: ignoring return value of ‘symlink’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   35 |     symlink(file, tmp);
+      |     ^~~~~~~~~~~~~~~~~~
+/root/box64_src/src/wrapped/wrappeddbus.c: In function ‘my_dbus_message_new_error_printf’:
+/root/box64_src/src/wrapped/wrappeddbus.c:685:5: warning: implicit declaration of function ‘vasprintf’; did you mean ‘vsprintf’? [-Wimplicit-function-declaration]
+  685 |     vasprintf(&buff, (char*)fmt, VARARGS);
+      |     ^~~~~~~~~
+      |     vsprintf
+/root/box64_src/src/wrapped/wrappedgmp.c: In function ‘my___gmp_asprintf’:
+/root/box64_src/src/wrapped/wrappedgmp.c:158:38: warning: passing argument 2 of ‘my_gmp.__gmp_vasprintf’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  158 |     return my->__gmp_vasprintf(strp, fmt, VARARGS);
+      |                                      ^~~
+/root/box64_src/src/wrapped/wrappedgmp.c:158:38: note: expected ‘void *’ but argument is of type ‘const char *’
+/root/box64_src/src/wrapped/wrappedgmp.c: In function ‘my___gmp_fprintf’:
+/root/box64_src/src/wrapped/wrappedgmp.c:165:39: warning: passing argument 2 of ‘my_gmp.__gmp_vfprintf’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  165 |     return my->__gmp_vfprintf(stream, fmt, VARARGS);
+      |                                       ^~~
+/root/box64_src/src/wrapped/wrappedgmp.c:165:39: note: expected ‘void *’ but argument is of type ‘const char *’
+/root/box64_src/src/wrapped/wrappedgmp.c: In function ‘my___gmp_vasprintf’:
+/root/box64_src/src/wrapped/wrappedgmp.c:176:38: warning: passing argument 2 of ‘my_gmp.__gmp_vasprintf’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  176 |     return my->__gmp_vasprintf(strp, fmt, VARARGS);
+      |                                      ^~~
+/root/box64_src/src/wrapped/wrappedgmp.c:176:38: note: expected ‘void *’ but argument is of type ‘const char *’
+/root/box64_src/src/wrapped/wrappedgmp.c: In function ‘my___gmp_vfprintf’:
+/root/box64_src/src/wrapped/wrappedgmp.c:187:39: warning: passing argument 2 of ‘my_gmp.__gmp_vfprintf’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  187 |     return my->__gmp_vfprintf(stream, fmt, VARARGS);
+      |                                       ^~~
+/root/box64_src/src/wrapped/wrappedgmp.c:187:39: note: expected ‘void *’ but argument is of type ‘const char *’
+/root/box64_src/src/wrapped/wrappedlibavutil56.c: In function ‘my_av_asprintf’:
+/root/box64_src/src/wrapped/wrappedlibavutil56.c:213:5: warning: ignoring return value of ‘vasprintf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  213 |     vasprintf(&buff, (char*)fmt, VARARGS);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/wrapped/wrappedlibavutil56.c: In function ‘my_av_log’:
+/root/box64_src/src/wrapped/wrappedlibavutil56.c:260:5: warning: ignoring return value of ‘vasprintf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  260 |     vasprintf(&buff, (char*)fmt, VARARGS);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/box64_src/src/wrapped/wrappedlibavutil56.c: In function ‘my_av_strlcatf’:
+/root/box64_src/src/wrapped/wrappedlibavutil56.c:285:5: warning: ignoring return value of ‘vasprintf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  285 |     vasprintf(&buff, (char*)fmt, VARARGS);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aarch64-linux-gnu-strip: stPZC3wP: warning: allocated section `.dynsym' not in segment

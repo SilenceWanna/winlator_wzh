@@ -1,0 +1,13 @@
+[225/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_cuda.cpp.obj
+[226/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_context_imm.cpp.obj
+[227/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_features.cpp.obj
+[228/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_depth_stencil.cpp.obj
+[229/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_context_def.cpp.obj
+[230/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_device.cpp.obj
+[231/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_initializer.cpp.obj
+[232/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_fence.cpp.obj
+[233/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_context_ext.cpp.obj
+[234/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_gdi.cpp.obj
+[235/321] Compiling C++ object src/d3d11/d3d11.dll.p/d3d11_context.cpp.obj
+ninja: build stopped: subcommand failed.
+=== 最终 DLL ===

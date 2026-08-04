@@ -1,0 +1,21 @@
+WGL swap test starting
+ChoosePixelFormat=1
+wglCreateContext=0000000000011000
+GL_VENDOR=Collabora Ltd
+GL_RENDERER=zink (Turnip Adreno (TM) 725)
+GL_VERSION=4.6 (Compatibility Profile) Mesa 22.2.5
+progress frame=60 swap_successes=60 swap_failures=0
+progress frame=120 swap_successes=120 swap_failures=0
+progress frame=180 swap_successes=180 swap_failures=0
+progress frame=240 swap_successes=240 swap_failures=0
+progress frame=300 swap_successes=300 swap_failures=0
+progress frame=360 swap_successes=360 swap_failures=0
+progress frame=420 swap_successes=420 swap_failures=0
+progress frame=480 swap_successes=480 swap_failures=0
+progress frame=540 swap_successes=540 swap_failures=0
+progress frame=600 swap_successes=600 swap_failures=0
+progress frame=660 swap_successes=660 swap_failures=0
+progress frame=720 swap_successes=720 swap_failures=0
+progress frame=780 swap_successes=780 swap_failures=0
+progress frame=840 swap_successes=840 swap_failures=0
+RESULT frames=867 swap_successes=867 swap_failures=0

@@ -1,0 +1,13 @@
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/subprojects/dxil-spirv/third_party/SPIRV-Tools'...
+From https://github.com/doitsujin/dxbc-spirv
+ * branch            29c93aeecd55533a357fdd7c95be5587d1c1f506 -> FETCH_HEAD
+Submodule 'submodules/spirv_headers' (https://github.com/KhronosGroup/SPIRV-Headers.git) registered for path 'subprojects/dxil-spirv/subprojects/dxbc-spirv/submodules/spirv_headers'
+Cloning into 'C:/Users/wangzihe.18.360BUYAD/AppData/Local/Temp/vkd3d_src/subprojects/dxil-spirv/subprojects/dxbc-spirv/submodules/spirv_headers'...
+From https://github.com/KhronosGroup/SPIRV-Headers
+ * branch            c8ad050fcb29e42a2f57d9f59e97488f465c436d -> FETCH_HEAD
+From https://github.com/KhronosGroup/SPIRV-Cross
+ * branch            4b7bcb7e5cf71015b3299088d22004bfe4e13a5e -> FETCH_HEAD
+From https://github.com/KhronosGroup/SPIRV-Tools
+ * branch            64f5770f59db933d46b9cad6edc42b4186409ef4 -> FETCH_HEAD
+From https://github.com/KhronosGroup/SPIRV-Headers
+ * branch            f88a2d766840fc825af1fc065977953ba1fa4a91 -> FETCH_HEAD

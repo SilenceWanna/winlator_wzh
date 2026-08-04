@@ -1,0 +1,13 @@
+    Cross files    : build-win64.txt
+    buildtype      : release
+
+Found ninja-1.10.1 at /usr/bin/ninja
+Generating targets:   0%|          | 0/14 eta ?Generating targets:  43%|████▎     | 6/14 eta 00:00Generating targets:  93%|█████████▎| 13/14 eta 00:00                                                    Writing build.ninja:   0%|          | 0/351 eta ?                                                 === NINJA 编译(完整错误) ===
+ninja: Entering directory `build.diag'
+FAILED: src/dxgi/dxgi.dll 
+x86_64-w64-mingw32-g++-posix  -o src/dxgi/dxgi.dll src/dxgi/dxgi.dll.p/version.o src/dxgi/dxgi.dll.p/dxgi_adapter.cpp.obj src/dxgi/dxgi.dll.p/dxgi_enums.cpp.obj src/dxgi/dxgi.dll.p/dxgi_factory.cpp.obj src/dxgi/dxgi.dll.p/dxgi_format.cpp.obj src/dxgi/dxgi.dll.p/dxgi_main.cpp.obj src/dxgi/dxgi.dll.p/dxgi_monitor.cpp.obj src/dxgi/dxgi.dll.p/dxgi_options.cpp.obj src/dxgi/dxgi.dll.p/dxgi_output.cpp.obj src/dxgi/dxgi.dll.p/dxgi_surface.cpp.obj src/dxgi/dxgi.dll.p/dxgi_swapchain.cpp.obj -Wl,--allow-shlib-undefined -Wl,-O1 -shared ../src/dxgi/dxgi.def -Wl,--start-group -Wl,--out-implib=src/dxgi/dxgi.dll.a -static -static-libgcc -static-libstdc++ -Wl,--file-alignment=4096 src/dxvk/libdxvk.a src/util/libutil.a src/spirv/libspirv.a src/wsi/libwsi.a subprojects/libdisplay-info/libdisplay-info.a subprojects/dxbc-spirv/libdxbc_spv.a src/vulkan/libvkcommon.a -lversion -pthread -lsetupapi -lm -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -Wl,--end-group
+/usr/bin/x86_64-w64-mingw32-ld: src/util/libutil.a.p/util_sleep.cpp.obj:util_sleep.cpp:(.text+0x4f6): undefined reference to `nanosleep64'
+/usr/bin/x86_64-w64-mingw32-ld: src/util/libutil.a.p/util_sleep.cpp.obj:util_sleep.cpp:(.text+0xd43): undefined reference to `nanosleep64'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+DIAG_DONE

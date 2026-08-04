@@ -1,0 +1,5 @@
+Submodule path 'subprojects/dxil-spirv/subprojects/dxbc-spirv': checked out '29c93aeecd55533a357fdd7c95be5587d1c1f506'
+Submodule path 'subprojects/dxil-spirv/subprojects/dxbc-spirv/submodules/spirv_headers': checked out 'c8ad050fcb29e42a2f57d9f59e97488f465c436d'
+Submodule path 'subprojects/dxil-spirv/third_party/SPIRV-Cross': checked out '4b7bcb7e5cf71015b3299088d22004bfe4e13a5e'
+Submodule path 'subprojects/dxil-spirv/third_party/SPIRV-Tools': checked out '64f5770f59db933d46b9cad6edc42b4186409ef4'
+Submodule path 'subprojects/dxil-spirv/third_party/spirv-headers': checked out 'f88a2d766840fc825af1fc065977953ba1fa4a91'

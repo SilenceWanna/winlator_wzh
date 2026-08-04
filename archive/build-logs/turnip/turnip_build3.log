@@ -1,0 +1,20 @@
+Run-time dependency lua-5.4 found: NO  (tried pkg-config and cmake)
+Run-time dependency lua53 found: NO  (tried pkg-config and cmake)
+Run-time dependency lua5.3 found: NO  (tried pkg-config and cmake)
+Run-time dependency lua-5.3 found: NO  (tried pkg-config and cmake)
+Run-time dependency lua found: NO  (tried pkg-config and cmake)
+Run-time dependency libelf found: NO  (tried pkg-config and cmake)
+Library elf found: NO
+Run-time dependency valgrind found: NO  (tried pkg-config)
+Program bison found: YES (/usr/bin/bison)
+Program bison found: YES 3.8.2 3.8.2 (/usr/bin/bison)
+Program flex found: NO
+
+meson.build:2138:14: ERROR: Program 'flex' not found or not executable
+
+A full log can be found at /root/mesa_src/build-turnip/meson-logs/meson-log.txt
+=== meson done, compiling ===
+ninja: Entering directory `build-turnip'
+ninja: error: loading 'build.ninja': No such file or directory
+=== 产物 ===
+TURNIP_BUILD_DONE

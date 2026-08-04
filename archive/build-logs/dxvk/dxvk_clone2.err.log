@@ -1,0 +1,38 @@
+Cloning into 'dxvk_src'...
+Note: switching to '6b20f622a77b87b2921fe5d2c1774d2f2ba3e9b7'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Submodule 'include/native/directx' (https://github.com/Joshua-Ashton/mingw-directx-headers) registered for path 'include/native/directx'
+Submodule 'include/spirv' (https://github.com/KhronosGroup/SPIRV-Headers.git) registered for path 'include/spirv'
+Submodule 'include/vulkan' (https://github.com/KhronosGroup/Vulkan-Headers) registered for path 'include/vulkan'
+Submodule 'subprojects/dxbc-spirv' (https://github.com/doitsujin/dxbc-spirv.git) registered for path 'subprojects/dxbc-spirv'
+Submodule 'subprojects/libdisplay-info' (https://github.com/doitsujin/libdisplay-info.git) registered for path 'subprojects/libdisplay-info'
+Cloning into '/root/dxvk_src/include/native/directx'...
+Cloning into '/root/dxvk_src/include/spirv'...
+Cloning into '/root/dxvk_src/include/vulkan'...
+Cloning into '/root/dxvk_src/subprojects/dxbc-spirv'...
+Cloning into '/root/dxvk_src/subprojects/libdisplay-info'...
+From https://github.com/KhronosGroup/SPIRV-Headers
+ * branch            04f10f650d514df88b76d25e83db360142c7b174 -> FETCH_HEAD
+From https://github.com/KhronosGroup/Vulkan-Headers
+ * branch            8864cdc896bbc2a9b6eb36b3218fc9ef57908d77 -> FETCH_HEAD
+From https://github.com/doitsujin/dxbc-spirv
+ * branch            887bb6c4c4af01a9ccb757e92d35fca3896794f6 -> FETCH_HEAD
+Submodule 'submodules/spirv_headers' (https://github.com/KhronosGroup/SPIRV-Headers.git) registered for path 'subprojects/dxbc-spirv/submodules/spirv_headers'
+Cloning into '/root/dxvk_src/subprojects/dxbc-spirv/submodules/spirv_headers'...
+From https://github.com/KhronosGroup/SPIRV-Headers
+ * branch            c8ad050fcb29e42a2f57d9f59e97488f465c436d -> FETCH_HEAD

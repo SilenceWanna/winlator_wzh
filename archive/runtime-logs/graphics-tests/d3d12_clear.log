@@ -1,0 +1,5 @@
+start
+CreateDXGIFactory1 ok
+D3D12CreateDevice ok
+CreateCommandQueue ok
+done

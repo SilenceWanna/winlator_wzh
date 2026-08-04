@@ -1,0 +1,20 @@
+The Meson build system
+Version: 1.11.2
+Source dir: /root/mesa_src
+Build dir: /root/mesa_src/build-turnip
+Build type: cross build
+Project name: mesa
+Project version: 26.1.5
+C compiler for the host machine: aarch64-linux-gnu-gcc (gcc 11.4.0 "aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0")
+C linker for the host machine: aarch64-linux-gnu-gcc ld.bfd 2.38
+
+meson.build:4:0: ERROR: Unknown compiler(s): [['aarch64-linux-gnu-g++']]
+The following exception(s) were encountered:
+Running `aarch64-linux-gnu-g++ --version` gave "[Errno 2] No such file or directory: 'aarch64-linux-gnu-g++'"
+
+A full log can be found at /root/mesa_src/build-turnip/meson-logs/meson-log.txt
+=== meson done, compiling ===
+ninja: Entering directory `build-turnip'
+ninja: error: loading 'build.ninja': No such file or directory
+=== 产物 ===
+TURNIP_BUILD_DONE

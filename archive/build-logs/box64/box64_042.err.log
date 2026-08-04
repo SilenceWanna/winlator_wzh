@@ -1,0 +1,21 @@
+Cloning into 'box64_042'...
+Note: switching to '7eeb5016493dab4e143d53da50dd47bfb44a9509'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  43% (1116/2542)Updating files:  44% (1119/2542)Updating files:  45% (1144/2542)Updating files:  46% (1170/2542)Updating files:  47% (1195/2542)Updating files:  48% (1221/2542)Updating files:  49% (1246/2542)Updating files:  50% (1271/2542)Updating files:  51% (1297/2542)Updating files:  52% (1322/2542)Updating files:  53% (1348/2542)Updating files:  54% (1373/2542)Updating files:  55% (1399/2542)Updating files:  56% (1424/2542)Updating files:  57% (1449/2542)Updating files:  58% (1475/2542)Updating files:  59% (1500/2542)Updating files:  60% (1526/2542)Updating files:  61% (1551/2542)Updating files:  62% (1577/2542)Updating files:  63% (1602/2542)Updating files:  64% (1627/2542)Updating files:  65% (1653/2542)Updating files:  66% (1678/2542)Updating files:  67% (1704/2542)Updating files:  68% (1729/2542)Updating files:  69% (1754/2542)Updating files:  70% (1780/2542)Updating files:  71% (1805/2542)Updating files:  72% (1831/2542)Updating files:  73% (1856/2542)Updating files:  74% (1882/2542)Updating files:  75% (1907/2542)Updating files:  76% (1932/2542)Updating files:  77% (1958/2542)Updating files:  78% (1983/2542)Updating files:  79% (2009/2542)Updating files:  80% (2034/2542)Updating files:  81% (2060/2542)Updating files:  82% (2085/2542)Updating files:  83% (2110/2542)Updating files:  84% (2136/2542)Updating files:  85% (2161/2542)Updating files:  86% (2187/2542)Updating files:  87% (2212/2542)Updating files:  88% (2237/2542)Updating files:  89% (2263/2542)Updating files:  90% (2288/2542)Updating files:  91% (2314/2542)Updating files:  92% (2339/2542)Updating files:  93% (2365/2542)Updating files:  93% (2373/2542)Updating files:  94% (2390/2542)Updating files:  95% (2415/2542)Updating files:  96% (2441/2542)Updating files:  97% (2466/2542)Updating files:  98% (2492/2542)Updating files:  99% (2517/2542)Updating files: 100% (2542/2542)Updating files: 100% (2542/2542), done.
+aarch64-linux-gnu-strip: stHi09z1: warning: allocated section `.dynsym' not in segment
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
