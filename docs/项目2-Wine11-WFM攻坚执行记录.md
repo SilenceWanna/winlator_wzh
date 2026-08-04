@@ -574,3 +574,28 @@ XZ 完整性检查通过；归档 2533 个条目全部位于 `opt/` 下，不安
 
 若 f11 能执行 swap 并启动游戏，即可确认故障由正式版缩短版本元数据触发的 ntdll/Box64 布局兼容性，而非 Wine 11.0 最终图形源码；f11 可作为可并存的最终版源码临时工作版本。若 f11 仍复现相同的 `c0000005`，则该布局假设被推翻，下一步只继续检查正式版 configure 元数据和运行时加载差异。
 
+### 6.17 Wine 11.0-f11 真机通过，确认正式版 ntdll/Box64 布局回归（2026-08-04）
+
+f11 addon 已在真机完成验证：可以进入桌面并启动 Stardew Valley。日志 `logs/stardew-valley/logs_wine11_f11_stardew.txt` 长度 216859 字节，SHA-256 为 `7502B4B300A03D7B54D9197D8E3F43D95C0BB8704949B01C0F2E8869555739BE`。
+
+日志时间线与指标：
+
+- Stardew 进程于 09:57:13 启动；09:57:49 报告 `libEGL.so.1` 不可用，随后正常回退到 GLX 4.6 / Zink / Turnip（Adreno 725）。
+- 创建 3 个 `x11drv_context`，返回 64 个 `win32u_wglGetProcAddress` 地址；09:58:05 开始执行 `win32u_wglSwapBuffers` 和 `x11drv_surface_swap`，全日志各 3 次，另有 56 次 surface flush、90 次 context flush。
+- `c0000005`、`NoSuitableGraphicsDeviceException`、`NullReferenceException`、`FailFast`、未处理异常和 ICU stub 均为 0；12 个 `e0434352`、8 个 `e06d7363` 与 rc5 成功基线一致，属于程序处理的正常探测异常。
+
+f11 与失败的 Wine 11.0 正式版只差一个等长版本布局变量：最终版源码、WGL/OpenGL/win32u 代码和 Android `server_dir` 补丁保持不变，`ntdll.so` 的 `.text` 原始字节与 rc5 完全一致，只把 `wine-11.0` 的短版本元数据变为 `wine-11.0-f11`，恢复 rc5 的数据偏移形态。f11 成功而正式版仍在同一位置触发 `c0000005`，已确认当前回归是 Box64 dynarec 对正式版 ntdll 版本数据布局的兼容性问题，不是 Wine 11.0 WGL 图形源码回归。
+
+当前推荐的真机工作版本是 f11；rc3、rc5 继续保留作为已验证基线，旧正式版保留用于复现对照。f11 addon 已通过 XZ 完整性、路径安全和 fresh 解包校验，产物信息如下：
+
+```text
+../../artifacts/wine-packages/wine-11.0-f11-winlator-custom-addon.tar.xz
+Size 54688900 bytes
+SHA-256 B12A756888B33CE6D1F6E7FA83A6A571AB748825C3609F56E0A348EFC21E9217
+```
+
+后续工程方向：
+
+- 保留 f11 作为 Wine 11.0 的 Android/WFM 工作包，不改动已经通过的 rc3、rc5。
+- 若要恢复正式 identifier `wine-11.0`，需要修复或升级 Box64 对该 ntdll 布局的处理，再重新验证正式版；直接把 f11 重命名为 `wine-11.0` 会重新触发已确认的失败布局，不作为当前方案。
+- 真机后续日志统一保留 `logs_wine11_f11_stardew.txt` 这类带版本后缀的文件名，避免覆盖 rc5 和正式版失败样本。
