@@ -84,6 +84,11 @@ public class Shortcut {
             index = path.indexOf("start.exe ");
             if (index != -1) path = path.substring(index+10);
 
+            // Desktop Exec entries quote the Windows executable path. Remove only
+            // those wrapping quotes before XServerDisplayActivity builds /dir args.
+            while (path.length() >= 2 && path.startsWith("\"") && path.endsWith("\"")) {
+                path = path.substring(1, path.length()-1).trim();
+            }
             this.path = path;
             Container.checkObsoleteOrMissingProperties(extraData);
         }

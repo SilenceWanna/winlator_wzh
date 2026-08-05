@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.1 已确认 UnityPlayer 检测无效；等待 T1.2 Unity 内部日志
+> 当前状态：G1.2 已修复快捷方式路径重复引号；等待 T1.3 修复 APK 真机复测
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -110,6 +110,7 @@ T1 结果：补丁 Wine 路径和 Box64 版本选择正确；游戏从 `dnsapi` 
 | T0 内置 Wine 失败 | `archive/runtime-logs/dave-the-diver/T0-builtin-wine11-failure.txt` | 48,526 | `9B688E03B964D960D81F37AEE579EE89901B32DF29A683588FD7C4861512E0B1` |
 | T1 补丁 Wine 黑屏 | `archive/runtime-logs/dave-the-diver/T1-patched-wine11-black-screen.txt` | 44,940 | `C521624EC395AF20B1F0C205313EB00D56C66BD1AE160BDC6EEDF9BD93BDCD58` |
 | T1.1 UnityPlayer 检测黑屏 | `archive/runtime-logs/dave-the-diver/T1.1-unityplayer-black-screen.txt` | 45,763 | `873B719C44BD1404CCDFE96CE0552F5662EB9D0894E8F7C63CC0A861EDEBF108` |
+| T1.2 损坏的快捷方式命令 | `archive/runtime-logs/dave-the-diver/T1.2-invalid-shortcut-command.txt` | 30,272 | `05B25941D43F9A95DA9CABB796D3A46B486955290D3106957910155B3DD7A8C6` |
 
 ### T1.1：启用 Box64 UnityPlayer 检测（已完成）
 
@@ -132,9 +133,29 @@ T1.1 结果：变量生效但无行为改善。日志在 `10:55:39` 明确出现
 - [x] 将 P1 从主因列表降级，进入 Unity 内部日志诊断。
 - [x] 准备下一轮只增加 `-logFile` 的 T1.2 操作。
 
+### G1.2：修复快捷方式路径重复引号（已完成）
+
+- [x] 从 T1.2 日志确认游戏进程没有创建，失败发生在 `winhandler` 参数解析阶段。
+- [x] 修复 `Shortcut.java`：移除 `.desktop` 的 `Exec=wine "..."` 可执行路径最外层引号，再交给启动命令重新转义。
+- [x] 使用 Temurin JDK 17.0.20 完成 `compileDebugJavaWithJavac` 和 `assembleDebug`。
+- [x] 完成 APK 对齐、V2 签名、签名证书一致性和 SHA-256 校验。
+- [x] 归档 T1.2 日志并形成 T1.3 真机复测步骤。
+
+候选 APK：
+
+```text
+D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-shortcut-quote-fix.apk
+Size: 208635197 bytes
+SHA-256: 4E3B812551D1767B5B7792536A652A36CD76CA38091C4FF41F2B3535E707298A
+Signature: APK Signature Scheme v2, 1 signer
+Signer SHA-256: B6396F6CD549475DEC0893AC0CAB0E03770F403FB37679BAE02418A492270B07
+```
+
+签名证书与上一版 `app-debug-wine11-default-box64-0.4.5-dev.apk` 完全一致，可以直接覆盖安装而不清除应用数据。
+
 ### G2：把最小修复集成到内置 Wine
 
-T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位时反复构建 APK，先完成 T1.1 兼容性分流，再执行内置集成：
+T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位时反复构建 APK，先完成 T1.3 快捷方式修复回归，再执行内置集成：
 
 1. 从已验证补丁产物提取所需 `nsiproxy` 模块，确认版本、架构、权限和哈希。
 2. 替换 `app/src/main/assets/rootfs.tzst` 中内置 Wine 11 的对应文件；不改 Wine 版本标识、Box64 或图形组件。
@@ -146,15 +167,14 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 
 使用全新容器选择内置 Wine，日志必须重新显示 `/opt/wine/`。连续冷启动两次并进入主菜单，以证明成功来自新内置 rootfs，而不是手机里残留的可选 Wine。通过后将日志归档、更新本文并提交推送。
 
-### T3：后续兼容性分支（仅 T1.1 未闭环时启用）
+### T3：后续兼容性分支（仅 T1.3 仍黑屏时启用）
 
 按以下顺序每轮只改一个变量：
 
-1. 保持补丁 Wine 和 T1.1 设置，增加 Unity 参数 `-logFile "E:\Dave the Diver\Player.log"`，取得游戏内部初始化停点。
-2. 根据 `Player.log` 只验证一个图形后端变量，优先使用 Winlator 已提供的 `-force-gfx-direct`。
-3. 保持 Wine/图形设置，Box64 预设改为 Stability。
-4. 使用来源合法、文件校验完整的干净游戏副本对照。
-5. 仍无明确异常时增加 Box64 日志级别 2 和 Wine 通道 `timestamp,pid,tid,+seh,+loaddll,+process,+thread,+nsi`。
+1. 根据 T1.3 的 `Player.log` 只验证一个图形后端变量，优先使用 Winlator 已提供的 `-force-gfx-direct`。
+2. 保持 Wine/图形设置，Box64 预设改为 Stability。
+3. 使用来源合法、文件校验完整的干净游戏副本对照。
+4. 仍无明确异常时增加 Box64 日志级别 2 和 Wine 通道 `timestamp,pid,tid,+seh,+loaddll,+process,+thread,+nsi`。
 
 判断边界：若干净副本能启动而当前副本不能，Winlator 侧不实现针对第三方 DRM/注入组件的绕过；记录兼容边界后转为验证正式游戏发行版本。
 
@@ -165,22 +185,25 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
-## 五、用户当前需要执行的 T1.2 步骤
+## 五、用户当前需要执行的 T1.3 步骤
 
-1. 继续使用刚才 T1.1 的补丁 Wine 11 容器，不要新建容器，也不要移除 `BOX64_UNITYPLAYER=1`。
-2. 为同一个 `DaveTheDiver.exe` 建立或编辑快捷方式，在执行参数中只增加：
+1. 把以下 APK 传到手机并直接覆盖安装，不能卸载旧版，否则容器和已导入 Wine 可能丢失：
 
-   `-logFile "E:\Dave the Diver\Player.log"`
+   `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-shortcut-quote-fix.apk`
 
-   不要加入 `-force-gfx-direct`、Stability 或其他参数。
-3. 保持 Box64 `0.4.5-dev-372739d`、Intermediate、Wine、图形驱动、DX wrapper、分辨率和游戏文件不变。
-4. 通过该快捷方式启动，黑屏后继续等待至少 120 秒。若进入主菜单，停留约 30 秒后正常退出。
-5. 导出 Winlator 日志并保存到电脑：
+2. 打开原来的补丁 Wine 11 容器，保留 `BOX64_UNITYPLAYER=1`，不要新建容器。
+3. 编辑现有 Dave 快捷方式，把 `Exec Arguments` 改成且只保留：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.2-playerlog-20260805.txt`
+   `-logFile Player.log`
 
-6. 从游戏目录取回 `Player.log`。如果该文件没有生成，也要反馈“无 Player.log”，这说明停点早于 Unity 日志系统初始化或路径不可写。
-7. 反馈可见结果和大致耗时。
+4. 保持 Box64 `0.4.5-dev-372739d`、Intermediate、Wine、图形驱动、DX wrapper、分辨率和游戏文件不变。
+5. 通过该快捷方式启动，黑屏后继续等待至少 120 秒。若进入主菜单，停留约 30 秒后正常退出。
+6. 导出 Winlator 日志并保存到电脑：
+
+   `D:\agent\Winlator\logs\dave-the-diver\T1.3-shortcut-fixed-20260805.txt`
+
+7. 从 `E:\Dave the Diver\` 取回 `Player.log`。如果没有生成，也要反馈“无 Player.log”。
+8. 反馈可见结果和大致耗时。日志中必须重新出现 `Detected running wine with "DaveTheDiver.exe"`；若仍未出现，继续按快捷方式命令链处理，不进入 Unity 兼容结论。
 
 ## 六、进度记录
 
@@ -210,6 +233,15 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - `c0000005`、SIGSEGV、Unhandled page fault 和 X connection broken 仍未出现；`UnityCrashHandler64.exe --attach` 仍只能视为 Unity 的崩溃收集器启动，不能单独作为主进程崩溃证据。
 - 结论：P1 已排除。当前问题收敛到 Unity 图形/窗口初始化或游戏内部等待；下一轮只增加 `-logFile` 生成 `Player.log`，保持所有运行参数不变。
 
+### 2026-08-05：G1.2 T1.2 日志定位快捷方式重复引号并完成源码修复
+
+- 用户使用 `-logFile "E:\\Dave the Diver\\Player.log"` 后收到 `invalid name`。导出的 T1.2 Winlator 日志共 466 行、30,272 bytes，SHA-256 为 `05B25941D43F9A95DA9CABB796D3A46B486955290D3106957910155B3DD7A8C6`。
+- 日志没有 `Detected running wine with "DaveTheDiver.exe"`、`Detected UnityPlayer.dll` 或 `GameAssembly.dll`。`14:27:41` 的参数已经损坏：目录参数带多余首尾引号，文件名带多余尾引号，`-logFile` 前还有空字符串参数；`14:27:59` X session 退出。因此该样本不是 Dave 黑屏复现，而是游戏启动前的快捷方式命令失败。
+- 源码根因为 `Shortcut.java` 从 `.desktop` 的 `Exec=wine "..."` 取路径时保留了可执行文件的包装引号，随后 `XServerDisplayActivity` 又对目录和文件名加引号。新增的 `Exec Arguments` 让原有隐患变成可见的错误拆分。
+- 最小修复只剥离整个路径最外层成对双引号。Windows 文件名不允许双引号，因此不会损失合法路径字符；路径内部空格和反斜杠保持不变。
+- Temurin JDK 17.0.20 下 `compileDebugJavaWithJavac` 和 `assembleDebug` 均成功。APK 通过 `zipalign -c -v 4` 和 `apksigner verify --verbose`，V2 签名有效且证书与上一版一致。
+- T1.3 使用修复 APK、原补丁 Wine 容器和相对参数 `-logFile Player.log` 复测。只有日志重新出现 Dave 进程后，才继续分析 Unity `Player.log`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -217,7 +249,8 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 | G0 | 初始诊断、执行计划、T1 操作 | 本文复核完成 | 已完成（2026-08-05） |
 | G1 | 失败/成功日志归档、T1 结论、下一轮计划 | 收到并分析 T1 日志 | 已完成（2026-08-05） |
 | G1.1 | T1.1 日志归档、UnityPlayer 变量验证、T1.2 计划 | 收到并分析 T1.1 日志 | 已完成（2026-08-05） |
-| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.2/T3 完成兼容性分流 | 待执行 |
+| G1.2 | T1.2 日志归档、快捷方式引号修复、候选 APK | 定位 `invalid name` 的命令拼装根因 | 已完成（2026-08-05） |
+| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.3/T3 完成兼容性分流 | 待执行 |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
