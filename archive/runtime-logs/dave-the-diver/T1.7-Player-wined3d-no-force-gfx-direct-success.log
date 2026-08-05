@@ -1,0 +1,182 @@
+Initialize engine version: 2020.3.48f1 (b805b124c6b7)
+[Subsystems] Discovering subsystems at path E:/Dave the Diver/DaveTheDiver_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 480 (ID=0x6c0)
+    Vendor:   
+    VRAM:     2048 MB
+<RI> Initializing input.
+New input system (experimental) initialized
+Using XInput
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 11.671600 ms
+Odin Serializer ArchitectureInfo initialization with defaults (all unaligned read/writes disabled).
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Sirenix.Serialization.UnitySerializationInitializer:Initialize()
+
+Odin Serializer detected whitelisted runtime platform WindowsPlayer and memory read test succeeded; enabling all unaligned memory read/writes.
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Sirenix.Serialization.ArchitectureInfo:SetRuntimePlatform(RuntimePlatform)
+Sirenix.Serialization.UnitySerializationInitializer:Initialize()
+
+Direct3D: detected that using refresh rate causes time drift. Will stop trusting refresh rate until the game window is moved.
+Unloading 5 Unused Serialized files (Serialized files now loaded: 379)
+UnloadTime: 35.921300 ms
+Build Version : v1.0.2.1270.steam
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+LogoManager:Awake()
+
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 10677.
+Total: 105.259200 ms (FindLiveObjects: 3.006900 ms CreateObjectMapping: 1.957100 ms MarkObjects: 95.488700 ms  DeleteObjects: 4.741500 ms)
+
+[Backtrace] backtrace enabled : True
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+BacktraceManager:Start()
+
+[21.51349][SingletonAddrScriptableObject] LoadAssetAsync: obj:SoundConfigManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+<Init>d__21:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[22.24218][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:SoundConfigManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+[Save Convert] UserData save version 0.0.26 is target version. applying common convert
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[Save Convert] UserOption save version 0.0.26 is target version. applying common convert
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[Save Convert] GameData save version 0.0.26 is target version. applying common convert
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[Save Convert] GameData Converting... Prev Ver : -100, Next Ver : -100
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.SaveConverterBase:ConvertToTargetVersion(JObject)
+SaveConverterTool.SaveConverter_GD_Common:ConvertToTargetVersion(JObject)
+SaveConverterTool.<>c__DisplayClass4_0:<Convert>g__ApplyCommonConvert|0()
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[Save Convert] Array Token "clearedEvents": [] Removed Value : 309
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.JsonConverter:RemoveFromArray(JToken, JToken)
+SaveConverterTool.SaveConverter_GD_Common:ConvertCommon(JObject)
+SaveConverterTool.<>c__DisplayClass4_0:<Convert>g__ApplyCommonConvert|0()
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[Save Convert] GameData Applied Common Converting
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.SaveConverter_GD_Common:ConvertCommon(JObject)
+SaveConverterTool.<>c__DisplayClass4_0:<Convert>g__ApplyCommonConvert|0()
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[Save Convert] PhotoData save version 0.0.26 is target version. applying common convert
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[89.86414][SingletonAddrScriptableObject] LoadAssetAsync: obj:CursorManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+<InitAfterSaveSystem>d__34:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[DLC localcheck] bundleAppId:2677020, isDlcInstalled:True
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ItemIntegrityCheck:PreCheckLocalDLC(UInt32)
+<CheckDlcOwnership>d__9:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+<AgeGradeEvent>d__12:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[90.00253][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:CursorManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+httpCode=OK, Rescode=2001
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+Steamworks.APIDispatchDelegate:Invoke(T, Boolean)
+Steamworks.CallResult`1:OnRunCallResult(IntPtr, Boolean, UInt64)
+Steamworks.CallbackDispatcher:RunFrame(Boolean)
+
+httpCode=OK, Rescode=2001
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+Steamworks.APIDispatchDelegate:Invoke(T, Boolean)
+Steamworks.CallResult`1:OnRunCallResult(IntPtr, Boolean, UInt64)
+Steamworks.CallbackDispatcher:RunFrame(Boolean)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 392)
+UnloadTime: 117.039700 ms
+
+Unloading 487 unused Assets to reduce memory usage. Loaded Objects now: 39230.
+Total: 530.422600 ms (FindLiveObjects: 25.416000 ms CreateObjectMapping: 15.438500 ms MarkObjects: 486.565000 ms  DeleteObjects: 2.690300 ms)
+
