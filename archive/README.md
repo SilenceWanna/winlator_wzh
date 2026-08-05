@@ -1,12 +1,12 @@
 # Winlator 工作归档
 
-本目录保存项目 1/2 研发过程中的可复现材料，服务于跨主机继续开发和研究。源码仍位于仓库本身；`winlator-main`、`winlator_wzh_new` 两个工作目录不复制到这里。
+本目录保存项目 1/2/3 研发过程中的可复现材料，服务于跨主机继续开发和研究。源码仍位于仓库本身；`winlator-main`、`winlator_wzh_new` 两个工作目录不复制到这里。
 
 ## 目录
 
 - `project-documents/`: 练习项目文档和工作区布局说明。
 - `build-logs/`: Android、组件和 WSL 构建日志。
-- `runtime-logs/`: 真机图形和 Stardew Valley 运行日志。
+- `runtime-logs/`: 真机图形、Stardew Valley 和 Dave the Diver 运行日志。
 - `test/`: 图形探针和游戏测试文件。
 - `artifacts/wine-packages/`: Wine 10/11 基线、失败对照和最终补丁包。
 - `artifacts/box64/`: Box64 0.4.5-dev 安装包归档。
