@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.5 已确认 Box64 Stability 无行为改善；等待 T1.6 WineD3D 单变量对照
+> 当前状态：G1.6 已通过 WineD3D 首次进入游戏；等待 T1.7 移除 `-force-gfx-direct` 的最小成功集回退
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -61,9 +61,9 @@ Dave 当前恰好使用未修复的内置 Wine，并停在 `dnsapi` 初始化之
 | P0（第一层已确认） | 内置 Wine 11 的 `nsiproxy` 缺少 `if_nameindex()` 空值保护，阻塞网络初始化 | T0 停在 `dnsapi`；T1 只换补丁 Wine 后越过该点并继续加载 `GameAssembly.dll`、Vulkan 和音频 | 已由 T1 功能路径确认；后续仍需集成进内置 rootfs |
 | P1（已排除） | Box64 Unity 专用策略被关闭导致 IL2CPP/Unity 初始化不兼容 | T1.1 确认 `BOX64_UNITYPLAYER=1`、`Detected UnityPlayer.dll`、`BOX64_UNITY=1`，但时间线和黑屏无改善 | 已完成；不再把该开关作为主修复 |
 | P2a（未支持） | Unity 多线程渲染路径导致首帧前等待 | T1.4 已在实际 argv 中启用 `-force-gfx-direct`；`Player.log` 停止位置与 T1.3 相同，仍未进入场景 | 已完成当前验证；不再单独修改 Unity 渲染线程参数 |
-| P2b（当前） | DXVK 的 D3D11-to-Vulkan 路径在设备创建后、首帧前发生等待 | T1.3-T1.5 均使用 DXVK/Turnip；D3D11 设备创建成功不能排除后续 present、shader 或 wrapper 路径 | T1.6 保持其他设置，只把快捷方式 DX wrapper 改为 WineD3D |
+| P2b（第二层已确认） | DXVK 的 D3D11-to-Vulkan 路径在设备创建后、首帧前发生等待 | T1.3-T1.5 使用 DXVK/Turnip 时均停在 Odin Serializer 后；T1.6 只改 WineD3D 后进入资源加载、场景切换和教程任务 | 已由 T1.6 功能路径确认；后续回退无关开关并建立最终配置 |
 | P3（已排除） | Box64 Intermediate 的内存模型不适合该 Unity 版本 | T1.5 已启用 Stability：`BIGBLOCK=0`、`STRONGMEM=2`、`WEAKBARRIER=0`；可见结果和 Unity 停点不变 | 已完成；恢复/保留 Stability 均不再作为主变量 |
-| P4（下一边界） | 当前游戏文件中的第三方 Steam/Unity 替换层在 Wine/Box64 下阻塞 | 本地目录明确存在 `tenoke.ini`、`UnityPlayer.tnk`、额外 `steamclient64.dll`，且替换后的 `UnityPlayer.dll` 参与当前启动链 | T1.6 仍无改善后，使用来源合法、校验完整的正式发行版干净副本对照 |
+| P4（非充分原因/范围风险） | 当前游戏文件中的第三方 Steam/Unity 替换层在 Wine/Box64 下阻塞 | 本地目录存在 `tenoke.ini`、`UnityPlayer.tnk` 和额外 `steamclient64.dll`，但相同文件在 T1.6 WineD3D 下成功运行 | 不能再把它判为本次黑屏的充分原因；最终结论仅覆盖当前样本，正式发行版仍需独立验证 |
 
 ## 四、分阶段测试与实现计划
 
@@ -118,6 +118,8 @@ T1 结果：补丁 Wine 路径和 Box64 版本选择正确；游戏从 `dnsapi` 
 | T1.4 Unity 内部日志 | `archive/runtime-logs/dave-the-diver/T1.4-Player-force-gfx-direct.log` | 1,071 | `796B971A6134F2E9EB273D81F25C98BCF7BE6C8F8619B2EBBB6C8C10DC3F46B90` |
 | T1.5 Stability 黑屏 | `archive/runtime-logs/dave-the-diver/T1.5-stability-force-gfx-direct-black-screen.txt` | 41,400 | `C2B63BC390346929E5A8B827FDCCC737A83183085F73D2CBE983BEC396A208C9` |
 | T1.5 Unity 内部日志 | `archive/runtime-logs/dave-the-diver/T1.5-Player-stability-force-gfx-direct.log` | 1,071 | `977C783F47895A65B9BAB16744DCF90002095D9BA1B5F4438C80D09E23150752` |
+| T1.6 WineD3D 成功 | `archive/runtime-logs/dave-the-diver/T1.6-wined3d-stability-success.txt` | 270,759 | `4FA3731A4D05F2739398C72BFD536B6489C850A5D1A8D2990555839058BD7A37` |
+| T1.6 Unity 成功日志 | `archive/runtime-logs/dave-the-diver/T1.6-Player-wined3d-stability-success.log` | 11,374 | `3AF7129BF6B633FE098977FFE866D763B277D7CC852C485337305A38F6392CFF` |
 
 ### T1.1：启用 Box64 UnityPlayer 检测（已完成）
 
@@ -182,9 +184,17 @@ Signer SHA-256: B6396F6CD549475DEC0893AC0CAB0E03770F403FB37679BAE02418A492270B07
 - [x] T1.5 与 T1.4 的 Unity 日志除 `UnloadTime` 从 `43.550800 ms` 变为 `30.718300 ms` 外逐行一致，仍在 Odin Serializer 启用非对齐内存访问后结束。
 - [x] 结论：P3 排除；T1.6 保留 Stability 和现有参数，只把 DX wrapper 从 DXVK 改为 WineD3D，完成 D3D11 翻译路径对照。
 
+### G1.6：WineD3D 首次成功进入游戏（已完成）
+
+- [x] 用户确认 T1.6 成功启动并进入游戏；Winlator 日志共 3,001 行、270,759 bytes，Unity 日志共 226 行、11,374 bytes。
+- [x] WineD3D 激活证据完整：日志显示 `Using the GLSL shader backend`、`Using the OpenGL renderer` 和原生 `libGL.so.1`；不再经过 T1.3-T1.5 的 DXVK/winevulkan 成功路径。
+- [x] Unity Renderer 从 DXVK 样本的 `Turnip Adreno 725` 变为 WineD3D 暴露的 `NVIDIA GeForce GTX 480`，D3D11 feature level 仍为 11.1。
+- [x] Unity 越过原 Odin 停点，打印版本 `v1.0.2.1270.steam`、LogoManager、Addressables 资源加载、Steam 回调、多次 `CoChangeSceneAsync`，并启动 `Tutorial_Mission01`。
+- [x] 建立最小成功集回退顺序：T1.7 移除 `-force-gfx-direct`；成功后 T1.8 恢复 Intermediate；再验证默认 UnityPlayer 开关与两次冷启动。
+
 ### G2：把最小修复集成到内置 Wine
 
-T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位时反复构建 APK，先完成 T1.6 及后续兼容性分流，再执行内置集成：
+T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层黑屏。先完成 T1.7-T1.9 的最小成功集与两次冷启动，再执行内置集成：
 
 1. 从已验证补丁产物提取所需 `nsiproxy` 模块，确认版本、架构、权限和哈希。
 2. 替换 `app/src/main/assets/rootfs.tzst` 中内置 Wine 11 的对应文件；不改 Wine 版本标识、Box64 或图形组件。
@@ -196,15 +206,16 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 
 使用全新容器选择内置 Wine，日志必须重新显示 `/opt/wine/`。连续冷启动两次并进入主菜单，以证明成功来自新内置 rootfs，而不是手机里残留的可选 Wine。通过后将日志归档、更新本文并提交推送。
 
-### T3：后续兼容性分支（已因 T1.3-T1.5 黑屏启用）
+### T3：兼容性分支与最小成功集回退
 
 按以下顺序每轮只改一个变量：
 
 1. T1.4 只增加 Winlator/Unity 已提供的 `-force-gfx-direct`，验证多线程渲染路径；该变量已验证无行为改善。
 2. T1.5 保留 `-force-gfx-direct`，只把 Box64 预设改为 Stability；该变量已验证无行为改善。
-3. T1.6 保持 Stability、Wine、图形驱动和启动参数，只把 DX wrapper 从 DXVK 改为 WineD3D，验证 D3D11-to-OpenGL 路径。
-4. T1.6 仍在相同位置黑屏时，使用来源合法、文件校验完整的正式发行版干净游戏副本对照。
-5. 干净副本仍无明确异常时，再增加 Box64 日志级别 2 和 Wine 通道 `timestamp,pid,tid,+seh,+loaddll,+process,+thread,+nsi`。
+3. T1.6 保持其他设置，只把 DX wrapper 从 DXVK 改为 WineD3D；该变量已成功使游戏进入教程任务。
+4. T1.7 保持 WineD3D 和 Stability，只移除 `-force-gfx-direct`，确认 Unity 直连渲染参数不是成功必需项。
+5. T1.7 成功后，T1.8 只把 Box64 从 Stability 恢复为 Intermediate，减少稳定性预设的性能代价。
+6. T1.8 成功后，再验证 `BOX64_UNITYPLAYER=0` 和最终配置的两次冷启动，随后进入 G2 内置 Wine 集成。
 
 判断边界：若干净副本能启动而当前副本不能，Winlator 侧不实现针对第三方 DRM/注入组件的绕过；记录兼容边界后转为验证正式游戏发行版本。
 
@@ -215,26 +226,24 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
-## 五、用户当前需要执行的 T1.6 步骤
+## 五、用户当前需要执行的 T1.7 步骤
 
 1. 继续使用当前已经覆盖安装的快捷方式修复 APK、原补丁 Wine 11 容器和原 Dave 快捷方式，不需要重新安装或新建容器。
-2. 保持 Box64 `0.4.5-dev-372739d`、`Stability` 和 `BOX64_UNITYPLAYER=1` 不变。
-3. 编辑 Dave 快捷方式，把该快捷方式的 `DX Wrapper` 从 `DXVK` 改为 `WineD3D`。使用 WineD3D 默认配置，不修改 Renderer、CSMT、FBO、显存或严格着色器数学等高级选项。
-4. 把 `Exec Arguments` 改成且只保留：
+2. 保持 Box64 `0.4.5-dev-372739d`、`Stability`、`BOX64_UNITYPLAYER=1`、WineD3D 默认配置、补丁 Wine、Turnip 和分辨率不变。
+3. 把 `Exec Arguments` 改成且只保留下面一项，移除 `-force-gfx-direct`：
 
-   `-logFile Player-T1.6.log -force-gfx-direct`
+   `-logFile Player-T1.7.log`
 
-5. 保持补丁 Wine、Turnip 图形驱动、分辨率和游戏文件不变；不要同时修改其他图形参数。
-6. 通过该快捷方式启动。WineD3D 首次启动可能明显更慢，黑屏后继续等待至少 180 秒；若进入主菜单，停留约 30 秒后正常退出。
-7. 导出 Winlator 日志并保存到电脑：
+4. 冷启动游戏并等待最多 180 秒。进入游戏后至少实际操作或停留 5 分钟，再正常退出。
+5. 导出 Winlator 日志并保存到电脑：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.6-wined3d-stability-20260805.txt`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.7-wined3d-no-force-gfx-direct-20260805.txt`
 
-8. 从 `E:\Dave the Diver\` 取回新生成的 `Player-T1.6.log`，保存到：
+6. 从 `E:\Dave the Diver\` 取回新生成的 `Player-T1.7.log`，保存到：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.6-Player-wined3d-stability.log`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.7-Player-wined3d-no-force-gfx-direct.log`
 
-9. 反馈可见结果和从双击到黑屏或主菜单的大致耗时。激活信号是 Unity `Player.log` 中的 Renderer 或 Winlator 加载的图形模块相对于 DXVK 样本发生变化；即使没有生成 `Player-T1.6.log`，也必须导出 Winlator 日志。
+7. 反馈从双击到进入可操作画面的耗时、是否能正常操作和退出。新 Winlator 日志的 Dave argv 中不得再出现 `-force-gfx-direct`；即使失败也必须导出两份日志。
 
 ## 六、进度记录
 
@@ -295,6 +304,15 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - T1.5 Unity 日志仍为 27 行，与 T1.4 仅 `UnloadTime` 数值不同；D3D11 11.1、Turnip Adreno 725、输入初始化和 Odin Serializer 结束位置完全相同。因此 Box64 Stability 不构成修复。
 - 本地游戏目录进一步确认包含 `tenoke.ini`（SHA-256 `21CACA1ED7E5D2731FD754D60DE5338554F15198AE5928542D57F30875035B82`）、`UnityPlayer.tnk` 和额外 `steamclient64.dll`。T1.6 只做 Winlator 自带 WineD3D 对照；若仍失败，停止针对该第三方替换层调参，转向正式发行版干净副本。
 
+### 2026-08-05：G1.6 WineD3D 越过黑屏并进入教程任务
+
+- 用户可见结果：游戏成功启动并进入可操作内容。T1.6 Winlator 日志共 3,001 行、270,759 bytes，SHA-256 为 `4FA3731A4D05F2739398C72BFD536B6489C850A5D1A8D2990555839058BD7A37`；Unity 日志共 226 行、11,374 bytes，SHA-256 为 `3AF7129BF6B633FE098977FFE866D763B277D7CC852C485337305A38F6392CFF`。
+- T1.6 仅将 DX wrapper 从 DXVK 改为 WineD3D，其余保持 Stability、`BOX64_UNITYPLAYER=1`、`-force-gfx-direct` 和补丁 Wine。`18:13:28` 日志明确打印 GLSL shader backend 与 OpenGL renderer，证明对照变量生效。
+- Unity 仍创建 D3D11 11.1 设备，但 Renderer 变为 WineD3D 默认的 `NVIDIA GeForce GTX 480`、VRAM 2,048 MB；随后越过此前所有失败样本共同停止的 Odin Serializer 位置。
+- 成功日志继续出现 Build Version、LogoManager、SoundConfigManager、CursorManager、Steamworks 回调、Addressables 完成事件、`CoChangeSceneAsync` 和 `Tutorial_Mission01`，形成比“窗口可见”更强的功能路径证据。
+- WineD3D 日志包含缺少部分 OpenGL 扩展、未实现 swap effect、`ensure_mta` 等警告，但游戏仍持续运行。这些当前归为兼容性噪声/残余风险，不作为启动失败；末尾 X connection broken 出现在用户正常结束会话后。
+- 当前只完成一次成功运行，尚未满足连续两次冷启动验收。T1.7 先移除 `-force-gfx-direct`；若仍成功，再逐项恢复性能更好的 Box64 Intermediate 和默认 UnityPlayer 设置。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -306,7 +324,8 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 | G1.3 | T1.3 双日志归档、快捷方式回归、Unity 初始化停点和 T1.4 计划 | 收到并分析 T1.3 Winlator/Unity 日志 | 已完成（2026-08-05） |
 | G1.4 | T1.4 双日志归档、`-force-gfx-direct` 变量验证、T1.5 计划 | 收到并分析 T1.4 Winlator/Unity 日志 | 已完成（2026-08-05） |
 | G1.5 | T1.5 双日志归档、Stability 变量验证、T1.6 WineD3D 计划 | 收到并分析 T1.5 Winlator/Unity 日志 | 已完成（2026-08-05） |
-| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.6/T3 完成兼容性分流 | 待执行 |
+| G1.6 | T1.6 双日志归档、WineD3D 成功证据、两层根因和最小回退计划 | T1.6 成功进入游戏并取得完整日志 | 已完成（2026-08-05） |
+| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.7-T1.9 完成最小成功集与两次冷启动 | 待执行 |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
