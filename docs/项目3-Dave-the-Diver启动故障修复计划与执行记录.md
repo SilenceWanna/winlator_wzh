@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1 已确认并越过 Wine/nsiproxy 第一阻塞点；等待 T1.1 UnityPlayer 单变量复测
+> 当前状态：G1.1 已确认 UnityPlayer 检测无效；等待 T1.2 Unity 内部日志
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -59,8 +59,8 @@ Dave 当前恰好使用未修复的内置 Wine，并停在 `dnsapi` 初始化之
 | 优先级 | 假设 | 当前支持证据 | 证伪方式 |
 |---|---|---|---|
 | P0（第一层已确认） | 内置 Wine 11 的 `nsiproxy` 缺少 `if_nameindex()` 空值保护，阻塞网络初始化 | T0 停在 `dnsapi`；T1 只换补丁 Wine 后越过该点并继续加载 `GameAssembly.dll`、Vulkan 和音频 | 已由 T1 功能路径确认；后续仍需集成进内置 rootfs |
-| P1（当前） | Box64 Unity 专用策略被关闭导致 IL2CPP/Unity 初始化不兼容 | T1 仍为 `BOX64_UNITYPLAYER=0`；Box64 0.4.5 默认值本应为 1，而 Winlator 源码显式覆盖为 0 | 在补丁 Wine 不变时只设置 `BOX64_UNITYPLAYER=1` |
-| P2 | Unity 图形后端或 DX wrapper 不兼容 | T1 已加载 `winevulkan.so`，但没有记录渲染器、swap 或首帧完成 | 收集 Unity `Player.log`，再用 `-force-gfx-direct` 和图形矩阵验证 |
+| P1（已排除） | Box64 Unity 专用策略被关闭导致 IL2CPP/Unity 初始化不兼容 | T1.1 确认 `BOX64_UNITYPLAYER=1`、`Detected UnityPlayer.dll`、`BOX64_UNITY=1`，但时间线和黑屏无改善 | 已完成；不再把该开关作为主修复 |
+| P2（当前） | Unity 图形后端或 DX wrapper 不兼容，或首帧创建前发生 Unity 内部等待 | T1/T1.1 均加载 `GameAssembly.dll`、`winevulkan.so`，没有渲染器、swap 或首帧完成证据 | 先取得 Unity `Player.log`，再用 `-force-gfx-direct` 和图形矩阵验证 |
 | P3 | Box64 Intermediate 的内存模型不适合该 Unity 版本 | 当前为 Intermediate | 在前项无效后只改 Stability |
 | P4 | 当前游戏文件中的第三方 Steam/Unity 替换层在 Wine/Box64 下阻塞 | `steamclient64.dll` 和替换过的 `UnityPlayer.dll` 均参与当前启动链 | 使用来源合法、校验完整的干净游戏副本对照 |
 
@@ -109,8 +109,9 @@ T1 结果：补丁 Wine 路径和 Box64 版本选择正确；游戏从 `dnsapi` 
 |---|---|---:|---|
 | T0 内置 Wine 失败 | `archive/runtime-logs/dave-the-diver/T0-builtin-wine11-failure.txt` | 48,526 | `9B688E03B964D960D81F37AEE579EE89901B32DF29A683588FD7C4861512E0B1` |
 | T1 补丁 Wine 黑屏 | `archive/runtime-logs/dave-the-diver/T1-patched-wine11-black-screen.txt` | 44,940 | `C521624EC395AF20B1F0C205313EB00D56C66BD1AE160BDC6EEDF9BD93BDCD58` |
+| T1.1 UnityPlayer 检测黑屏 | `archive/runtime-logs/dave-the-diver/T1.1-unityplayer-black-screen.txt` | 45,763 | `873B719C44BD1404CCDFE96CE0552F5662EB9D0894E8F7C63CC0A861EDEBF108` |
 
-### T1.1：启用 Box64 UnityPlayer 检测（当前轮）
+### T1.1：启用 Box64 UnityPlayer 检测（已完成）
 
 唯一变量：在 T1 的同一个补丁 Wine 容器中增加 `BOX64_UNITYPLAYER=1`。Box64 0.4.5 的该选项默认值是 1；检测到 `UnityPlayer.dll` 后会设置 `BOX64_UNITY=1`，对 Windows Unity 程序启用特殊检测代码。当前 Winlator 在 `GuestProgramLauncherComponent.addBox64EnvVars()` 中显式设为 0，但容器环境变量会在其后合并，可以覆盖该值。
 
@@ -121,6 +122,15 @@ T1 结果：补丁 Wine 路径和 Box64 版本选择正确；游戏从 `dnsapi` 
 - 游戏进入主菜单；或者即使仍失败，也越过 T1 的最后进度并给出新的首个异常。
 
 本轮禁止同时更改 Box64 预设、图形驱动、DX wrapper、分辨率、Wine、游戏文件和启动参数。
+
+T1.1 结果：变量生效但无行为改善。日志在 `10:55:39` 明确出现 `Detected UnityPlayer.dll`，并把 `BOX64_UNITY` 设为 1；Dave 随后仍在约一分钟内黑屏，继续经过 `GameAssembly.dll`、`dnsapi.so`、`winevulkan.so` 和音频初始化，没有进入主菜单。P1 排除，下一轮只增加 Unity `Player.log` 输出，不同时改图形设置。
+
+### G1.1：T1.1 证据归档与决策（已完成）
+
+- [x] 核对 `BOX64_UNITYPLAYER=1`、`Detected UnityPlayer.dll` 和 `BOX64_UNITY=1` 均已生效。
+- [x] 将 T1.1 日志归档并记录哈希。
+- [x] 将 P1 从主因列表降级，进入 Unity 内部日志诊断。
+- [x] 准备下一轮只增加 `-logFile` 的 T1.2 操作。
 
 ### G2：把最小修复集成到内置 Wine
 
@@ -155,17 +165,22 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
-## 五、用户当前需要执行的 T1.1 步骤
+## 五、用户当前需要执行的 T1.2 步骤
 
-1. 继续使用刚才 T1 新建的补丁 Wine 11 容器，不要再新建容器。
-2. 编辑该容器的“环境变量”，新增 `BOX64_UNITYPLAYER=1`。因为本轮从桌面双击 EXE 启动，所以变量必须加在容器环境中，不能只加在一个未使用的快捷方式上。
-3. 保持 Box64 `0.4.5-dev-372739d`、Intermediate、Wine、图形驱动、DX wrapper、分辨率和游戏文件不变；不要添加 `BOX64_UNITY=1`、Stability、`-force-gfx-direct` 或其他参数。
-4. 进入容器桌面后双击同一个 `DaveTheDiver.exe`，黑屏时继续等待至少 120 秒。若进入主菜单，停留约 30 秒后正常退出。
-5. 导出日志并保存到电脑：
+1. 继续使用刚才 T1.1 的补丁 Wine 11 容器，不要新建容器，也不要移除 `BOX64_UNITYPLAYER=1`。
+2. 为同一个 `DaveTheDiver.exe` 建立或编辑快捷方式，在执行参数中只增加：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.1-unityplayer-20260805.txt`
+   `-logFile "E:\Dave the Diver\Player.log"`
 
-6. 反馈可见结果和大致耗时。日志必须先确认 Dave 进程中的 `BOX64_UNITYPLAYER=1`；若仍显示 0，本轮视为变量未生效，不作兼容性结论。
+   不要加入 `-force-gfx-direct`、Stability 或其他参数。
+3. 保持 Box64 `0.4.5-dev-372739d`、Intermediate、Wine、图形驱动、DX wrapper、分辨率和游戏文件不变。
+4. 通过该快捷方式启动，黑屏后继续等待至少 120 秒。若进入主菜单，停留约 30 秒后正常退出。
+5. 导出 Winlator 日志并保存到电脑：
+
+   `D:\agent\Winlator\logs\dave-the-diver\T1.2-playerlog-20260805.txt`
+
+6. 从游戏目录取回 `Player.log`。如果该文件没有生成，也要反馈“无 Player.log”，这说明停点早于 Unity 日志系统初始化或路径不可写。
+7. 反馈可见结果和大致耗时。
 
 ## 六、进度记录
 
@@ -187,13 +202,22 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - 当前日志级别没有打印 `if_nameindex failed`，因此不能从该字符串直接验签补丁；但相对于 T0 在 `dnsapi` 后静止 117 秒，T1 已确定越过旧停点并进入 Unity/Vulkan 初始化，足以确认 P0 是第一层阻塞且补丁有效。
 - 游戏整体验收仍失败。当前首要变量转为 `BOX64_UNITYPLAYER=1`；若 T1.1 仍黑屏，下一轮先采集 Unity `Player.log`，不直接盲改图形驱动。
 
+### 2026-08-05：G1.1 UnityPlayer 检测无效，转向 Unity 内部日志
+
+- T1.1 日志共 688 行，45,763 bytes，SHA-256 为 `873B719C44BD1404CCDFE96CE0552F5662EB9D0894E8F7C63CC0A861EDEBF108`。
+- 日志确认 `/opt/installed-wine/wine-11.0/`、Box64 `0.4.5 372739d` 和 `BOX64_UNITYPLAYER=1`；`10:55:39` 出现 `Detected UnityPlayer.dll`，随后打印 `BOX64_UNITY=1`。
+- Dave 仍在不到一分钟内黑屏。`GameAssembly.dll`、`dnsapi.so`、`winevulkan.so`、Vulkan、打印和音频模块的加载顺序与 T1 基本一致，没有主菜单、swap 或首帧完成证据。
+- `c0000005`、SIGSEGV、Unhandled page fault 和 X connection broken 仍未出现；`UnityCrashHandler64.exe --attach` 仍只能视为 Unity 的崩溃收集器启动，不能单独作为主进程崩溃证据。
+- 结论：P1 已排除。当前问题收敛到 Unity 图形/窗口初始化或游戏内部等待；下一轮只增加 `-logFile` 生成 `Player.log`，保持所有运行参数不变。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
 |---|---|---|---|
 | G0 | 初始诊断、执行计划、T1 操作 | 本文复核完成 | 已完成（2026-08-05） |
 | G1 | 失败/成功日志归档、T1 结论、下一轮计划 | 收到并分析 T1 日志 | 已完成（2026-08-05） |
-| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.1 完成兼容性分流 | 待执行 |
+| G1.1 | T1.1 日志归档、UnityPlayer 变量验证、T1.2 计划 | 收到并分析 T1.1 日志 | 已完成（2026-08-05） |
+| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.2/T3 完成兼容性分流 | 待执行 |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
