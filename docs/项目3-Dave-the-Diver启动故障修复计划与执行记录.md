@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.3 已确认快捷方式修复和 D3D11 设备初始化；等待 T1.4 单变量关闭 Unity 多线程渲染
+> 当前状态：G1.4 已确认 `-force-gfx-direct` 生效但无行为改善；等待 T1.5 Box64 Stability 单变量复测
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -60,8 +60,8 @@ Dave 当前恰好使用未修复的内置 Wine，并停在 `dnsapi` 初始化之
 |---|---|---|---|
 | P0（第一层已确认） | 内置 Wine 11 的 `nsiproxy` 缺少 `if_nameindex()` 空值保护，阻塞网络初始化 | T0 停在 `dnsapi`；T1 只换补丁 Wine 后越过该点并继续加载 `GameAssembly.dll`、Vulkan 和音频 | 已由 T1 功能路径确认；后续仍需集成进内置 rootfs |
 | P1（已排除） | Box64 Unity 专用策略被关闭导致 IL2CPP/Unity 初始化不兼容 | T1.1 确认 `BOX64_UNITYPLAYER=1`、`Detected UnityPlayer.dll`、`BOX64_UNITY=1`，但时间线和黑屏无改善 | 已完成；不再把该开关作为主修复 |
-| P2（当前） | Unity 多线程渲染路径或进入首个游戏场景前的内部初始化发生等待 | T1.3 `Player.log` 已确认 D3D11 11.1、Turnip Adreno 725 和输入初始化成功，但显示 `threaded=1`，并在 Odin Serializer 初始化后停止 | T1.4 只增加 `-force-gfx-direct`；比较新日志中的 `threaded` 值和停止位置 |
-| P3 | Box64 Intermediate 的内存模型不适合该 Unity 版本 | 当前为 Intermediate | 在前项无效后只改 Stability |
+| P2（未支持） | Unity 多线程渲染路径导致首帧前等待 | T1.4 已在实际 argv 中启用 `-force-gfx-direct`；`Player.log` 停止位置与 T1.3 相同，仍未进入场景 | 已完成当前验证；不再单独修改 Unity 渲染线程参数 |
+| P3（当前） | Box64 Intermediate 的内存模型不适合该 Unity 版本 | T1.3/T1.4 均为 Intermediate；主要值为 `BIGBLOCK=2`、`STRONGMEM=0`、`WEAKBARRIER=2` | T1.5 保留 `-force-gfx-direct`，只把预设切换为 Stability |
 | P4 | 当前游戏文件中的第三方 Steam/Unity 替换层在 Wine/Box64 下阻塞 | `steamclient64.dll` 和替换过的 `UnityPlayer.dll` 均参与当前启动链 | 使用来源合法、校验完整的干净游戏副本对照 |
 
 ## 四、分阶段测试与实现计划
@@ -113,6 +113,8 @@ T1 结果：补丁 Wine 路径和 Box64 版本选择正确；游戏从 `dnsapi` 
 | T1.2 损坏的快捷方式命令 | `archive/runtime-logs/dave-the-diver/T1.2-invalid-shortcut-command.txt` | 30,272 | `05B25941D43F9A95DA9CABB796D3A46B486955290D3106957910155B3DD7A8C6` |
 | T1.3 快捷方式修复后仍黑屏 | `archive/runtime-logs/dave-the-diver/T1.3-shortcut-fixed-black-screen.txt` | 41,132 | `AF78F6162F09DD5DC37FC44BC65531E76F02DE605EC291084AC5C90E460A0012` |
 | T1.3 Unity 内部日志 | `archive/runtime-logs/dave-the-diver/T1.3-Player.log` | 1,119 | `B033E0A9425CF8D8C2781FD380C3AA22C6A5C3FA2F865F25732E0278A2C26AB5` |
+| T1.4 `-force-gfx-direct` 黑屏 | `archive/runtime-logs/dave-the-diver/T1.4-force-gfx-direct-black-screen.txt` | 41,400 | `F231EBDC34E3A8366687944589E951F8EAEB555A29FAD506067F84DC837CABF5` |
+| T1.4 Unity 内部日志 | `archive/runtime-logs/dave-the-diver/T1.4-Player-force-gfx-direct.log` | 1,071 | `796B971A6134F2E9EB273D81F25C98BCF7BE6C8F8619B2EBBB6C8C10DC3F46B90` |
 
 ### T1.1：启用 Box64 UnityPlayer 检测（已完成）
 
@@ -163,9 +165,16 @@ Signer SHA-256: B6396F6CD549475DEC0893AC0CAB0E03770F403FB37679BAE02418A492270B07
 - [x] 日志没有 `c0000005`、SIGSEGV、Unhandled page fault 或 X connection broken；可见结果仍为黑屏。
 - [x] 将当前停点收敛到 `threaded=1` 的 Unity 渲染路径或 Odin Serializer 之后的游戏内部初始化，形成 T1.4 单变量测试。
 
+### G1.4：`-force-gfx-direct` 无行为改善，转向 Box64 Stability（已完成）
+
+- [x] T1.4 Winlator 日志共 629 行、41,400 bytes，SHA-256 为 `F231EBDC34E3A8366687944589E951F8EAEB555A29FAD506067F84DC837CABF5`；Unity 日志为 1,071 bytes，SHA-256 为 `796B971A6134F2E9EB273D81F25C98BCF7BE6C8F8619B2EBBB6C8C10DC3F46B90`。
+- [x] Dave 实际 argv 明确包含 `-logFile Player-T1.4.log -force-gfx-direct`；工作目录、补丁 Wine、Box64 版本和 `BOX64_UNITYPLAYER=1` 均保持正确。
+- [x] T1.4 `Player.log` 不再打印 T1.3 的 `GfxDevice ... threaded=1`，说明参数已被 Unity 接收；但 D3D11 11.1、Turnip Adreno 725、输入初始化和 Odin Serializer 停止位置没有实质变化，仍为黑屏。
+- [x] 结论：多线程渲染开关不是当前可见故障的充分原因；下一轮保持 T1.4 参数，只切换 Box64 Stability。
+
 ### G2：把最小修复集成到内置 Wine
 
-T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位时反复构建 APK，先完成 T1.4 及后续兼容性分流，再执行内置集成：
+T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位时反复构建 APK，先完成 T1.5 及后续兼容性分流，再执行内置集成：
 
 1. 从已验证补丁产物提取所需 `nsiproxy` 模块，确认版本、架构、权限和哈希。
 2. 替换 `app/src/main/assets/rootfs.tzst` 中内置 Wine 11 的对应文件；不改 Wine 版本标识、Box64 或图形组件。
@@ -177,12 +186,12 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 
 使用全新容器选择内置 Wine，日志必须重新显示 `/opt/wine/`。连续冷启动两次并进入主菜单，以证明成功来自新内置 rootfs，而不是手机里残留的可选 Wine。通过后将日志归档、更新本文并提交推送。
 
-### T3：后续兼容性分支（已因 T1.3 黑屏启用）
+### T3：后续兼容性分支（已因 T1.3/T1.4 黑屏启用）
 
 按以下顺序每轮只改一个变量：
 
-1. T1.4 只增加 Winlator/Unity 已提供的 `-force-gfx-direct`，验证多线程渲染路径；保留新的 Unity 日志。
-2. 保持 Wine/图形设置，Box64 预设改为 Stability。
+1. T1.4 只增加 Winlator/Unity 已提供的 `-force-gfx-direct`，验证多线程渲染路径；该变量已验证无行为改善。
+2. T1.5 保留 `-force-gfx-direct`，只把 Box64 预设改为 Stability。该预设由源码设置 `BIGBLOCK=0`、`STRONGMEM=2`、`WEAKBARRIER=0`、`FASTNAN=0`、`WAIT=0` 等稳定性参数。
 3. 使用来源合法、文件校验完整的干净游戏副本对照。
 4. 仍无明确异常时增加 Box64 日志级别 2 和 Wine 通道 `timestamp,pid,tid,+seh,+loaddll,+process,+thread,+nsi`。
 
@@ -195,24 +204,25 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
-## 五、用户当前需要执行的 T1.4 步骤
+## 五、用户当前需要执行的 T1.5 步骤
 
 1. 继续使用当前已经覆盖安装的快捷方式修复 APK、原补丁 Wine 11 容器和原 Dave 快捷方式，不需要重新安装或新建容器。
-2. 保留 `BOX64_UNITYPLAYER=1`，把 Dave 快捷方式的 `Exec Arguments` 改成且只保留：
+2. 在该容器的 Box64 预设中把 `Intermediate` 改为 `Stability`，只改变这一项；保留 `BOX64_UNITYPLAYER=1`。
+3. 把 Dave 快捷方式的 `Exec Arguments` 改成且只保留：
 
-   `-logFile Player-T1.4.log -force-gfx-direct`
+   `-logFile Player-T1.5.log -force-gfx-direct`
 
-3. 保持 Box64 `0.4.5-dev-372739d`、Intermediate、Wine、图形驱动、DX wrapper、分辨率和游戏文件不变。这一轮不能同时切换 Stability 或修改其他图形参数。
-4. 通过该快捷方式启动。黑屏后继续等待至少 120 秒；若进入主菜单，停留约 30 秒后正常退出。
-5. 导出 Winlator 日志并保存到电脑：
+4. 保持 Box64 `0.4.5-dev-372739d` 版本、补丁 Wine、图形驱动、DX wrapper、分辨率和游戏文件不变；不要修改其他图形参数。
+5. 通过该快捷方式启动。黑屏后继续等待至少 120 秒；若进入主菜单，停留约 30 秒后正常退出。
+6. 导出 Winlator 日志并保存到电脑：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.4-force-gfx-direct-20260805.txt`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.5-stability-force-gfx-direct-20260805.txt`
 
-6. 从 `E:\Dave the Diver\` 取回新生成的 `Player-T1.4.log`，保存到：
+7. 从 `E:\Dave the Diver\` 取回新生成的 `Player-T1.5.log`，保存到：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.4-Player-force-gfx-direct.log`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.5-Player-stability-force-gfx-direct.log`
 
-7. 反馈可见结果和从双击到黑屏或主菜单的大致耗时。激活信号是新 `Player-T1.4.log` 中 `GfxDevice: creating device client; threaded=...` 相比 T1.3 的 `threaded=1` 发生变化；即使仍黑屏也必须导出两份日志。
+8. 反馈可见结果和从双击到黑屏或主菜单的大致耗时。重点检查 Winlator 日志中的 `BOX64_DYNAREC_BIGBLOCK=0`、`STRONGMEM=2`、`WEAKBARRIER=0` 是否生效；即使仍黑屏也必须导出两份日志。
 
 ## 六、进度记录
 
@@ -259,6 +269,13 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 - Unity 日志确认引擎为 2020.3.48f1，D3D11 feature level 11.1 设备创建成功，渲染器为 Turnip Adreno 725，VRAM 11,473 MB；新输入系统、XInput 和触摸输入均完成初始化。因此不能再把 GPU 未识别或 D3D11 设备创建失败作为当前主因。
 - Unity 日志显示 `GfxDevice: creating device client; threaded=1`，最后记录 Odin Serializer 在 WindowsPlayer 上完成内存读取测试并启用非对齐读写，之后没有场景加载或首帧记录。下一轮 T1.4 只增加 `-force-gfx-direct`，验证 Unity 多线程渲染路径；若仍停在相同位置，再单独切换 Box64 Stability。
 
+### 2026-08-05：G1.4 `-force-gfx-direct` 已生效但仍黑屏
+
+- T1.4 实际参数为 `E:\\Dave the Diver\\DaveTheDiver.exe -logFile Player-T1.4.log -force-gfx-direct`，Winlator 日志共 629 行、41,400 bytes，Unity 日志共 27 行、1,071 bytes。
+- `-force-gfx-direct` 已被传给 Dave；新 `Player.log` 不再出现 `GfxDevice: creating device client; threaded=1`，因此不能把本轮判定为参数未生效。`UnloadTime` 从 T1.3 的 `156.030300 ms` 降为 `43.550800 ms`，但这没有带来可见启动改善。
+- T1.4 仍完成 D3D11 11.1、Turnip Adreno 725、输入系统和 Odin Serializer 初始化，日志同样在 Odin 启用非对齐内存访问后结束。Winlator 侧仍没有 `c0000005`、SIGSEGV、Unhandled page fault 或 X connection broken。
+- 结论：P2 的多线程渲染开关未能解释黑屏；T1.5 保留 `-force-gfx-direct`，只将 Box64 预设从 Intermediate 切换为 Stability，验证 Box64 内存/屏障策略。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -268,7 +285,8 @@ T1 已证明补丁解决第一层阻塞。为避免在第二层黑屏未定位�
 | G1.1 | T1.1 日志归档、UnityPlayer 变量验证、T1.2 计划 | 收到并分析 T1.1 日志 | 已完成（2026-08-05） |
 | G1.2 | T1.2 日志归档、快捷方式引号修复、候选 APK | 定位 `invalid name` 的命令拼装根因 | 已完成（2026-08-05） |
 | G1.3 | T1.3 双日志归档、快捷方式回归、Unity 初始化停点和 T1.4 计划 | 收到并分析 T1.3 Winlator/Unity 日志 | 已完成（2026-08-05） |
-| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.4/T3 完成兼容性分流 | 待执行 |
+| G1.4 | T1.4 双日志归档、`-force-gfx-direct` 变量验证、T1.5 计划 | 收到并分析 T1.4 Winlator/Unity 日志 | 已完成（2026-08-05） |
+| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.5/T3 完成兼容性分流 | 待执行 |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
