@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.10 已完成；G2 首版暴露 rootfs 缓存未刷新问题，G2.2 已修复版本门槛并生成新 APK，等待刷新后的 T2-A 复验
+> 当前状态：G1.10 已完成；G2.2 已修复 rootfs 版本门槛，G2.3 已阻止未完成 rootfs 进入容器启动流程，等待 G2.3 安装完成后的 T2-A2 复验
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -26,7 +26,7 @@
 |---|---|---|
 | Winlator 源码 | 当前实际开发仓库为 `winlator_wzh_new`，分支 `main` | `winlator-main` 是上游快照，子模块未完整初始化，不作为本轮修改目标 |
 | 内置 Wine | 11.0，运行路径为 `/opt/wine` | Dave 日志中的搜索路径为 `rootfs/opt/wine`，不是可选 Wine 路径 |
-| 内置 Wine 状态 | G2 已把项目2验证的 `nsiproxy` 空值保护集成进 APK 资产；G2.2 强制递增 rootfs 版本以刷新手机缓存 | 新 rootfs SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`；等待刷新后的 T2 真机确认 |
+| 内置 Wine 状态 | G2 已把项目2验证的 `nsiproxy` 空值保护集成进 APK 资产；G2.2 强制递增 rootfs 版本以刷新手机缓存；G2.3 在容器入口增加 rootfs 完整性门槛 | 新 rootfs SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`；等待 G2.3 刷新后的 T2 真机确认 |
 | Box64 | `0.4.5-dev-372739d` | Dave 日志确认；当前默认版本 |
 | Box64 预设 | Intermediate | `BIGBLOCK=2`、`STRONGMEM=0`、`WEAKBARRIER=2` |
 | Unity 开关 | 当前样本需要 `BOX64_UNITYPLAYER=1` | 值为 0 的 T1.9/T1.10A 均在 114–115 秒闪退；值为 1 的 T1.10A2 越过该点且正常结束 |
@@ -278,10 +278,19 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - [x] G2.2 clean APK 重新构建成功，大小为 `206,814,205` bytes，SHA-256 为 `BCCC878EA10F4D04D9BAE47139CFC9335E055421C79D7788BBF9CEF746191B44`；`javap` 确认编译后的 `installIfNeeded()` 使用版本 `23`，`zipalign` 与 V2 签名验证通过。
 - [x] 候选 APK 路径保持不变：`D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`；安装后必须等待“安装系统文件”完成，再新建容器进行 T2-A 刷新后复验。
 
+### G2.3：阻止未完成 rootfs 进入 `starting up`（已完成）
+
+- [x] 用户反馈安装 G2.2 后无法进入容器，界面停在 `starting up`，且没有 Winlator/Wine/Box64 日志；这说明故障发生在 Wine 进程启动前，不能用游戏日志判断 `nsiproxy` 是否已生效。
+- [x] 复查启动顺序确认 `XServerDisplayActivity` 原先直接显示 `PreloaderDialog` 并启动环境，没有检查 rootfs 是否有效或版本是否达到 `LATEST_VERSION`；在系统文件异步安装、旧版本 rootfs 或半解压状态下会产生“假启动”状态。
+- [x] 在容器启动入口增加门槛：`RootFS.find(this)` 无效或版本低于 `RootFSInstaller.LATEST_VERSION`（当前为 `23`）时，提示“安装系统文件”并立即结束该 Activity，不创建容器运行环境，也不显示无限期 `starting up`。
+- [x] 门槛只负责阻止错误时序，不改变 Wine、Box64、图形驱动或 Dave 参数；rootfs 完整且版本为 `23` 时，后续启动路径保持原样。
+- [x] G2.3 clean APK 构建成功，大小为 `206,814,253` bytes，SHA-256 为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`；`zipalign -c 4` 通过，APK V2 签名验证通过。
+- [x] G2.3 APK 内嵌 `assets/rootfs.tzst` 大小为 `79,289,327` bytes，SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`；候选文件已替换为同一路径。
+
 ### T2：内置修复 APK 真机回归
 
-1. 安装 G2.2 APK `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，确认安装包 SHA-256 为 `BCCC878EA10F4D04D9BAE47139CFC9335E055421C79D7788BBF9CEF746191B44`。
-2. 首次打开 APK 后等待系统文件安装完成；必须看到安装过程结束后再继续。不要在安装过程中启动容器。
+1. 安装 G2.3 APK `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，确认安装包 SHA-256 为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`。
+2. 首次打开 APK 后等待系统文件安装完成；必须看到安装过程结束后再继续。不要在安装过程中启动容器。如果从桌面快捷方式启动时立即返回并提示“安装系统文件”，这是 G2.3 门槛生效，应回到主界面等待安装完成。
 3. 创建全新容器并选择内置 Wine `/opt/wine`；不要复用已经导入补丁 Wine 的旧容器，避免旧模块残留污染结论。
 4. Dave 快捷方式保持 `WineD3D`、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`，不添加 `-force-gfx-direct`，沿用当前已验证的 Turnip、分辨率和游戏路径。
 5. 刷新后第一轮冷启动使用 `-logFile Player-T2-A2.log`，进入可交互主菜单后继续观察至少 6 分钟；导出 Winlator 日志和 `Player-T2-A2.log`。
@@ -310,7 +319,7 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 
 ## 五、用户当前需要执行的步骤
 
-1. 安装 G2.2 APK：`D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，先核对 SHA-256 是否为 `BCCC878EA10F4D04D9BAE47139CFC9335E055421C79D7788BBF9CEF746191B44`。
+1. 安装 G2.3 APK：`D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，先核对 SHA-256 是否为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`。
 2. 等待“安装系统文件”完成后，新建容器并选择内置 Wine `/opt/wine`；不要复用导入补丁 Wine 的旧容器。
 3. 保留 Dave 快捷方式中的 WineD3D、Box64 `Intermediate` 和 `BOX64_UNITYPLAYER=1`，不要添加 `-force-gfx-direct`。
 4. 先执行 T2-A2，使用 `-logFile Player-T2-A2.log`，进入主菜单后观察至少 6 分钟并导出日志；A2 通过后再执行 T2-B。
@@ -447,6 +456,13 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - clean 构建和静态校验通过；G2.2 APK SHA-256 为 `BCCC878EA10F4D04D9BAE47139CFC9335E055421C79D7788BBF9CEF746191B44`，内嵌 rootfs SHA-256 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
 - 下一步先执行 T2-A2：安装后等待系统文件安装完成，再新建内置 Wine 容器并观察 `if_nameindex failed, errno 13` 后是否继续加载游戏与图形模块。
 
+### 2026-08-06：G2.3 增加 rootfs 启动门槛并重建 APK
+
+- 用户新反馈为“无法进入容器，卡在 `starting up`，没有日志产出”；由于 Wine/Box64 尚未启动，本轮没有新增运行日志可归档。
+- `XServerDisplayActivity` 增加 rootfs 有效性和版本检查：系统文件安装未完成时提示安装状态并结束 Activity，避免在异步解压或旧 rootfs 上创建假启动会话。
+- G2.3 clean APK SHA-256 为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`，大小 `206,814,253` bytes；内嵌 rootfs SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
+- 下一步改用 G2.3 APK，先从 Winlator 主界面等待系统文件安装结束，再启动新建内置 Wine 容器；若入口立即提示“安装系统文件”，记录为门槛拦截而不是游戏启动失败。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -467,6 +483,7 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 | G1.10 | 最终配置第二次冷启动日志与最小成功集确认 | T1.10B 进入可交互游戏后稳定运行至少 6 分钟 | 已完成（2026-08-06） |
 | G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.10B 六分钟冷启动完成 | 已完成（2026-08-06） |
 | G2.2 | 递增 rootfs 版本、归档 T2-A 失败日志、重建 APK | T2-A 证明应用级 rootfs 未因 APK 更新而刷新 | 已完成（2026-08-06） |
+| G2.3 | 容器入口增加 rootfs 完整性门槛、重建 APK、更新 T2 操作步骤 | 用户反馈卡在 `starting up` 且无日志，确认需阻止安装竞争状态启动 | 已完成（2026-08-06） |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。

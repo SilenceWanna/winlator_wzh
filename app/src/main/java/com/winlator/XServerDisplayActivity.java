@@ -77,6 +77,7 @@ import com.winlator.winhandler.TaskManagerDialog;
 import com.winlator.winhandler.WinHandler;
 import com.winlator.xconnector.UnixSocketConfig;
 import com.winlator.xenvironment.RootFS;
+import com.winlator.xenvironment.RootFSInstaller;
 import com.winlator.xenvironment.XEnvironment;
 import com.winlator.xenvironment.components.ALSAServerComponent;
 import com.winlator.xenvironment.components.GuestProgramLauncherComponent;
@@ -166,6 +167,12 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         navigationView.setNavigationItemSelectedListener(this);
 
         rootFS = RootFS.find(this);
+
+        if (!rootFS.isValid() || rootFS.getVersion() < RootFSInstaller.LATEST_VERSION) {
+            AppUtils.showToast(this, R.string.installing_system_files);
+            finish();
+            return;
+        }
 
         if (!isGenerateWineprefix()) {
             ContainerManager containerManager = new ContainerManager(this);
