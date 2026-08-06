@@ -157,6 +157,9 @@ public abstract class TarCompressorUtils {
                     if (file == null) continue;
                 }
 
+                File parent = file.getParentFile();
+                if (parent != null && !parent.isDirectory() && !parent.mkdirs() && !parent.isDirectory()) return false;
+
                 if (entry.isDirectory()) {
                     if (!file.isDirectory()) file.mkdirs();
                 }

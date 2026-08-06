@@ -1,0 +1,40 @@
+[2026-08-06 18:29:57.SSS] STARTUP BEGIN
+[2026-08-06 18:29:57.SSS] rootfs=/data/user/0/com.winlator/files/rootfs, version=23, container=6
+[2026-08-06 18:29:57.SSS] graphics=turnip,zink, dxwrapper=wined3d, audio=alsa
+[2026-08-06 18:29:57.SSS] BEGIN setup_wine_system_files
+[2026-08-06 18:29:57.SSS] BEGIN setup_wine_system_files.apply_general_patches
+[2026-08-06 18:29:58.SSS] END setup_wine_system_files.apply_general_patches
+[2026-08-06 18:29:58.SSS] BEGIN setup_wine_system_files.verify_user_registry
+[2026-08-06 18:29:58.SSS] END setup_wine_system_files.verify_user_registry
+[2026-08-06 18:29:58.SSS] BEGIN setup_wine_system_files.extract_dxwrapper_files
+[2026-08-06 18:29:58.SSS] END setup_wine_system_files.extract_dxwrapper_files
+[2026-08-06 18:29:58.SSS] BEGIN setup_wine_system_files.extract_wincomponent_files
+[2026-08-06 18:29:59.SSS] END setup_wine_system_files.extract_wincomponent_files
+[2026-08-06 18:30:00.SSS] BEGIN setup_wine_system_files.apply_desktop_theme
+[2026-08-06 18:30:00.SSS] END setup_wine_system_files.apply_desktop_theme
+[2026-08-06 18:30:00.SSS] BEGIN setup_wine_system_files.create_start_menu
+[2026-08-06 18:30:00.SSS] END setup_wine_system_files.create_start_menu
+[2026-08-06 18:30:00.SSS] BEGIN setup_wine_system_files.create_dosdevices_symlinks
+[2026-08-06 18:30:00.SSS] END setup_wine_system_files.create_dosdevices_symlinks
+[2026-08-06 18:30:00.SSS] BEGIN setup_wine_system_files.change_services_status
+[2026-08-06 18:30:01.SSS] END setup_wine_system_files.change_services_status
+[2026-08-06 18:30:01.SSS] BEGIN setup_wine_system_files.change_browser_registry
+[2026-08-06 18:30:01.SSS] END setup_wine_system_files.change_browser_registry
+[2026-08-06 18:30:01.SSS] END setup_wine_system_files
+[2026-08-06 18:30:01.SSS] BEGIN extract_graphics_driver_files
+[2026-08-06 18:30:01.SSS] END extract_graphics_driver_files
+[2026-08-06 18:30:01.SSS] BEGIN change_wine_audio_driver
+[2026-08-06 18:30:01.SSS] END change_wine_audio_driver
+[2026-08-06 18:30:01.SSS] BEGIN setup_x_environment
+[2026-08-06 18:30:01.SSS] FAILED setup_x_environment: java.lang.IllegalStateException: Box64 extraction failed: path=/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64, exists=false, size=0, executable=false
+java.lang.IllegalStateException: Box64 extraction failed: path=/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64, exists=false, size=0, executable=false
+	at com.winlator.xenvironment.components.GuestProgramLauncherComponent.extractBox64File(GuestProgramLauncherComponent.java:135)
+	at com.winlator.xenvironment.components.GuestProgramLauncherComponent.start(GuestProgramLauncherComponent.java:40)
+	at com.winlator.xenvironment.XEnvironment.startEnvironmentComponents(XEnvironment.java:57)
+	at com.winlator.XServerDisplayActivity.setupXEnvironment(XServerDisplayActivity.java:658)
+	at com.winlator.XServerDisplayActivity.lambda$onCreate$3(XServerDisplayActivity.java:314)
+	at com.winlator.XServerDisplayActivity.$r8$lambda$WTBSXgYeVWMisNtfnsA2HGE3Rtg(Unknown Source:0)
+	at com.winlator.XServerDisplayActivity$$ExternalSyntheticLambda16.run(Unknown Source:4)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+	at java.lang.Thread.run(Thread.java:1019)

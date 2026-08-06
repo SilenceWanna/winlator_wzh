@@ -1,0 +1,29 @@
+[18:29:57]  [startup] STARTUP BEGIN
+[18:29:57]  [startup] rootfs=/data/user/0/com.winlator/files/rootfs, version=23, container=6
+[18:29:57]  [startup] graphics=turnip,zink, dxwrapper=wined3d, audio=alsa
+[18:29:57]  [startup] BEGIN setup_wine_system_files
+[18:29:57]  [startup] BEGIN setup_wine_system_files.apply_general_patches
+[18:29:58]  [startup] END setup_wine_system_files.apply_general_patches
+[18:29:58]  [startup] BEGIN setup_wine_system_files.verify_user_registry
+[18:29:58]  [startup] END setup_wine_system_files.verify_user_registry
+[18:29:58]  [startup] BEGIN setup_wine_system_files.extract_dxwrapper_files
+[18:29:58]  [startup] END setup_wine_system_files.extract_dxwrapper_files
+[18:29:58]  [startup] BEGIN setup_wine_system_files.extract_wincomponent_files
+[18:30:00]  [startup] END setup_wine_system_files.extract_wincomponent_files
+[18:30:00]  [startup] BEGIN setup_wine_system_files.apply_desktop_theme
+[18:30:00]  [startup] END setup_wine_system_files.apply_desktop_theme
+[18:30:00]  [startup] BEGIN setup_wine_system_files.create_start_menu
+[18:30:00]  [startup] END setup_wine_system_files.create_start_menu
+[18:30:00]  [startup] BEGIN setup_wine_system_files.create_dosdevices_symlinks
+[18:30:00]  [startup] END setup_wine_system_files.create_dosdevices_symlinks
+[18:30:00]  [startup] BEGIN setup_wine_system_files.change_services_status
+[18:30:01]  [startup] END setup_wine_system_files.change_services_status
+[18:30:01]  [startup] BEGIN setup_wine_system_files.change_browser_registry
+[18:30:01]  [startup] END setup_wine_system_files.change_browser_registry
+[18:30:01]  [startup] END setup_wine_system_files
+[18:30:01]  [startup] BEGIN extract_graphics_driver_files
+[18:30:01]  [startup] END extract_graphics_driver_files
+[18:30:01]  [startup] BEGIN change_wine_audio_driver
+[18:30:01]  [startup] END change_wine_audio_driver
+[18:30:01]  [startup] BEGIN setup_x_environment
+[18:30:01]  [startup] FAILED setup_x_environment: java.lang.IllegalStateException: Box64 extraction failed: path=/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64, exists=false, size=0, executable=false
