@@ -40,6 +40,7 @@ public class GuestProgramLauncherComponent extends EnvironmentComponent {
             extractBox64File();
             copyDefaultBox64RCFile();
             pid = execGuestProgram();
+            if (pid == -1) throw new IllegalStateException("Unable to create the Box64 guest process");
         }
     }
 
@@ -124,11 +125,22 @@ public class GuestProgramLauncherComponent extends EnvironmentComponent {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         String box64Version = preferences.getString("box64_version", DefaultVersion.BOX64);
         String currentBox64Version = preferences.getString("current_box64_version", "");
+        File box64File = new File(environment.getRootFS().getRootDir(), "/usr/local/bin/box64");
 
-        if (!box64Version.equals(currentBox64Version)) {
+        if (!box64Version.equals(currentBox64Version) || !isUsableBox64File(box64File)) {
             GeneralComponents.extractFile(GeneralComponents.Type.BOX64, context, box64Version, DefaultVersion.BOX64);
+
+            if (!isUsableBox64File(box64File)) {
+                preferences.edit().remove("current_box64_version").apply();
+                throw new IllegalStateException("Box64 extraction failed: path="+box64File.getPath()+", exists="+box64File.isFile()+", size="+box64File.length()+", executable="+box64File.canExecute());
+            }
+
             preferences.edit().putString("current_box64_version", box64Version).apply();
         }
+    }
+
+    private boolean isUsableBox64File(File file) {
+        return file.isFile() && file.length() > 0 && file.canExecute();
     }
 
     private void copyDefaultBox64RCFile() {

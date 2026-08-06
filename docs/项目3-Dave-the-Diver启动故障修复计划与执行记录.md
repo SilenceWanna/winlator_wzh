@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.10 已完成；G2.2 已修复 rootfs 版本门槛，G2.3 已阻止未完成 rootfs 进入容器启动流程，等待 G2.3 安装完成后的 T2-A2 复验
+> 当前状态：G1.10 已完成；G2.3 真机仍停在 `starting up`，G2.4 已增加启动阶段日志、异常收口和 Box64 失败重试，等待 T2-A3 真机定位
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -287,14 +287,32 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - [x] G2.3 clean APK 构建成功，大小为 `206,814,253` bytes，SHA-256 为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`；`zipalign -c 4` 通过，APK V2 签名验证通过。
 - [x] G2.3 APK 内嵌 `assets/rootfs.tzst` 大小为 `79,289,327` bytes，SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`；候选文件已替换为同一路径。
 
+### G2.4：`starting up` 阶段可观测性与启动失败自愈（已完成）
+
+- [x] G2.3 真机仍停在 `starting up`；本地日志目录没有比 T2-A 更新的导出文件，说明现有日志无法覆盖 Wine/Box64 进程创建前的 Java 后台初始化。
+- [x] 代码路径重新收敛：显示 `starting up` 后，后台线程还会同步 Wine 系统文件、DX wrapper、图形驱动和音频，最后才创建 XEnvironment 与 guest 进程；任一步骤抛出未捕获异常都会留下永久对话框。
+- [x] 发现第二条静默失败路径：Box64 解压结果未校验却立即保存 `current_box64_version`；若首次解压失败，后续不会重试。`ProcessHelper.exec()` 同时吞掉进程创建异常并返回 `-1`，因此不会产生进程日志或结束回调。
+- [x] 为每个启动阶段写入独立的 `Documents/Winlator/startup.log`，并同步写入 Winlator 调试日志；捕获后台异常后关闭 `starting up`、返回上一界面并提示启动日志路径。若发生阻塞而非异常，日志最后一条 `BEGIN` 即为未返回的阶段。
+- [x] Box64 文件不存在时强制重试解压，仅在文件存在、大小非零且具有执行权限后保存当前版本；guest 进程创建返回 `-1` 时抛出明确错误，由启动阶段日志收口。
+- [x] `./gradlew.bat --no-daemon clean :app:assembleDebug` 成功；G2.4 APK 大小为 `206,816,529` bytes，SHA-256 为 `791605F6231AE041E2832298E079840EE60E49758F9B1E8B37FB3919E8B60E34`。`zipalign -c 4` 和 APK V2 签名验证通过，编译字节码包含启动阶段日志与 Box64 校验分支。
+- [x] G2.4 APK 内嵌 rootfs 大小仍为 `79,289,327` bytes，SHA-256 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`，未引入新的 Wine/rootfs 变量。
+- [x] 新产物独立归档为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G2.4-startup-diagnostics-box64-retry.apk`；创建前检查目标不存在，未覆盖 G2.3 或其他 APK。
+
+### APK 产物保留规则
+
+- 从 G2.4 起，每个 APK 使用包含节点号和用途的唯一文件名，已存在文件视为只读产物，不执行覆盖。
+- G2.3 已补存为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G2.3-rootfs-startup-guard.apk`，大小 `206,814,253` bytes，SHA-256 为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`。
+- 新节点的文档必须同时记录文件名、大小和 SHA-256；通用文件名 `app-debug-project3-builtin-nsiproxy-fix.apk` 仅作为 G2.3 历史产物保留，不再更新。
+
 ### T2：内置修复 APK 真机回归
 
-1. 安装 G2.3 APK `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，确认安装包 SHA-256 为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`。
+1. 覆盖安装 G2.4 APK `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G2.4-startup-diagnostics-box64-retry.apk`，确认安装包 SHA-256 为 `791605F6231AE041E2832298E079840EE60E49758F9B1E8B37FB3919E8B60E34`；不要卸载应用。
 2. 首次打开 APK 后等待系统文件安装完成；必须看到安装过程结束后再继续。不要在安装过程中启动容器。如果从桌面快捷方式启动时立即返回并提示“安装系统文件”，这是 G2.3 门槛生效，应回到主界面等待安装完成。
 3. 创建全新容器并选择内置 Wine `/opt/wine`；不要复用已经导入补丁 Wine 的旧容器，避免旧模块残留污染结论。
 4. Dave 快捷方式保持 `WineD3D`、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`，不添加 `-force-gfx-direct`，沿用当前已验证的 Turnip、分辨率和游戏路径。
-5. 刷新后第一轮冷启动使用 `-logFile Player-T2-A2.log`，进入可交互主菜单后继续观察至少 6 分钟；导出 Winlator 日志和 `Player-T2-A2.log`。
-6. 日志应出现 `if_nameindex failed, errno 13` 后继续加载 Dave/图形模块，而不是停在旧的 rootfs 早期路径；通过后再进行 T2-B。
+5. 刷新后第一轮冷启动使用 `-logFile Player-T2-A3.log`，进入可交互主菜单后继续观察至少 6 分钟；导出 Winlator 日志、`Player-T2-A3.log` 和 `Documents/Winlator/startup.log`。
+6. 若再次停在 `starting up`，最多等待 2 分钟后结束 Winlator，直接从手机 `Documents/Winlator/` 复制 `startup.log`；该文件启动时即创建，不依赖 Wine/Box64 成功启动或 Winlator 日志导出。
+7. 成功日志应出现 `if_nameindex failed, errno 13` 后继续加载 Dave/图形模块，而不是停在旧的 rootfs 早期路径；通过后再进行 T2-B。
 
 ### T3：兼容性分支与最小成功集回退
 
@@ -319,10 +337,11 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 
 ## 五、用户当前需要执行的步骤
 
-1. 安装 G2.3 APK：`D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，先核对 SHA-256 是否为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`。
+1. 覆盖安装 G2.4 APK：`D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G2.4-startup-diagnostics-box64-retry.apk`，先核对 SHA-256 是否为 `791605F6231AE041E2832298E079840EE60E49758F9B1E8B37FB3919E8B60E34`；不要卸载应用。
 2. 等待“安装系统文件”完成后，新建容器并选择内置 Wine `/opt/wine`；不要复用导入补丁 Wine 的旧容器。
 3. 保留 Dave 快捷方式中的 WineD3D、Box64 `Intermediate` 和 `BOX64_UNITYPLAYER=1`，不要添加 `-force-gfx-direct`。
-4. 先执行 T2-A2，使用 `-logFile Player-T2-A2.log`，进入主菜单后观察至少 6 分钟并导出日志；A2 通过后再执行 T2-B。
+4. 执行 T2-A3，使用 `-logFile Player-T2-A3.log`；若进入主菜单则观察至少 6 分钟并导出全部日志。
+5. 若仍卡在 `starting up`，等待最多 2 分钟后结束应用，把手机 `Documents/Winlator/startup.log` 复制到 `D:\agent\Winlator\logs\dave-the-diver\startup-T2-A3.log`；同时导出或复制 `logs.txt`（如果存在）。
 
 ## 六、进度记录
 
@@ -463,6 +482,14 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - G2.3 clean APK SHA-256 为 `8CB87C3CBE013649F59F909F8E59A3F616A9E6CA74AD6A9927B7EEF409EDE5CC`，大小 `206,814,253` bytes；内嵌 rootfs SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
 - 下一步改用 G2.3 APK，先从 Winlator 主界面等待系统文件安装结束，再启动新建内置 Wine 容器；若入口立即提示“安装系统文件”，记录为门槛拦截而不是游戏启动失败。
 
+### 2026-08-06：G2.4 收口 guest 启动前静默失败
+
+- G2.3 真机依然停在 `starting up`，而本地没有新导出的 Winlator/Unity 日志；因此 G2.3 的版本门槛已通过，阻塞范围后移到 Java 后台初始化至 guest 进程创建之间。
+- 新增独立 `Documents/Winlator/startup.log`，记录 rootfs/容器/驱动信息，以及 Wine 系统文件同步、DX wrapper、图形驱动、音频与 XEnvironment 的 BEGIN/END；异常时记录完整 Java 堆栈、关闭对话框并返回。
+- 修复 Box64 首次解压失败仍写入版本缓存的问题：缺失或不可执行时每次重试，验证成功后才保存 `current_box64_version`；进程创建返回 `-1` 不再静默。
+- G2.3 已补存为唯一文件名且哈希保持不变；G2.4 使用新的唯一文件名归档。后续 APK 一律只新增、不覆盖。
+- G2.4 clean 构建及静态验证通过，APK SHA-256 为 `791605F6231AE041E2832298E079840EE60E49758F9B1E8B37FB3919E8B60E34`。下一步执行 T2-A3；无论成功、异常或阻塞，都应取得 `startup.log`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -484,6 +511,7 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 | G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.10B 六分钟冷启动完成 | 已完成（2026-08-06） |
 | G2.2 | 递增 rootfs 版本、归档 T2-A 失败日志、重建 APK | T2-A 证明应用级 rootfs 未因 APK 更新而刷新 | 已完成（2026-08-06） |
 | G2.3 | 容器入口增加 rootfs 完整性门槛、重建 APK、更新 T2 操作步骤 | 用户反馈卡在 `starting up` 且无日志，确认需阻止安装竞争状态启动 | 已完成（2026-08-06） |
+| G2.4 | 启动阶段独立日志、后台异常收口、Box64 解压失败重试、唯一 APK 归档 | G2.3 通过版本门槛后仍在 guest 进程创建前静默卡住 | 已完成（2026-08-06） |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。

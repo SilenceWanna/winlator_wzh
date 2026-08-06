@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -68,6 +69,7 @@ import com.winlator.math.Mathf;
 import com.winlator.renderer.GLRenderer;
 import com.winlator.widget.FrameRating;
 import com.winlator.widget.InputControlsView;
+import com.winlator.widget.LogView;
 import com.winlator.widget.MagnifierView;
 import com.winlator.widget.ShutdownBallView;
 import com.winlator.widget.TouchpadView;
@@ -99,6 +101,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executors;
@@ -106,6 +111,7 @@ import java.util.concurrent.Executors;
 public class XServerDisplayActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final String DESKTOP_SHELL_ENV_VAR = "WINLATOR_DESKTOP_SHELL";
     private static final String WFM_INTERPRETER_ENV_VAR = "WINLATOR_WFM_INTERPRETER";
+    private static final String STARTUP_LOG_FILENAME = "startup.log";
     private XServerView xServerView;
     private InputControlsView inputControlsView;
     private TouchpadView touchpadView;
@@ -140,6 +146,7 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
     private int frameRatingWindowId = -1;
     private Win32AppWorkarounds win32AppWorkarounds;
     private String screenEffectProfile;
+    private File startupLogFile;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -242,6 +249,9 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             this.dxwrapperConfig = DXWrappers.parseConfigs(dxwrapper, dxwrapperConfig);
         }
 
+        resetStartupLog();
+        appendStartupLog("rootfs="+rootFS.getRootDir().getPath()+", version="+rootFS.getVersion()+", container="+(container != null ? container.id : 0));
+        appendStartupLog("graphics="+graphicsDriver[0]+","+graphicsDriver[1]+", dxwrapper="+dxwrapper+", audio="+audioDriver);
         preloaderDialog.show(R.string.starting_up);
 
         inputControlsManager = new InputControlsManager(this);
@@ -280,13 +290,73 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         setupUI();
 
         Executors.newSingleThreadExecutor().execute(() -> {
-            if (!isGenerateWineprefix()) {
-                setupWineSystemFiles();
-                extractGraphicsDriverFiles();
-                changeWineAudioDriver();
+            String stage = "initialization";
+            try {
+                if (!isGenerateWineprefix()) {
+                    stage = "setup_wine_system_files";
+                    appendStartupLog("BEGIN "+stage);
+                    setupWineSystemFiles();
+                    appendStartupLog("END "+stage);
+
+                    stage = "extract_graphics_driver_files";
+                    appendStartupLog("BEGIN "+stage);
+                    extractGraphicsDriverFiles();
+                    appendStartupLog("END "+stage);
+
+                    stage = "change_wine_audio_driver";
+                    appendStartupLog("BEGIN "+stage);
+                    changeWineAudioDriver();
+                    appendStartupLog("END "+stage);
+                }
+
+                stage = "setup_x_environment";
+                appendStartupLog("BEGIN "+stage);
+                setupXEnvironment();
+                appendStartupLog("END "+stage);
+                appendStartupLog("STARTUP COMPLETE");
             }
-            setupXEnvironment();
+            catch (Exception error) {
+                appendStartupFailure(stage, error);
+                runOnUiThread(() -> {
+                    preloaderDialog.close();
+                    AppUtils.showToast(this, R.string.unable_to_start_check_startup_log);
+                    finish();
+                });
+            }
         });
+    }
+
+    private void resetStartupLog() {
+        File parent = LogView.getLogFile().getParentFile();
+        if (parent != null && !parent.isDirectory()) parent.mkdirs();
+        startupLogFile = new File(parent, STARTUP_LOG_FILENAME);
+        FileUtils.delete(startupLogFile);
+        appendStartupLog("STARTUP BEGIN");
+    }
+
+    private synchronized void appendStartupLog(String message) {
+        String line = "["+DateFormat.format("yyyy-MM-dd HH:mm:ss.SSS", System.currentTimeMillis())+"] "+message;
+        if (startupLogFile != null) {
+            try (FileWriter writer = new FileWriter(startupLogFile, true)) {
+                writer.write(line+System.lineSeparator());
+            }
+            catch (IOException error) {
+                error.printStackTrace();
+            }
+        }
+        if (debugDialog != null) debugDialog.call("[startup] "+message);
+    }
+
+    private synchronized void appendStartupFailure(String stage, Exception error) {
+        appendStartupLog("FAILED "+stage+": "+error.getClass().getName()+": "+String.valueOf(error.getMessage()));
+        if (startupLogFile != null) {
+            try (PrintWriter writer = new PrintWriter(new FileWriter(startupLogFile, true))) {
+                error.printStackTrace(writer);
+            }
+            catch (IOException logError) {
+                logError.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -447,34 +517,52 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
 
         boolean wineprefixWasUpdated = WineUtils.isWineprefixWasUpdated(container);
         if (!container.getExtra("appVersion").equals(appVersion) || !container.getExtra("rfsVersion").equals(rfsVersion) || wineprefixWasUpdated) {
+            appendStartupLog("BEGIN setup_wine_system_files.apply_general_patches");
             applyGeneralPatches(container);
+            appendStartupLog("END setup_wine_system_files.apply_general_patches");
             container.putExtra("appVersion", appVersion);
             container.putExtra("rfsVersion", rfsVersion);
             containerDataChanged = true;
         }
 
+        appendStartupLog("BEGIN setup_wine_system_files.verify_user_registry");
         if (verifyUserRegistry()) containerDataChanged = true;
+        appendStartupLog("END setup_wine_system_files.verify_user_registry");
+
+        appendStartupLog("BEGIN setup_wine_system_files.extract_dxwrapper_files");
         if (extractDXWrapperFiles()) containerDataChanged = true;
+        appendStartupLog("END setup_wine_system_files.extract_dxwrapper_files");
 
         if (!wincomponents.equals(container.getExtra("wincomponents"))) {
+            appendStartupLog("BEGIN setup_wine_system_files.extract_wincomponent_files");
             extractWinComponentFiles();
+            appendStartupLog("END setup_wine_system_files.extract_wincomponent_files");
             container.putExtra("wincomponents", wincomponents);
             containerDataChanged = true;
         }
 
         String desktopTheme = container.getDesktopTheme();
         if (!(desktopTheme+","+xServer.screenInfo).equals(container.getExtra("desktopTheme"))) {
+            appendStartupLog("BEGIN setup_wine_system_files.apply_desktop_theme");
             WineThemeManager.apply(this, new WineThemeManager.ThemeInfo(desktopTheme), xServer.screenInfo);
+            appendStartupLog("END setup_wine_system_files.apply_desktop_theme");
             container.putExtra("desktopTheme", desktopTheme+","+xServer.screenInfo);
             containerDataChanged = true;
         }
 
+        appendStartupLog("BEGIN setup_wine_system_files.create_start_menu");
         WineStartMenuCreator.create(this, container);
+        appendStartupLog("END setup_wine_system_files.create_start_menu");
+
+        appendStartupLog("BEGIN setup_wine_system_files.create_dosdevices_symlinks");
         WineUtils.createDosdevicesSymlinks(container, true);
+        appendStartupLog("END setup_wine_system_files.create_dosdevices_symlinks");
 
         String startupSelection = String.valueOf(container.getStartupSelection());
         if (!startupSelection.equals(container.getExtra("startupSelection")) || wineprefixWasUpdated) {
+            appendStartupLog("BEGIN setup_wine_system_files.change_services_status");
             WineUtils.changeServicesStatus(container, container.getStartupSelection());
+            appendStartupLog("END setup_wine_system_files.change_services_status");
             container.putExtra("startupSelection", startupSelection);
             containerDataChanged = true;
         }
@@ -482,7 +570,9 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         boolean openAndroidBrowserFromWine = preferences.getBoolean("open_android_browser_from_wine", true);
         String openAndroidBrowserFromWineStr = openAndroidBrowserFromWine ? "t" : "f";
         if (!openAndroidBrowserFromWineStr.equals(container.getExtra("openAndroidBrowserFromWine")) || wineprefixWasUpdated) {
+            appendStartupLog("BEGIN setup_wine_system_files.change_browser_registry");
             WineUtils.changeBrowsersRegistryKey(container, openAndroidBrowserFromWine);
+            appendStartupLog("END setup_wine_system_files.change_browser_registry");
             container.putExtra("openAndroidBrowserFromWine", openAndroidBrowserFromWineStr);
             containerDataChanged = true;
         }
