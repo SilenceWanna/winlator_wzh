@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：T1.10A 未实际启用 `BOX64_UNITYPLAYER=1`，重复复现默认值 0 的闪退；等待正确保存后执行 T1.10A2
+> 当前状态：T1.10A2 已在 `BOX64_UNITYPLAYER=1` 下越过重复闪退点并正常运行；等待 T1.10B 六分钟冷启动验收
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -29,7 +29,7 @@
 | 内置 Wine 状态 | 当前 rootfs 的 `nsiproxy` 未包含项目2已验证的 `if_nameindex()` 空值保护 | 与补丁版模块哈希不同；现象与项目2未修复样本一致 |
 | Box64 | `0.4.5-dev-372739d` | Dave 日志确认；当前默认版本 |
 | Box64 预设 | Intermediate | `BIGBLOCK=2`、`STRONGMEM=0`、`WEAKBARRIER=2` |
-| Unity 开关 | 候选最终值 `BOX64_UNITYPLAYER=1` | T1.8 成功、T1.9 单独恢复默认值 0 后闪退；是否为必要项由 T1.10 回切复验确认 |
+| Unity 开关 | 当前样本需要 `BOX64_UNITYPLAYER=1` | 值为 0 的 T1.9/T1.10A 均在 114–115 秒闪退；值为 1 的 T1.10A2 越过该点且正常结束 |
 | 游戏引擎 | Unity 2020.3.48f1，IL2CPP | 本地游戏文件静态检查 |
 | 游戏包风险 | 当前文件包含替换过的 `UnityPlayer.dll` 和第三方 Steam 兼容层 | 若官方干净副本与当前副本结果不同，应归因于游戏文件，不修改 Winlator 去适配 DRM 绕过组件 |
 | 初始日志 | 48,526 bytes，SHA-256 `9B688E03B964D960D81F37AEE579EE89901B32DF29A683588FD7C4861512E0B1` | 2026-08-05 09:38:22 |
@@ -59,7 +59,7 @@ Dave 当前恰好使用未修复的内置 Wine，并停在 `dnsapi` 初始化之
 | 优先级 | 假设 | 当前支持证据 | 证伪方式 |
 |---|---|---|---|
 | P0（第一层已确认） | 内置 Wine 11 的 `nsiproxy` 缺少 `if_nameindex()` 空值保护，阻塞网络初始化 | T0 停在 `dnsapi`；T1 只换补丁 Wine 后越过该点并继续加载 `GameAssembly.dll`、Vulkan 和音频 | 已由 T1 功能路径确认；后续仍需集成进内置 rootfs |
-| P1（高度怀疑必要但不充分） | Box64 Unity 专用策略被关闭会使当前样本在启动后期不稳定 | T1.1 证明该开关不能单独解决 DXVK 黑屏；T1.8 在 WineD3D 下成功，T1.9 只恢复默认值 0 后约 114 秒进入崩溃处理路径 | 候选最终配置保留 1；T1.10 连续两次冷启动复验 |
+| P1（因果回切已支持，待重复性确认） | Box64 Unity 专用策略被关闭会使当前样本在启动后期不稳定 | T1.1 证明该开关不能单独解决 DXVK 黑屏；值为 0 的两轮均在 114–115 秒进入崩溃处理路径，回切为 1 的 T1.10A2 越过该点 | 最终配置保留 1；T1.10B 六分钟冷启动确认重复性 |
 | P2a（未支持） | Unity 多线程渲染路径导致首帧前等待 | T1.4 已在实际 argv 中启用 `-force-gfx-direct`；`Player.log` 停止位置与 T1.3 相同，仍未进入场景 | 已完成当前验证；不再单独修改 Unity 渲染线程参数 |
 | P2b（第二层已确认） | DXVK 的 D3D11-to-Vulkan 路径在设备创建后、首帧前发生等待 | T1.3-T1.5 使用 DXVK/Turnip 时均停在 Odin Serializer 后；T1.6 只改 WineD3D 后进入资源加载、场景切换和教程任务 | 已由 T1.6 功能路径确认；后续回退无关开关并建立最终配置 |
 | P3（已排除） | Box64 Intermediate 的内存模型不适合该 Unity 版本 | T1.5 已启用 Stability：`BIGBLOCK=0`、`STRONGMEM=2`、`WEAKBARRIER=0`；可见结果和 Unity 停点不变 | 已完成；恢复/保留 Stability 均不再作为主变量 |
@@ -128,6 +128,8 @@ T1 结果：补丁 Wine 路径和 Box64 版本选择正确；游戏从 `dnsapi` 
 | T1.9 Unity 闪退日志 | `archive/runtime-logs/dave-the-diver/T1.9-Player-wined3d-intermediate-unity-default-crash.log` | 9,595 | `E8090C4D3CC082ACA16E3833046A125C444FE938CFD0A968FFB914C3E765E3B4` |
 | T1.10A 未生效的 UnityPlayer 覆盖重复闪退 | `archive/runtime-logs/dave-the-diver/T1.10A-invalid-unity-override-repeat-crash.txt` | 270,687 | `4717FC0FDBC2A4ABDC51B844BD8637435AC8D58DBA959A503D9EE20DE7B14786` |
 | T1.10A Unity 重复闪退日志 | `archive/runtime-logs/dave-the-diver/T1.10A-Player-invalid-unity-override-repeat-crash.log` | 8,855 | `5424886C11FC03A207640A0A3B1E11BAE06FBBAD6E7B2E25CB1F1D55C67CAAF4` |
+| T1.10A2 UnityPlayer 回切成功 | `archive/runtime-logs/dave-the-diver/T1.10A2-final-unity-on-success.txt` | 268,540 | `30D2C12D3EB92875A14D77EF09230631E9FEFAB002DD31F337A858ADEF339CD3` |
+| T1.10A2 Unity 成功日志 | `archive/runtime-logs/dave-the-diver/T1.10A2-Player-final-unity-on-success.log` | 8,973 | `B777F9E4C5238DEEDC8258A1849F7C7387BAC1BF2D8C963BF10A35CAA4315A8F` |
 
 ### T1.1：启用 Box64 UnityPlayer 检测（已完成）
 
@@ -229,9 +231,17 @@ Signer SHA-256: B6396F6CD549475DEC0893AC0CAB0E03770F403FB37679BAE02418A492270B07
 - [x] 运行层和时序与 T1.9 重复：补丁 Wine、WineD3D、Intermediate 生效；Dave 于 `10:59:19` 启动，`11:01:14` 第二次启动不带 `--attach` 的 `UnityCrashHandler64.exe`，约 115 秒后闪退。Unity 同样完成 D3D11、版本、资源、存档和 Steamworks 初始化。
 - [x] 结论：该样本进一步重复验证默认值 0 的闪退，但尚未验证 `BOX64_UNITYPLAYER=1`。下一轮先确认快捷方式设置被保存，再执行 T1.10A2。
 
+### G1.10A2：UnityPlayer 回切后越过闪退点（已完成）
+
+- [x] 用户确认游戏成功启动且未闪退；Winlator 日志共 2,978 行、268,540 bytes，Unity 日志共 185 行、8,973 bytes。
+- [x] Dave 进程明确为 `BOX64_UNITYPLAYER=1`，并出现 `Detected UnityPlayer.dll` 和 `BOX64_UNITY=1`；实际 argv 只有 `-logFile Player-T1.10-A2.log`，说明回切变量正确生效。
+- [x] 补丁 Wine、WineD3D GLSL/OpenGL 和 Intermediate 均保持不变；Unity 完成 D3D11 11.1、版本、资源、存档、CursorManager、Steamworks 回调及后续资源卸载。
+- [x] Dave 从 `11:18:22` 运行到 `11:21:26`，日志覆盖约 184 秒，越过默认值 0 两轮稳定发生在 114–115 秒的闪退点；全程只有启动时带 `--attach` 的 CrashHandler，没有第二个崩溃处理进程。
+- [x] 末尾 `X connection to :0 broken` 与用户主动结束本次正常运行一致。由于本轮不足计划中的 5 分钟，T1.10B 改为进入可操作画面后计时 6 分钟，作为最终重复性与时长验收。
+
 ### G2：把最小修复集成到内置 Wine
 
-T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层黑屏，T1.9 已把 Box64 Unity 专用策略确定为当前首要稳定性变量。先完成 T1.10 最终配置的两次冷启动复验，再执行内置集成：
+T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层黑屏，T1.9/T1.10A/T1.10A2 已完成 Box64 Unity 专用策略的失败重复与成功回切。先完成 T1.10B 六分钟冷启动验收，再执行内置集成：
 
 1. 从已验证补丁产物提取所需 `nsiproxy` 模块，确认版本、架构、权限和哈希。
 2. 替换 `app/src/main/assets/rootfs.tzst` 中内置 Wine 11 的对应文件；不改 Wine 版本标识、Box64 或图形组件。
@@ -253,7 +263,7 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 4. T1.7 保持 WineD3D 和 Stability，只移除 `-force-gfx-direct`；该变量已验证不是成功必需项。
 5. T1.8 保持 WineD3D 和无额外图形参数，只把 Box64 从 Stability 恢复为 Intermediate；已验证成功。
 6. T1.9 删除用户设置的 `BOX64_UNITYPLAYER=1`，验证 Winlator 默认 `BOX64_UNITYPLAYER=0`；该轮在约 114 秒后闪退，强烈表明默认值不适用于当前样本，仍需回切复验排除偶发崩溃。
-7. T1.10A2 正确保存 `BOX64_UNITYPLAYER=1` 后先完成一次有效冷启动；确认该轮日志显示 1 并运行至少 5 分钟后，再执行第二次 B 冷启动，随后进入 G2 内置 Wine 集成。
+7. T1.10A2 正确保存 `BOX64_UNITYPLAYER=1` 后已完成一次有效冷启动并越过重复闪退点；T1.10B 保持配置不变，进入可操作画面后持续运行 6 分钟，随后进入 G2 内置 Wine 集成。
 
 判断边界：若干净副本能启动而当前副本不能，Winlator 侧不实现针对第三方 DRM/注入组件的绕过；记录兼容边界后转为验证正式游戏发行版本。
 
@@ -264,32 +274,25 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
-## 五、用户当前需要执行的 T1.10A2 步骤
+## 五、用户当前需要执行的 T1.10B 步骤
 
-1. 继续使用当前快捷方式修复 APK、原补丁 Wine 11 容器和 Dave 快捷方式，不需要重新安装或新建容器。
-2. 保持 WineD3D、Box64 `Intermediate`、补丁 Wine、Turnip 和分辨率不变。
-3. 长按 Dave 快捷方式，进入快捷方式设置的 **Environment Variables** 标签页；不要只改容器的临时运行界面。
-4. 删除已有同名项后点 **Add**，填写两栏：
+1. 保持当前已经生效的全部设置不变：补丁 Wine 11、WineD3D、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`、Turnip、分辨率及游戏文件均不改。
+2. 重新打开快捷方式设置，确认 Environment Variables 中仍有 Name `BOX64_UNITYPLAYER`、Value `1`。
+3. `Exec Arguments` 只改为：
 
-   - Name：`BOX64_UNITYPLAYER`
-   - Value：`1`
+   `-logFile Player-T1.10-B.log`
 
-   不要填写 `BOX64_UNITYPLAYER=1` 作为名称，也不要加引号或空格。
-5. 先确认新增变量对话框，再确认外层快捷方式设置对话框；重新打开快捷方式设置，确认该行仍显示 `BOX64_UNITYPLAYER` 和 `1`。这一步不保存，日志就会继续显示默认值 0。
-6. `Exec Arguments` 只填写：
+4. 正常退出当前容器和 Winlator，并从 Android 最近任务中移除 Winlator；重新打开应用后从 Dave 快捷方式冷启动。
+5. 进入可操作画面后再开始计时，连续操作或停留至少 6 分钟；不要在计时结束前主动关闭容器。完成后正常退出。
+6. 导出 Winlator 日志为：
 
-   `-logFile Player-T1.10-A2.log`
-
-7. 完全退出 Winlator 后重新打开，通过快捷方式冷启动。进入游戏后至少操作或停留 5 分钟，再正常退出。
-8. 导出 Winlator 日志为：
-
-   `D:\agent\Winlator\logs\dave-the-diver\T1.10A2-final-cold-start-20260806.txt`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.10B-final-cold-start-20260806.txt`
 
    从 `E:\Dave the Diver\` 取回 Unity 日志并保存为：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.10A2-Player-final.log`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.10B-Player-final.log`
 
-9. 先反馈这一轮结果；只有日志确认 `BOX64_UNITYPLAYER=1`、`Detected UnityPlayer.dll` 和 `BOX64_UNITY=1` 后，才继续第二次 B 冷启动。
+7. 反馈从双击到可操作画面的耗时、6 分钟内是否稳定，以及是否能正常退出；无论成功或失败都保留两份日志。
 
 ## 六、进度记录
 
@@ -388,6 +391,13 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - Dave 在 `10:59:19` 启动，`11:01:14` 启动第二个不带 `--attach` 的 CrashHandler；这与 T1.9 的约 114 秒闪退时序重复。该证据用于确认默认值路径可重复，不用于判断开关 1 的效果。
 - 已查明正确保存边界：快捷方式设置中的 Environment Variables 由 `ShortcutSettingsDialog` 保存到快捷方式 `envVars`，运行时再由 `XServerDisplayActivity` 合并；只在新增变量子对话框中输入而未确认外层设置，不会进入下次启动。
 
+### 2026-08-06：G1.10A2 UnityPlayer 回切成功
+
+- 用户可见结果：游戏成功启动且未闪退。Winlator 日志共 2,978 行、268,540 bytes，SHA-256 为 `30D2C12D3EB92875A14D77EF09230631E9FEFAB002DD31F337A858ADEF339CD3`；Unity 日志共 185 行、8,973 bytes，SHA-256 为 `B777F9E4C5238DEEDC8258A1849F7C7387BAC1BF2D8C963BF10A35CAA4315A8F`。
+- 回切信号完整：Dave 及其他 Box64 进程均为 `BOX64_UNITYPLAYER=1`，Dave 加载时检测到 `UnityPlayer.dll` 并设置 `BOX64_UNITY=1`；WineD3D 和 Intermediate 保持生效。
+- Dave 运行日志覆盖约 184 秒，比两次默认值闪退点多约 69–70 秒，且只有一个带 `--attach` 的启动监控进程，没有第二个 CrashHandler。Unity 日志继续完成资源、存档、Steamworks 和资源卸载路径。
+- 本轮支持“UnityPlayer 开关为必要但不充分条件”的因果判断：WineD3D 解决首帧黑屏，UnityPlayer 开关解决随后稳定发生的启动后期闪退。下一轮 B 保持相同配置，进入游戏后计时 6 分钟完成最终重复性验证。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -404,8 +414,9 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 | G1.8 | T1.8 双日志归档、Intermediate 成功、T1.9 默认 Unity 开关计划 | T1.8 成功且 Intermediate 参数生效 | 已完成（2026-08-06） |
 | G1.9 | T1.9 双日志归档、默认 UnityPlayer 开关闪退证据、T1.10 双冷启动计划 | T1.9 闪退且单变量生效 | 已完成（2026-08-06） |
 | G1.10A | 未生效覆盖的双日志归档、默认值闪退重复证据、A2 保存步骤 | T1.10A 日志仍显示 `BOX64_UNITYPLAYER=0` | 已完成（2026-08-06） |
-| G1.10 | 最终配置两次冷启动日志与最小成功集确认 | 有效的 T1.10 A2/B 均进入可交互游戏并运行至少 5 分钟 | 待执行 |
-| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | 有效的 T1.10 A2/B 两次冷启动完成 | 待执行 |
+| G1.10A2 | 回切成功双日志、114–115 秒闪退点对照、B 轮六分钟计划 | A2 日志显示 UnityPlayer 1 且越过重复闪退点 | 已完成（2026-08-06） |
+| G1.10 | 最终配置第二次冷启动日志与最小成功集确认 | T1.10B 进入可交互游戏后稳定运行至少 6 分钟 | 待执行 |
+| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.10B 六分钟冷启动完成 | 待执行 |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
