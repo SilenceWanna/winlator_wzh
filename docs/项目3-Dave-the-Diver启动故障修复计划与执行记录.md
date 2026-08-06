@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.7 已确认 WineD3D 无需 `-force-gfx-direct` 仍可启动；等待 T1.8 恢复 Box64 Intermediate
+> 当前状态：G1.8 已确认 WineD3D + Intermediate 成功；等待 T1.9 恢复默认 `BOX64_UNITYPLAYER=0`
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -122,6 +122,8 @@ T1 结果：补丁 Wine 路径和 Box64 版本选择正确；游戏从 `dnsapi` 
 | T1.6 Unity 成功日志 | `archive/runtime-logs/dave-the-diver/T1.6-Player-wined3d-stability-success.log` | 11,374 | `3AF7129BF6B633FE098977FFE866D763B277D7CC852C485337305A38F6392CFF` |
 | T1.7 WineD3D 无直连参数成功 | `archive/runtime-logs/dave-the-diver/T1.7-wined3d-no-force-gfx-direct-success.txt` | 274,957 | `E18E98F1BB1588389F761D99828294D8D970AA88CB92ACF88791EA741C73A64` |
 | T1.7 Unity 成功日志 | `archive/runtime-logs/dave-the-diver/T1.7-Player-wined3d-no-force-gfx-direct-success.log` | 8,972 | `FA153783B48F6FB0019609C461A41D1736C2646751808A6302D87276F4256B6D` |
+| T1.8 WineD3D + Intermediate 成功 | `archive/runtime-logs/dave-the-diver/T1.8-wined3d-intermediate-success.txt` | 273,565 | `B3C7BEB8793D6D862A7CF332418DEE161B83C82C53C2936ACBCF866D41D48313` |
+| T1.8 Unity 成功日志 | `archive/runtime-logs/dave-the-diver/T1.8-Player-wined3d-intermediate-success.log` | 9,097 | `2ACCD29F8C16F429757C1BFF66B7DE8AD66BE3D530545794CAEB363F83F5ED87` |
 
 ### T1.1：启用 Box64 UnityPlayer 检测（已完成）
 
@@ -201,9 +203,16 @@ Signer SHA-256: B6396F6CD549475DEC0893AC0CAB0E03770F403FB37679BAE02418A492270B07
 - [x] Unity 日志继续完成 D3D11 11.1、WineD3D Renderer、版本打印、LogoManager、SoundConfigManager、存档转换和 Steamworks 回调，没有回到 Odin 停点或出现显式崩溃。
 - [x] 结论：`-force-gfx-direct` 从成功配置中移除；下一轮只恢复 Box64 Intermediate，评估性能更好的预设是否同样可用。
 
+### G1.8：恢复 Box64 Intermediate 后仍成功（已完成）
+
+- [x] 用户确认 T1.8 成功；Winlator 日志共 3,021 行、273,565 bytes，Unity 日志共 186 行、9,097 bytes。
+- [x] Dave 进程确认 Intermediate 生效：`BIGBLOCK=2`、`FASTNAN=1`、`STRONGMEM=0`、`WAIT=1`、`WEAKBARRIER=2`；实际 argv 仍只有 `-logFile Player-T1.8.log`。
+- [x] WineD3D 继续使用 GLSL/OpenGL，Unity 完成版本、Logo、资源、存档转换和 Steamworks 回调，没有回到 DXVK 黑屏停点。
+- [x] 结论：Stability 不是成功必需项；成功配置收敛为“补丁 Wine + WineD3D + Intermediate + `BOX64_UNITYPLAYER=1`”。T1.9 只移除 UnityPlayer 用户覆盖。
+
 ### G2：把最小修复集成到内置 Wine
 
-T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层黑屏。先完成 T1.8-T1.9 的最小成功集与两次冷启动，再执行内置集成：
+T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层黑屏。先完成 T1.9 的默认开关验证与最终配置两次冷启动，再执行内置集成：
 
 1. 从已验证补丁产物提取所需 `nsiproxy` 模块，确认版本、架构、权限和哈希。
 2. 替换 `app/src/main/assets/rootfs.tzst` 中内置 Wine 11 的对应文件；不改 Wine 版本标识、Box64 或图形组件。
@@ -223,8 +232,8 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 2. T1.5 保留 `-force-gfx-direct`，只把 Box64 预设改为 Stability；该变量已验证无行为改善。
 3. T1.6 保持其他设置，只把 DX wrapper 从 DXVK 改为 WineD3D；该变量已成功使游戏进入教程任务。
 4. T1.7 保持 WineD3D 和 Stability，只移除 `-force-gfx-direct`；该变量已验证不是成功必需项。
-5. T1.8 保持 WineD3D 和无额外图形参数，只把 Box64 从 Stability 恢复为 Intermediate，减少稳定性预设的性能代价。
-6. T1.8 成功后，再验证 `BOX64_UNITYPLAYER=0` 和最终配置的两次冷启动，随后进入 G2 内置 Wine 集成。
+5. T1.8 保持 WineD3D 和无额外图形参数，只把 Box64 从 Stability 恢复为 Intermediate；已验证成功。
+6. T1.9 删除用户设置的 `BOX64_UNITYPLAYER=1`，验证 Winlator 默认 `BOX64_UNITYPLAYER=0`；成功后使用该最终配置连续冷启动两次，随后进入 G2 内置 Wine 集成。
 
 判断边界：若干净副本能启动而当前副本不能，Winlator 侧不实现针对第三方 DRM/注入组件的绕过；记录兼容边界后转为验证正式游戏发行版本。
 
@@ -235,25 +244,25 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
-## 五、用户当前需要执行的 T1.8 步骤
+## 五、用户当前需要执行的 T1.9 步骤
 
 1. 继续使用当前已经覆盖安装的快捷方式修复 APK、原补丁 Wine 11 容器和原 Dave 快捷方式，不需要重新安装或新建容器。
-2. 保持 WineD3D 默认配置、`BOX64_UNITYPLAYER=1`、补丁 Wine、Turnip 和分辨率不变。
-3. 在容器的 Box64 预设中只把 `Stability` 改为 `Intermediate`。Intermediate 的关键值应恢复为 `BIGBLOCK=2`、`STRONGMEM=0`、`WEAKBARRIER=2`、`FASTNAN=1`、`WAIT=1`。
+2. 保持 WineD3D 默认配置、Box64 `Intermediate`、补丁 Wine、Turnip 和分辨率不变。
+3. 打开容器环境变量，删除用户添加的 `BOX64_UNITYPLAYER=1` 整条配置；不要手工新增 `BOX64_UNITYPLAYER=0`，让 Winlator 使用源码默认值。
 4. `Exec Arguments` 只填写：
 
-   `-logFile Player-T1.8.log`
+   `-logFile Player-T1.9.log`
 
 5. 通过快捷方式冷启动，等待最多 180 秒。进入游戏后至少实际操作或停留 5 分钟，再正常退出。
 6. 导出 Winlator 日志并保存到电脑：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.8-wined3d-intermediate-20260805.txt`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.9-wined3d-intermediate-unity-default-20260806.txt`
 
-7. 从 `E:\Dave the Diver\` 取回新生成的 `Player-T1.8.log`，保存到：
+7. 从 `E:\Dave the Diver\` 取回新生成的 `Player-T1.9.log`，保存到：
 
-   `D:\agent\Winlator\logs\dave-the-diver\T1.8-Player-wined3d-intermediate.log`
+   `D:\agent\Winlator\logs\dave-the-diver\T1.9-Player-wined3d-intermediate-unity-default.log`
 
-8. 反馈从双击到进入可操作画面的耗时、是否能正常操作和退出。重点检查 Dave 进程中的 `BIGBLOCK=2`、`STRONGMEM=0`、`WEAKBARRIER=2`；即使失败也必须导出两份日志。
+8. 反馈从双击到进入可操作画面的耗时、是否能正常操作和退出。激活信号是 Dave 进程显示 `BOX64_UNITYPLAYER=0`，且不再出现 `Detected UnityPlayer.dll`/`BOX64_UNITY=1`；即使失败也必须导出两份日志。
 
 ## 六、进度记录
 
@@ -330,6 +339,13 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - Unity 继续打印 D3D11 11.1、`NVIDIA GeForce GTX 480`、版本 `v1.0.2.1270.steam`、LogoManager、资源加载、存档转换和 Steamworks 回调；未出现 `c0000005`、SIGSEGV 或 X connection broken。
 - T1.7 使成功组合进一步收敛为“补丁 Wine + WineD3D + Stability + `BOX64_UNITYPLAYER=1`”，下一轮只恢复 Intermediate。
 
+### 2026-08-06：G1.8 恢复 Intermediate 后仍成功
+
+- 用户可见结果：T1.8 成功进入游戏。Winlator 日志共 3,021 行、273,565 bytes，SHA-256 为 `B3C7BEB8793D6D862A7CF332418DEE161B83C82C53C2936ACBCF866D41D48313`；Unity 日志共 186 行、9,097 bytes，SHA-256 为 `2ACCD29F8C16F429757C1BFF66B7DE8AD66BE3D530545794CAEB363F83F5ED87`。
+- Dave 实际 argv 为 `E:\\Dave the Diver\\DaveTheDiver.exe -logFile Player-T1.8.log`；Intermediate 的五个关键环境值全部符合源码定义，WineD3D 仍明确打印 GLSL/OpenGL renderer。
+- Unity 日志继续越过 Odin Serializer，完成 D3D11 11.1、版本、Logo、SoundConfigManager、存档转换、CursorManager 和 Steamworks 回调；没有 `c0000005`、SIGSEGV、Unhandled page fault 或 X connection broken。
+- Stability 已从必要条件中排除。下一轮只删除 `BOX64_UNITYPLAYER=1` 用户覆盖，验证 Winlator 默认值 0 是否可用。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -343,7 +359,8 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 | G1.5 | T1.5 双日志归档、Stability 变量验证、T1.6 WineD3D 计划 | 收到并分析 T1.5 Winlator/Unity 日志 | 已完成（2026-08-05） |
 | G1.6 | T1.6 双日志归档、WineD3D 成功证据、两层根因和最小回退计划 | T1.6 成功进入游戏并取得完整日志 | 已完成（2026-08-05） |
 | G1.7 | T1.7 双日志归档、移除 `-force-gfx-direct` 成功、T1.8 计划 | T1.7 成功进入游戏且参数未出现 | 已完成（2026-08-05） |
-| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.8-T1.9 完成最小成功集与两次冷启动 | 待执行 |
+| G1.8 | T1.8 双日志归档、Intermediate 成功、T1.9 默认 Unity 开关计划 | T1.8 成功且 Intermediate 参数生效 | 已完成（2026-08-06） |
+| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.9 与最终配置两次冷启动完成 | 待执行 |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
