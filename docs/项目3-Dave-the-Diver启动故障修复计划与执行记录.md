@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.10 已完成两次冷启动与六分钟稳定性验收；G2 正在把 `nsiproxy` 修复集成到内置 Wine/rootfs
+> 当前状态：G1.10 与 G2 已完成；候选 APK 已构建并完成静态校验，等待 T2 内置 Wine 真机回归
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -26,7 +26,7 @@
 |---|---|---|
 | Winlator 源码 | 当前实际开发仓库为 `winlator_wzh_new`，分支 `main` | `winlator-main` 是上游快照，子模块未完整初始化，不作为本轮修改目标 |
 | 内置 Wine | 11.0，运行路径为 `/opt/wine` | Dave 日志中的搜索路径为 `rootfs/opt/wine`，不是可选 Wine 路径 |
-| 内置 Wine 状态 | 当前 rootfs 的 `nsiproxy` 未包含项目2已验证的 `if_nameindex()` 空值保护 | 与补丁版模块哈希不同；现象与项目2未修复样本一致 |
+| 内置 Wine 状态 | G2 已把项目2验证的 `nsiproxy` 空值保护集成进当前 rootfs | 新 rootfs SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`；等待 T2 真机确认 |
 | Box64 | `0.4.5-dev-372739d` | Dave 日志确认；当前默认版本 |
 | Box64 预设 | Intermediate | `BIGBLOCK=2`、`STRONGMEM=0`、`WEAKBARRIER=2` |
 | Unity 开关 | 当前样本需要 `BOX64_UNITYPLAYER=1` | 值为 0 的 T1.9/T1.10A 均在 114–115 秒闪退；值为 1 的 T1.10A2 越过该点且正常结束 |
@@ -58,7 +58,7 @@ Dave 当前恰好使用未修复的内置 Wine，并停在 `dnsapi` 初始化之
 
 | 优先级 | 假设 | 当前支持证据 | 证伪方式 |
 |---|---|---|---|
-| P0（第一层已确认） | 内置 Wine 11 的 `nsiproxy` 缺少 `if_nameindex()` 空值保护，阻塞网络初始化 | T0 停在 `dnsapi`；T1 只换补丁 Wine 后越过该点并继续加载 `GameAssembly.dll`、Vulkan 和音频 | 已由 T1 功能路径确认；后续仍需集成进内置 rootfs |
+| P0（第一层已确认） | 原内置 Wine 11 的 `nsiproxy` 缺少 `if_nameindex()` 空值保护，阻塞网络初始化 | T0 停在 `dnsapi`；T1 只换补丁 Wine 后越过该点并继续加载 `GameAssembly.dll`、Vulkan 和音频 | 已由 T1 确认并在 G2 集成；等待 T2 验证内置路径 |
 | P1（当前样本已确认） | Box64 Unity 专用策略被关闭会使当前样本在启动后期不稳定 | T1.1 证明该开关不能单独解决 DXVK 黑屏；值为 0 的两轮均在 114–115 秒进入崩溃处理路径，值为 1 的 A2/B 两轮均越过该点 | 最终配置保留 `BOX64_UNITYPLAYER=1`；正式发行版仍需独立验证 |
 | P2a（未支持） | Unity 多线程渲染路径导致首帧前等待 | T1.4 已在实际 argv 中启用 `-force-gfx-direct`；`Player.log` 停止位置与 T1.3 相同，仍未进入场景 | 已完成当前验证；不再单独修改 Unity 渲染线程参数 |
 | P2b（第二层已确认） | DXVK 的 D3D11-to-Vulkan 路径在设备创建后、首帧前发生等待 | T1.3-T1.5 使用 DXVK/Turnip 时均停在 Odin Serializer 后；T1.6 只改 WineD3D 后进入资源加载、场景切换和教程任务 | 已由 T1.6 功能路径确认；后续回退无关开关并建立最终配置 |
@@ -251,7 +251,7 @@ Signer SHA-256: B6396F6CD549475DEC0893AC0CAB0E03770F403FB37679BAE02418A492270B07
 
 ### G2：把最小修复集成到内置 Wine
 
-T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层黑屏，T1.9/T1.10A/T1.10A2/T1.10B 已完成 Box64 Unity 专用策略的失败重复、成功回切和六分钟复验。当前执行内置集成：
+T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层黑屏，T1.9/T1.10A/T1.10A2/T1.10B 已完成 Box64 Unity 专用策略的失败重复、成功回切和六分钟复验。G2 已按以下范围完成内置集成：
 
 1. 从已验证补丁产物提取所需 `nsiproxy` 模块，确认版本、架构、权限和哈希。
 2. 替换 `app/src/main/assets/rootfs.tzst` 中内置 Wine 11 的对应文件；不改 Wine 版本标识、Box64 或图形组件。
@@ -259,9 +259,24 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 4. 构建调试 APK，执行 `zipalign` 与 APK 签名验证并记录 SHA-256。
 5. 提交并推送源码、构建说明与哈希；APK 超过 GitHub 普通对象限制时只记录本地路径和哈希，不直接提交大文件。
 
+### G2.1：内置 rootfs 集成与 APK 构建（已完成）
+
+- [x] 从已归档的 Wine 修复包 `archive/artifacts/wine-packages/wine-11.0-final-nsiproxy-nullguard-winlator-custom-addon.tar.xz` 提取 `opt/wine/lib/wine/x86_64-unix/nsiproxy.so`；文件大小为 `65,200` bytes，SHA-256 为 `75E61DB13D2EF1929C085F94AB46605C2C4EBAF0BBB6102CA1F88C6D36BE2F93`。
+- [x] 原始 `app/src/main/assets/rootfs.tzst` 大小为 `79,228,257` bytes，SHA-256 为 `58A65A477703E443B34A99D660DD62089B0116A0D17999BD6C093A37CF3FDA40`；仅替换 `./opt/wine/lib/wine/x86_64-unix/nsiproxy.so`，替换计数为 1。
+- [x] 使用保留 tar 元数据的 zstd 重打包流程生成新 rootfs：成员数仍为 `4,154`，源/目标元数据摘要相同；目标文件保持 `0755`、`root:root`、mtime `0`。新 rootfs 大小为 `79,289,327` bytes，SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
+- [x] `./gradlew.bat --no-daemon clean :app:assembleDebug` 构建成功。清理构建后的 APK 大小为 `206,814,205` bytes，SHA-256 为 `926E9DEB7E5530DFEE1BCCE6C0A532A102373E4C636AB00C9B6C98AF75E1C15C`。
+- [x] `zipalign -c 4` 通过，APK 签名验证通过（V2）；签名证书 SHA-256 为 `B6396F6CD549475DEC0893AC0CAB0E03770F403FB37679BAE02418A492270B07`。
+- [x] 从 APK 抽出的 `assets/rootfs.tzst` 大小和 SHA-256 与源码资产完全一致，确认修复模块已进入 APK，而不是只修改了本地源码文件。
+- [x] 构建候选 APK 已归档到 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`；APK 不进入 Git，便于后续真机安装和哈希核对。
+
 ### T2：内置修复 APK 真机回归
 
-使用全新容器选择内置 Wine，日志必须重新显示 `/opt/wine/`。连续冷启动两次并进入主菜单，以证明成功来自新内置 rootfs，而不是手机里残留的可选 Wine。通过后将日志归档、更新本文并提交推送。
+1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，确认安装包 SHA-256 为 `926E9DEB7E5530DFEE1BCCE6C0A532A102373E4C636AB00C9B6C98AF75E1C15C`。
+2. 创建全新容器并选择内置 Wine `/opt/wine`；不要复用已经导入补丁 Wine 的旧容器，避免旧模块残留污染结论。
+3. Dave 快捷方式保持 `WineD3D`、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`，不添加 `-force-gfx-direct`，沿用当前已验证的 Turnip、分辨率和游戏路径。
+4. 第一次冷启动使用 `-logFile Player-T2-A.log`，进入可交互主菜单后继续观察至少 6 分钟；导出 Winlator 日志和 `Player-T2-A.log`。
+5. 完全退出容器后再次冷启动，使用 `-logFile Player-T2-B.log`，重复相同观察窗口并导出两份日志。
+6. 日志应显示实际路径为 `/opt/wine/`，`nsiproxy` 不再触发空值保护缺失的崩溃路径；通过后把日志复制到 `logs/dave-the-diver/`，再完成 G3 回归记录。
 
 ### T3：兼容性分支与最小成功集回退
 
@@ -286,9 +301,10 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 
 ## 五、用户当前需要执行的步骤
 
-1. 暂时不需要继续真机测试，也不要删除当前已经验证成功的补丁 Wine 容器。
-2. 保留 Dave 快捷方式中的 WineD3D、Box64 `Intermediate` 和 `BOX64_UNITYPLAYER=1`，不要恢复默认值。
-3. 等待 G2 生成包含内置 Wine 修复的新 APK。届时会新建全新容器、选择内置 Wine 并执行 T2，避免可选补丁 Wine 残留污染验证。
+1. 安装 G2 候选 APK：`D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-builtin-nsiproxy-fix.apk`，先核对 SHA-256 是否为 `926E9DEB7E5530DFEE1BCCE6C0A532A102373E4C636AB00C9B6C98AF75E1C15C`。
+2. 新建容器并选择内置 Wine `/opt/wine`；不要复用导入补丁 Wine 的旧容器。
+3. 保留 Dave 快捷方式中的 WineD3D、Box64 `Intermediate` 和 `BOX64_UNITYPLAYER=1`，不要添加 `-force-gfx-direct`。
+4. 按 T2 的 A/B 两轮步骤各冷启动一次，进入主菜单后观察至少 6 分钟并导出 Winlator 日志与对应 `Player-T2-*.log`。
 
 ## 六、进度记录
 
@@ -296,7 +312,7 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 
 - 工作区与代码启动链已完成首轮阅读，当前实际修改目标确认为 `winlator_wzh_new`。
 - 初始日志确认 Winlator 已正确创建 Dave 游戏进程，排除快捷方式未执行。
-- 失败停点收敛到 `dnsapi` 加载后的早期初始化阶段；当前内置 Wine 未包含项目2已验证的 `nsiproxy` 空值保护。
+- 失败停点收敛到 `dnsapi` 加载后的早期初始化阶段；当时内置 Wine 未包含项目2已验证的 `nsiproxy` 空值保护。
 - 已确定 T1 只切换补丁 Wine，禁止同轮调整 Box64、Unity 或图形设置。
 - G0 文档节点已纳入本次提交并推送；下一动作是等待用户执行 T1，收到日志后立即追加 G1 证据和下一轮计划。
 
@@ -402,6 +418,14 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - 当前样本的最小成功集确定为：补丁 Wine 11（`nsiproxy` 空值保护）+ WineD3D + Box64 Intermediate + `BOX64_UNITYPLAYER=1`，不需要 `-force-gfx-direct` 或 Stability。
 - 下一阶段 G2 只把已验证的 Wine 模块集成进内置 rootfs；WineD3D 与 UnityPlayer 作为快捷方式级兼容配置保留，避免未经更广泛回归就改变全局默认。
 
+### 2026-08-06：G2 内置 rootfs 集成与 APK 构建完成
+
+- 已将已验证的 `nsiproxy.so` 空值保护模块单文件替换进 `app/src/main/assets/rootfs.tzst`，成员数和 tar 元数据摘要保持不变，目标文件执行权限仍为 `0755`。
+- 新 rootfs SHA-256 为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`；干净构建命令 `./gradlew.bat --no-daemon clean :app:assembleDebug` 成功。
+- APK SHA-256 为 `926E9DEB7E5530DFEE1BCCE6C0A532A102373E4C636AB00C9B6C98AF75E1C15C`，`zipalign` 和 V2 签名验证通过；从 APK 抽出的 rootfs 与源码资产哈希一致。
+- 首次增量构建因旧 asset 残留导致 APK 物理大小异常，已废弃该 APK 并改用 clean build；后续只使用上述干净构建产物。
+- 候选 APK 已放入本地 `artifacts/apks/project3/`，下一步转入全新内置 Wine 容器的 T2 两轮冷启动回归。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -420,7 +444,7 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 | G1.10A | 未生效覆盖的双日志归档、默认值闪退重复证据、A2 保存步骤 | T1.10A 日志仍显示 `BOX64_UNITYPLAYER=0` | 已完成（2026-08-06） |
 | G1.10A2 | 回切成功双日志、114–115 秒闪退点对照、B 轮六分钟计划 | A2 日志显示 UnityPlayer 1 且越过重复闪退点 | 已完成（2026-08-06） |
 | G1.10 | 最终配置第二次冷启动日志与最小成功集确认 | T1.10B 进入可交互游戏后稳定运行至少 6 分钟 | 已完成（2026-08-06） |
-| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.10B 六分钟冷启动完成 | 执行中 |
+| G2 | 内置 Wine/rootfs 最小修复、构建验证、APK 哈希 | T1.10B 六分钟冷启动完成 | 已完成（2026-08-06） |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
