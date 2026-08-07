@@ -1,0 +1,3 @@
+29 session_start
+2904 window_map id=20971527,parent=3,name=nogui - Wine Desktop,class=explorer.exe,mapped=true,viewable=false,enabled=false,renderable=true,surface=false,application=true,keyPress=true,keyRelease=true,focus_before={null}
+2904 window_map_result id=20971527,focus_after={id=20971527,parent=3,name=nogui - Wine Desktop,class=explorer.exe,mapped=true,viewable=false,enabled=false,renderable=true,surface=false,application=true,keyPress=true,keyRelease=true}

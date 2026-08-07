@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；Dave/星露谷跨游戏输入对照失败，G3-P0-B X11 输入诊断 APK 已归档，等待真机输入跟踪
+> 当前状态：Dave 启动故障已闭环；G3-P0-B 证明 X11 键盘事件已发送，G3-P0-C 等待“活动窗口”手动前台化对照
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -384,12 +384,20 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 4. [x] 已增加会话级唯一 `input-events-*.log`，记录窗口 map/focus、虚拟绑定 press/release、XServer 注入、键盘去重、X11 事件目标和丢弃原因；每行立即刷新，即使异常退出也能保留已写入证据。
 5. [x] 本轮未改变焦点选择和事件分发行为。诊断 APK 已以 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-B-input-trace.apk` 唯一文件名归档，大小 `206,821,237` bytes，SHA-256 `0A916DECCB023316E192476E118F1732F48F9D8E3BD2C925C2830205CCABF1F4`。
 
+### G3-P0-C：WineD3D 窗口前台化对照（等待真机结果）
+
+1. G3-P0-B 大日志记录星露谷主窗口 `id=29360133`、`class=stardew valley.exe`：`mapped/viewable/enabled/renderable/application/keyPress/keyRelease` 均为 `true`，X11 焦点从映射后一直指向该窗口。
+2. 日志共记录 39 次 `key_press_sent` 和 39 次 `key_release_sent`，`no_focus`、`focus_not_listening`、`target_disabled` 计数均为 0。D-pad `W` 在 `145734–145904 ms` 持续约 170 ms，屏幕键盘也产生了 `keycode=25, keysym=119` 并发送到星露谷窗口。
+3. 该窗口唯一异常属性是 `surface=false`。当前 `DesktopHelper.setFocusedWindow()` 只在 `window.isSurface()` 为真时调用 `WinHandler.bringToFront()`；WineD3D 应用窗口虽已取得 X11 焦点，却可能没有同步为 Wine 内部 Win32 前台窗口。
+4. 侧栏“活动窗口”列表点击条目会不经 `isSurface()` 条件，直接调用同一 `bringToFront(className, handle)`；因此它是对“Win32 前台未同步”假设的无代码单变量验证。
+5. 若手动前台化后 D-pad 立即有效，最小修复是对所有具有有效 class/handle 的 application window 同步调用 `bringToFront()`，不再以 `_NET_WM_SURFACE` 作为前置必要条件；若仍无效，再转向 Wine 键盘消息转换而不修改焦点逻辑。
+
 ## 五、用户当前需要执行的步骤
 
-1. 覆盖安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-B-input-trace.apk`，不要卸载 Winlator，不要删除容器或触屏配置。
-2. 仅启动 Dave 或星露谷其中一个游戏；进入可操作场景后，按住 D-pad 上/`W` 1–2 秒，松开；再打开 Winlator 屏幕键盘，按一次 `W`。
-3. 测试后可以正常退出，也可以在仍运行时直接复制日志；将 `Documents\Winlator\input\` 中本轮新生成的 `input-events-*.log` 导出到 `D:\agent\Winlator\logs\dave-the-diver\`，不覆盖旧文件。
-4. 本轮不需要导出 CSV，不重复 180 秒性能测试，也不更改 Wine、Box64或图形驱动。
+1. 保持当前 G3-P0-B 诊断 APK 和星露谷运行配置不变，启动星露谷并进入可操作场景。
+2. 打开 Winlator 左侧栏，选择“活动窗口”（Active windows），在列表中点击 `Stardew Valley`。列表关闭后不再点击游戏画面。
+3. 立即按住 D-pad 上/`W` 1–2 秒，只告知“手动选中活动窗口后有效/仍无效”。该操作不需要新 APK，不需要再导出日志。
+4. 本轮不重复 Dave 或 180 秒性能测试，不更改 Wine、Box64、图形驱动或触屏配置。
 
 ## 六、进度记录
 
@@ -585,6 +593,12 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - Java 编译和 clean `:app:assembleDebug` 成功；APK 已通过 zipalign、V2 签名、字节码关键字和内置 rootfs 校验。rootfs 大小仍为 `79,289,327` bytes，SHA-256 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
 - 新 APK `app-debug-project3-G3-P0-B-input-trace.apk` 大小 `206,821,237` bytes，SHA-256 `0A916DECCB023316E192476E118F1732F48F9D8E3BD2C925C2830205CCABF1F4`；归档前确认目标不存在，未覆盖 G3-P0 r1 或其他历史 APK。
 
+### 2026-08-07：G3-P0-B 真机日志排除 X11 焦点与事件丢弃
+
+- 两份日志已使用唯一名称归档：`G3-P0-B-input-trace-stardew-20260807.log`（230,565 bytes，SHA-256 `B3564D59A9A4E3C1708B8DF7668066B93B5D3280F7F1B8C2758AD141F5D684E9`）和 `G3-P0-B-input-trace-startup-only-20260807.log`（470 bytes，SHA-256 `23297807550FE357FD050F8155F527E632874CB076E4829DD1FA4BE72D58DA91`）。
+- 星露谷窗口的 X11 焦点、事件订阅和 enabled 状态均正常；39 次 press 和 39 次 release 均已发送，三类预设丢弃计数均为 0。这否定“X11 焦点丢失”与“虚拟按键未到达 XServer”假设。
+- 主窗口为 application window 但 `surface=false`，刚好绕过当前 `DesktopHelper` 中受 `isSurface()` 限制的 `bringToFront()`。下一步使用已有“活动窗口”菜单无条件调用 `bringToFront()`，作为 Win32 前台同步的单变量验证。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -612,7 +626,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G2.5-B | 归档 T2-B 三份日志、确认 6 分 51 秒第二次冷启动、关闭启动故障 | T2-B 同配置进入 `Tutorial_Mission01` 且无崩溃特征 | 已完成（2026-08-07） |
 | G3-P0 | FPS/帧时间 CSV 采样工具与固定场景基线 | 启动故障闭环后进入性能阶段 | 工具已完成，等待真机基线（2026-08-07） |
 | G3-P0-A | 首份空 CSV 证据、单按钮多绑定诊断、D-pad/屏幕键盘对照 | 首轮真机游玩出现触屏方向无反应 | 已完成，跨游戏对照仍失败（2026-08-07） |
-| G3-P0-B | X11 键盘事件全链跟踪、唯一诊断 APK | Dave/星露谷两款游戏的 D-pad/屏幕键盘均无效 | 诊断工具已完成，等待真机日志（2026-08-07） |
+| G3-P0-B | X11 键盘事件全链跟踪、唯一诊断 APK、两份真机日志 | Dave/星露谷两款游戏的 D-pad/屏幕键盘均无效 | 已完成，X11 事件已发送且无丢弃（2026-08-07） |
+| G3-P0-C | 活动窗口手动 `bringToFront()` 单变量对照 | WineD3D application window 的 `surface=false` 绕过自动前台同步 | 等待真机结果（2026-08-07） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
