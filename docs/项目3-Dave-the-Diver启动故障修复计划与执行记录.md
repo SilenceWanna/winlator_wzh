@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；G3-P0 首次真机运行发现单按钮多方向绑定和空 CSV 两个独立问题，先执行输入对照
+> 当前状态：Dave 启动故障已闭环；Dave/星露谷跨游戏输入对照失败，G3-P0-B X11 输入诊断 APK 已归档，等待真机输入跟踪
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -368,7 +368,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 6. 首个固定场景使用已验证可达的 `Tutorial_Mission01`，预热 60 秒后采样 180 秒；基线完成后再按单变量顺序比较 WineD3D 设置、Box64 预设和分辨率。
 7. 性能采样工具未改变 Wine、Box64、图形驱动或游戏参数。最终 APK 为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-frame-sampling-r1.apk`，大小 `208,688,282` bytes，SHA-256 `37BF9EA5759A1B9271D81764462A31F2018A176A87625E2D60610926B6DE1F95`。首次候选包 `app-debug-project3-G3-P0-frame-sampling.apk` 仍保留，未被 r1 覆盖。
 
-### G3-P0-A：首次真机输入与采样诊断（等待最小对照）
+### G3-P0-A：首次真机输入与采样诊断（已完成）
 
 1. 用户确认游戏可以实际游玩，但触屏控制中绑定 `W/S/A/D` 后点击按钮无反应。本地游戏 `globalgamemanagers` 明确包含 `Horizontal: A/D` 和 `Vertical: S/W`，排除 Dave 不支持键盘方向键位。
 2. Winlator `BUTTON` 元素被按下时会遍历该元素的所有绑定，并对每个绑定同时调用 `injectKeyPress`；松开时再同时释放。因此，若 `W/S/A/D` 被绑到同一个按钮，游戏会同时收到上下左右，水平与垂直输入都抵消；这是当前最高概率原因，不是 Box64 或 WineD3D 故障。即使是单键按钮，键也只在手指按住期间保持；过快点按可能在 Unity 两次输入轮询之间完成，因此方向对照必须持续按住。
@@ -376,13 +376,20 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 4. 本轮导出的 `frame-rating-20260807-151057-952.csv` 只有 97 bytes，SHA-256 `1CFF822F37E13924B131458E32EA5246A8761D85FDF9118C96027EA113AA3F6A`；文件只含版本行和表头，无帧样本、`# window_reset` 和 `# summary`，不能作为性能基线。空 CSV 是采样窗口识别/更新回调的独立问题，不足以证明键盘焦点丢失。
 5. 下一步先用一个 `D_PAD` 执行最小输入对照；若 D-pad 仍无效，再用 Winlator 屏幕键盘单独按 `W` 区分“控制配置问题”与“X11 窗口焦点/键盘注入问题”。未完成该对照前不修改 Wine、Box64 或图形设置。
 
+### G3-P0-B：跨游戏键盘注入诊断计划（工具已完成，等待真机日志）
+
+1. [x] Dave 的 D-pad 和 Winlator 屏幕键盘均无效；用户另用《星露谷物语》对照后仍无效，排除单个游戏键位、Dave 场景状态和单个触屏配置。
+2. [x] 两条输入路径的公共链路确认为 `XServer.injectKeyPress()` → `Keyboard.setKeyPress()` → `InputDeviceManager.onKeyPress()` → X11 `KeyPress`。后三个输入核心类从仓库初始 Winlator 11.1 导入后未改动，不是 G2/G3 回归。
+3. [x] 当前代码会在“焦点窗口为空”、“焦点窗口未订阅 `KEY_PRESS/KEY_RELEASE`”或“目标窗口被禁用”时静默返回；现有 Winlator/Player 日志不记录这些状态，无法在不增加观测的情况下区分根因。
+4. [x] 已增加会话级唯一 `input-events-*.log`，记录窗口 map/focus、虚拟绑定 press/release、XServer 注入、键盘去重、X11 事件目标和丢弃原因；每行立即刷新，即使异常退出也能保留已写入证据。
+5. [x] 本轮未改变焦点选择和事件分发行为。诊断 APK 已以 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-B-input-trace.apk` 唯一文件名归档，大小 `206,821,237` bytes，SHA-256 `0A916DECCB023316E192476E118F1732F48F9D8E3BD2C925C2830205CCABF1F4`。
+
 ## 五、用户当前需要执行的步骤
 
-1. 在当前触屏控制配置中新建一个 `D-pad`，设置为：上=`W`、右=`D`、下=`S`、左=`A`。不要把四个键绑在同一个 `Button` 的多绑定中。
-2. 保存配置后，在容器的“输入控制”对话框中选中该配置，确保“显示触屏控件”已开启，进入可控制 Dave 的游戏场景。
-3. 只测试 D-pad 的一个方向：先按住上/W 1–2 秒，不要快速点按。若有效，再逐一测试右、下、左，并告知结果。
-4. 若 D-pad 四向都无效，打开 Winlator 屏幕键盘，单独按一次 `W`：记录“屏幕键盘 W 有效/无效”，不要更改其他参数。
-5. 本轮暂不重复 180 秒性能测试；空 CSV 需要修正采样窗口识别后再重测。
+1. 覆盖安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-B-input-trace.apk`，不要卸载 Winlator，不要删除容器或触屏配置。
+2. 仅启动 Dave 或星露谷其中一个游戏；进入可操作场景后，按住 D-pad 上/`W` 1–2 秒，松开；再打开 Winlator 屏幕键盘，按一次 `W`。
+3. 测试后可以正常退出，也可以在仍运行时直接复制日志；将 `Documents\Winlator\input\` 中本轮新生成的 `input-events-*.log` 导出到 `D:\agent\Winlator\logs\dave-the-diver\`，不覆盖旧文件。
+4. 本轮不需要导出 CSV，不重复 180 秒性能测试，也不更改 Wine、Box64或图形驱动。
 
 ## 六、进度记录
 
@@ -571,6 +578,13 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 游戏资源证明 Dave 接受 `A/D` 水平和 `W/S` 垂直键盘输入；Winlator 源码证明普通 `BUTTON` 会同时按下其全部绑定。因此先验证“单按钮绑四键导致相反输入抵消”，不立即修改 Wine/Box64。
 - 首份 CSV 仅含 97 bytes 表头，没有任何样本或摘要，本轮性能数据作废。该问题与触屏按键是两条独立诊断线，计划在输入最小对照后修复采样窗口识别。
 
+### 2026-08-07：G3-P0-B 跨游戏输入跟踪 APK 完成
+
+- Dave 的 D-pad/屏幕键盘和星露谷对照均无效，原“单按钮多绑定”假设被否定；根因范围收窄到共用 XServer/X11 键盘事件分发。
+- 新增 `InputEventLogger`，每个 XServer 会话在 `Documents\Winlator\input\` 创建唯一日志；跟踪绑定、XServer 注入、键盘去重、窗口 map/focus、X11 目标和静默丢弃原因。本轮未改变焦点与分发行为。
+- Java 编译和 clean `:app:assembleDebug` 成功；APK 已通过 zipalign、V2 签名、字节码关键字和内置 rootfs 校验。rootfs 大小仍为 `79,289,327` bytes，SHA-256 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
+- 新 APK `app-debug-project3-G3-P0-B-input-trace.apk` 大小 `206,821,237` bytes，SHA-256 `0A916DECCB023316E192476E118F1732F48F9D8E3BD2C925C2830205CCABF1F4`；归档前确认目标不存在，未覆盖 G3-P0 r1 或其他历史 APK。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -597,7 +611,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G2.5-A | 归档 T2-A4 三份成功日志、确认首次内置修复冷启动、制定 T2-B | G2.5 真机越过 Box64 解压并成功启动 Dave | 已完成（2026-08-07） |
 | G2.5-B | 归档 T2-B 三份日志、确认 6 分 51 秒第二次冷启动、关闭启动故障 | T2-B 同配置进入 `Tutorial_Mission01` 且无崩溃特征 | 已完成（2026-08-07） |
 | G3-P0 | FPS/帧时间 CSV 采样工具与固定场景基线 | 启动故障闭环后进入性能阶段 | 工具已完成，等待真机基线（2026-08-07） |
-| G3-P0-A | 首份空 CSV 证据、单按钮多绑定诊断、D-pad/屏幕键盘对照 | 首轮真机游玩出现触屏方向无反应 | 等待最小输入对照（2026-08-07） |
+| G3-P0-A | 首份空 CSV 证据、单按钮多绑定诊断、D-pad/屏幕键盘对照 | 首轮真机游玩出现触屏方向无反应 | 已完成，跨游戏对照仍失败（2026-08-07） |
+| G3-P0-B | X11 键盘事件全链跟踪、唯一诊断 APK | Dave/星露谷两款游戏的 D-pad/屏幕键盘均无效 | 诊断工具已完成，等待真机日志（2026-08-07） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。

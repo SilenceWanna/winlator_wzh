@@ -412,6 +412,7 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
     @Override
     protected void onDestroy() {
         if (frameRating != null) frameRating.close();
+        if (xServer != null) xServer.inputEventLogger.close();
         winHandler.stop();
         if (environment != null) environment.stopEnvironmentComponents();
         super.onDestroy();

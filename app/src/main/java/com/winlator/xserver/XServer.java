@@ -38,6 +38,7 @@ public class XServer {
     public final InputDeviceManager inputDeviceManager;
     public final GrabManager grabManager;
     public final CursorLocker cursorLocker;
+    public final InputEventLogger inputEventLogger;
     private SHMSegmentManager shmSegmentManager;
     private GLRenderer renderer;
     private WinHandler winHandler;
@@ -47,6 +48,7 @@ public class XServer {
     public XServer(XServerDisplayActivity activity, ScreenInfo screenInfo) {
         this.activity = activity;
         this.screenInfo = screenInfo;
+        inputEventLogger = new InputEventLogger();
         cursorLocker = new CursorLocker(this);
         for (Lockable lockable : Lockable.values()) locks.put(lockable, new ReentrantLock());
 
@@ -172,12 +174,14 @@ public class XServer {
 
     public void injectKeyPress(XKeycode xKeycode, int keysym) {
         try (XLock lock = lock(Lockable.WINDOW_MANAGER, Lockable.INPUT_DEVICE)) {
+            inputEventLogger.log("inject_press keycode="+(xKeycode.id & 0xff)+",keysym="+keysym);
             keyboard.setKeyPress(xKeycode.id, keysym);
         }
     }
 
     public void injectKeyRelease(XKeycode xKeycode) {
         try (XLock lock = lock(Lockable.WINDOW_MANAGER, Lockable.INPUT_DEVICE)) {
+            inputEventLogger.log("inject_release keycode="+(xKeycode.id & 0xff));
             keyboard.setKeyRelease(xKeycode.id);
         }
     }

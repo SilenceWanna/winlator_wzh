@@ -491,6 +491,9 @@ public class InputControlsView extends View {
             }
             else {
                 Pointer.Button pointerButton = binding.getPointerButton();
+                if (pointerButton == null) {
+                    xServer.inputEventLogger.log("binding_"+(isActionDown ? "press" : "release")+" binding="+binding.name()+",keycode="+(binding.keycode.id & 0xff));
+                }
                 if (isActionDown) {
                     if (pointerButton != null) {
                         xServer.injectPointerButtonPress(pointerButton);

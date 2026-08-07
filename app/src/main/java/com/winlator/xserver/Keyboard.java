@@ -65,6 +65,7 @@ public class Keyboard {
             if (isModifier(keycode)) modifiersMask.set(getModifierFlag(keycode));
             triggerOnKeyPress(keycode, keysym);
         }
+        else xServer.inputEventLogger.log("keyboard_press_suppressed reason=already_pressed,keycode="+(keycode & 0xff));
     }
 
     public void setKeyRelease(byte keycode) {
@@ -73,6 +74,7 @@ public class Keyboard {
             if (isModifier(keycode)) modifiersMask.unset(getModifierFlag(keycode));
             triggerOnKeyRelease(keycode);
         }
+        else xServer.inputEventLogger.log("keyboard_release_suppressed reason=not_pressed_or_sticky,keycode="+(keycode & 0xff));
     }
 
     public void addOnKeyboardListener(OnKeyboardListener onKeyboardListener) {

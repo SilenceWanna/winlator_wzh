@@ -21,7 +21,9 @@ public abstract class DesktopHelper {
         xServer.windowManager.addOnWindowModificationListener(new WindowManager.OnWindowModificationListener() {
             @Override
             public void onMapWindow(Window window) {
+                xServer.inputEventLogger.log("window_map "+InputEventLogger.describeWindow(window)+",focus_before={"+InputEventLogger.describeWindow(xServer.windowManager.getFocusedWindow())+"}");
                 setFocusedWindow(xServer, window);
+                xServer.inputEventLogger.log("window_map_result id="+window.id+",focus_after={"+InputEventLogger.describeWindow(xServer.windowManager.getFocusedWindow())+"}");
             }
         });
     }
@@ -30,12 +32,14 @@ public abstract class DesktopHelper {
         try (XLock lock = xServer.lock(XServer.Lockable.WINDOW_MANAGER, XServer.Lockable.INPUT_DEVICE)) {
             Window focusedWindow = xServer.windowManager.getFocusedWindow();
             Window child = xServer.windowManager.findPointWindow(xServer.pointer.getClampedX(), xServer.pointer.getClampedY());
+            xServer.inputEventLogger.log("pointer_focus point={"+InputEventLogger.describeWindow(child)+"},focus_before={"+InputEventLogger.describeWindow(focusedWindow)+"}");
             if (child == null && focusedWindow != xServer.windowManager.rootWindow) {
                 xServer.windowManager.setFocus(xServer.windowManager.rootWindow, WindowManager.FocusRevertTo.NONE);
             }
             else if (child != null && child != focusedWindow) {
                 setFocusedWindow(xServer, child);
             }
+            xServer.inputEventLogger.log("pointer_focus_result focus_after={"+InputEventLogger.describeWindow(xServer.windowManager.getFocusedWindow())+"}");
         }
     }
 

@@ -239,21 +239,32 @@ public class InputDeviceManager implements Pointer.OnPointerMotionListener, Keyb
     @Override
     public void onKeyPress(byte keycode, int keysym) {
         Window focusedWindow = xServer.windowManager.getFocusedWindow();
-        if (focusedWindow == null) return;
+        if (focusedWindow == null) {
+            xServer.inputEventLogger.log("key_press_drop reason=no_focus,keycode="+(keycode & 0xff));
+            return;
+        }
         updatePointWindow();
+        xServer.inputEventLogger.log("key_press_received keycode="+(keycode & 0xff)+",keysym="+keysym+",focus={"+InputEventLogger.describeWindow(focusedWindow)+"},point={"+InputEventLogger.describeWindow(pointWindow)+"}");
 
         Window eventWindow = null;
         Window child = null;
         if (focusedWindow.isAncestorOf(pointWindow)) {
             eventWindow = pointWindow.getAncestorWithEventId(Event.KEY_PRESS, focusedWindow);
+            xServer.inputEventLogger.log("key_press_ancestor_target target={"+InputEventLogger.describeWindow(eventWindow)+"}");
             child = eventWindow.isAncestorOf(pointWindow) ? pointWindow : null;
         }
         if (eventWindow == null) {
-            if (!focusedWindow.hasEventListenerFor(Event.KEY_PRESS)) return;
+            if (!focusedWindow.hasEventListenerFor(Event.KEY_PRESS)) {
+                xServer.inputEventLogger.log("key_press_drop reason=focus_not_listening,focus={"+InputEventLogger.describeWindow(focusedWindow)+"}");
+                return;
+            }
             eventWindow = focusedWindow;
         }
 
-        if (!eventWindow.attributes.isEnabled()) return;
+        if (!eventWindow.attributes.isEnabled()) {
+            xServer.inputEventLogger.log("key_press_drop reason=target_disabled,target={"+InputEventLogger.describeWindow(eventWindow)+"}");
+            return;
+        }
 
         Bitmask keyButMask = getKeyButMask();
         short x = xServer.pointer.getX();
@@ -273,26 +284,38 @@ public class InputDeviceManager implements Pointer.OnPointerMotionListener, Keyb
         }
 
         eventWindow.sendEvent(Event.KEY_PRESS, new KeyPress(keycode, xServer.windowManager.rootWindow, eventWindow, child, x, y, localPoint[0], localPoint[1], keyButMask));
+        xServer.inputEventLogger.log("key_press_sent keycode="+(keycode & 0xff)+",target={"+InputEventLogger.describeWindow(eventWindow)+"}");
     }
 
     @Override
     public void onKeyRelease(byte keycode) {
         Window focusedWindow = xServer.windowManager.getFocusedWindow();
-        if (focusedWindow == null) return;
+        if (focusedWindow == null) {
+            xServer.inputEventLogger.log("key_release_drop reason=no_focus,keycode="+(keycode & 0xff));
+            return;
+        }
         updatePointWindow();
+        xServer.inputEventLogger.log("key_release_received keycode="+(keycode & 0xff)+",focus={"+InputEventLogger.describeWindow(focusedWindow)+"},point={"+InputEventLogger.describeWindow(pointWindow)+"}");
 
         Window eventWindow = null;
         Window child = null;
         if (focusedWindow.isAncestorOf(pointWindow)) {
             eventWindow = pointWindow.getAncestorWithEventId(Event.KEY_RELEASE, focusedWindow);
+            xServer.inputEventLogger.log("key_release_ancestor_target target={"+InputEventLogger.describeWindow(eventWindow)+"}");
             child = eventWindow.isAncestorOf(pointWindow) ? pointWindow : null;
         }
         if (eventWindow == null) {
-            if (!focusedWindow.hasEventListenerFor(Event.KEY_RELEASE)) return;
+            if (!focusedWindow.hasEventListenerFor(Event.KEY_RELEASE)) {
+                xServer.inputEventLogger.log("key_release_drop reason=focus_not_listening,focus={"+InputEventLogger.describeWindow(focusedWindow)+"}");
+                return;
+            }
             eventWindow = focusedWindow;
         }
 
-        if (!eventWindow.attributes.isEnabled()) return;
+        if (!eventWindow.attributes.isEnabled()) {
+            xServer.inputEventLogger.log("key_release_drop reason=target_disabled,target={"+InputEventLogger.describeWindow(eventWindow)+"}");
+            return;
+        }
 
         Bitmask keyButMask = getKeyButMask();
         short x = xServer.pointer.getX();
@@ -307,6 +330,7 @@ public class InputDeviceManager implements Pointer.OnPointerMotionListener, Keyb
 
         short[] localPoint = eventWindow.rootPointToLocal(x, y);
         eventWindow.sendEvent(Event.KEY_RELEASE, new KeyRelease(keycode, xServer.windowManager.rootWindow, eventWindow, child, x, y, localPoint[0], localPoint[1], keyButMask));
+        xServer.inputEventLogger.log("key_release_sent keycode="+(keycode & 0xff)+",target={"+InputEventLogger.describeWindow(eventWindow)+"}");
     }
 
     private Bitmask createPointerEventMask() {
