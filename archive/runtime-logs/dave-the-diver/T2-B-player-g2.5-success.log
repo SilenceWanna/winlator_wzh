@@ -1,0 +1,241 @@
+Initialize engine version: 2020.3.48f1 (b805b124c6b7)
+[Subsystems] Discovering subsystems at path E:/Dave the Diver/DaveTheDiver_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 480 (ID=0x6c0)
+    Vendor:   
+    VRAM:     2048 MB
+<RI> Initializing input.
+New input system (experimental) initialized
+Using XInput
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 44.473000 ms
+Odin Serializer ArchitectureInfo initialization with defaults (all unaligned read/writes disabled).
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Sirenix.Serialization.UnitySerializationInitializer:Initialize()
+
+Odin Serializer detected whitelisted runtime platform WindowsPlayer and memory read test succeeded; enabling all unaligned memory read/writes.
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Sirenix.Serialization.ArchitectureInfo:SetRuntimePlatform(RuntimePlatform)
+Sirenix.Serialization.UnitySerializationInitializer:Initialize()
+
+Direct3D: detected that using refresh rate causes time drift. Will stop trusting refresh rate until the game window is moved.
+Did not save cached content catalog because Application.persistentDataPath is an empty path.
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+UnityEngine.AddressableAssets.ResourceProviders.InternalOp:OnCatalogLoaded(ContentCatalogData)
+UnityEngine.AddressableAssets.ResourceProviders.InternalOp:CatalogLoadOpCompleteCallback(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.ResourceManager:ExecuteDeferredCallbacks()
+UnityEngine.ResourceManagement.ResourceManager:Update(Single)
+System.Action`1:Invoke(T)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 379)
+UnloadTime: 28.321200 ms
+Build Version : v1.0.2.1270.steam
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+LogoManager:Awake()
+
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 10677.
+Total: 164.309800 ms (FindLiveObjects: 5.747600 ms CreateObjectMapping: 1.914200 ms MarkObjects: 142.862700 ms  DeleteObjects: 13.596100 ms)
+
+[Backtrace] backtrace enabled : True
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+BacktraceManager:Start()
+
+[17.46167][SingletonAddrScriptableObject] LoadAssetAsync: obj:SoundConfigManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+<Init>d__21:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[18.59548][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:SoundConfigManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+[Save Convert] UserOption save version 0.0.26 is target version. applying common convert
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+SaveConverterTool.SaveConvertSystem:Convert(String, String, String, Boolean&, Boolean)
+DR.Save.SaveLoadManagerBase`1:LoadData()
+DR.Save.SaveSystem:LoadAllData()
+DR.Save.<InitSaveSystem>d__37:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[73.88936][SingletonAddrScriptableObject] LoadAssetAsync: obj:CursorManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+<InitAfterSaveSystem>d__34:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[DLC localcheck] bundleAppId:2677020, isDlcInstalled:True
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ItemIntegrityCheck:PreCheckLocalDLC(UInt32)
+<CheckDlcOwnership>d__9:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+<AgeGradeEvent>d__12:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[74.01061][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:CursorManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+httpCode=OK, Rescode=2001
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+Steamworks.APIDispatchDelegate:Invoke(T, Boolean)
+Steamworks.CallResult`1:OnRunCallResult(IntPtr, Boolean, UInt64)
+Steamworks.CallbackDispatcher:RunFrame(Boolean)
+
+httpCode=OK, Rescode=2001
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+Steamworks.APIDispatchDelegate:Invoke(T, Boolean)
+Steamworks.CallResult`1:OnRunCallResult(IntPtr, Boolean, UInt64)
+Steamworks.CallbackDispatcher:RunFrame(Boolean)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 392)
+UnloadTime: 100.842500 ms
+
+Unloading 487 unused Assets to reduce memory usage. Loaded Objects now: 39230.
+Total: 558.896300 ms (FindLiveObjects: 8.762100 ms CreateObjectMapping: 7.225600 ms MarkObjects: 539.004600 ms  DeleteObjects: 3.893600 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 395)
+UnloadTime: 255.527600 ms
+
+Unloading 59 unused Assets to reduce memory usage. Loaded Objects now: 35753.
+Total: 460.058500 ms (FindLiveObjects: 12.829000 ms CreateObjectMapping: 3.536700 ms MarkObjects: 440.518700 ms  DeleteObjects: 3.169000 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 388)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 35753.
+Total: 464.019100 ms (FindLiveObjects: 16.045700 ms CreateObjectMapping: 3.618800 ms MarkObjects: 444.075800 ms  DeleteObjects: 0.272800 ms)
+
+[255.1757][SingletonAddrScriptableObject] LoadAssetAsync: obj:DialogueAutoTalker
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+SOSingletonFacade:Init()
+<CoChangeSceneAsync>d__79:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[255.1904][SingletonAddrScriptableObject] LoadAssetAsync: obj:DialogueDictionary
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+SOSingletonFacade:Init()
+<CoChangeSceneAsync>d__79:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[255.1971][SingletonAddrScriptableObject] LoadAssetAsync: obj:DialogueTalkerCollection
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+<CoChangeSceneAsync>d__79:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[255.3112][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:DialogueAutoTalker
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+[255.4221][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:DialogueDictionary
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+[255.443][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:DialogueTalkerCollection
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 392)
+UnloadTime: 6.030400 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 36225.
+Total: 469.862200 ms (FindLiveObjects: 13.748000 ms CreateObjectMapping: 4.505400 ms MarkObjects: 450.542800 ms  DeleteObjects: 1.059200 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 392)
+UnloadTime: 49.176200 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 36054.
+Total: 469.133800 ms (FindLiveObjects: 10.063400 ms CreateObjectMapping: 5.376100 ms MarkObjects: 451.013300 ms  DeleteObjects: 2.676200 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 389)
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 36054.
+Total: 493.916100 ms (FindLiveObjects: 14.870500 ms CreateObjectMapping: 5.076100 ms MarkObjects: 473.851900 ms  DeleteObjects: 0.111600 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 393)
+UnloadTime: 5.855000 ms
+
+Unloading 341 unused Assets to reduce memory usage. Loaded Objects now: 50396.
+Total: 561.645500 ms (FindLiveObjects: 11.828000 ms CreateObjectMapping: 4.567500 ms MarkObjects: 540.502600 ms  DeleteObjects: 4.741700 ms)
+
+Req StartScenario :Tutorial_Mission01 ,[Option]isIgnorePlayingScenario : False
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ScenarioManager:StartScenario(String, Action`1, Boolean, Boolean, Boolean)
+<DelayActivate>d__60:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+TutorialHandler:ActivateTutorial()
+TutorialManager:ActivateTutorial()
+<AfterNewMissionFinished>d__19:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+<I> Failed to get cursor position:
+Invalid handle.

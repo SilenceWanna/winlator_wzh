@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.10 已完成；G2.5 的 T2-A4 首次冷启动已成功，等待同配置 T2-B 第二次冷启动及至少 6 分钟稳定性复验
+> 当前状态：Dave 启动故障已闭环；G2.5 连续两次内置修复冷启动通过，进入 G3 性能采样工具与固定场景基线阶段
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -328,12 +328,14 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 6. 若再次停在 `starting up`，最多等待 2 分钟后结束 Winlator，直接从手机 `Documents/Winlator/` 复制 `startup.log`；该文件启动时即创建，不依赖 Wine/Box64 成功启动或 Winlator 日志导出。
 7. 成功日志应出现 `if_nameindex failed, errno 13` 后继续加载 Dave/图形模块，而不是停在旧的 rootfs 早期路径；通过后再进行 T2-B。
 
-### T2-B：G2.5 第二次冷启动与稳定性确认
+### T2-B：G2.5 第二次冷启动与稳定性确认（已完成）
 
 1. 保持 G2.5 APK、container 6 和 T2-A4 全部配置不变，完全退出 Winlator 后重新冷启动。
 2. 只把 Unity 日志文件名改为 `-logFile Player-T2-B.log`；不得修改 WineD3D、Turnip/Zink、Box64 `Intermediate` 或 `BOX64_UNITYPLAYER=1`。
 3. 进入可交互主菜单后连续运行至少 6 分钟，期间不要切换配置或主动结束进程。
 4. 结束后导出 `startup.log`、Winlator `logs.txt` 和 `Player-T2-B.log`；T2-B 通过后完成内置修复的启动闭环并进入 G3 性能基线。
+
+T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从 `10:17:52` 持续输出至 `10:24:43`，共 6 分 51 秒；Unity 日志进入 `Tutorial_Mission01`。三份日志均无崩溃特征，T2-B 通过。
 
 ### T3：兼容性分支与最小成功集回退
 
@@ -351,17 +353,24 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 
 ### G3：启动闭环与项目3性能阶段
 
-- [ ] 连续两次冷启动通过，完成日志与 APK 归档。
-- [ ] 输出根因、修复、验证矩阵、残余风险和复现步骤。
+- [x] 连续两次冷启动通过，完成日志与 APK 归档。
+- [x] 输出启动故障根因、修复、验证矩阵、残余风险和复现步骤。
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
+### G3-P0：性能基线采样计划（下一节点）
+
+1. 保持 T2-B 成功配置作为性能基线：`1280x720`、Turnip/Zink、WineD3D、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`、container 6。
+2. 当前 `FrameRating` 只每约 500 ms 计算并显示瞬时 FPS，不保留样本，不能可靠计算平均 FPS、1% Low 和帧时间分布；因此不以目测 HUD 数字作为项目3基线。
+3. 下一代码节点为 `FrameRating` 增加可开关的 CSV 采样：单调时间戳、采样区间、帧数、FPS、近似帧时间、RAM 和 CPU 最大频率；每次运行使用唯一文件名，不覆盖既有结果。
+4. 首个固定场景使用已验证可达的 `Tutorial_Mission01`，预热 60 秒后采样 180 秒；基线完成后再按单变量顺序比较 WineD3D 设置、Box64 预设和分辨率。
+5. 性能采样工具不得改变 Wine、Box64、图形驱动或游戏参数；先验证记录开销，再生成新的唯一 APK。
+
 ## 五、用户当前需要执行的步骤
 
-1. 保持当前 G2.5 APK、container 6、WineD3D、Box64 `Intermediate` 和 `BOX64_UNITYPLAYER=1` 不变，完全退出 Winlator 后重新启动。
-2. 仅把执行参数中的文件名改为 `-logFile Player-T2-B.log`。
-3. 进入主菜单后连续运行至少 6 分钟，不改设置，不主动结束游戏。
-4. 导出 `startup.log`、Winlator `logs.txt` 和 `Player-T2-B.log`；放入 `D:\agent\Winlator\logs\dave-the-diver` 后继续分析。
+1. 暂时保留 G2.5 APK、container 6 和 T2-B 成功配置，不再进行兼容性变量测试。
+2. 不需要继续导出启动日志；现有 T2-A4/T2-B 日志已满足启动闭环。
+3. 等待 G3-P0 性能采样 APK 后，在 `Tutorial_Mission01` 执行固定的 60 秒预热和 180 秒采样；具体操作将在新 APK 生成时更新。
 
 ## 六、进度记录
 
@@ -526,6 +535,15 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - 三份日志中均未发现 `c0000005`、SIGSEGV、Unhandled page fault 或 X 连接中断；用户确认游戏成功启动。该轮计为第一次冷启动成功。
 - 日志已使用 T2-A4 唯一名称归档；下一步执行完全同配置的 T2-B，要求第二次进入可交互主菜单并持续至少 6 分钟。
 
+### 2026-08-07：T2-B 六分钟第二次冷启动通过，启动故障闭环
+
+- T2-B 再次使用 rootfs 版本 `23`、container 6、Turnip/Zink、WineD3D、ALSA、Box64 `0.4.5 372739d`、`BOX64_UNITYPLAYER=1` 和内置 `/opt/wine`；唯一参数变化是日志名 `Player-T2-B.log`。
+- `startup.log` 在 `10:17:52` 完成全部阶段并记录 `STARTUP COMPLETE`。Winlator 日志持续至 `10:24:43`，可验证时长为 411 秒（6 分 51 秒）。
+- `nsiproxy.so` 后两次 `if_nameindex failed, errno 13` 没有阻断启动；随后继续加载 Unity、GameAssembly 和 WineD3D。Unity 日志进入 `Tutorial_Mission01`，证明已进入游戏内容而不是只显示窗口。
+- Winlator/Unity 日志中 `c0000005`、SIGSEGV、Segmentation fault、Unhandled page fault、X connection broken、Box64 extraction failed、NullReferenceException 和 AccessViolationException 计数均为 0。
+- T2-B 日志已归档为 `T2-B-startup-g2.5-success.log`（1,324 bytes，SHA-256 `F0CBCD7AEDECF0A51846569FFB14BEB8E62D188FE7AA395CF019CC3B27DA4F7F`）、`T2-B-winlator-g2.5-success.txt`（290,988 bytes，SHA-256 `A90F0C6305F6409E0E7D5751D7EC480686E6D582D9C6AD8F57CA1BE389992831`）和 `T2-B-player-g2.5-success.log`（12,444 bytes，SHA-256 `00231601A81E7C9A778D86F230A52024FE17853FFDF60715D14FA0386C02A28A`）。
+- 启动故障验收标准已经满足：G2.5 连续两次冷启动成功，第二次稳定超过 6 分钟。后续转入 G3-P0 性能采样，不再追加兼容性变量。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -550,6 +568,8 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 | G2.4 | 启动阶段独立日志、后台异常收口、Box64 解压失败重试、唯一 APK 归档 | G2.3 通过版本门槛后仍在 guest 进程创建前静默卡住 | 已完成（2026-08-06） |
 | G2.5 | 归档 T2-A3 双日志、修复压缩包父目录创建、唯一 APK 归档 | T2-A3 证明 Box64 单文件 tar 因父目录缺失而无法解压 | 已完成（2026-08-06） |
 | G2.5-A | 归档 T2-A4 三份成功日志、确认首次内置修复冷启动、制定 T2-B | G2.5 真机越过 Box64 解压并成功启动 Dave | 已完成（2026-08-07） |
-| G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
+| G2.5-B | 归档 T2-B 三份日志、确认 6 分 51 秒第二次冷启动、关闭启动故障 | T2-B 同配置进入 `Tutorial_Mission01` 且无崩溃特征 | 已完成（2026-08-07） |
+| G3-P0 | FPS/帧时间 CSV 采样工具与固定场景基线 | 启动故障闭环后进入性能阶段 | 待执行 |
+| G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
