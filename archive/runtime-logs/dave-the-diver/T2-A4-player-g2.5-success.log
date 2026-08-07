@@ -1,0 +1,129 @@
+Initialize engine version: 2020.3.48f1 (b805b124c6b7)
+[Subsystems] Discovering subsystems at path E:/Dave the Diver/DaveTheDiver_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 480 (ID=0x6c0)
+    Vendor:   
+    VRAM:     2048 MB
+<RI> Initializing input.
+New input system (experimental) initialized
+Using XInput
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 55.972900 ms
+Odin Serializer ArchitectureInfo initialization with defaults (all unaligned read/writes disabled).
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Sirenix.Serialization.UnitySerializationInitializer:Initialize()
+
+Odin Serializer detected whitelisted runtime platform WindowsPlayer and memory read test succeeded; enabling all unaligned memory read/writes.
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Sirenix.Serialization.ArchitectureInfo:SetRuntimePlatform(RuntimePlatform)
+Sirenix.Serialization.UnitySerializationInitializer:Initialize()
+
+Direct3D: detected that using refresh rate causes time drift. Will stop trusting refresh rate until the game window is moved.
+Did not save cached content catalog because Application.persistentDataPath is an empty path.
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+UnityEngine.AddressableAssets.ResourceProviders.InternalOp:OnCatalogLoaded(ContentCatalogData)
+UnityEngine.AddressableAssets.ResourceProviders.InternalOp:CatalogLoadOpCompleteCallback(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.ResourceManager:ExecuteDeferredCallbacks()
+UnityEngine.ResourceManagement.ResourceManager:Update(Single)
+System.Action`1:Invoke(T)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 379)
+UnloadTime: 28.733900 ms
+Build Version : v1.0.2.1270.steam
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+LogoManager:Awake()
+
+Do ValidateBundleFile : LastVersion=
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+LogoManager:ValidateBundleFile()
+LogoManager:Awake()
+
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 10678.
+Total: 143.633400 ms (FindLiveObjects: 3.573200 ms CreateObjectMapping: 1.020400 ms MarkObjects: 128.723200 ms  DeleteObjects: 9.891800 ms)
+
+[Backtrace] backtrace enabled : True
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+BacktraceManager:Start()
+
+[20.04016][SingletonAddrScriptableObject] LoadAssetAsync: obj:SoundConfigManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+<Init>d__21:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[20.96592][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:SoundConfigManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+[76.36195][SingletonAddrScriptableObject] LoadAssetAsync: obj:CursorManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+SingletonAddrScriptableObject`1:LoadBundle(Action)
+<InitAfterSaveSystem>d__34:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[DLC localcheck] bundleAppId:2677020, isDlcInstalled:True
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ItemIntegrityCheck:PreCheckLocalDLC(UInt32)
+<CheckDlcOwnership>d__9:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+<AgeGradeEvent>d__12:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+[76.48166][SingletonAddrScriptableObject] COMPLETE LoadAssetAsync: obj:CursorManager
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+<>c__DisplayClass5_0:<LoadBundle>b__0(AsyncOperationHandle`1)
+System.Action`1:Invoke(T)
+DelegateList`1:Invoke(T)
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:InvokeCompletionEvent()
+UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase`1:Complete(TObject, Boolean, Exception, Boolean)
+UnityEngine.ResourceManagement.AsyncOperations.ProviderOperation`1:ProviderCompleted(T, Boolean, Exception)
+UnityEngine.ResourceManagement.ResourceProviders.InternalOp:CompleteOperation()
+System.Action`1:Invoke(T)
+UnityEngine.AsyncOperation:InvokeCompletionEvent()
+
+httpCode=OK, Rescode=2001
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+Steamworks.APIDispatchDelegate:Invoke(T, Boolean)
+Steamworks.CallResult`1:OnRunCallResult(IntPtr, Boolean, UInt64)
+Steamworks.CallbackDispatcher:RunFrame(Boolean)
+
+httpCode=OK, Rescode=2001
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+Steamworks.APIDispatchDelegate:Invoke(T, Boolean)
+Steamworks.CallResult`1:OnRunCallResult(IntPtr, Boolean, UInt64)
+Steamworks.CallbackDispatcher:RunFrame(Boolean)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 392)
+UnloadTime: 124.280300 ms
+
+Unloading 487 unused Assets to reduce memory usage. Loaded Objects now: 39238.
+Total: 510.480500 ms (FindLiveObjects: 10.838600 ms CreateObjectMapping: 7.968800 ms MarkObjects: 489.120100 ms  DeleteObjects: 2.547800 ms)
+

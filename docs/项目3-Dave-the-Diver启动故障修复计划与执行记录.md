@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：G1.10 已完成；G2.4 日志已定位为 Box64 压缩包父目录未创建，G2.5 已修复通用解压逻辑，等待 T2-A4 真机复验
+> 当前状态：G1.10 已完成；G2.5 的 T2-A4 首次冷启动已成功，等待同配置 T2-B 第二次冷启动及至少 6 分钟稳定性复验
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -308,7 +308,9 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - [x] clean 构建完成，增量 `:app:assembleDebug` 再次明确返回 `BUILD SUCCESSFUL`；G2.5 APK 大小为 `206,816,497` bytes，SHA-256 为 `A89417627D46FDEE4A494C517620490617FC83E51A06E765D139E7D85FF29D0A`。
 - [x] `zipalign -c 4`、APK V2 签名、编译字节码父目录分支和内嵌 rootfs 均验证通过；rootfs SHA-256 保持 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
 - [x] G2.5 使用全新文件名 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G2.5-tar-parent-directory-fix.apk` 归档；创建前验证目标不存在，未覆盖任何历史 APK。
-- [ ] T2-A4 确认 Box64 能被解压并进入 Wine/Unity 启动阶段，再继续分析 Dave 图形兼容性。
+- [x] T2-A4 真机确认 Box64 `0.4.5 372739d` 成功解压并启动，`setup_x_environment` 完成且记录 `STARTUP COMPLETE`；内置 Wine、Unity、WineD3D 和游戏资源初始化均继续执行。
+- [x] T2-A4 没有 `c0000005`、SIGSEGV、Unhandled page fault、X 连接中断或启动阶段失败。Winlator 日志有从 `10:03:26` 到 `10:07:32` 的运行输出，用户确认游戏成功启动；该轮计为第一次冷启动通过，不替代第二次冷启动和 6 分钟稳定性复验。
+- [x] T2-A4 三份日志分别归档为 `T2-A4-startup-g2.5-success.log`、`T2-A4-winlator-g2.5-success.txt` 和 `T2-A4-player-g2.5-success.log`；大小依次为 `1,324`、`290,897`、`6,266` bytes，SHA-256 依次为 `33D2FB424997F87A0065B463FCB86BFB89BA8F4D59E28610C467E64139E203BA`、`15A6F1C18F6EDC76261268989552EF5D9378F10B05EE9AF99108411DE2D168A8`、`A30A858C5F01B70599DE96250B6705DE8026A47BEB113F0D176C5ACDAE4F2114`。
 
 ### APK 产物保留规则
 
@@ -325,6 +327,13 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 5. 刷新后第一轮冷启动使用 `-logFile Player-T2-A4.log`，进入可交互主菜单后继续观察至少 6 分钟；导出 Winlator 日志、`Player-T2-A4.log` 和 `Documents/Winlator/startup.log`。
 6. 若再次停在 `starting up`，最多等待 2 分钟后结束 Winlator，直接从手机 `Documents/Winlator/` 复制 `startup.log`；该文件启动时即创建，不依赖 Wine/Box64 成功启动或 Winlator 日志导出。
 7. 成功日志应出现 `if_nameindex failed, errno 13` 后继续加载 Dave/图形模块，而不是停在旧的 rootfs 早期路径；通过后再进行 T2-B。
+
+### T2-B：G2.5 第二次冷启动与稳定性确认
+
+1. 保持 G2.5 APK、container 6 和 T2-A4 全部配置不变，完全退出 Winlator 后重新冷启动。
+2. 只把 Unity 日志文件名改为 `-logFile Player-T2-B.log`；不得修改 WineD3D、Turnip/Zink、Box64 `Intermediate` 或 `BOX64_UNITYPLAYER=1`。
+3. 进入可交互主菜单后连续运行至少 6 分钟，期间不要切换配置或主动结束进程。
+4. 结束后导出 `startup.log`、Winlator `logs.txt` 和 `Player-T2-B.log`；T2-B 通过后完成内置修复的启动闭环并进入 G3 性能基线。
 
 ### T3：兼容性分支与最小成功集回退
 
@@ -349,11 +358,10 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 
 ## 五、用户当前需要执行的步骤
 
-1. 覆盖安装 G2.5 APK：`D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G2.5-tar-parent-directory-fix.apk`，先核对 SHA-256 是否为 `A89417627D46FDEE4A494C517620490617FC83E51A06E765D139E7D85FF29D0A`；不要卸载应用。
-2. 等待“安装系统文件”完成后，新建容器并选择内置 Wine `/opt/wine`；不要复用导入补丁 Wine 的旧容器。
-3. 保留 Dave 快捷方式中的 WineD3D、Box64 `Intermediate` 和 `BOX64_UNITYPLAYER=1`，不要添加 `-force-gfx-direct`。
-4. 执行 T2-A4，使用 `-logFile Player-T2-A4.log`；若进入主菜单则观察至少 6 分钟并导出全部日志。
-5. 无论成功或失败，都把手机 `Documents/Winlator/startup.log` 复制到 `D:\agent\Winlator\logs\dave-the-diver\startup-T2-A4.log`；同时导出 `logs.txt` 和 `Player-T2-A4.log`（如果存在）。
+1. 保持当前 G2.5 APK、container 6、WineD3D、Box64 `Intermediate` 和 `BOX64_UNITYPLAYER=1` 不变，完全退出 Winlator 后重新启动。
+2. 仅把执行参数中的文件名改为 `-logFile Player-T2-B.log`。
+3. 进入主菜单后连续运行至少 6 分钟，不改设置，不主动结束游戏。
+4. 导出 `startup.log`、Winlator `logs.txt` 和 `Player-T2-B.log`；放入 `D:\agent\Winlator\logs\dave-the-diver` 后继续分析。
 
 ## 六、进度记录
 
@@ -510,6 +518,14 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 - 两份 T2-A3 日志已使用唯一文件名归档。G2.5 clean 构建、APK 对齐、V2 签名、字节码和内嵌 rootfs 校验通过，新 APK SHA-256 为 `A89417627D46FDEE4A494C517620490617FC83E51A06E765D139E7D85FF29D0A`。
 - 下一步执行 T2-A4，预期 `startup.log` 越过 `setup_x_environment` 并出现 `STARTUP COMPLETE`，Winlator 日志开始产生 Box64/Wine 输出。
 
+### 2026-08-07：T2-A4 首次内置修复冷启动成功
+
+- 启动阶段从 `10:03:26` 开始并在同一秒完成，`startup.log` 明确记录 `END setup_x_environment` 和 `STARTUP COMPLETE`；G2.5 的父目录创建修复已在真机生效。
+- Winlator 日志确认实际运行 Box64 `0.4.5 372739d`、内置 `/opt/wine`、WineD3D、Turnip/Zink、`BOX64_UNITYPLAYER=1`，执行参数完整传入 `Player-T2-A4.log`。
+- 内置 `nsiproxy.so` 加载后出现两次预期的 `if_nameindex failed, errno 13`，但启动没有停止：随后加载 `UnityCrashHandler64.exe`、`GameAssembly.dll`、WineD3D/OpenGL，并进入 Unity D3D11、输入、Addressables、DLC 和网络初始化。
+- 三份日志中均未发现 `c0000005`、SIGSEGV、Unhandled page fault 或 X 连接中断；用户确认游戏成功启动。该轮计为第一次冷启动成功。
+- 日志已使用 T2-A4 唯一名称归档；下一步执行完全同配置的 T2-B，要求第二次进入可交互主菜单并持续至少 6 分钟。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -533,6 +549,7 @@ T1 已证明补丁解决第一层阻塞，T1.6 已证明 WineD3D 解决第二层
 | G2.3 | 容器入口增加 rootfs 完整性门槛、重建 APK、更新 T2 操作步骤 | 用户反馈卡在 `starting up` 且无日志，确认需阻止安装竞争状态启动 | 已完成（2026-08-06） |
 | G2.4 | 启动阶段独立日志、后台异常收口、Box64 解压失败重试、唯一 APK 归档 | G2.3 通过版本门槛后仍在 guest 进程创建前静默卡住 | 已完成（2026-08-06） |
 | G2.5 | 归档 T2-A3 双日志、修复压缩包父目录创建、唯一 APK 归档 | T2-A3 证明 Box64 单文件 tar 因父目录缺失而无法解压 | 已完成（2026-08-06） |
+| G2.5-A | 归档 T2-A4 三份成功日志、确认首次内置修复冷启动、制定 T2-B | G2.5 真机越过 Box64 解压并成功启动 Dave | 已完成（2026-08-07） |
 | G3 | 两次冷启动回归、最终报告、性能阶段入口 | 内置修复真机通过 | 待执行 |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
