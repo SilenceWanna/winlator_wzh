@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；G3-P0-B 证明 X11 键盘事件已发送，G3-P0-C 等待“活动窗口”手动前台化对照
+> 当前状态：Dave 启动故障已闭环；G3-P0-D 的 `VK_W` 双通道诊断 APK 已完成，等待星露谷真机对照
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -376,7 +376,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 4. 本轮导出的 `frame-rating-20260807-151057-952.csv` 只有 97 bytes，SHA-256 `1CFF822F37E13924B131458E32EA5246A8761D85FDF9118C96027EA113AA3F6A`；文件只含版本行和表头，无帧样本、`# window_reset` 和 `# summary`，不能作为性能基线。空 CSV 是采样窗口识别/更新回调的独立问题，不足以证明键盘焦点丢失。
 5. 下一步先用一个 `D_PAD` 执行最小输入对照；若 D-pad 仍无效，再用 Winlator 屏幕键盘单独按 `W` 区分“控制配置问题”与“X11 窗口焦点/键盘注入问题”。未完成该对照前不修改 Wine、Box64 或图形设置。
 
-### G3-P0-B：跨游戏键盘注入诊断计划（工具已完成，等待真机日志）
+### G3-P0-B：跨游戏键盘注入诊断（已完成）
 
 1. [x] Dave 的 D-pad 和 Winlator 屏幕键盘均无效；用户另用《星露谷物语》对照后仍无效，排除单个游戏键位、Dave 场景状态和单个触屏配置。
 2. [x] 两条输入路径的公共链路确认为 `XServer.injectKeyPress()` → `Keyboard.setKeyPress()` → `InputDeviceManager.onKeyPress()` → X11 `KeyPress`。后三个输入核心类从仓库初始 Winlator 11.1 导入后未改动，不是 G2/G3 回归。
@@ -384,20 +384,31 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 4. [x] 已增加会话级唯一 `input-events-*.log`，记录窗口 map/focus、虚拟绑定 press/release、XServer 注入、键盘去重、X11 事件目标和丢弃原因；每行立即刷新，即使异常退出也能保留已写入证据。
 5. [x] 本轮未改变焦点选择和事件分发行为。诊断 APK 已以 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-B-input-trace.apk` 唯一文件名归档，大小 `206,821,237` bytes，SHA-256 `0A916DECCB023316E192476E118F1732F48F9D8E3BD2C925C2830205CCABF1F4`。
 
-### G3-P0-C：WineD3D 窗口前台化对照（等待真机结果）
+### G3-P0-C：WineD3D 窗口前台化对照（已完成，假设否定）
 
 1. G3-P0-B 大日志记录星露谷主窗口 `id=29360133`、`class=stardew valley.exe`：`mapped/viewable/enabled/renderable/application/keyPress/keyRelease` 均为 `true`，X11 焦点从映射后一直指向该窗口。
 2. 日志共记录 39 次 `key_press_sent` 和 39 次 `key_release_sent`，`no_focus`、`focus_not_listening`、`target_disabled` 计数均为 0。D-pad `W` 在 `145734–145904 ms` 持续约 170 ms，屏幕键盘也产生了 `keycode=25, keysym=119` 并发送到星露谷窗口。
 3. 该窗口唯一异常属性是 `surface=false`。当前 `DesktopHelper.setFocusedWindow()` 只在 `window.isSurface()` 为真时调用 `WinHandler.bringToFront()`；WineD3D 应用窗口虽已取得 X11 焦点，却可能没有同步为 Wine 内部 Win32 前台窗口。
 4. 侧栏“活动窗口”列表点击条目会不经 `isSurface()` 条件，直接调用同一 `bringToFront(className, handle)`；因此它是对“Win32 前台未同步”假设的无代码单变量验证。
-5. 若手动前台化后 D-pad 立即有效，最小修复是对所有具有有效 class/handle 的 application window 同步调用 `bringToFront()`，不再以 `_NET_WM_SURFACE` 作为前置必要条件；若仍无效，再转向 Wine 键盘消息转换而不修改焦点逻辑。
+5. 用户按要求从“活动窗口”手动选中 `Stardew Valley` 后，D-pad `W` 仍然无效。该操作已经无条件调用 `WinHandler.bringToFront(className, handle)`，因此否定“X11 已聚焦但 Wine 内部 Win32 前台窗口未同步”假设；不修改 `DesktopHelper` 的 `isSurface()` 条件。
+
+### G3-P0-D：WinHandler 键盘直通对照（工具已完成，等待真机结果）
+
+1. [x] 仓库已有 `WinHandler.keyboardEvent(byte vkey, int flags)` 和 `KEYBOARD_EVENT=11` 协议，但此前没有调用方；鼠标与游戏手柄已通过同一 WinHandler 通道发送到 Wine，键盘却只走 X11 core event。
+2. [x] 已从 `rootfs_patches.tzst` 单独提取来宾端 `winhandler.exe`（SHA-256 `E378CF2534620F67B8665B1E4EF91E8AE8422A0D5F5F5A6C22F879E556EF3D39`）并反汇编。它读取 UDP `buffer[1]` 作为 `bVk`、`buffer+2` 作为 32 位 `dwFlags`，调用 `USER32.keybd_event(bVk, 0, dwFlags, 0)`；协议含义确认是标准 Windows 虚拟键，按下 flags 为 `0`，释放为 `KEYEVENTF_KEYUP=0x0002`。
+3. [x] 独立 G3-P0-D 诊断实现保留原 X11 路径，只把键盘去重后真正接受的 `W` press/release 额外送到 WinHandler，分别使用 `VK_W=0x57` 和 flags `0/2`；其他按键不走直通，避免尚未验证时扩大双输入影响。
+4. [x] 输入日志新增 `winhandler_init_received`、`winhandler_keyboard_queued`、`winhandler_keyboard_packet sent=<true|false>`，以及 `not_initialized/no_handler` 丢弃原因，可区分来宾握手、Java 排队和 UDP 发送状态。
+5. [x] 新 APK 已以唯一文件名 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-D-vk-w-dual-route.apk` 归档，大小 `206,821,829` bytes，SHA-256 `37D5A4EDFF758A377EADE8E08CB9633015A31FAC247A39687BB8F3A8F0F5C2B2`；未覆盖历史 APK。
+6. [x] Java 编译与 clean 构建完成，随后增量 `:app:assembleDebug` 明确返回 `BUILD SUCCESSFUL`；zipalign 通过，V2 签名有效且 signer=1。APK 内 `rootfs.tzst` 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`，`rootfs_patches.tzst` 仍为 `70C25EDCBAFB71D7D3855FAF39E582ED5C6709F3AFCFB2F21C675D5FEB65E02C`。
+7. [ ] 首轮只验收星露谷可操作场景中的 D-pad `W`；若有效，再补全按键映射并验证 Dave；若无效，根据新增日志判断 WinHandler 未初始化、UDP 未发送或 Wine/game 仍未消费合成键盘事件。
 
 ## 五、用户当前需要执行的步骤
 
-1. 保持当前 G3-P0-B 诊断 APK 和星露谷运行配置不变，启动星露谷并进入可操作场景。
-2. 打开 Winlator 左侧栏，选择“活动窗口”（Active windows），在列表中点击 `Stardew Valley`。列表关闭后不再点击游戏画面。
-3. 立即按住 D-pad 上/`W` 1–2 秒，只告知“手动选中活动窗口后有效/仍无效”。该操作不需要新 APK，不需要再导出日志。
-4. 本轮不重复 Dave 或 180 秒性能测试，不更改 Wine、Box64、图形驱动或触屏配置。
+1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-D-vk-w-dual-route.apk`。该文件是新归档，不覆盖磁盘上的历史 APK；Android 安装时仍按同包名升级当前 Winlator，以保留现有容器。
+2. 保持原星露谷容器、图形设置和触屏配置不变，进入之前用于对照的可操作场景；本轮不再打开“活动窗口”。
+3. 只按 D-pad 上方向（绑定 `W`）1–2 秒，观察角色是否移动。不要用 `A/S/D` 判断，因为本轮为了单变量只给 `W` 启用了 WinHandler 直通。
+4. 无论 `W` 有效还是无效，都导出本次最新的 `Documents\Winlator\input\input-events-*.log`，并告知测试现象；若同时出现多份，只需导出时间最新且包含 `winhandler_init_received` 的一份。
+5. 本轮不测试 Dave、不执行 180 秒性能采样，也不更改 Wine、Box64、图形驱动、容器或触屏配置。
 
 ## 六、进度记录
 
@@ -599,6 +610,19 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 星露谷窗口的 X11 焦点、事件订阅和 enabled 状态均正常；39 次 press 和 39 次 release 均已发送，三类预设丢弃计数均为 0。这否定“X11 焦点丢失”与“虚拟按键未到达 XServer”假设。
 - 主窗口为 application window 但 `surface=false`，刚好绕过当前 `DesktopHelper` 中受 `isSurface()` 限制的 `bringToFront()`。下一步使用已有“活动窗口”菜单无条件调用 `bringToFront()`，作为 Win32 前台同步的单变量验证。
 
+### 2026-08-07：G3-P0-C 手动前台化对照失败
+
+- 用户从“活动窗口”手动选中 `Stardew Valley` 后立即测试 D-pad `W`，输入仍无效；该入口无条件调用 `WinHandler.bringToFront(className, handle)`。
+- 结合 G3-P0-B 已确认的 X11 焦点、订阅和事件发送，现可排除触屏绑定未触发、X11 事件静默丢弃以及 Win32 前台窗口未同步三类原因。
+- 下一步不修改焦点逻辑，转入 G3-P0-D：验证仓库中现成但未被调用的 `WinHandler.keyboardEvent()`，用 Windows 虚拟键直通路径绕过 Wine 的 X11 core keyboard 转换层。
+
+### 2026-08-07：G3-P0-D `VK_W` 双通道诊断 APK 完成
+
+- 静态检查 `rootfs_patches.tzst` 中的 `winhandler.exe`，确认 `KEYBOARD_EVENT=11` 最终调用 `USER32.keybd_event`，Android 端现有数据布局与来宾端读取偏移一致；按下/释放协议不再是推测。
+- 在 `Keyboard` 的去重完成点增加仅针对 `KEY_W` 的 WinHandler 分支，继续发送原 X11 core event；在 `WinHandler` 记录初始化、未初始化丢弃、排队及 UDP 发送结果。
+- Java 编译及 clean/增量 APK 构建完成，zipalign、V2 签名、编译字节码、rootfs 与 rootfs patch 哈希均通过验证。唯一 APK 为 `app-debug-project3-G3-P0-D-vk-w-dual-route.apk`，大小 `206,821,829` bytes，SHA-256 `37D5A4EDFF758A377EADE8E08CB9633015A31FAC247A39687BB8F3A8F0F5C2B2`。
+- 下一步只在星露谷相同场景测试 D-pad `W`，并回收包含 `winhandler_*` 条目的最新输入日志；在结果明确前不扩展到其他虚拟键。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -627,7 +651,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G3-P0 | FPS/帧时间 CSV 采样工具与固定场景基线 | 启动故障闭环后进入性能阶段 | 工具已完成，等待真机基线（2026-08-07） |
 | G3-P0-A | 首份空 CSV 证据、单按钮多绑定诊断、D-pad/屏幕键盘对照 | 首轮真机游玩出现触屏方向无反应 | 已完成，跨游戏对照仍失败（2026-08-07） |
 | G3-P0-B | X11 键盘事件全链跟踪、唯一诊断 APK、两份真机日志 | Dave/星露谷两款游戏的 D-pad/屏幕键盘均无效 | 已完成，X11 事件已发送且无丢弃（2026-08-07） |
-| G3-P0-C | 活动窗口手动 `bringToFront()` 单变量对照 | WineD3D application window 的 `surface=false` 绕过自动前台同步 | 等待真机结果（2026-08-07） |
+| G3-P0-C | 活动窗口手动 `bringToFront()` 单变量对照 | WineD3D application window 的 `surface=false` 绕过自动前台同步 | 已完成，手动前台化仍无效（2026-08-07） |
+| G3-P0-D | WinHandler 键盘协议核对、`VK_W` 双通道诊断 APK 与真机对照 | X11 core event 已发送但两款游戏均不响应 | 工具已完成，等待真机结果（2026-08-07） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
