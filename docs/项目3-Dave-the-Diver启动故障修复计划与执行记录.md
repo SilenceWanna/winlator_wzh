@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；G2.5 连续两次内置修复冷启动通过，进入 G3 性能采样工具与固定场景基线阶段
+> 当前状态：Dave 启动故障已闭环；G3-P0 CSV 性能采样 APK 已完成并归档，等待 `Tutorial_Mission01` 真机基线
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -358,19 +358,23 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - [ ] 建立固定场景性能基线和单变量优化矩阵。
 - [ ] 完成项目3报告并提交、推送最终节点。
 
-### G3-P0：性能基线采样计划（下一节点）
+### G3-P0：性能基线采样计划（工具已完成，等待真机采样）
 
 1. 保持 T2-B 成功配置作为性能基线：`1280x720`、Turnip/Zink、WineD3D、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`、container 6。
-2. 当前 `FrameRating` 只每约 500 ms 计算并显示瞬时 FPS，不保留样本，不能可靠计算平均 FPS、1% Low 和帧时间分布；因此不以目测 HUD 数字作为项目3基线。
-3. 下一代码节点为 `FrameRating` 增加可开关的 CSV 采样：单调时间戳、采样区间、帧数、FPS、近似帧时间、RAM 和 CPU 最大频率；每次运行使用唯一文件名，不覆盖既有结果。
-4. 首个固定场景使用已验证可达的 `Tutorial_Mission01`，预热 60 秒后采样 180 秒；基线完成后再按单变量顺序比较 WineD3D 设置、Box64 预设和分辨率。
-5. 性能采样工具不得改变 Wine、Box64、图形驱动或游戏参数；先验证记录开销，再生成新的唯一 APK。
+2. 修改前的 `FrameRating` 只每约 500 ms 计算并显示瞬时 FPS，不保留样本，不能可靠计算平均 FPS、1% Low 和帧时间分布；因此不以目测 HUD 数字作为项目3基线。
+3. [x] 采样入口确定为容器 HUD `Full` 模式：它本来就显示 FPS、RAM 和 CPU，开启采样不会改变游戏运行参数；`Disabled/Simple` 模式不创建采样文件。
+4. [x] `FrameRating` 已增加 CSV 采样：记录相对单调时间、近似帧时间、窗口 FPS、RAM 已用字节数和 CPU 最大频率；文件名含毫秒时间戳且存在时递增后缀，不覆盖既有结果。
+5. [x] Activity 正常销毁时写入摘要行，包含平均 FPS、1% Low FPS、平均帧时间和 P99 帧时间；采样过程约每 500 ms 刷新，进程被系统直接杀死时已落盘的原始样本仍可用。
+6. 首个固定场景使用已验证可达的 `Tutorial_Mission01`，预热 60 秒后采样 180 秒；基线完成后再按单变量顺序比较 WineD3D 设置、Box64 预设和分辨率。
+7. 性能采样工具未改变 Wine、Box64、图形驱动或游戏参数。最终 APK 为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-frame-sampling-r1.apk`，大小 `208,688,282` bytes，SHA-256 `37BF9EA5759A1B9271D81764462A31F2018A176A87625E2D60610926B6DE1F95`。首次候选包 `app-debug-project3-G3-P0-frame-sampling.apk` 仍保留，未被 r1 覆盖。
 
 ## 五、用户当前需要执行的步骤
 
-1. 暂时保留 G2.5 APK、container 6 和 T2-B 成功配置，不再进行兼容性变量测试。
-2. 不需要继续导出启动日志；现有 T2-A4/T2-B 日志已满足启动闭环。
-3. 等待 G3-P0 性能采样 APK 后，在 `Tutorial_Mission01` 执行固定的 60 秒预热和 180 秒采样；具体操作将在新 APK 生成时更新。
+1. 直接覆盖安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-frame-sampling-r1.apk`，不要卸载 Winlator，不要删除 container 6。
+2. 编辑 container 6，只将 HUD 模式设为 `Full`；保持 `1280x720`、Turnip/Zink、WineD3D、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1` 以及现有 Dave 启动参数不变。
+3. 启动 Dave 并进入 `Tutorial_Mission01`，先原地预热 60 秒，再持续正常操作 180 秒；本轮不切换场景、分辨率或其他运行参数。
+4. 180 秒结束后立即从游戏内正常退出，再退回 Winlator 容器界面，以便在 CSV 末尾写入 `# summary`。`# summary` 覆盖整个窗口运行期；正式基线会从原始样本中截取退出前的最后 180 秒，以排除启动和 60 秒预热。
+5. 将手机 `Documents\Winlator\performance\` 中本轮新生成的 `frame-rating-*.csv` 导出到 `D:\agent\Winlator\logs\dave-the-diver\`；保留原文件名，不覆盖旧样本。
 
 ## 六、进度记录
 
@@ -544,6 +548,15 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - T2-B 日志已归档为 `T2-B-startup-g2.5-success.log`（1,324 bytes，SHA-256 `F0CBCD7AEDECF0A51846569FFB14BEB8E62D188FE7AA395CF019CC3B27DA4F7F`）、`T2-B-winlator-g2.5-success.txt`（290,988 bytes，SHA-256 `A90F0C6305F6409E0E7D5751D7EC480686E6D582D9C6AD8F57CA1BE389992831`）和 `T2-B-player-g2.5-success.log`（12,444 bytes，SHA-256 `00231601A81E7C9A778D86F230A52024FE17853FFDF60715D14FA0386C02A28A`）。
 - 启动故障验收标准已经满足：G2.5 连续两次冷启动成功，第二次稳定超过 6 分钟。后续转入 G3-P0 性能采样，不再追加兼容性变量。
 
+### 2026-08-07：G3-P0 CSV 性能采样工具完成
+
+- 采样入口复用容器 HUD `Full` 模式；`Disabled` 和 `Simple` 不会创建 CSV，因此本轮唯一配置变化是将 HUD 设为 `Full`。
+- `FrameRating` 按帧记录 `elapsed_ms`、`frame_time_ms`、`window_fps`、`ram_used_bytes` 和 `cpu_max_mhz`；约每 500 ms 刷新已写入数据，正常退出时写入整个窗口运行期的平均 FPS、1% Low、平均帧时间和 P99 帧时间摘要。本轮正式指标将从退出前最后 180 秒原始样本重算。
+- 采样文件写入公共文档目录 `Documents\Winlator\performance\`，使用毫秒时间戳和碰撞后缀确保每次运行不覆盖旧样本。Activity 销毁时主动关闭写入器。
+- `:app:compileDebugJavaWithJavac`、clean `:app:assembleDebug` 和最终增量 `:app:assembleDebug` 均成功；最终 r1 APK 已通过 zipalign 和 APK V2 签名校验，签名者数为 1。
+- 最终 APK 以唯一文件名 `app-debug-project3-G3-P0-frame-sampling-r1.apk` 归档，大小 `208,688,282` bytes，SHA-256 `37BF9EA5759A1B9271D81764462A31F2018A176A87625E2D60610926B6DE1F95`；内置 `assets/rootfs.tzst` 大小 `79,289,327` bytes，SHA-256 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
+- 上一个候选 APK `app-debug-project3-G3-P0-frame-sampling.apk` 保留不动；r1 用于真机基线，两个文件都没有覆盖 G2.5 及更早 APK。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -569,7 +582,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G2.5 | 归档 T2-A3 双日志、修复压缩包父目录创建、唯一 APK 归档 | T2-A3 证明 Box64 单文件 tar 因父目录缺失而无法解压 | 已完成（2026-08-06） |
 | G2.5-A | 归档 T2-A4 三份成功日志、确认首次内置修复冷启动、制定 T2-B | G2.5 真机越过 Box64 解压并成功启动 Dave | 已完成（2026-08-07） |
 | G2.5-B | 归档 T2-B 三份日志、确认 6 分 51 秒第二次冷启动、关闭启动故障 | T2-B 同配置进入 `Tutorial_Mission01` 且无崩溃特征 | 已完成（2026-08-07） |
-| G3-P0 | FPS/帧时间 CSV 采样工具与固定场景基线 | 启动故障闭环后进入性能阶段 | 待执行 |
+| G3-P0 | FPS/帧时间 CSV 采样工具与固定场景基线 | 启动故障闭环后进入性能阶段 | 工具已完成，等待真机基线（2026-08-07） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
