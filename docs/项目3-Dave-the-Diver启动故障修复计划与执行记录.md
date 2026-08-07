@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；G3-P0 CSV 性能采样 APK 已完成并归档，等待 `Tutorial_Mission01` 真机基线
+> 当前状态：Dave 启动故障已闭环；G3-P0 首次真机运行发现单按钮多方向绑定和空 CSV 两个独立问题，先执行输入对照
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -368,13 +368,21 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 6. 首个固定场景使用已验证可达的 `Tutorial_Mission01`，预热 60 秒后采样 180 秒；基线完成后再按单变量顺序比较 WineD3D 设置、Box64 预设和分辨率。
 7. 性能采样工具未改变 Wine、Box64、图形驱动或游戏参数。最终 APK 为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-frame-sampling-r1.apk`，大小 `208,688,282` bytes，SHA-256 `37BF9EA5759A1B9271D81764462A31F2018A176A87625E2D60610926B6DE1F95`。首次候选包 `app-debug-project3-G3-P0-frame-sampling.apk` 仍保留，未被 r1 覆盖。
 
+### G3-P0-A：首次真机输入与采样诊断（等待最小对照）
+
+1. 用户确认游戏可以实际游玩，但触屏控制中绑定 `W/S/A/D` 后点击按钮无反应。本地游戏 `globalgamemanagers` 明确包含 `Horizontal: A/D` 和 `Vertical: S/W`，排除 Dave 不支持键盘方向键位。
+2. Winlator `BUTTON` 元素被按下时会遍历该元素的所有绑定，并对每个绑定同时调用 `injectKeyPress`；松开时再同时释放。因此，若 `W/S/A/D` 被绑到同一个按钮，游戏会同时收到上下左右，水平与垂直输入都抵消；这是当前最高概率原因，不是 Box64 或 WineD3D 故障。
+3. Winlator 的 `D_PAD`/`STICK` 默认四向顺序是上、右、下、左，对应 `W/D/S/A`，它们会根据触摸方向只激活当前方向，不应按 `W/S/A/D` 的文字顺序填入四向槽位。
+4. 本轮导出的 `frame-rating-20260807-151057-952.csv` 只有 97 bytes，SHA-256 `1CFF822F37E13924B131458E32EA5246A8761D85FDF9118C96027EA113AA3F6A`；文件只含版本行和表头，无帧样本、`# window_reset` 和 `# summary`，不能作为性能基线。空 CSV 是采样窗口识别/更新回调的独立问题，不足以证明键盘焦点丢失。
+5. 下一步先用一个 `D_PAD` 执行最小输入对照；若 D-pad 仍无效，再用 Winlator 屏幕键盘单独按 `W` 区分“控制配置问题”与“X11 窗口焦点/键盘注入问题”。未完成该对照前不修改 Wine、Box64 或图形设置。
+
 ## 五、用户当前需要执行的步骤
 
-1. 直接覆盖安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-frame-sampling-r1.apk`，不要卸载 Winlator，不要删除 container 6。
-2. 编辑 container 6，只将 HUD 模式设为 `Full`；保持 `1280x720`、Turnip/Zink、WineD3D、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1` 以及现有 Dave 启动参数不变。
-3. 启动 Dave 并进入 `Tutorial_Mission01`，先原地预热 60 秒，再持续正常操作 180 秒；本轮不切换场景、分辨率或其他运行参数。
-4. 180 秒结束后立即从游戏内正常退出，再退回 Winlator 容器界面，以便在 CSV 末尾写入 `# summary`。`# summary` 覆盖整个窗口运行期；正式基线会从原始样本中截取退出前的最后 180 秒，以排除启动和 60 秒预热。
-5. 将手机 `Documents\Winlator\performance\` 中本轮新生成的 `frame-rating-*.csv` 导出到 `D:\agent\Winlator\logs\dave-the-diver\`；保留原文件名，不覆盖旧样本。
+1. 在当前触屏控制配置中新建一个 `D-pad`，设置为：上=`W`、右=`D`、下=`S`、左=`A`。不要把四个键绑在同一个 `Button` 的多绑定中。
+2. 保存配置后，在容器的“输入控制”对话框中选中该配置，确保“显示触屏控件”已开启，进入可控制 Dave 的游戏场景。
+3. 只测试 D-pad 的一个方向（先按上/W）。若有效，再逐一测试右、下、左，并告知结果。
+4. 若 D-pad 四向都无效，打开 Winlator 屏幕键盘，单独按一次 `W`：记录“屏幕键盘 W 有效/无效”，不要更改其他参数。
+5. 本轮暂不重复 180 秒性能测试；空 CSV 需要修正采样窗口识别后再重测。
 
 ## 六、进度记录
 
@@ -557,6 +565,12 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 最终 APK 以唯一文件名 `app-debug-project3-G3-P0-frame-sampling-r1.apk` 归档，大小 `208,688,282` bytes，SHA-256 `37BF9EA5759A1B9271D81764462A31F2018A176A87625E2D60610926B6DE1F95`；内置 `assets/rootfs.tzst` 大小 `79,289,327` bytes，SHA-256 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`。
 - 上一个候选 APK `app-debug-project3-G3-P0-frame-sampling.apk` 保留不动；r1 用于真机基线，两个文件都没有覆盖 G2.5 及更早 APK。
 
+### 2026-08-07：G3-P0 首轮真机发现输入配置与空 CSV
+
+- 用户已成功运行游戏并导出首份 CSV，但实际游玩时触屏 `W/S/A/D` 按钮无反应。
+- 游戏资源证明 Dave 接受 `A/D` 水平和 `W/S` 垂直键盘输入；Winlator 源码证明普通 `BUTTON` 会同时按下其全部绑定。因此先验证“单按钮绑四键导致相反输入抵消”，不立即修改 Wine/Box64。
+- 首份 CSV 仅含 97 bytes 表头，没有任何样本或摘要，本轮性能数据作废。该问题与触屏按键是两条独立诊断线，计划在输入最小对照后修复采样窗口识别。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -583,6 +597,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G2.5-A | 归档 T2-A4 三份成功日志、确认首次内置修复冷启动、制定 T2-B | G2.5 真机越过 Box64 解压并成功启动 Dave | 已完成（2026-08-07） |
 | G2.5-B | 归档 T2-B 三份日志、确认 6 分 51 秒第二次冷启动、关闭启动故障 | T2-B 同配置进入 `Tutorial_Mission01` 且无崩溃特征 | 已完成（2026-08-07） |
 | G3-P0 | FPS/帧时间 CSV 采样工具与固定场景基线 | 启动故障闭环后进入性能阶段 | 工具已完成，等待真机基线（2026-08-07） |
+| G3-P0-A | 首份空 CSV 证据、单按钮多绑定诊断、D-pad/屏幕键盘对照 | 首轮真机游玩出现触屏方向无反应 | 等待最小输入对照（2026-08-07） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
