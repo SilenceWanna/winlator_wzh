@@ -658,6 +658,7 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             envVars.putAll(overrideEnvVars);
             overrideEnvVars = null;
         }
+        installXkbCoreFallback(rootPath);
         String inputTraceChannels = "-all,+key,+keyboard,+input,+rawinput";
         envVars.put("WINEDEBUG", inputTraceChannels);
         ProcessHelper.addDebugCallback(this::captureWineInputTrace);
@@ -672,6 +673,24 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         audioDriver = null;
         audioDriverConfig = null;
         wincomponents = null;
+    }
+
+    private void installXkbCoreFallback(String rootPath) {
+        File fallbackLibrary = new File(rootPath, "/usr/lib/libwinlator-xkb-core.so");
+        FileUtils.copy(this, "guest/xkb-core-fallback-x86_64.so", fallbackLibrary);
+
+        boolean installed = fallbackLibrary.isFile() && fallbackLibrary.length() > 0;
+        xServer.inputEventLogger.log("xkb_core_fallback installed="+installed+
+                ",path="+fallbackLibrary.getPath()+",size="+fallbackLibrary.length());
+        if (!installed) {
+            throw new IllegalStateException("Unable to install the XKB core mapping fallback");
+        }
+
+        String existingPreload = envVars.get("BOX64_LD_PRELOAD");
+        String preload = fallbackLibrary.getPath();
+        if (!existingPreload.isEmpty()) preload += ":"+existingPreload;
+        envVars.put("BOX64_LD_PRELOAD", preload);
+        xServer.inputEventLogger.log("xkb_core_fallback preload=true,preserved="+!existingPreload.isEmpty());
     }
 
     private void captureWineInputTrace(String line) {

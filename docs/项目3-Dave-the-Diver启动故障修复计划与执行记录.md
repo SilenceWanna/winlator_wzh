@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；G3-P0-G 证明 Wine 收到 A 但错误映射为 scan `0x78`；G3-P0-H 修复 X11 键盘映射协议
+> 当前状态：Dave 启动故障已闭环；G3-P0-H 已证明核心键盘映射响应完整，但 Wine 因 XServer 未提供 XKB 仍把 A 分配为 scan `0x78`；G3-P0-I APK 已构建并等待真机验证
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -431,22 +431,31 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 5. [x] 新 APK 已归档为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-G-auto-wine-input-trace-a.apk`，大小 `206,823,485` bytes，SHA-256 `E1F327D14C1EE33B1B91FF6CF72F0892C770FFBFD9F7A88679345C95FC542883`。Java 编译、clean/增量构建成功，zipalign、V2 签名、dex 标记和 rootfs 哈希均通过验证。
 6. [x] 自动日志完整出现 `X11DRV_KeyEvent` 与 `X11DRV_send_keyboard_input`。两组 A 均转换为 `VK_A=0x41`，但 scan 为错误的 `0x78`；初始化日志明确显示 `assigning scancode 78 to unidentified keycode 38 (NoSymbol)`，根因转入 XServer 键盘映射响应。
 
-### G3-P0-H：修复 X11 `GetKeyboardMapping` 响应（工具完成，等待真机）
+### G3-P0-H：修复 X11 `GetKeyboardMapping` 响应（已完成，单独修复仍不足）
 
 1. [x] Wine 10.10 的 US 键盘表规定 A 的扫描码为 `0x1e`；G3-P0-G 实际得到 `0x78`，可解释依赖 scan code/DirectInput 的游戏不响应，而 `VK_A` 仍看似正确。
 2. [x] `KeyboardRequests.getKeyboardMapping()` 声明 `keysyms-per-keycode=2`，却只返回 `count` 个 keysym、reply length 也只写 `count`，并且非最小 keycode 请求的数组起点没有乘 2；`Keyboard.keysyms` 同样只按 keycode 数量分配，协议数据被截断。
 3. [x] backing array 已扩为 `(MAX_KEYCODE-MIN_KEYCODE+1) * KEYSYMS_PER_KEYCODE`；回复长度、起始索引和写入数量全部按 `KEYSYMS_PER_KEYCODE` 计算，保持现有 X keycode 编号和键位表不变，并校验非法请求范围。
 4. [x] 已保留 G3-P0-G 自动 Wine 跟踪与 `A` 双通道；新日志应直接验收 `keycode 38 converted to vkey 0x41 scan 1e`，不再把 `0x78` 当作可接受结果。
 5. [x] 新 APK 已归档为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-H-x11-keyboard-mapping-a.apk`，大小 `208,697,326` bytes，SHA-256 `43FC44152EFF0AF9347645AABD1B6BB55A44A0A7258BDD8F14D57CFBA4816A6E`。Java 编译、增量 `assembleDebug`、zipalign、V2 签名、dex 标记和 rootfs 哈希均通过验证。
-6. [ ] 若 scan 修正为 `0x1e` 后恢复输入，删除临时 WinHandler 单键直通和强制 Wine trace，形成通用键盘映射修复；若仍无效，再分析已正确扫描码之后的 Windows input/rawinput 消费。
+6. [x] 真机日志中 9 次 `keyboard_mapping_reply` 均为 `first=8,count=248,keysyms=496`，确认核心协议修复已经执行；两组 A 的 X11 与 WinHandler press/release 也均无丢弃。
+7. [x] Wine 仍把 4 个 A 事件转换为 `scan=0078`，初始化日志继续出现 `assigning scancode 78 to unidentified keycode 38 (NoSymbol)`。代码复核确认 Wine 的扫描码初始化使用 XKB API，而当前 Java XServer 没有注册 `XKEYBOARD` 扩展，因此核心映射正确仍不足以提供扫描码。
+
+### G3-P0-I：Box64 客体侧 XKB 核心映射兼容层（进行中）
+
+1. [x] 新增可复现构建的 x86_64 ELF 兼容库，只接管 Wine 初始化依赖的 `XkbKeycodeToKeysym` 与 `XkbTranslateKeySym`；按当前 XServer 的核心两级键盘映射返回 keysym，不改 Android 触控、X11 事件投递或 WinHandler 协议。
+2. [x] 将兼容库作为独立 APK asset，在每次 X 环境启动前复制到当前 rootfs，并通过 `BOX64_LD_PRELOAD` 仅注入 x86_64 客体进程；保留已有 preload 值，避免污染 Android ARM64 宿主进程。
+3. [x] 增加安装路径、文件大小和 preload 环境标记；继续保留 A 键 X11/WinHandler 双通道和自动 Wine trace，以便一次真机日志同时确认补丁执行与最终扫描码。
+4. [x] 完成 ELF 架构/导出符号验证、函数级测试、Java 编译、APK 构建、zipalign、V2 签名、dex 标记及 rootfs 哈希验证；生成新的唯一 APK，绝不覆盖 G3-P0-H 或更早构建。
+5. [ ] 真机验收以 `keycode 38 converted to vkey 0x41 scan 1e` 为首要条件，再判断星露谷中的 A 是否生效；只有扫描码正确后仍无响应，才继续 Windows input/rawinput 消费链路。
 
 ## 五、用户当前需要执行的步骤
 
-1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-H-x11-keyboard-mapping-a.apk`；它是新文件，没有覆盖任何历史 APK。
-2. 保持星露谷现有容器、快捷方式、图形驱动和触屏配置不变，进入此前相同的可移动场景；不要打开或操作 Active Windows。
+1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-I-xkb-core-fallback-a.apk`；它是新文件，没有覆盖任何历史 APK。
+2. 保持星露谷现有容器、快捷方式、图形驱动和触屏配置不变，只测试此前相同场景的 `A` 键；不要改 Wine/Box64 日志变量，也不要测试 `W/S/D`。
 3. 只按屏幕 D-pad 的左方向（绑定 `A`），按住约 1 至 2 秒后松开，重复 2 次；本轮不要测试 `W/S/D`，也不要用实体键盘补充输入。
 4. 记录结果属于“无法进入游戏”“进入后 `A` 有效”或“进入后 `A` 仍无效”中的哪一种，然后只导出最新 `input-events-*.log`。重点保留 `keyboard_mapping_reply`、`X11DRV_KeyEvent`、`keycode 38 converted` 和 `X11DRV_send_keyboard_input` 行。
-5. 测试后不要调整 Wine/Box64 日志变量；该 APK 会自动接管 Wine 输入跟踪，回收日志后再决定 G3-P0-H 的下一分支。
+5. 测试后只导出最新 `input-events-*.log`；该 APK 会自动记录兼容层安装标记、X11 A 事件和 Wine 输入跟踪。
 
 ## 六、进度记录
 
@@ -716,6 +725,21 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 新 APK `app-debug-project3-G3-P0-H-x11-keyboard-mapping-a.apk` 大小 `208,697,326` bytes，SHA-256 `43FC44152EFF0AF9347645AABD1B6BB55A44A0A7258BDD8F14D57CFBA4816A6E`；归档前确认目标不存在，未覆盖历史 APK。
 - 下一次真机只在星露谷相同场景按 D-pad 左方向 `A` 两次；验收首要条件是 Wine 日志出现 `keycode 38 converted to vkey 0x41 scan 1e`，随后再看游戏是否响应。
 
+### 2026-08-10：G3-P0-H 真机确认核心映射完整但 XKB 缺失
+
+- 真机日志 `input-events-20260810-151403-986.log` 已唯一归档为 `archive/runtime-logs/dave-the-diver/G3-P0-H-x11-keyboard-mapping-stardew-a-20260810.log`，大小 `268,990` bytes，SHA-256 `254ED3C6372A627CCC690EB85636A9D7E3F3B3B42A275DE5E9C7A90200391F83`。
+- 日志出现 9 次 `keyboard_mapping_reply first=8,count=248,keysyms=496`，证明 H 的数组容量、回复长度和数据数量修复均已在真机执行。两组 A 产生 4 个 X11 `KeyPress/KeyRelease`、4 个成功 WinHandler 包及 4 个 Wine `X11DRV_KeyEvent`，没有事件丢失。
+- 4 个 Wine 事件仍全部为 `vkey=0041 scan=0078`，没有 `scan=001e`；初始化仍报告 keycode 38 为 `NoSymbol` 并分配备用扫描码 `0x78`。原因是 Wine 扫描码布局通过 XKB API读取，而当前 XServer 未注册 `XKEYBOARD` 扩展。
+- G3-P0-I 采用 Box64 客体侧 XKB 到核心映射的窄兼容层，避免在 Java XServer 中一次性实现完整 XKB wire protocol；验收目标保持为 A 的标准扫描码 `0x1e`。
+
+### 2026-08-10：G3-P0-I 兼容层 APK 完成
+
+- 新增 `app/src/main/guest/xkb-core-fallback.c` 与构建脚本；独立函数级测试退出码为 `0`。生成库为 ELF64 x86-64、3024 bytes，导出 `XkbKeycodeToKeysym`、`XkbTranslateKeySym`，仅保留运行时所需的 `XKeycodeToKeysym` 未定义符号。
+- 启动流程每次将 asset 复制为 rootfs `/usr/lib/libwinlator-xkb-core.so`，并写入 `BOX64_LD_PRELOAD`；日志会记录 `xkb_core_fallback installed` 与 `preload` 标记，未设置宿主 `LD_PRELOAD`。
+- 新 APK `app-debug-project3-G3-P0-I-xkb-core-fallback-a.apk` 大小 `208,697,640` bytes，SHA-256 `C6EE05454DF4A48DC77CBCAC0E245E0A19DF8A73A4959A7B5EF994AAC55357F0`；目标归档前不存在，未覆盖 G3-P0-H 或更早 APK。
+- APK v2 签名和 zipalign 通过；asset `xkb-core-fallback-x86_64.so` SHA-256 `B2D9ECB6CB0F05895C59FACCB195BE1641029A185C9371CFC1B666F955D83F4E`，rootfs 与 patches 哈希仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`、`70C25EDCBAFB71D7D3855FAF39E582ED5C6709F3AFCFB2F21C675D5FEB65E02C`。
+- H 真机日志已唯一归档为 `archive/runtime-logs/dave-the-diver/G3-P0-H-x11-keyboard-mapping-stardew-a-20260810.log`，大小 `268,990` bytes，SHA-256 `254ED3C6372A627CCC690EB85636A9D7E3F3B3B42A275DE5E9C7A90200391F83`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -749,7 +773,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G3-P0-E | 标准 X11 `FocusIn/FocusOut`、焦点日志、唯一 APK 与真机对照 | Java 侧焦点变化从未通知 Wine X11 客户端 | 已完成，通知生成且被订阅但输入仍无效（2026-08-10） |
 | G3-P0-F | 改测 `A`、Wine `event/key/input/rawinput` 跟踪、唯一 APK | Android/XServer 事件完整，Wine 消费状态未知 | 已完成，A 双通道仍无效且 guest 输出被丢弃（2026-08-10） |
 | G3-P0-G | 自动捕获 Wine 键盘/input/rawinput 输出、唯一 APK | G3-P0-F 未获得 Wine 消费层日志 | 已完成，定位 A 被映射为错误 scan `0x78`（2026-08-10） |
-| G3-P0-H | 修复 `GetKeyboardMapping` 长度/索引/容量、唯一 APK | Wine 收到 A 但使用错误 scan `0x78` | 工具已完成，等待真机 `A` 对照（2026-08-10） |
+| G3-P0-H | 修复 `GetKeyboardMapping` 长度/索引/容量、唯一 APK | Wine 收到 A 但使用错误 scan `0x78` | 已完成，核心映射完整但 XKB 仍返回 `NoSymbol`（2026-08-10） |
+| G3-P0-I | x86_64 XKB 核心映射兼容层、Box64 注入、唯一 APK | H 真机仍把 A 分配为备用 scan `0x78` | 已完成工具验证，等待真机 `A` 对照（2026-08-10） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
