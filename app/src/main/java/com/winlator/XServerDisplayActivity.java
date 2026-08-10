@@ -412,9 +412,10 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
     @Override
     protected void onDestroy() {
         if (frameRating != null) frameRating.close();
-        if (xServer != null) xServer.inputEventLogger.close();
         winHandler.stop();
         if (environment != null) environment.stopEnvironmentComponents();
+        ProcessHelper.removeAllDebugCallbacks();
+        if (xServer != null) xServer.inputEventLogger.close();
         super.onDestroy();
     }
 
@@ -657,9 +658,10 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             envVars.putAll(overrideEnvVars);
             overrideEnvVars = null;
         }
-        String inputTraceChannels = "-all,+event,+key,+keyboard,+input,+rawinput";
+        String inputTraceChannels = "-all,+key,+keyboard,+input,+rawinput";
         envVars.put("WINEDEBUG", inputTraceChannels);
-        xServer.inputEventLogger.log("wine_debug_override value="+inputTraceChannels);
+        ProcessHelper.addDebugCallback(this::captureWineInputTrace);
+        xServer.inputEventLogger.log("wine_trace_capture enabled=true,channels="+inputTraceChannels);
         environment.startEnvironmentComponents();
 
         winHandler.start();
@@ -670,6 +672,18 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         audioDriver = null;
         audioDriverConfig = null;
         wincomponents = null;
+    }
+
+    private void captureWineInputTrace(String line) {
+        if (xServer == null || line == null) return;
+        if (!line.contains(":key:") &&
+            !line.contains(":keyboard:") &&
+            !line.contains(":input:") &&
+            !line.contains(":rawinput:")) return;
+
+        String content = line.replace('\r', ' ').replace('\n', ' ');
+        if (content.length() > 2048) content = content.substring(0, 2048);
+        xServer.inputEventLogger.log("wine_trace "+content);
     }
 
     private void setupUI() {
