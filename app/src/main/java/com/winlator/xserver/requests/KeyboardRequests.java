@@ -8,28 +8,33 @@ import com.winlator.xconnector.XOutputStream;
 import com.winlator.xconnector.XStreamLock;
 import com.winlator.xserver.Keyboard;
 import com.winlator.xserver.XClient;
+import com.winlator.xserver.errors.BadValue;
 import com.winlator.xserver.errors.XRequestError;
 
 import java.io.IOException;
 
 public abstract class KeyboardRequests {
     public static void getKeyboardMapping(XClient client, XInputStream inputStream, XOutputStream outputStream) throws IOException, XRequestError {
-        byte firstKeycode = inputStream.readByte();
+        int firstKeycode = inputStream.readUnsignedByte();
         int count = inputStream.readUnsignedByte();
         inputStream.skip(2);
+        if (firstKeycode < Keyboard.MIN_KEYCODE || count == 0 || firstKeycode + count - 1 > Keyboard.MAX_KEYCODE) {
+            throw new BadValue(firstKeycode);
+        }
+
+        int keysymCount = count * KEYSYMS_PER_KEYCODE;
+        int firstKeysym = (firstKeycode - Keyboard.MIN_KEYCODE) * KEYSYMS_PER_KEYCODE;
+        client.xServer.inputEventLogger.log("keyboard_mapping_reply first="+firstKeycode+",count="+count+",keysyms="+keysymCount);
 
         try (XStreamLock lock = outputStream.lock()) {
             outputStream.writeByte(RESPONSE_CODE_SUCCESS);
             outputStream.writeByte(KEYSYMS_PER_KEYCODE);
             outputStream.writeShort(client.getSequenceNumber());
-            outputStream.writeInt(count);
+            outputStream.writeInt(keysymCount);
             outputStream.writePad(24);
 
-            int i = firstKeycode - Keyboard.MIN_KEYCODE;
-            while (count != 0) {
-                outputStream.writeInt(client.xServer.keyboard.keysyms[i]);
-                count--;
-                i++;
+            for (int i = 0; i < keysymCount; i++) {
+                outputStream.writeInt(client.xServer.keyboard.keysyms[firstKeysym+i]);
             }
         }
     }
