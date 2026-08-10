@@ -13,6 +13,9 @@ import com.winlator.xserver.events.ConfigureRequest;
 import com.winlator.xserver.events.DestroyNotify;
 import com.winlator.xserver.events.Event;
 import com.winlator.xserver.events.Expose;
+import com.winlator.xserver.events.FocusIn;
+import com.winlator.xserver.events.FocusNotify;
+import com.winlator.xserver.events.FocusOut;
 import com.winlator.xserver.events.MapNotify;
 import com.winlator.xserver.events.MapRequest;
 import com.winlator.xserver.events.ResizeRequest;
@@ -44,6 +47,8 @@ public class WindowManager extends XResourceManager {
         default void onUpdateWindowAttributes(Window window, Bitmask mask) {}
 
         default void onModifyWindowProperty(Window window, Property property) {}
+
+        default void onFocusChange(Window previousWindow, Window focusedWindow, FocusNotify.Detail focusOutDetail, FocusNotify.Detail focusInDetail, boolean focusOutSelected, boolean focusInSelected) {}
     }
 
     public WindowManager(ScreenInfo screenInfo, DrawableManager drawableManager) {
@@ -133,22 +138,53 @@ public class WindowManager extends XResourceManager {
     }
 
     public void revertFocus() {
+        Window revertedFocus = focusedWindow;
         switch (focusRevertTo) {
             case NONE:
-                focusedWindow = null;
+                revertedFocus = null;
                 break;
             case POINTER_ROOT:
-                focusedWindow = rootWindow;
+                revertedFocus = rootWindow;
                 break;
             case PARENT:
-                if (focusedWindow.getParent() != null) focusedWindow = focusedWindow.getParent();
+                if (focusedWindow != null && focusedWindow.getParent() != null) revertedFocus = focusedWindow.getParent();
                 break;
         }
+        setFocus(revertedFocus, focusRevertTo);
     }
 
     public void setFocus(Window focusedWindow, FocusRevertTo focusRevertTo) {
+        Window previousWindow = this.focusedWindow;
         this.focusedWindow = focusedWindow;
         this.focusRevertTo = focusRevertTo;
+        if (previousWindow == focusedWindow) return;
+
+        FocusNotify.Detail focusOutDetail = getFocusOutDetail(previousWindow, focusedWindow);
+        FocusNotify.Detail focusInDetail = getFocusInDetail(previousWindow, focusedWindow);
+        boolean focusOutSelected = previousWindow != null && previousWindow.hasEventListenerFor(Event.FOCUS_CHANGE);
+        boolean focusInSelected = focusedWindow != null && focusedWindow.hasEventListenerFor(Event.FOCUS_CHANGE);
+
+        if (previousWindow != null) {
+            previousWindow.sendEvent(Event.FOCUS_CHANGE, new FocusOut(focusOutDetail, previousWindow, FocusNotify.Mode.NORMAL));
+        }
+        if (focusedWindow != null) {
+            focusedWindow.sendEvent(Event.FOCUS_CHANGE, new FocusIn(focusInDetail, focusedWindow, FocusNotify.Mode.NORMAL));
+        }
+        triggerOnFocusChange(previousWindow, focusedWindow, focusOutDetail, focusInDetail, focusOutSelected, focusInSelected);
+    }
+
+    private static FocusNotify.Detail getFocusOutDetail(Window previousWindow, Window focusedWindow) {
+        if (previousWindow == null || focusedWindow == null) return FocusNotify.Detail.NONE;
+        if (previousWindow.isAncestorOf(focusedWindow)) return FocusNotify.Detail.INFERIOR;
+        if (focusedWindow.isAncestorOf(previousWindow)) return FocusNotify.Detail.ANCESTOR;
+        return FocusNotify.Detail.NONLINEAR;
+    }
+
+    private static FocusNotify.Detail getFocusInDetail(Window previousWindow, Window focusedWindow) {
+        if (previousWindow == null || focusedWindow == null) return FocusNotify.Detail.NONE;
+        if (previousWindow.isAncestorOf(focusedWindow)) return FocusNotify.Detail.ANCESTOR;
+        if (focusedWindow.isAncestorOf(previousWindow)) return FocusNotify.Detail.INFERIOR;
+        return FocusNotify.Detail.NONLINEAR;
     }
 
     public FocusRevertTo getFocusRevertTo() {
@@ -359,6 +395,12 @@ public class WindowManager extends XResourceManager {
     public void triggerOnModifyWindowProperty(Window window, Property property) {
         for (int i = onWindowModificationListeners.size()-1; i >= 0; i--) {
             onWindowModificationListeners.get(i).onModifyWindowProperty(window, property);
+        }
+    }
+
+    private void triggerOnFocusChange(Window previousWindow, Window focusedWindow, FocusNotify.Detail focusOutDetail, FocusNotify.Detail focusInDetail, boolean focusOutSelected, boolean focusInSelected) {
+        for (int i = onWindowModificationListeners.size()-1; i >= 0; i--) {
+            onWindowModificationListeners.get(i).onFocusChange(previousWindow, focusedWindow, focusOutDetail, focusInDetail, focusOutSelected, focusInSelected);
         }
     }
 }

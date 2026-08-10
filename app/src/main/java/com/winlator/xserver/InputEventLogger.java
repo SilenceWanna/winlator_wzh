@@ -73,7 +73,8 @@ public final class InputEventLogger {
                ",surface="+window.isSurface()+
                ",application="+window.isApplicationWindow()+
                ",keyPress="+window.hasEventListenerFor(com.winlator.xserver.events.Event.KEY_PRESS)+
-               ",keyRelease="+window.hasEventListenerFor(com.winlator.xserver.events.Event.KEY_RELEASE);
+               ",keyRelease="+window.hasEventListenerFor(com.winlator.xserver.events.Event.KEY_RELEASE)+
+               ",focusChange="+window.hasEventListenerFor(com.winlator.xserver.events.Event.FOCUS_CHANGE);
     }
 
     private static String sanitize(String value) {

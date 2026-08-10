@@ -3,6 +3,7 @@ package com.winlator.xserver;
 import androidx.collection.ArrayMap;
 
 import com.winlator.winhandler.WinHandler;
+import com.winlator.xserver.events.FocusNotify;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -24,6 +25,11 @@ public abstract class DesktopHelper {
                 xServer.inputEventLogger.log("window_map "+InputEventLogger.describeWindow(window)+",focus_before={"+InputEventLogger.describeWindow(xServer.windowManager.getFocusedWindow())+"}");
                 setFocusedWindow(xServer, window);
                 xServer.inputEventLogger.log("window_map_result id="+window.id+",focus_after={"+InputEventLogger.describeWindow(xServer.windowManager.getFocusedWindow())+"}");
+            }
+
+            @Override
+            public void onFocusChange(Window previousWindow, Window focusedWindow, FocusNotify.Detail focusOutDetail, FocusNotify.Detail focusInDetail, boolean focusOutSelected, boolean focusInSelected) {
+                xServer.inputEventLogger.log("focus_notify previous={"+InputEventLogger.describeWindow(previousWindow)+"},focused={"+InputEventLogger.describeWindow(focusedWindow)+"},outDetail="+focusOutDetail+",inDetail="+focusInDetail+",outSelected="+focusOutSelected+",inSelected="+focusInSelected);
             }
         });
     }
