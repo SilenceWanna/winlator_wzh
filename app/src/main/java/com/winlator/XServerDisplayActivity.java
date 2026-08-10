@@ -657,6 +657,9 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             envVars.putAll(overrideEnvVars);
             overrideEnvVars = null;
         }
+        String inputTraceChannels = "-all,+event,+key,+keyboard,+input,+rawinput";
+        envVars.put("WINEDEBUG", inputTraceChannels);
+        xServer.inputEventLogger.log("wine_debug_override value="+inputTraceChannels);
         environment.startEnvironmentComponents();
 
         winHandler.start();

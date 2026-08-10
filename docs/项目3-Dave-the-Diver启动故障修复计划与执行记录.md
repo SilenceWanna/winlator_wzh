@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；G3-P0-E 的 X11 `FocusIn/FocusOut` 修复 APK 已完成，等待星露谷真机对照
+> 当前状态：Dave 启动故障已闭环；G3-P0-E 焦点通知仍未恢复输入；G3-P0-F `A` 键 Wine 消费层跟踪 APK 已完成，等待真机日志
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -402,7 +402,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 6. [x] Java 编译与 clean 构建完成，随后增量 `:app:assembleDebug` 明确返回 `BUILD SUCCESSFUL`；zipalign 通过，V2 签名有效且 signer=1。APK 内 `rootfs.tzst` 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`，`rootfs_patches.tzst` 仍为 `70C25EDCBAFB71D7D3855FAF39E582ED5C6709F3AFCFB2F21C675D5FEB65E02C`。
 7. [x] 星露谷真机 `W` 仍无效。日志在 `2864 ms` 收到 WinHandler 握手，共记录 27 组去重后的 `W` press/release、54 次 `winhandler_keyboard_queued` 和 54 次 `winhandler_keyboard_packet sent=true`，丢弃计数为 0；同一批 27 组 X11 `KeyPress/KeyRelease` 也全部发送。根因已越过 Android 输入、X11 core event 发送和 WinHandler UDP 发送，继续扩展虚拟键映射没有依据。
 
-### G3-P0-E：X11 焦点通知修复（工具已完成，等待真机结果）
+### G3-P0-E：X11 焦点通知修复（已完成，单独修复仍无效）
 
 1. [x] 本项目 `WindowManager.setFocus()` 仅修改 Java 侧 `focusedWindow`，`revertFocus()` 也只替换字段；事件目录没有 X11 事件码 9/10 的 `FocusIn/FocusOut` 实现。现有日志中的 X11 “焦点正常”只能证明服务端内部目标正确，不能证明 Wine 收到焦点切换。
 2. [x] Wine 10.10 `winex11.drv/event.c` 明确注册 `FocusIn`/`FocusOut` 处理器；`X11DRV_FocusIn()` 在正常模式下调用 `NtUserSetForegroundWindow(hwnd)`。因此缺少 X11 焦点通知可以同时解释：core `KeyPress` 已送达 Wine 的 X11 窗口，但 Wine 内部前台/键盘状态未切换；`winhandler.exe` 的 `keybd_event` 也投递不到游戏。
@@ -411,16 +411,24 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 5. [x] 输入日志增加每个窗口的 `focusChange` 订阅状态，并记录 `focus_notify` 的旧/新窗口、out/in detail 以及两端是否订阅，真机可直接判断 Wine 是否接收该类事件。
 6. [x] Java 编译、clean 构建和增量 `:app:assembleDebug` 已完成，增量构建明确返回 `BUILD SUCCESSFUL`。编译字节码及最终 `classes.dex` 均包含事件码 `9/10`、23-byte padding、`FocusIn/FocusOut` 和 `focus_notify` 标记。
 7. [x] 唯一 APK 已归档为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-E-x11-focus-notify.apk`，大小 `206,823,469` bytes，SHA-256 `6180E52628596C9BB407ECE44DB1E7AB0F0BAD246EB2E95DB574791AEE4F44E2`。zipalign 通过，V2 签名有效且 signer=1；APK 内 rootfs 与 rootfs patch 哈希均未变化。
-8. [ ] 首轮保留 G3-P0-D 的 `W` 双通道作为对照，只测试星露谷 `W`。若有效，再移除 WinHandler 键盘直通，验证最终最小修复是否只需标准 X11 焦点事件。
+8. [x] 星露谷真机 `W` 仍无效。游戏窗口明确为 `focusChange=true`，从 explorer 切换到游戏时生成 `FocusOut(INFERIOR)` / `FocusIn(ANCESTOR)` 且 `outSelected/inSelected` 均为 true；两组 `W` 的 X11 press/release 和 4 个 WinHandler 包也全部发送。该结果证明事件生成与订阅成立，但不能证明 Wine 处理器实际消费了事件。
+
+### G3-P0-F：`A` 键 Wine 消费层跟踪（工具完成，等待真机）
+
+1. [x] 按用户要求，从本节点起方向输入对照统一改为 `A`，不再要求测试 `W`；Android/X11 keycode 为 `38`，Windows vkey 为 `VK_A=0x41`。
+2. [x] Wine 10.10 `X11DRV_KeyEvent()` 会依次执行 X keycode → keysym/vkey/scan code 转换、`update_lock_state()` 和 `X11DRV_send_keyboard_input()`。现有 `input-events` 只能证明事件写入 Wine 的 X11 socket，无法证明上述转换是否成功。
+3. [x] 已把 G3-P0-D 的单键 WinHandler 直通从 `KEY_W/VK_W` 改为 `KEY_A/VK_A`，仍在键盘去重后发送；其他按键没有增加直通。
+4. [x] 已在容器和快捷方式环境变量合并后强制 `WINEDEBUG=-all,+event,+key,+keyboard,+input,+rawinput`，并在输入日志写入 `wine_debug_override`，无需再手工录入容易触发 `invalid name` 的执行参数。
+5. [x] 唯一 APK 已归档为 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-F-vk-a-wine-input-trace.apk`，大小 `206,823,569` bytes，SHA-256 `E6040A50185919301262911D27D3425A415E10DE7D1DC87AB649DDA1F2C031DA`。clean/增量构建成功，zipalign、V2 签名、dex 标记和 rootfs 哈希均通过验证。
+6. [ ] 若 Wine 日志没有 `X11DRV_KeyEvent`，继续修复 X event 投递/唤醒；若能转换出 `VK_A/scan 1e` 但游戏无响应，转查 `NtUserSendInput`、RawInput 注册或 Windows 前台线程，不再修改 X keymap。
 
 ## 五、用户当前需要执行的步骤
 
-1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-E-x11-focus-notify.apk`。这是新的磁盘归档文件，未覆盖任何历史 APK；Android 会按同包名升级当前 Winlator，以保留容器。
-2. 保持原星露谷容器、图形设置和触屏配置不变，正常启动并进入之前的可操作场景；不要打开“活动窗口”。
-3. 只按 D-pad 上方向（绑定 `W`）1–2 秒，观察角色是否移动。不要用 `A/S/D` 判断，本轮仍只给 `W` 保留 WinHandler 直通。
-4. 反馈三种结果之一：“无法正常进入游戏”“进入游戏且 W 有效”“进入游戏但 W 仍无效”。
-5. 无论结果如何，都导出本次最新的 `Documents\Winlator\input\input-events-*.log`；目标日志应包含 `focus_notify` 和 `winhandler_init_received`。若有多份，只导出时间最新的一份。
-6. 本轮不测试 Dave、不执行 180 秒性能采样，也不更改 Wine、Box64、图形驱动、容器或触屏配置。
+1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-F-vk-a-wine-input-trace.apk`；它是新文件，没有覆盖任何历史 APK。
+2. 保持星露谷现有容器、快捷方式、图形驱动和触屏配置不变，进入此前相同的可移动场景；不要打开或操作 Active Windows。
+3. 只按屏幕 D-pad 的左方向（绑定 `A`），按住约 1 至 2 秒后松开，重复 2 次；本轮不要测试 `W/S/D`，也不要用实体键盘补充输入。
+4. 记录结果属于“无法进入游戏”“进入后 `A` 有效”或“进入后 `A` 仍无效”中的哪一种，然后导出最新 `input-events-*.log` 和 Winlator 日志。输入日志应包含 `wine_debug_override`、`KEY_A`/`keycode=38` 与 `winhandler_*`；Winlator/Wine 日志用于搜索 `X11DRV_KeyEvent`、vkey/scan code、input/rawinput 路径。
+5. 测试后不要调整 Wine 调试变量；该 APK 会自动覆盖为本轮诊断值，回收两份日志后再决定 G3-P0-F 的下一分支。
 
 ## 六、进度记录
 
@@ -649,6 +657,21 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - Java 编译、clean/增量 APK 构建、zipalign、V2 签名、字节码及最终 dex 检查均通过。APK 内 `rootfs.tzst` 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`，`rootfs_patches.tzst` 仍为 `70C25EDCBAFB71D7D3855FAF39E582ED5C6709F3AFCFB2F21C675D5FEB65E02C`。
 - 新 APK `app-debug-project3-G3-P0-E-x11-focus-notify.apk` 大小 `206,823,469` bytes，SHA-256 `6180E52628596C9BB407ECE44DB1E7AB0F0BAD246EB2E95DB574791AEE4F44E2`；归档前确认目标不存在，未覆盖历史 APK。
 
+### 2026-08-10：G3-P0-E 真机仍无效，下一轮改测 `A`
+
+- 日志已唯一归档为 `G3-P0-E-x11-focus-notify-stardew-20260810.log`，大小 `58,576` bytes，SHA-256 `B8E2746031D58C78260EA066E1D54187336DE605CE2C4C2151602D4989005E56`。
+- explorer 与星露谷窗口均订阅 `FOCUS_CHANGE`；星露谷映射时生成旧窗口 `FocusOut(INFERIOR)` 和游戏 `FocusIn(ANCESTOR)`，两端 `Selected` 都为 true。两组 `W` X11 press/release 及 4 个 WinHandler UDP 包也全部发送，但游戏仍无响应。
+- 结论收窄为“Android/XServer 已生成全部预期事件，但 Wine/game 是否消费未知”。G3-P0-F 将临时启用 Wine 键盘相关 trace，观察 `X11DRV_KeyEvent` 到 Windows input/rawinput 的链路。
+- 用户要求后续测试改为 `A`；代码直通、文档步骤、日志检索条件和验收口径从本节点起全部同步改为 `KEY_A/VK_A`。
+
+### 2026-08-10：G3-P0-F `A` 键 Wine 消费层跟踪 APK 完成
+
+- 单键 WinHandler 诊断直通已从 `KEY_W/VK_W` 改为 `KEY_A/VK_A`；X11 core event 原路径保持不变，因此可继续核对两条通道。
+- 运行环境最终合并点强制写入 `WINEDEBUG=-all,+event,+key,+keyboard,+input,+rawinput`，输入日志同步写入 `wine_debug_override`，避免再次依赖手工执行参数。
+- Java 编译、clean/增量 APK 构建、zipalign、V2 签名和最终 dex 检查均通过。APK 内 `rootfs.tzst` 仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`，`rootfs_patches.tzst` 仍为 `70C25EDCBAFB71D7D3855FAF39E582ED5C6709F3AFCFB2F21C675D5FEB65E02C`。
+- 新 APK `app-debug-project3-G3-P0-F-vk-a-wine-input-trace.apk` 大小 `206,823,569` bytes，SHA-256 `E6040A50185919301262911D27D3425A415E10DE7D1DC87AB649DDA1F2C031DA`；归档前确认目标不存在，未覆盖历史 APK。
+- 下一次真机测试只在星露谷相同场景按 D-pad 左方向 `A`，并同时回收最新 `input-events` 与 Winlator/Wine 日志；不再测试 `W`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -679,7 +702,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G3-P0-B | X11 键盘事件全链跟踪、唯一诊断 APK、两份真机日志 | Dave/星露谷两款游戏的 D-pad/屏幕键盘均无效 | 已完成，X11 事件已发送且无丢弃（2026-08-07） |
 | G3-P0-C | 活动窗口手动 `bringToFront()` 单变量对照 | WineD3D application window 的 `surface=false` 绕过自动前台同步 | 已完成，手动前台化仍无效（2026-08-07） |
 | G3-P0-D | WinHandler 键盘协议核对、`VK_W` 双通道诊断 APK 与真机对照 | X11 core event 已发送但两款游戏均不响应 | 已完成，54 个直通包发送成功但仍无效（2026-08-10） |
-| G3-P0-E | 标准 X11 `FocusIn/FocusOut`、焦点日志、唯一 APK 与真机对照 | Java 侧焦点变化从未通知 Wine X11 客户端 | 工具已完成，等待真机结果（2026-08-10） |
+| G3-P0-E | 标准 X11 `FocusIn/FocusOut`、焦点日志、唯一 APK 与真机对照 | Java 侧焦点变化从未通知 Wine X11 客户端 | 已完成，通知生成且被订阅但输入仍无效（2026-08-10） |
+| G3-P0-F | 改测 `A`、Wine `event/key/input/rawinput` 跟踪、唯一 APK | Android/XServer 事件完整，Wine 消费状态未知 | 工具已完成，等待真机 `A` 对照（2026-08-10） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。

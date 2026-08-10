@@ -101,7 +101,7 @@ public class Keyboard {
     }
 
     private void sendWinHandlerKeyboardEvent(byte keycode, boolean isKeyUp) {
-        if (keycode != XKeycode.KEY_W.id) return;
+        if (keycode != XKeycode.KEY_A.id) return;
 
         WinHandler winHandler = xServer.getWinHandler();
         if (winHandler == null) {
@@ -110,7 +110,7 @@ public class Keyboard {
         }
 
         int flags = isKeyUp ? WinHandler.KEYEVENTF_KEYUP : 0;
-        winHandler.keyboardEvent((byte)0x57, flags);
+        winHandler.keyboardEvent((byte)0x41, flags);
     }
 
     public boolean onKeyEvent(KeyEvent event) {
