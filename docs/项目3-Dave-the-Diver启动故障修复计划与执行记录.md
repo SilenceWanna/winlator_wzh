@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；当前开始 T1-DUCKOV-A
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；T1-DUCKOV-A 已确认 DXVK 黑屏，当前执行 T1-DUCKOV-B WineD3D 对照
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -469,8 +469,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 ## 五、用户当前需要执行的步骤
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
-2. 按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”新建 Duckov 独立容器并执行 T1-DUCKOV-A。
-3. 本轮不要同时测试 Palworld，也不要更改 Dave 成功容器；Duckov 结果归档后再决定是否做 WineD3D 单变量对照。
+2. 按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”复用 Duckov A 轮容器并执行 T1-DUCKOV-B。
+3. 本轮只把 DX wrapper 改为 WineD3D，并用无引号的相对 `-logFile` 参数收集 Unity 日志；不要同时测试 Palworld，也不要更改 Dave 成功容器。
 
 ## 六、进度记录
 
@@ -778,6 +778,13 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 同轮 CSV 归档为 `archive/runtime-logs/dave-the-diver/G3-P2-hud-touch-pass-through-open-sampling-20260811.csv`，大小 `1,074` bytes，SHA-256 `4DC3D2A1561C9B28BADB7789979ABB5EEAC373503870B63E69EC73066DF212F9`。它已选中非 surface 的 Dave 窗口，证明 G3-P1 窗口识别生效；但约 15 分钟会话仅记录两条 Dave 更新，且容器未销毁时导出导致无 `session_end`。该文件不能作为性能基线，后续需把采样目标继续下沉到实际更新的 renderable 子窗口，并让手动重置标记立即 flush。
 - G3-P2 的兼容性目标已完成。长按无振动仅保留为采样器交互反馈问题；当前暂停 G3 性能工具修正，按用户优先级进入项目3任务1的 Duckov 覆盖。
 
+### 2026-08-11：T1-DUCKOV-A DXVK 黑屏归档
+
+- Duckov 独立容器 ID 8 已完整执行 rootfs、图形、音频和 X 环境启动阶段，随后启动 `Duckov.exe` 并识别 `UnityPlayer.dll`；Steam API、FMOD、ALSA 与 Wine Vulkan 模块均已加载。用户可见结果仍为黑屏。
+- 约 75 秒的 Winlator 日志没有访问异常、SIGSEGV、Unhandled exception、X 连接断开或显式进程退出，也没有 DXVK 建立设备或交换链的可辨认证据，因此分类为 `FAIL-BLACK`，不归为容器启动失败或闪退。
+- 两份原始日志已使用唯一名称归档到 `archive/runtime-logs/duckov/`。主日志大小 `60,808` bytes、SHA-256 `DCC3727774199B6CC1A2652825EF14329FA474C99586A639CC56CF893B28BC38`；启动日志大小 `1,321` bytes、SHA-256 `84E2102A921A5FCEC9941303B5FA19B744480395FEAFCE7B3A08CB17C8B6E022`。
+- 下一步复用同一容器，仅将 DXVK 3.0.2 切换为 WineD3D；另加相对 Unity `-logFile` 参数以获得引擎日志。如果 B 轮结果变化，后续用相同日志参数补做 DXVK 对照，避免把观测参数误判为修复变量。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -815,6 +822,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G3-P0-I | x86_64 XKB 核心映射兼容层、Box64 注入、唯一 APK | H 真机仍把 A 分配为备用 scan `0x78` | 已完成，星露谷和 Dave 输入均有效（2026-08-11） |
 | G3-P1 | WineD3D 非 surface 采样、移除输入诊断开销、唯一基线 APK | I 已闭环输入，旧性能 CSV 因未选中窗口为空 | 窗口选中已生效，但实际帧更新目标仍需修正；任务1后继续（2026-08-11） |
 | G3-P2 | HUD 长按命中范围收缩到 FPS 面板、恢复触摸板事件下传、唯一 APK | G3-P1 根 HUD 全屏 long-clickable 导致鼠标无法移动 | 已完成，鼠标与按键真机回归通过（2026-08-11） |
+| T1-DUCKOV-A | Duckov DXVK 黑屏日志归档、失败分类与 WineD3D 对照计划 | G3-P2 输入门槛通过后首轮新游戏覆盖 | 已完成，`FAIL-BLACK`，进入 B 轮（2026-08-11） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
