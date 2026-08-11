@@ -7,7 +7,6 @@ import androidx.collection.ArraySet;
 import com.winlator.core.AppUtils;
 import com.winlator.core.Bitmask;
 import com.winlator.inputcontrols.ExternalController;
-import com.winlator.winhandler.WinHandler;
 
 import java.util.ArrayList;
 
@@ -90,27 +89,12 @@ public class Keyboard {
         for (int i = onKeyboardListeners.size()-1; i >= 0; i--) {
             onKeyboardListeners.get(i).onKeyPress(keycode, keysym);
         }
-        sendWinHandlerKeyboardEvent(keycode, false);
     }
 
     private void triggerOnKeyRelease(byte keycode) {
         for (int i = onKeyboardListeners.size()-1; i >= 0; i--) {
             onKeyboardListeners.get(i).onKeyRelease(keycode);
         }
-        sendWinHandlerKeyboardEvent(keycode, true);
-    }
-
-    private void sendWinHandlerKeyboardEvent(byte keycode, boolean isKeyUp) {
-        if (keycode != XKeycode.KEY_A.id) return;
-
-        WinHandler winHandler = xServer.getWinHandler();
-        if (winHandler == null) {
-            xServer.inputEventLogger.log("winhandler_keyboard_drop reason=no_handler,keycode="+(keycode & 0xff));
-            return;
-        }
-
-        int flags = isKeyUp ? WinHandler.KEYEVENTF_KEYUP : 0;
-        winHandler.keyboardEvent((byte)0x41, flags);
     }
 
     public boolean onKeyEvent(KeyEvent event) {

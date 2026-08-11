@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动故障已闭环；G3-P0-H 已证明核心键盘映射响应完整，但 Wine 因 XServer 未提供 XKB 仍把 A 分配为 scan `0x78`；G3-P0-I APK 已构建并等待真机验证
+> 当前状态：Dave 启动与键盘输入故障均已闭环；G3-P0-I 已在星露谷和 Dave 真机验证标准扫描码及实际输入有效；G3-P1 APK 已构建并等待性能基线采样
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -441,21 +441,31 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 6. [x] 真机日志中 9 次 `keyboard_mapping_reply` 均为 `first=8,count=248,keysyms=496`，确认核心协议修复已经执行；两组 A 的 X11 与 WinHandler press/release 也均无丢弃。
 7. [x] Wine 仍把 4 个 A 事件转换为 `scan=0078`，初始化日志继续出现 `assigning scancode 78 to unidentified keycode 38 (NoSymbol)`。代码复核确认 Wine 的扫描码初始化使用 XKB API，而当前 Java XServer 没有注册 `XKEYBOARD` 扩展，因此核心映射正确仍不足以提供扫描码。
 
-### G3-P0-I：Box64 客体侧 XKB 核心映射兼容层（进行中）
+### G3-P0-I：Box64 客体侧 XKB 核心映射兼容层（已完成）
 
 1. [x] 新增可复现构建的 x86_64 ELF 兼容库，只接管 Wine 初始化依赖的 `XkbKeycodeToKeysym` 与 `XkbTranslateKeySym`；按当前 XServer 的核心两级键盘映射返回 keysym，不改 Android 触控、X11 事件投递或 WinHandler 协议。
 2. [x] 将兼容库作为独立 APK asset，在每次 X 环境启动前复制到当前 rootfs，并通过 `BOX64_LD_PRELOAD` 仅注入 x86_64 客体进程；保留已有 preload 值，避免污染 Android ARM64 宿主进程。
 3. [x] 增加安装路径、文件大小和 preload 环境标记；继续保留 A 键 X11/WinHandler 双通道和自动 Wine trace，以便一次真机日志同时确认补丁执行与最终扫描码。
 4. [x] 完成 ELF 架构/导出符号验证、函数级测试、Java 编译、APK 构建、zipalign、V2 签名、dex 标记及 rootfs 哈希验证；生成新的唯一 APK，绝不覆盖 G3-P0-H 或更早构建。
-5. [ ] 真机验收以 `keycode 38 converted to vkey 0x41 scan 1e` 为首要条件，再判断星露谷中的 A 是否生效；只有扫描码正确后仍无响应，才继续 Windows input/rawinput 消费链路。
+5. [x] 星露谷真机日志中 A 共 16 个 press/release 事件全部为 `vkey 0x41 scan 1e`，错误 `scan 0x78` 为 0；用户确认输入有效。Dave 对照中 D/S 为标准 `scan 20/1f`，游戏随后持续读取 Raw Input，用户同样确认实际操作有效。
+
+### G3-P1：WineD3D 性能采样修复与低扰动基线 APK（进行中）
+
+1. [x] 复核首次空 CSV 与两份成功输入日志：WineD3D 的星露谷、Dave 应用窗口和子窗口全部 `surface=false`；旧采样入口只接受 surface 窗口，因此从未设置 `frameRatingWindowId`，不是游戏没有渲染帧。
+2. [x] 扩展性能窗口选择：继续优先真正的 surface 窗口/子窗口；不存在 surface 时，选择尺寸达到屏幕门槛且 `isApplicationWindow()` 的可渲染 WineD3D 窗口。帧计数仍来自该窗口 `Drawable` 的更新回调，GLX 更新会触发同一回调。
+3. [x] CSV 升级为 version 2，增加选中窗口的 id、名称、class、surface 状态、warmup/measure 阶段和相对时间；窗口切换/取消映射时先写分段摘要，不混合旧窗口数据。
+4. [x] 删除 G3-P0-D/F/G 临时诊断行为：取消 A 键 WinHandler 双发、强制 `WINEDEBUG` 通道和自动 Wine trace 回调；保留通用 X11 核心映射、焦点通知及 XKB 兼容层，降低基线测试的日志与输入开销。
+5. [x] 增加 60 秒预热、180 秒固定测量、手动长按重置和 `measurement_complete` 摘要；Java 编译、APK 构建、zipalign、V2 签名、dex 标记和 rootfs 哈希检查均通过，使用新的唯一 APK 文件名，未覆盖 G3-P0-I 或历史性能 APK。
+6. [ ] 基线 A 固定为 Dave `1280x720`、Turnip/Zink、WineD3D GL、CSMT 开、Strict Shader Math 开、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`。进入 `Tutorial_Mission01` 后预热 60 秒，再以相同路线游玩 180 秒并正常退出。
+7. [ ] 基线有效后按单变量顺序测试：关闭 Strict Shader Math；Box64 `Performance`；降低到 `960x544`。每轮保持同一场景、路线和时长，启动失败、画面错误或 1% Low 明显退化即回退，不同时改多个变量。
 
 ## 五、用户当前需要执行的步骤
 
-1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P0-I-xkb-core-fallback-a.apk`；它是新文件，没有覆盖任何历史 APK。
-2. 保持星露谷现有容器、快捷方式、图形驱动和触屏配置不变，只测试此前相同场景的 `A` 键；不要改 Wine/Box64 日志变量，也不要测试 `W/S/D`。
-3. 只按屏幕 D-pad 的左方向（绑定 `A`），按住约 1 至 2 秒后松开，重复 2 次；本轮不要测试 `W/S/D`，也不要用实体键盘补充输入。
-4. 记录结果属于“无法进入游戏”“进入后 `A` 有效”或“进入后 `A` 仍无效”中的哪一种，然后只导出最新 `input-events-*.log`。重点保留 `keyboard_mapping_reply`、`X11DRV_KeyEvent`、`keycode 38 converted` 和 `X11DRV_send_keyboard_input` 行。
-5. 测试后只导出最新 `input-events-*.log`；该 APK 会自动记录兼容层安装标记、X11 A 事件和 Wine 输入跟踪。
+1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P1-performance-baseline-r2.apk`；它是新文件，没有覆盖 G3-P0-I 或其他历史 APK。
+2. 在 Dave 容器设置中把 HUD Mode 设为 `Full`，其他配置固定为 `1280x720`、Turnip/Zink、WineD3D GL、CSMT 开、Strict Shader Math 开、Box64 `Intermediate`、`BOX64_UNITYPLAYER=1`；不要改启动参数或 `WINEDEBUG`。
+3. 启动 Dave，进入已经验证可达的 `Tutorial_Mission01` 固定位置；保持相同视角和路线，先不要开始计时。
+4. 到达固定位置后长按 HUD 的 FPS 区域约 1 秒；设备短振动表示采样分段已重置。之后等待 60 秒预热，再保持相同场景运行 180 秒；到达 180 秒后 APK 会自动写入 `measurement_complete` 摘要。
+5. 正常退出容器，并导出 `Documents/Winlator/performance/frame-rating-*.csv` 中本轮最新 CSV。重点保留 `# window_selected`、`phase` 列取值为 `measure` 的数据行，以及 `# summary,reason=measurement_complete` 行；同时可导出最新 `input-events-*.log` 作为启动/输入回归证据。
 
 ## 六、进度记录
 
@@ -740,6 +750,19 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - APK v2 签名和 zipalign 通过；asset `xkb-core-fallback-x86_64.so` SHA-256 `B2D9ECB6CB0F05895C59FACCB195BE1641029A185C9371CFC1B666F955D83F4E`，rootfs 与 patches 哈希仍为 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`、`70C25EDCBAFB71D7D3855FAF39E582ED5C6709F3AFCFB2F21C675D5FEB65E02C`。
 - H 真机日志已唯一归档为 `archive/runtime-logs/dave-the-diver/G3-P0-H-x11-keyboard-mapping-stardew-a-20260810.log`，大小 `268,990` bytes，SHA-256 `254ED3C6372A627CCC690EB85636A9D7E3F3B3B42A275DE5E9C7A90200391F83`。
 
+### 2026-08-11：G3-P0-I 真机输入闭环并恢复性能阶段
+
+- 星露谷成功日志已归档为 `archive/runtime-logs/dave-the-diver/G3-P0-I-xkb-core-fallback-stardew-input-success-20260811.log`，原文件 `input-events-20260811-105026-922.log` 大小 `1,446,660` bytes，SHA-256 `1B330B98129FD8E087BFD909148BD48FE8A1E3A537D6484453C3243303E2BB00`：A 的 16 个 Wine press/release 事件全部为 `scan 1e`，另有 W/S/D 分别为标准 `scan 11/1f/20`，没有 `scan 78`。
+- Dave 成功日志已归档为 `archive/runtime-logs/dave-the-diver/G3-P0-I-xkb-core-fallback-dave-input-success-20260811.log`，原文件 `input-events-20260811-105430-263.log` 大小 `733,905` bytes，SHA-256 `272A797E789EF67B2069D8DC5E36493855F01AE7A88342741299E0B58C9E9857`：D、S 分别为 `scan 20`、`scan 1f`，X11 事件发送后出现 604 行 Raw Input 读取；用户确认游戏实际响应。
+- 两轮都记录兼容库 `installed=true,size=3024`、`preload=true`，且所有应用窗口均为 `surface=false`。输入修复正式闭环；后续不再保留 A 单键双通道和强制 Wine trace，转入 G3-P1 低扰动性能基线。
+
+### 2026-08-11：G3-P1 低扰动性能基线 APK 完成
+
+- `FrameRating` 现在可选择没有 `_NET_WM_SURFACE` 属性的 WineD3D 应用窗口；计数仍来自该窗口 drawable 的实际更新回调，不使用 Android 屏幕刷新次数伪造 FPS。
+- CSV 使用 `version=2`：自动预热 `60,000 ms`、测量 `180,000 ms`；在 HUD Full 模式下长按 FPS 区域可重新开始分段，测量结束后写入 `reason=measurement_complete`。摘要的 1% Low 由最慢 1% 帧的平均帧时间换算，避免对瞬时 FPS 取算术平均。
+- 新 APK `app-debug-project3-G3-P1-performance-baseline-r2.apk` 大小 `208,697,768` bytes，SHA-256 `579F4B793B22F1CEC4B83E8ACCE6709C814E8202F2D816ABE205DE60E8AF6DB1`；目标归档前不存在，未覆盖历史构建。
+- APK V2 签名、zipalign、dex 标记通过；XKB asset SHA-256 `B2D9ECB6CB0F05895C59FACCB195BE1641029A185C9371CFC1B666F955D83F4E`，rootfs 与 patches 哈希保持 `2419CAD38D3C3992827151CD7D46C18E19085375403D01C5478A1F9EC4D97CBD`、`70C25EDCBAFB71D7D3855FAF39E582ED5C6709F3AFCFB2F21C675D5FEB65E02C`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -774,7 +797,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G3-P0-F | 改测 `A`、Wine `event/key/input/rawinput` 跟踪、唯一 APK | Android/XServer 事件完整，Wine 消费状态未知 | 已完成，A 双通道仍无效且 guest 输出被丢弃（2026-08-10） |
 | G3-P0-G | 自动捕获 Wine 键盘/input/rawinput 输出、唯一 APK | G3-P0-F 未获得 Wine 消费层日志 | 已完成，定位 A 被映射为错误 scan `0x78`（2026-08-10） |
 | G3-P0-H | 修复 `GetKeyboardMapping` 长度/索引/容量、唯一 APK | Wine 收到 A 但使用错误 scan `0x78` | 已完成，核心映射完整但 XKB 仍返回 `NoSymbol`（2026-08-10） |
-| G3-P0-I | x86_64 XKB 核心映射兼容层、Box64 注入、唯一 APK | H 真机仍把 A 分配为备用 scan `0x78` | 已完成工具验证，等待真机 `A` 对照（2026-08-10） |
+| G3-P0-I | x86_64 XKB 核心映射兼容层、Box64 注入、唯一 APK | H 真机仍把 A 分配为备用 scan `0x78` | 已完成，星露谷和 Dave 输入均有效（2026-08-11） |
+| G3-P1 | WineD3D 非 surface 采样、移除输入诊断开销、唯一基线 APK | I 已闭环输入，旧性能 CSV 因未选中窗口为空 | 工具已完成，等待真机性能基线（2026-08-11） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。

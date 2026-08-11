@@ -22,7 +22,6 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Executors;
 
 public class WinHandler {
-    public static final int KEYEVENTF_KEYUP = 0x0002;
     private static final short SERVER_PORT = 7947;
     private static final short CLIENT_PORT = 7946;
     private static final byte DEFAULT_PACKET_LENGTH = 64;
@@ -173,27 +172,16 @@ public class WinHandler {
         });
     }
 
-    public boolean keyboardEvent(byte vkey, int flags) {
-        if (!initReceived) {
-            logKeyboardEvent("winhandler_keyboard_drop reason=not_initialized,vkey="+(vkey & 0xff)+",flags="+flags);
-            return false;
-        }
+    public void keyboardEvent(byte vkey, int flags) {
+        if (!initReceived) return;
 
         addAction(() -> {
             sendData.rewind();
             sendData.put(RequestCodes.KEYBOARD_EVENT);
             sendData.put(vkey);
             sendData.putInt(flags);
-            boolean sent = sendPacket(CLIENT_PORT);
-            logKeyboardEvent("winhandler_keyboard_packet vkey="+(vkey & 0xff)+",flags="+flags+",sent="+sent);
+            sendPacket(CLIENT_PORT);
         });
-        logKeyboardEvent("winhandler_keyboard_queued vkey="+(vkey & 0xff)+",flags="+flags);
-        return true;
-    }
-
-    private void logKeyboardEvent(String message) {
-        XServer xServer = activity.getXServer();
-        if (xServer != null) xServer.inputEventLogger.log(message);
     }
 
     public void bringToFront(final String processName) {
@@ -297,7 +285,6 @@ public class WinHandler {
         switch (requestCode) {
             case RequestCodes.INIT: {
                 initReceived = true;
-                logKeyboardEvent("winhandler_init_received port="+port);
 
                 synchronized (actions) {
                     actions.notify();

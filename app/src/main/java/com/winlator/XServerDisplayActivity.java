@@ -659,10 +659,6 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             overrideEnvVars = null;
         }
         installXkbCoreFallback(rootPath);
-        String inputTraceChannels = "-all,+key,+keyboard,+input,+rawinput";
-        envVars.put("WINEDEBUG", inputTraceChannels);
-        ProcessHelper.addDebugCallback(this::captureWineInputTrace);
-        xServer.inputEventLogger.log("wine_trace_capture enabled=true,channels="+inputTraceChannels);
         environment.startEnvironmentComponents();
 
         winHandler.start();
@@ -691,18 +687,6 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         if (!existingPreload.isEmpty()) preload += ":"+existingPreload;
         envVars.put("BOX64_LD_PRELOAD", preload);
         xServer.inputEventLogger.log("xkb_core_fallback preload=true,preserved="+!existingPreload.isEmpty());
-    }
-
-    private void captureWineInputTrace(String line) {
-        if (xServer == null || line == null) return;
-        if (!line.contains(":key:") &&
-            !line.contains(":keyboard:") &&
-            !line.contains(":input:") &&
-            !line.contains(":rawinput:")) return;
-
-        String content = line.replace('\r', ' ').replace('\n', ' ');
-        if (content.length() > 2048) content = content.substring(0, 2048);
-        xServer.inputEventLogger.log("wine_trace "+content);
     }
 
     private void setupUI() {
@@ -1231,22 +1215,32 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
     private void changeFrameRatingVisibility(Window window, boolean visible) {
         if (frameRating == null) return;
         if (visible) {
-            Window child = window.getChildCount() > 0 ? window.getChildren().get(0) : null;
             boolean viewable = window.attributes.isMapped() && window.getWidth() >= ScreenInfo.MIN_WIDTH && window.getHeight() >= ScreenInfo.MIN_HEIGHT;
-            if (viewable && (window.isSurface() || (child != null && child.isSurface()))) {
-                Window frameRatingWindow = window.isSurface() ? window : child;
+            Window surfaceWindow = findSurfaceWindow(window);
+            Window candidate = surfaceWindow != null ? surfaceWindow : window.isApplicationWindow() ? window : null;
+            if (viewable && candidate != null) {
                 if (frameRating.getMode() == FrameRating.Mode.FULL) {
-                    Property gpuInfo = frameRatingWindow.getProperty(Atom._NET_WM_GPU_INFO);
+                    Property gpuInfo = candidate.getProperty(Atom._NET_WM_GPU_INFO);
                     frameRating.setGPUInfo(gpuInfo != null ? new String(gpuInfo.data.array()) : "N/A");
                 }
-                frameRatingWindowId = frameRatingWindow.id;
-                frameRating.reset();
+                frameRatingWindowId = candidate.id;
+                frameRating.selectWindow(candidate.id, candidate.getName(), candidate.getClassName(), candidate.isSurface());
             }
         }
         else if (window.id == frameRatingWindowId) {
+            frameRating.deselectWindow(window.id);
             frameRatingWindowId = -1;
             runOnUiThread(() -> frameRating.setVisibility(View.GONE));
         }
+    }
+
+    private Window findSurfaceWindow(Window window) {
+        if (window.isSurface()) return window;
+        for (Window child : window.getChildren()) {
+            Window surfaceWindow = findSurfaceWindow(child);
+            if (surfaceWindow != null) return surfaceWindow;
+        }
+        return null;
     }
 
     public boolean verifyUserRegistry() {
