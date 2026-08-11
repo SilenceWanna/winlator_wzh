@@ -1,0 +1,53 @@
+Mono path[0] = 'E:/Escape from Duckov/Duckov_Data/Managed'
+Mono config path = 'E:/Escape from Duckov/MonoBleedingEdge/etc'
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Initialize engine version: 2022.3.62f2 (7670c08855a9)
+[Subsystems] Discovering subsystems at path E:/Escape from Duckov/Duckov_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 480 (ID=0x6c0)
+    Vendor:   NVIDIA
+    VRAM:     2048 MB
+    Driver:   31.0.13.9135
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.829 seconds
+- Finished resetting the current domain, in  0.019 seconds
+<RI> Initializing input.
+Using Windows.Gaming.Input
+<RI> Input initialized.
+<RI> Initialized touch support.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+UnloadTime: 32.717300 ms
+Odin Serializer ArchitectureInfo initialization with defaults (all unaligned read/writes disabled).
+Odin Serializer detected whitelisted runtime platform WindowsPlayer and memory read test succeeded; enabling all unaligned memory read/writes.
+E:/Escape from Duckov/Duckov_Data/StreamingAssets/Localization
+DirectoryNotFoundException: Could not find a part of the path "E:\Saves\Save_1.sav.tmp".
+  at ES3Internal.ES3Stream.CreateStream (ES3Settings settings, ES3Internal.ES3FileMode fileMode) [0x0011a] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3Writer.Create (ES3Settings settings, System.Boolean writeHeaderAndFooter, System.Boolean overwriteKeys, System.Boolean append) [0x00000] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3File.Sync (ES3Settings settings) [0x00020] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3File.Store (ES3Settings settings) [0x00080] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3.StoreCachedFile (ES3Settings settings) [0x00000] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3.StoreCachedFile (System.String filePath) [0x00007] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at Saves.SavesSystem.CacheFile (System.Int32 slot) [0x00133] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at Saves.SavesSystem.CacheFile () [0x00005] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at Saves.SavesSystem.KeyExisits (System.String realKey) [0x00007] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at Duckov.Rules.GameRulesManager.get_SelectedRuleIndex () [0x00000] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at RuleIndexDisplay.Refresh () [0x00000] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at RuleIndexDisplay.OnEnable () [0x00000] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+
+DirectoryNotFoundException: Could not find a part of the path "E:\Saves\Options.ES3.tmp".
+  at ES3Internal.ES3Stream.CreateStream (ES3Settings settings, ES3Internal.ES3FileMode fileMode) [0x0011a] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3Writer.Create (ES3Settings settings, System.Boolean writeHeaderAndFooter, System.Boolean overwriteKeys, System.Boolean append) [0x00000] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3Writer.Create (ES3Settings settings) [0x00000] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at ES3.Save[T] (System.String key, T value, ES3Settings settings) [0x00017] in <7b1d2595ed2e4172836abfc48ff50620>:0 
+  at Duckov.Options.OptionsManager.Save[T] (System.String key, T obj) [0x00010] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at FsrSetting.Set (System.Int32 index) [0x000cd] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at FsrSetting.SyncSetting () [0x0000d] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at FsrSetting.RefreshOnLevelInited () [0x00000] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+  at FsrSetting.Awake () [0x00000] in <502a5e0bc57047d0847bb81ad8b01401>:0 
+
+Initialize Bilibili BDS: 0
+Player Info:
+{"role_name":"UNKOWN","profession_type":"English","gender":"1.0.14","level":"0","b_account_id":"76561197960287930","b_role_id":"1|Rule_Standard","b_tour_indicator":"0","b_zone_id":"US","b_sdk_uid":"Steam|Win32NT"}

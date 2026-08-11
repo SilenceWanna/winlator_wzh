@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；T1-DUCKOV-A 已确认 DXVK 黑屏，当前执行 T1-DUCKOV-B WineD3D 对照
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；Duckov 在 DXVK/WineD3D 下均黑屏，当前执行 T1-DUCKOV-C 保存目录对照
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -469,8 +469,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 ## 五、用户当前需要执行的步骤
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
-2. 按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”复用 Duckov A 轮容器并执行 T1-DUCKOV-B。
-3. 本轮只把 DX wrapper 改为 WineD3D，并用无引号的相对 `-logFile` 参数收集 Unity 日志；不要同时测试 Palworld，也不要更改 Dave 成功容器。
+2. 按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”复用 Duckov 容器并执行 T1-DUCKOV-C。
+3. 本轮只在 `E:` 根目录创建空的 `Saves` 文件夹，保持 WineD3D 和其余配置不变；不要同时测试 Palworld，也不要更改 Dave 成功容器。
 
 ## 六、进度记录
 
@@ -785,6 +785,13 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 两份原始日志已使用唯一名称归档到 `archive/runtime-logs/duckov/`。主日志大小 `60,808` bytes、SHA-256 `DCC3727774199B6CC1A2652825EF14329FA474C99586A639CC56CF893B28BC38`；启动日志大小 `1,321` bytes、SHA-256 `84E2102A921A5FCEC9941303B5FA19B744480395FEAFCE7B3A08CB17C8B6E022`。
 - 下一步复用同一容器，仅将 DXVK 3.0.2 切换为 WineD3D；另加相对 Unity `-logFile` 参数以获得引擎日志。如果 B 轮结果变化，后续用相同日志参数补做 DXVK 对照，避免把观测参数误判为修复变量。
 
+### 2026-08-11：T1-DUCKOV-B WineD3D 黑屏归档
+
+- B 轮配置和 argv 均按计划生效，约 5 分钟内仍为黑屏。Unity Player 日志证明 2022.3.62f2 已通过 WineD3D 创建 D3D11 feature level 11.1 设备，并完成程序集、输入、触摸与 PhysX 初始化；WineD3D 不是当前缺少图形设备的证据。
+- WineD3D 对现代交换链特性的若干未实现警告保留为显示兼容风险。更靠近游戏逻辑的直接异常是 `SavesSystem` 与 `OptionsManager` 无法写入 `E:\Saves`，连续抛出两个 `DirectoryNotFoundException`，随后未进入可见菜单或场景。
+- 原始 7z 不包含 Saves 条目，本地共享根目录也没有该目录。T1-DUCKOV-C 因此只创建空的 `E:\Saves`，验证游戏包首次运行未创建父目录是否为共同阻塞；B 轮仍记为 `FAIL-BLACK`。
+- B 轮三份日志已归档：Winlator 日志 `164,866` bytes、SHA-256 `582BE36177E53ABB895338F8D6E4E600FDDE227A0DCE2C63CA306D57561A20DE`；启动日志 `1,324` bytes、SHA-256 `349522637F1F18BFBC57DF74E68F48165FF48B0D0FFF07C19E6414A9889F2FCB`；Player 日志 `4,052` bytes、SHA-256 `A0B685E2D0C24D7C480563C5896BCC4DA296E4149EB438895239F2B660C90257`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -823,6 +830,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G3-P1 | WineD3D 非 surface 采样、移除输入诊断开销、唯一基线 APK | I 已闭环输入，旧性能 CSV 因未选中窗口为空 | 窗口选中已生效，但实际帧更新目标仍需修正；任务1后继续（2026-08-11） |
 | G3-P2 | HUD 长按命中范围收缩到 FPS 面板、恢复触摸板事件下传、唯一 APK | G3-P1 根 HUD 全屏 long-clickable 导致鼠标无法移动 | 已完成，鼠标与按键真机回归通过（2026-08-11） |
 | T1-DUCKOV-A | Duckov DXVK 黑屏日志归档、失败分类与 WineD3D 对照计划 | G3-P2 输入门槛通过后首轮新游戏覆盖 | 已完成，`FAIL-BLACK`，进入 B 轮（2026-08-11） |
+| T1-DUCKOV-B | WineD3D 黑屏三日志归档、D3D11 初始化证据与缺失保存目录定位 | A 轮 DXVK 无首帧后执行图形封装层对照 | 已完成，`FAIL-BLACK`，进入 C 轮（2026-08-11） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
