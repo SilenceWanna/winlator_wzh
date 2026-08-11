@@ -1,0 +1,23 @@
+# winlator_frame_rating,version=2,warmup_ms=60000,measurement_ms=180000
+session_elapsed_ms,segment_elapsed_ms,frame_time_ms,window_fps,ram_used_bytes,cpu_max_mhz,phase
+# window_selected,session_elapsed_ms=2995,id=16777223,name=nogui - Wine Desktop,class=explorer.exe,surface=false,warmup_ms=60000,measurement_ms=180000
+3308,313,0,0.0,0,0,warmup
+3312,317,4,0.0,0,0,warmup
+3312,317,0,0.0,0,0,warmup
+3312,317,0,0.0,0,0,warmup
+3313,318,1,0.0,0,0,warmup
+3313,318,0,0.0,0,0,warmup
+3313,318,0,0.0,0,0,warmup
+3313,318,0,0.0,0,0,warmup
+3315,320,2,0.0,0,0,warmup
+3316,321,1,0.0,0,0,warmup
+3316,321,0,0.0,0,0,warmup
+3316,321,0,0.0,0,0,warmup
+3317,322,1,0.0,0,0,warmup
+3317,322,0,0.0,0,0,warmup
+3317,322,0,0.0,0,0,warmup
+3317,322,0,0.0,0,0,warmup
+# summary,reason=window_change,window_id=16777223,name=nogui - Wine Desktop,class=explorer.exe,surface=false,measured_frames=0
+# window_selected,session_elapsed_ms=32468,id=29360129,name=DAVE THE DIVER,class=davethediver.exe,surface=false,warmup_ms=60000,measurement_ms=180000
+32589,121,0,0.0,0,0,warmup
+33326,858,737,1.1655011,0,0,warmup

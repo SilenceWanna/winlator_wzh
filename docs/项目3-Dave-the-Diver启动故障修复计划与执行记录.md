@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动与键盘输入故障均已闭环；G3-P2 已修复 G3-P1 HUD 全屏截获触摸导致的鼠标回归并生成唯一 APK，等待真机回归；项目3任务1多游戏测试计划已建立
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；当前开始 T1-DUCKOV-A
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -464,16 +464,13 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 1. [x] G3-P1 唯一新增的交互改动是在 `FrameRating` 根视图注册长按监听器；该视图通过 `rootView.addView(frameRating)` 覆盖整个 `FLXServerDisplay`，内部布局也是 `match_parent`。设置根视图 `longClickable=true` 后，全屏触摸在到达下层 `TouchpadView` 前被消费，因此手指拖动不能再驱动鼠标。
 2. [x] 将长按监听器和 `longClickable` 仅绑定到实际可见的 `LLFPSPanel`。HUD 外区域恢复向下分发，FPS 小区域仍可长按重置性能采样；不修改 `TouchpadView`、XServer 指针、Wine、XKB 或游戏输入链。
 3. [x] Java 编译和完整 `assembleDebug` 均通过；生成新的唯一 APK `app-debug-project3-G3-P2-hud-touch-pass-through-r1.apk`，未覆盖 G3-P1 或更早构建。zipalign 与 V2 签名验证通过。
-4. [ ] 真机同时验收三项：HUD 外拖动可移动鼠标；触屏按键仍有效；长按 FPS 面板有短振动且长按后 HUD 外鼠标继续有效。通过后关闭 G3-P2，再开始任务1新游戏覆盖。
+4. [x] 真机确认 HUD 外鼠标恢复、Dave 触屏按键有效，日志记录 48 次 key press、48 次 key release 和 58 次 pointer focus 事件；长按没有振动，但它不影响鼠标/键盘兼容性。CSV 在容器仍打开时导出，没有 `session_end` 或 `window_restarted`，因此不能据此判定长按回调；提示与立即落盘问题转入后续性能采样工具修复，不阻塞任务1。
 
 ## 五、用户当前需要执行的步骤
 
-1. 安装 `D:\agent\Winlator\artifacts\apks\project3\app-debug-project3-G3-P2-hud-touch-pass-through-r1.apk`；它是新文件，没有覆盖 G3-P1 或其他历史 APK。
-2. 保持 Dave 当前成功容器与配置不变，只把 HUD Mode 设为 `Full`；先进入 Wine 桌面，不要立即启动游戏。
-3. 在 HUD 之外的空白区域用单指持续拖动约 3 秒，确认鼠标指针连续移动；再单击一个桌面空白位置，确认左键点击有效。
-4. 启动 Dave 并进入可操作界面，先在 HUD 外拖动鼠标，再按一次已经验证过的触屏方向键，确认鼠标和键盘两条输入链都有效。
-5. 长按左上角 FPS 面板约 1 秒，短振动表示采样已重置；松手后再次在 HUD 外拖动，确认长按动作没有使鼠标失效。FPS 面板本身是保留的手势命中区，不用在该小区域测试鼠标拖动。
-6. 正常退出并导出本轮最新 `input-events-*.log`；若已生成 `frame-rating-*.csv` 也一并导出。回复“鼠标恢复/仍不动、按键有效/无效、长按有振动/无振动”三项结果。
+1. G3-P2 已通过，不再重复 Dave 输入回归。
+2. 按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”新建 Duckov 独立容器并执行 T1-DUCKOV-A。
+3. 本轮不要同时测试 Palworld，也不要更改 Dave 成功容器；Duckov 结果归档后再决定是否做 WineD3D 单变量对照。
 
 ## 六、进度记录
 
@@ -777,6 +774,9 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 修复只把采样重置手势从全屏 `FrameRating` 移到可见的 `LLFPSPanel`，未改触摸板、X11、WinHandler、XKB、Wine 或性能采样统计逻辑。
 - 新 APK `app-debug-project3-G3-P2-hud-touch-pass-through-r1.apk` 大小 `208,697,777` bytes，SHA-256 `776266F789536BE5DC35BBF303C8147F7210528F7F8016274E607531D7E7D67B`；目标归档前不存在，未覆盖 G3-P1。Java 编译、完整 APK 构建、zipalign 和 V2 签名验证通过，等待真机鼠标/按键/HUD 长按三项回归。
 - 项目3任务1的后续覆盖计划已独立建立为 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md`；G3-P2 通过后先测 `Escape from Duckov`，再测 `Palworld`，不在鼠标回归轮同时引入新游戏变量。
+- 真机回归结果为鼠标恢复、按键有效、长按无振动。输入日志归档为 `archive/runtime-logs/dave-the-diver/G3-P2-hud-touch-pass-through-success-20260811.log`，大小 `1,174,319` bytes，SHA-256 `4D0BAEBB5388C11B73826E26F3003DAF21DC598956F2CB7290763C2E7F3F0F8E`；其中 XKB 安装/preload 均生效，Dave 窗口获得 48 次 press、48 次 release，另有 58 次 pointer focus 事件，与用户可见结果一致。
+- 同轮 CSV 归档为 `archive/runtime-logs/dave-the-diver/G3-P2-hud-touch-pass-through-open-sampling-20260811.csv`，大小 `1,074` bytes，SHA-256 `4DC3D2A1561C9B28BADB7789979ABB5EEAC373503870B63E69EC73066DF212F9`。它已选中非 surface 的 Dave 窗口，证明 G3-P1 窗口识别生效；但约 15 分钟会话仅记录两条 Dave 更新，且容器未销毁时导出导致无 `session_end`。该文件不能作为性能基线，后续需把采样目标继续下沉到实际更新的 renderable 子窗口，并让手动重置标记立即 flush。
+- G3-P2 的兼容性目标已完成。长按无振动仅保留为采样器交互反馈问题；当前暂停 G3 性能工具修正，按用户优先级进入项目3任务1的 Duckov 覆盖。
 
 ## 七、Git 关键节点
 
@@ -813,8 +813,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | G3-P0-G | 自动捕获 Wine 键盘/input/rawinput 输出、唯一 APK | G3-P0-F 未获得 Wine 消费层日志 | 已完成，定位 A 被映射为错误 scan `0x78`（2026-08-10） |
 | G3-P0-H | 修复 `GetKeyboardMapping` 长度/索引/容量、唯一 APK | Wine 收到 A 但使用错误 scan `0x78` | 已完成，核心映射完整但 XKB 仍返回 `NoSymbol`（2026-08-10） |
 | G3-P0-I | x86_64 XKB 核心映射兼容层、Box64 注入、唯一 APK | H 真机仍把 A 分配为备用 scan `0x78` | 已完成，星露谷和 Dave 输入均有效（2026-08-11） |
-| G3-P1 | WineD3D 非 surface 采样、移除输入诊断开销、唯一基线 APK | I 已闭环输入，旧性能 CSV 因未选中窗口为空 | 工具已完成，等待真机性能基线（2026-08-11） |
-| G3-P2 | HUD 长按命中范围收缩到 FPS 面板、恢复触摸板事件下传、唯一 APK | G3-P1 根 HUD 全屏 long-clickable 导致鼠标无法移动 | 工具已完成，等待真机三项输入回归（2026-08-11） |
+| G3-P1 | WineD3D 非 surface 采样、移除输入诊断开销、唯一基线 APK | I 已闭环输入，旧性能 CSV 因未选中窗口为空 | 窗口选中已生效，但实际帧更新目标仍需修正；任务1后继续（2026-08-11） |
+| G3-P2 | HUD 长按命中范围收缩到 FPS 面板、恢复触摸板事件下传、唯一 APK | G3-P1 根 HUD 全屏 long-clickable 导致鼠标无法移动 | 已完成，鼠标与按键真机回归通过（2026-08-11） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
