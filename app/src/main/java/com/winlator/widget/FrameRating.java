@@ -74,8 +74,8 @@ public class FrameRating extends FrameLayout implements Runnable {
         cpuPanel = view.findViewById(R.id.LLCPUPanel);
         addView(view);
         setupPanels();
-        setLongClickable(true);
-        setOnLongClickListener(clickedView -> {
+        fpsPanel.setLongClickable(true);
+        fpsPanel.setOnLongClickListener(clickedView -> {
             boolean restarted = restartSamplingWindow();
             if (restarted) performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
             return restarted;
