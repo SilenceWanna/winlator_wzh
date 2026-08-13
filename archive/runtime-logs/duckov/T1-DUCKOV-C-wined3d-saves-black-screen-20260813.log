@@ -1,0 +1,2074 @@
+[18:29:03]  [startup] STARTUP BEGIN
+[18:29:03]  [startup] rootfs=/data/user/0/com.winlator/files/rootfs, version=23, container=8
+[18:29:03]  [startup] graphics=turnip,zink, dxwrapper=wined3d, audio=alsa
+[18:29:04]  [startup] BEGIN setup_wine_system_files
+[18:29:04]  [startup] BEGIN setup_wine_system_files.verify_user_registry
+[18:29:04]  [startup] END setup_wine_system_files.verify_user_registry
+[18:29:04]  [startup] BEGIN setup_wine_system_files.extract_dxwrapper_files
+[18:29:04]  [startup] END setup_wine_system_files.extract_dxwrapper_files
+[18:29:04]  [startup] BEGIN setup_wine_system_files.create_start_menu
+[18:29:04]  [startup] END setup_wine_system_files.create_start_menu
+[18:29:04]  [startup] BEGIN setup_wine_system_files.create_dosdevices_symlinks
+[18:29:04]  [startup] END setup_wine_system_files.create_dosdevices_symlinks
+[18:29:04]  [startup] END setup_wine_system_files
+[18:29:04]  [startup] BEGIN extract_graphics_driver_files
+[18:29:04]  [startup] END extract_graphics_driver_files
+[18:29:04]  [startup] BEGIN change_wine_audio_driver
+[18:29:04]  [startup] END change_wine_audio_driver
+[18:29:04]  [startup] BEGIN setup_x_environment
+[18:29:04]  [startup] END setup_x_environment
+[18:29:04]  [startup] STARTUP COMPLETE
+[18:29:04]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:04]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:04]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:04]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:04]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[18:29:04]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:04]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:04]  [BOX64] Detected running wine with "explorer"
+[18:29:04]  [BOX64] Counted 79 Env var
+[18:29:04]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:04]  [BOX64] Library search path: 
+[18:29:04]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:04]  [BOX64] Looking for wine
+[18:29:04]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:04]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:04]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:04]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:04]  	BOX64_DYNAREC_FORWARD=128
+[18:29:04]  	BOX64_DYNAREC_MISSING=1
+[18:29:04]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:04]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:04]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:04]  	BOX64_DYNAREC_WAIT=1
+[18:29:04]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:04]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:04]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:04]  	BOX64_LOG=1
+[18:29:04]  	BOX64_NOBANNER=0
+[18:29:04]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:04]  	BOX64_UNITYPLAYER=1
+[18:29:04]  	BOX64_DYNAREC=1
+[18:29:04]  	BOX64_DYNAREC_CALLRET=0
+[18:29:04]  [BOX64] argv[1]="explorer"
+[18:29:04]  [BOX64] argv[2]="/desktop=nogui,1280x720"
+[18:29:04]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[18:29:04]  [BOX64] argv[4]="/dir"
+[18:29:04]  [BOX64] argv[5]="E:\\Escape from Duckov"
+[18:29:04]  [BOX64] argv[6]=""Duckov.exe""
+[18:29:04]  [BOX64] argv[7]=""""
+[18:29:04]  [BOX64] argv[8]="-logFile"
+[18:29:04]  [BOX64] argv[9]="Player-T1-DUCKOV-C.log"
+[18:29:04]  [BOX64] Rename process to "wine"
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:04]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:04]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:04]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:04]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/bin/../lib/wine/x86_64-unix/ntdll.so
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:04]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:04]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:04]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:04]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:04]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:04]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[18:29:04]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:04]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:04]  [BOX64] Detected running wine with "explorer"
+[18:29:04]  [BOX64] Counted 80 Env var
+[18:29:04]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:04]  [BOX64] Library search path: 
+[18:29:04]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:04]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:04]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:04]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:04]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:04]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:04]  	BOX64_DYNAREC_FORWARD=128
+[18:29:04]  	BOX64_DYNAREC_MISSING=1
+[18:29:04]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:04]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:04]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:04]  	BOX64_DYNAREC_WAIT=1
+[18:29:04]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:04]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:04]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:04]  	BOX64_LOG=1
+[18:29:04]  	BOX64_NOBANNER=0
+[18:29:04]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:04]  	BOX64_UNITYPLAYER=1
+[18:29:04]  	BOX64_DYNAREC=1
+[18:29:04]  	BOX64_DYNAREC_CALLRET=0
+[18:29:04]  [BOX64] argv[1]="explorer"
+[18:29:04]  [BOX64] argv[2]="/desktop=nogui,1280x720"
+[18:29:04]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[18:29:04]  [BOX64] argv[4]="/dir"
+[18:29:04]  [BOX64] argv[5]="E:\\Escape from Duckov"
+[18:29:04]  [BOX64] argv[6]=""Duckov.exe""
+[18:29:04]  [BOX64] argv[7]=""""
+[18:29:04]  [BOX64] argv[8]="-logFile"
+[18:29:04]  [BOX64] argv[9]="Player-T1-DUCKOV-C.log"
+[18:29:04]  [BOX64] Rename process to "wine"
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:04]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:04]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:04]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:04]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:04]  [BOX64] posix_spawn(0x7d63abd5cc, "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", (nil), (nil), 0x7d63abd5d0["/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", "", ...], 0x7d63abd998), IsX64=1, IsX86=0 IsScript=0 IsPython=0 envp is context->envv
+[18:29:04]  [BOX64]  => posix_spawn(0x7d63abd5cc, "/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", (nil), (nil), 0x7fd21fdbd0 ["/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", ""...:1], 0x7fd21fe410)
+[18:29:04]  [BOX64] posix_spawn returned 0
+[18:29:04]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:04]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:04]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:04]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:04]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:04]  [BOX64] Counted 79 Env var
+[18:29:04]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:04]  [BOX64] Library search path: 
+[18:29:04]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:04]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver
+[18:29:04]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:04]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:04]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:04]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:04]  	BOX64_DYNAREC_FORWARD=128
+[18:29:04]  	BOX64_DYNAREC_MISSING=1
+[18:29:04]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:04]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:04]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:04]  	BOX64_DYNAREC_WAIT=1
+[18:29:04]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:04]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:04]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:04]  	BOX64_LOG=1
+[18:29:04]  	BOX64_NOBANNER=0
+[18:29:04]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:04]  	BOX64_UNITYPLAYER=1
+[18:29:04]  	BOX64_DYNAREC=1
+[18:29:04]  	BOX64_DYNAREC_CALLRET=0
+[18:29:04]  [BOX64] Rename process to "wineserver"
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:04]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:04]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:04]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:04]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:04]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:04]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:04]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:04]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:04]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:04]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140024000"
+[18:29:04]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:04]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x140000000:0x140024000 done
+[18:29:04]  [BOX64] Detected running wine with "wineboot.exe"
+[18:29:04]  [BOX64] Counted 82 Env var
+[18:29:04]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:04]  [BOX64] Library search path: 
+[18:29:04]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:04]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:04]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:04]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:04]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:04]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:04]  	BOX64_DYNAREC_FORWARD=128
+[18:29:04]  	BOX64_DYNAREC_MISSING=1
+[18:29:04]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:04]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:04]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:04]  	BOX64_DYNAREC_WAIT=1
+[18:29:04]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:04]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:04]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:04]  	BOX64_LOG=1
+[18:29:04]  	BOX64_NOBANNER=0
+[18:29:04]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:04]  	BOX64_UNITYPLAYER=1
+[18:29:04]  	BOX64_DYNAREC=1
+[18:29:04]  	BOX64_DYNAREC_CALLRET=0
+[18:29:04]  [BOX64] argv[1]="C:\windows\system32\wineboot.exe"
+[18:29:04]  [BOX64] argv[2]="--init"
+[18:29:04]  [BOX64] Rename process to "wine"
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:04]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:04]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:04]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:04]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[18:29:04]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:04]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:04]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:04]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:04]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:04]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140029000"
+[18:29:04]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:04]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x140000000:0x140029000 done
+[18:29:04]  [BOX64] Detected running wine with "winemenubuilder.exe"
+[18:29:04]  [BOX64] Counted 82 Env var
+[18:29:04]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:04]  [BOX64] Library search path: 
+[18:29:04]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:04]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:04]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:04]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:04]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:04]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:04]  	BOX64_DYNAREC_FORWARD=128
+[18:29:04]  	BOX64_DYNAREC_MISSING=1
+[18:29:04]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:04]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:04]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:04]  	BOX64_DYNAREC_WAIT=1
+[18:29:04]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:04]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:04]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:04]  	BOX64_LOG=1
+[18:29:04]  	BOX64_NOBANNER=0
+[18:29:04]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:04]  	BOX64_UNITYPLAYER=1
+[18:29:04]  	BOX64_DYNAREC=1
+[18:29:04]  	BOX64_DYNAREC_CALLRET=0
+[18:29:04]  [BOX64] argv[1]="C:\windows\system32\winemenubuilder.exe"
+[18:29:04]  [BOX64] argv[2]="-a"
+[18:29:04]  [BOX64] argv[3]="-r"
+[18:29:04]  [BOX64] Rename process to "wine"
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:04]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:04]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:04]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:04]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:04]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:04]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:04]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:04]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:04]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:04]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140017000"
+[18:29:04]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:04]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:04]  [BOX64] WINE prereserve of 0x140000000:0x140017000 done
+[18:29:04]  [BOX64] Detected running wine with "services.exe"
+[18:29:04]  [BOX64] Counted 82 Env var
+[18:29:04]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:04]  [BOX64] Library search path: 
+[18:29:04]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:04]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:04]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:04]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:04]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:04]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:04]  	BOX64_DYNAREC_FORWARD=128
+[18:29:04]  	BOX64_DYNAREC_MISSING=1
+[18:29:04]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:04]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:04]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:04]  	BOX64_DYNAREC_WAIT=1
+[18:29:04]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:04]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:04]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:04]  	BOX64_LOG=1
+[18:29:04]  	BOX64_NOBANNER=0
+[18:29:04]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:04]  	BOX64_UNITYPLAYER=1
+[18:29:04]  	BOX64_DYNAREC=1
+[18:29:04]  	BOX64_DYNAREC_CALLRET=0
+[18:29:04]  [BOX64] argv[1]="C:\windows\system32\services.exe"
+[18:29:04]  [BOX64] Rename process to "wine"
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:04]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:04]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:04]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:04]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:04]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:04]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:04]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:04]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:05]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:05]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:05]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:05]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:05]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:05]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[18:29:05]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:05]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[18:29:05]  [BOX64] Detected running wine with "winedevice.exe"
+[18:29:05]  [BOX64] Counted 82 Env var
+[18:29:05]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:05]  [BOX64] Library search path: 
+[18:29:05]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:05]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:05]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:05]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:05]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:05]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:05]  	BOX64_DYNAREC_FORWARD=128
+[18:29:05]  	BOX64_DYNAREC_MISSING=1
+[18:29:05]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:05]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:05]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:05]  	BOX64_DYNAREC_WAIT=1
+[18:29:05]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:05]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:05]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:05]  	BOX64_LOG=1
+[18:29:05]  	BOX64_NOBANNER=0
+[18:29:05]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:05]  	BOX64_UNITYPLAYER=1
+[18:29:05]  	BOX64_DYNAREC=1
+[18:29:05]  	BOX64_DYNAREC_CALLRET=0
+[18:29:05]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[18:29:05]  [BOX64] Rename process to "wine"
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:05]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:05]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:05]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:05]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:05]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:05]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:05]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:05]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:05]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:05]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140022000"
+[18:29:05]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:05]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x140000000:0x140022000 done
+[18:29:05]  [BOX64] Detected running wine with "explorer.exe"
+[18:29:05]  [BOX64] Counted 82 Env var
+[18:29:05]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:05]  [BOX64] Library search path: 
+[18:29:05]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:05]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:05]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:05]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:05]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:05]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:05]  	BOX64_DYNAREC_FORWARD=128
+[18:29:05]  	BOX64_DYNAREC_MISSING=1
+[18:29:05]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:05]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:05]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:05]  	BOX64_DYNAREC_WAIT=1
+[18:29:05]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:05]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:05]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:05]  	BOX64_LOG=1
+[18:29:05]  	BOX64_NOBANNER=0
+[18:29:05]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:05]  	BOX64_UNITYPLAYER=1
+[18:29:05]  	BOX64_DYNAREC=1
+[18:29:05]  	BOX64_DYNAREC_CALLRET=0
+[18:29:05]  [BOX64] argv[1]="C:\windows\system32\explorer.exe"
+[18:29:05]  [BOX64] argv[2]="/desktop"
+[18:29:05]  [BOX64] Rename process to "wine"
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:05]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:05]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:05]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:05]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:05]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/mountmgr.so
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[18:29:05]  [[31mBOX64[0m] Error initializing native libdbus-1.so.3 (last dlerror is libdbus-1.so.3: cannot open shared object file: No such file or directory)
+[18:29:05]  [BOX64] Error loading needed lib libdbus-1.so.3
+[18:29:05]  [BOX64] Warning: Cannot dlopen("libdbus-1.so.3"/0x3f03006270, 2)
+[18:29:05]  [BOX64] Using native(wrapped) libXext.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libX11.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libxcb.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXau.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[18:29:05]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[18:29:05]  [BOX64] Error loading needed lib libXinerama.so.1
+[18:29:05]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0405e8e1, 2)
+[18:29:05]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXrender.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXrandr.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXi.so.6
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/nsiproxy.so
+[18:29:05]  0070:err:nsi:poll_events bind failed, errno 13.
+[18:29:05]  [BOX64] Using native(wrapped) libvulkan.so.1
+[18:29:05]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:05]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:05]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:05]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:05]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:05]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[18:29:05]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:05]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[18:29:05]  [BOX64] Detected running wine with "winedevice.exe"
+[18:29:05]  [BOX64] Counted 82 Env var
+[18:29:05]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:05]  [BOX64] Library search path: 
+[18:29:05]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:05]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:05]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:05]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:05]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:05]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:05]  	BOX64_DYNAREC_FORWARD=128
+[18:29:05]  	BOX64_DYNAREC_MISSING=1
+[18:29:05]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:05]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:05]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:05]  	BOX64_DYNAREC_WAIT=1
+[18:29:05]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:05]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:05]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:05]  	BOX64_LOG=1
+[18:29:05]  	BOX64_NOBANNER=0
+[18:29:05]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:05]  	BOX64_UNITYPLAYER=1
+[18:29:05]  	BOX64_DYNAREC=1
+[18:29:05]  	BOX64_DYNAREC_CALLRET=0
+[18:29:05]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[18:29:05]  [BOX64] Rename process to "wine"
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:05]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:05]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:05]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:05]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXcursor.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXfixes.so.3
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebus.so
+[18:29:05]  [[31mBOX64[0m] Error initializing native libudev.so.1 (last dlerror is libudev.so.0: cannot open shared object file: No such file or directory)
+[18:29:05]  [BOX64] Error loading needed lib libudev.so.1
+[18:29:05]  [BOX64] Error loading one of needed lib
+[18:29:05]  [BOX64] Error initializing needed lib /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebus.so
+[18:29:05]  0080:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebus": c0000135
+[18:29:05]  003c:fixme:service:scmdatabase_autostart_services Auto-start service L"winebus" failed to start: 126
+[18:29:05]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:05]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:05]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:05]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:05]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:05]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[18:29:05]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:05]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:05]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[18:29:05]  [BOX64] Detected running wine with "winedevice.exe"
+[18:29:05]  [BOX64] Counted 82 Env var
+[18:29:05]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:05]  [BOX64] Library search path: 
+[18:29:05]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:05]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:05]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:05]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:05]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:05]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:05]  	BOX64_DYNAREC_FORWARD=128
+[18:29:05]  	BOX64_DYNAREC_MISSING=1
+[18:29:05]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:05]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:05]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:05]  	BOX64_DYNAREC_WAIT=1
+[18:29:05]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:05]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:05]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:05]  	BOX64_LOG=1
+[18:29:05]  	BOX64_NOBANNER=0
+[18:29:05]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:05]  	BOX64_UNITYPLAYER=1
+[18:29:05]  	BOX64_DYNAREC=1
+[18:29:05]  	BOX64_DYNAREC_CALLRET=0
+[18:29:05]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[18:29:05]  [BOX64] Rename process to "wine"
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:05]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:05]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:05]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:05]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:05]  0050:err:ole:start_rpcss Failed to start RpcSs service
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[18:29:05]  [BOX64] Using native(wrapped) libXext.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libX11.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libxcb.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXau.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[18:29:05]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[18:29:05]  [BOX64] Error loading needed lib libXinerama.so.1
+[18:29:05]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0405e8e1, 2)
+[18:29:05]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXrender.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXrandr.so.2
+[18:29:05]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXi.so.6
+[18:29:05]  [BOX64] Using native(wrapped) libXcursor.so.1
+[18:29:05]  [BOX64] Using native(wrapped) libXfixes.so.3
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebth.so
+[18:29:05]  [[31mBOX64[0m] Error initializing native libdbus-1.so.3 (last dlerror is libdbus-1.so.3: cannot open shared object file: No such file or directory)
+[18:29:05]  [BOX64] Error loading needed lib libdbus-1.so.3
+[18:29:05]  [BOX64] Warning: Cannot dlopen("libdbus-1.so.3"/0x3f0301441b, 2)
+[18:29:05]  00b0:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c00000e5
+[18:29:05]  003c:fixme:service:scmdatabase_autostart_services Auto-start service L"winebth" failed to start: 1359
+[18:29:05]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:05]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:06]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:06]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:06]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:06]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:06]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:06]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:06]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:06]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:06]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:06]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140022000"
+[18:29:06]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:06]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:06]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:06]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:06]  [BOX64] WINE prereserve of 0x140000000:0x140022000 done
+[18:29:06]  [BOX64] Detected running wine with "explorer.exe"
+[18:29:06]  [BOX64] Counted 82 Env var
+[18:29:06]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:06]  [BOX64] Library search path: 
+[18:29:06]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:06]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:06]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:06]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:06]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:06]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:06]  	BOX64_DYNAREC_FORWARD=128
+[18:29:06]  	BOX64_DYNAREC_MISSING=1
+[18:29:06]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:06]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:06]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:06]  	BOX64_DYNAREC_WAIT=1
+[18:29:06]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:06]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:06]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:06]  	BOX64_LOG=1
+[18:29:06]  	BOX64_NOBANNER=0
+[18:29:06]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:06]  	BOX64_UNITYPLAYER=1
+[18:29:06]  	BOX64_DYNAREC=1
+[18:29:06]  	BOX64_DYNAREC_CALLRET=0
+[18:29:06]  [BOX64] argv[1]="C:\windows\system32\explorer.exe"
+[18:29:06]  [BOX64] argv[2]="/desktop=nogui,1280x720"
+[18:29:06]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[18:29:06]  [BOX64] argv[4]="/dir"
+[18:29:06]  [BOX64] argv[5]="E:\\Escape from Duckov"
+[18:29:06]  [BOX64] argv[6]=""Duckov.exe""
+[18:29:06]  [BOX64] argv[7]=""""
+[18:29:06]  [BOX64] argv[8]="-logFile"
+[18:29:06]  [BOX64] argv[9]="Player-T1-DUCKOV-C.log"
+[18:29:06]  [BOX64] Rename process to "wine"
+[18:29:06]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:06]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:06]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:06]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:06]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:06]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:06]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:06]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:06]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:06]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:06]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:06]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:06]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[18:29:06]  [BOX64] Using native(wrapped) libXext.so.6
+[18:29:06]  [BOX64] Using native(wrapped) libX11.so.6
+[18:29:06]  [BOX64] Using native(wrapped) libxcb.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libXau.so.6
+[18:29:06]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[18:29:06]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[18:29:06]  [BOX64] Error loading needed lib libXinerama.so.1
+[18:29:06]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0405e8e1, 2)
+[18:29:06]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libXrender.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libXrandr.so.2
+[18:29:06]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libXi.so.6
+[18:29:06]  [BOX64] Using native(wrapped) libvulkan.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libXcursor.so.1
+[18:29:06]  [BOX64] Using native(wrapped) libXfixes.so.3
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:06]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:07]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:07]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:07]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:07]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:07]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:07]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140014000"
+[18:29:07]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:07]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x140000000:0x140014000 done
+[18:29:07]  [BOX64] Detected running wine with "winhandler.exe"
+[18:29:07]  [BOX64] Counted 82 Env var
+[18:29:07]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:07]  [BOX64] Library search path: 
+[18:29:07]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:07]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:07]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:07]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:07]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:07]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:07]  	BOX64_DYNAREC_FORWARD=128
+[18:29:07]  	BOX64_DYNAREC_MISSING=1
+[18:29:07]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:07]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:07]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:07]  	BOX64_DYNAREC_WAIT=1
+[18:29:07]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:07]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:07]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:07]  	BOX64_LOG=1
+[18:29:07]  	BOX64_NOBANNER=0
+[18:29:07]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:07]  	BOX64_UNITYPLAYER=1
+[18:29:07]  	BOX64_DYNAREC=1
+[18:29:07]  	BOX64_DYNAREC_CALLRET=0
+[18:29:07]  [BOX64] argv[1]="C:\windows\winhandler.exe"
+[18:29:07]  [BOX64] argv[2]="/dir"
+[18:29:07]  [BOX64] argv[3]="E:\\Escape from Duckov"
+[18:29:07]  [BOX64] argv[4]=""Duckov.exe""
+[18:29:07]  [BOX64] argv[5]=""""
+[18:29:07]  [BOX64] argv[6]="-logFile"
+[18:29:07]  [BOX64] argv[7]="Player-T1-DUCKOV-C.log"
+[18:29:07]  [BOX64] Rename process to "wine"
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:07]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:07]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:07]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:07]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:07]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:07]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:07]  00c4:err:ole:start_rpcss Failed to start RpcSs service
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:07]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:07]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[18:29:07]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:07]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:07]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:07]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:07]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:07]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-1400a8000"
+[18:29:07]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:07]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x140000000:0x1400a8000 done
+[18:29:07]  [BOX64] Detected running wine with "Duckov.exe"
+[18:29:07]  [BOX64] Counted 82 Env var
+[18:29:07]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:07]  [BOX64] Library search path: 
+[18:29:07]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:07]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:07]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:07]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:07]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:07]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:07]  	BOX64_DYNAREC_FORWARD=128
+[18:29:07]  	BOX64_DYNAREC_MISSING=1
+[18:29:07]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:07]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:07]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:07]  	BOX64_DYNAREC_WAIT=1
+[18:29:07]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:07]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:07]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:07]  	BOX64_LOG=1
+[18:29:07]  	BOX64_NOBANNER=0
+[18:29:07]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:07]  	BOX64_UNITYPLAYER=1
+[18:29:07]  	BOX64_DYNAREC=1
+[18:29:07]  	BOX64_DYNAREC_CALLRET=0
+[18:29:07]  [BOX64] argv[1]="E:\Escape from Duckov\Duckov.exe"
+[18:29:07]  [BOX64] argv[2]=""
+[18:29:07]  [BOX64] argv[3]="-logFile"
+[18:29:07]  [BOX64] argv[4]="Player-T1-DUCKOV-C.log"
+[18:29:07]  [BOX64] Rename process to "wine"
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:07]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:07]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:07]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:07]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:07]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:07]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:07]  [BOX64] Detected UnityPlayer.dll
+[18:29:07]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:07]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:07]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:07]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:07]  	BOX64_DYNAREC_FORWARD=128
+[18:29:07]  	BOX64_DYNAREC_MISSING=1
+[18:29:07]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:07]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:07]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:07]  	BOX64_DYNAREC_WAIT=1
+[18:29:07]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:07]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:07]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:07]  	BOX64_LOG=1
+[18:29:07]  	BOX64_NOBANNER=0
+[18:29:07]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:07]  	BOX64_UNITY=1
+[18:29:07]  	BOX64_UNITYPLAYER=1
+[18:29:07]  	BOX64_DYNAREC=1
+[18:29:07]  	BOX64_DYNAREC_CALLRET=0
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:07]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:07]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/opengl32.so
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/bcrypt.so
+[18:29:07]  [BOX64] Using native(wrapped) libgnutls.so.30
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/crypt32.so
+[18:29:07]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[18:29:07]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[18:29:07]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[18:29:07]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[18:29:07]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[18:29:07]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140128000"
+[18:29:07]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[18:29:07]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[18:29:07]  [BOX64] WINE prereserve of 0x140000000:0x140128000 done
+[18:29:07]  [BOX64] Detected running wine with "UnityCrashHandler64.exe"
+[18:29:07]  [BOX64] Counted 83 Env var
+[18:29:07]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[18:29:07]  [BOX64] Library search path: 
+[18:29:07]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[18:29:07]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[18:29:07]  [BOX64] BOX64ENV: Variables overridden:
+[18:29:07]  	BOX64_DYNAREC_BIGBLOCK=2
+[18:29:07]  	BOX64_DYNAREC_FASTNAN=1
+[18:29:07]  	BOX64_DYNAREC_FASTROUND=0
+[18:29:07]  	BOX64_DYNAREC_FORWARD=128
+[18:29:07]  	BOX64_DYNAREC_MISSING=1
+[18:29:07]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[18:29:07]  	BOX64_DYNAREC_SAFEFLAGS=2
+[18:29:07]  	BOX64_DYNAREC_STRONGMEM=0
+[18:29:07]  	BOX64_DYNAREC_WAIT=1
+[18:29:07]  	BOX64_DYNAREC_WEAKBARRIER=2
+[18:29:07]  	BOX64_DYNAREC_X87DOUBLE=1
+[18:29:07]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[18:29:07]  	BOX64_LOG=1
+[18:29:07]  	BOX64_NOBANNER=0
+[18:29:07]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[18:29:07]  	BOX64_UNITYPLAYER=1
+[18:29:07]  	BOX64_DYNAREC=1
+[18:29:07]  	BOX64_DYNAREC_CALLRET=0
+[18:29:07]  [BOX64] argv[1]="E:\Escape from Duckov\UnityCrashHandler64.exe"
+[18:29:07]  [BOX64] argv[2]="--attach"
+[18:29:07]  [BOX64] argv[3]="228"
+[18:29:07]  [BOX64] argv[4]="2159022080"
+[18:29:07]  [BOX64] Rename process to "wine"
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[18:29:07]  [BOX64] Using native(wrapped) libdl.so.2
+[18:29:07]  [BOX64] Using native(wrapped) libc.so.6
+[18:29:07]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[18:29:07]  [BOX64] Using native(wrapped) libpthread.so.0
+[18:29:07]  [BOX64] Using native(wrapped) libutil.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libresolv.so.2
+[18:29:07]  [BOX64] Using native(wrapped) librt.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libbsd.so.0
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[18:29:07]  [BOX64] Using native(wrapped) libXext.so.6
+[18:29:07]  [BOX64] Using native(wrapped) libX11.so.6
+[18:29:07]  [BOX64] Using native(wrapped) libxcb.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libXau.so.6
+[18:29:07]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[18:29:07]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[18:29:07]  [BOX64] Error loading needed lib libXinerama.so.1
+[18:29:07]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0805e8e1, 2)
+[18:29:07]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libXrender.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libXrandr.so.2
+[18:29:07]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libXi.so.6
+[18:29:07]  [BOX64] Using native(wrapped) libXcursor.so.1
+[18:29:07]  [BOX64] Using native(wrapped) libXfixes.so.3
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[18:29:07]  [BOX64] Using native(wrapped) libm.so.6
+[18:29:07]  [BOX64] Using native(wrapped) libfreetype.so.6
+[18:29:07]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[18:29:07]  [BOX64] Parsing volatile metadata of file mono-2.0-bdwgc.dll loaded at 0x27c040000
+[18:29:08]  00e8:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+[18:29:08]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/dnsapi.so
+[18:29:08]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:08]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:08]  00e8:err:winediag:wined3d_dll_init Setting multithreaded command stream to 0x3.
+[18:29:08]  00e8:err:winediag:wined3d_dll_init Using the GLSL shader backend.
+[18:29:08]  00e8:err:winediag:wined3d_dll_init Setting strict shader math to 0x1.
+[18:29:08]  00e8:err:winediag:wined3d_dll_init Using the OpenGL renderer.
+[18:29:08]  [BOX64] Using native(wrapped) libvulkan.so.1
+[18:29:08]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:08]  [[31mBOX64[0m] Error initializing native libEGL.so.1 (last dlerror is libEGL.so.1: cannot open shared object file: No such file or directory)
+[18:29:08]  [BOX64] Error loading needed lib libEGL.so.1
+[18:29:08]  [BOX64] Warning: Cannot dlopen("libEGL.so.1"/0x3f03156bf6, 102)
+[18:29:08]  00e8:err:wgl:egl_init Failed to load libEGL.so.1: Cannot dlopen("libEGL.so.1"/0x3f03156bf6, 102)
+[18:29:08]  [BOX64] Using native(wrapped) libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCheckNamedFramebufferStatus not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateFramebuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCreateRenderbuffers not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetNamedFramebufferAttachmentParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferDrawBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferReadBuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedFramebufferRenderbuffer not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNamedRenderbufferStorageMultisample not found in lib libGL.so.1
+[18:29:08]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:08]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:08]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glClipControl not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glClipControl not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glClipControl not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glClipControl not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformativ not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformativ not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformativ not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformativ not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformati64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformati64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformati64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetInternalformati64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClamp not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClamp not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClamp not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClamp not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glShaderStorageBlockBinding not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glShaderStorageBlockBinding not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glShaderStorageBlockBinding not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glShaderStorageBlockBinding not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPatchParameterfv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPatchParameterfv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPatchParameterfv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPatchParameterfv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glQueryCounter not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glQueryCounter not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glQueryCounter not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glQueryCounter not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetQueryObjectui64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetQueryObjectui64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetQueryObjectui64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetQueryObjectui64v not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTextureBarrier not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTextureBarrier not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTextureBarrier not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTextureBarrier not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlendEquationSeparateEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlendEquationSeparateEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlendEquationSeparateEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlendEquationSeparateEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDepthBoundsEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDepthBoundsEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDepthBoundsEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDepthBoundsEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlitFramebufferEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlitFramebufferEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlitFramebufferEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glBlitFramebufferEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytei_vEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytei_vEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytei_vEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytei_vEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytevEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytevEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytevEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetUnsignedBytevEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClampEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClampEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClampEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPolygonOffsetClampEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureLevelParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureLevelParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureLevelParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureLevelParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureParameteriv not found in lib libGL.so.1
+[18:29:08]  [BOX64] Warning, function glGetTextureParameteriv not found in lib libGL.so.1
+[18:29:08]  00e8:fixme:dxgi:DXGID3D10CreateDevice Ignoring flags 0x20.
+[18:29:08]  00e8:err:d3d_sync:wined3d_cs_create Forcing serialization of all command streams.
+[18:29:08]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Returning fake Options support data.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 29, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 61, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 49, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 28, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 63, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 51, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 31, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 62, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 50, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 30, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 64, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 52, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 32, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 56, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 35, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 11, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 58, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 37, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 13, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 57, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 36, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 12, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 59, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 38, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 14, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 42, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 17, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 7, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 3, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 43, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 18, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 8, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 4, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 54, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 34, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 10, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 41, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 16, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 6, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 2, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 61, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 65, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 56, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 91, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 87, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 115, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 85, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 86, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 67, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 26, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 24, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 25, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 89, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 29, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 28, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 2, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 55, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 45, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 40, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 20, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 72, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 71, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 75, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 74, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 78, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 77, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 80, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 81, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 83, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 84, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 95, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 96, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 99, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 98, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 107, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 45, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 56, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFormatSupport iface 0000000081BD8040, format 107, format_support 00000000800DEAA8 partial-stub!
+[18:29:09]  00e8:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Unhandled feature 0x3.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Returning fake Options support data.
+[18:29:09]  00e8:fixme:dxgi:dxgi_factory_IsWindowedStereoEnabled iface 0000000240E33740 stub!
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Returning fake Options1 support data.
+[18:29:09]  00e8:fixme:d3d11:d3d11_device_CheckFeatureSupport Returning fake threading support data.
+[18:29:12]  00e8:fixme:dxgi:DXGID3D10CreateDevice Ignoring flags 0x820.
+[18:29:12]  00e8:err:d3d_sync:wined3d_cs_create Forcing serialization of all command streams.
+[18:29:12]  00e8:fixme:d3d11:d3d10_multithread_SetMultithreadProtected iface 00000002697237B0, enable 0x1 stub!
+[18:29:13]  00e8:fixme:win:GetPointerDevices (00000000800DF108 0000000000000000): partial stub
+[18:29:13]  00e8:fixme:win:GetPointerDevices (00000000800DF108 0000000000000000): partial stub
+[18:29:13]  00e8:fixme:combase:RoGetActivationFactory (L"Windows.Gaming.Input.Gamepad", {8bbce529-d49c-39e9-9560-e47dde96b7c8}, 0000000170F32F48): semi-stub
+[18:29:13]  018c:err:service:device_notify_proc failed to open RPC handle, error 1722
+[18:29:13]  00e8:fixme:combase:RoGetActivationFactory (L"Windows.Gaming.Input.RawGameController", {eb8d0792-e95a-4b19-afc7-0a59f8bf759e}, 0000000170F32F50): semi-stub
+[18:29:13]  00e8:fixme:system:NtUserGetDisplayConfigBufferSizes only returning active paths
+[18:29:13]  00e8:fixme:system:NtUserQueryDisplayConfig only returning active paths
+[18:29:13]  00e8:fixme:system:NtUserQueryDisplayConfig setting toplogyid to DISPLAYCONFIG_TOPOLOGY_INTERNAL
+[18:29:13]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:13]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestObjectAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBufferParameteriAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFlushMappedBufferRangeAPPLE not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureFaceARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFramebufferTextureLayerARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramParameteriARB not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glAlphaFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBeginFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glBindFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp1ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp2ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColorFragmentOp3ATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glEndFragmentShaderATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFragmentShadersATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPassTexCoordATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSampleMapATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFragmentShaderConstantATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilOpSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glStencilFuncSeparateATI not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramEnvParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glProgramLocalParameters4fvEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glActiveStencilFaceEXT not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glDeleteFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinishFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGenFencesNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glGetFenceivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glIsFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSetFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTestFenceNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glColor4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFogCoordhvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glMultiTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glNormal3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glSecondaryColor3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glTexCoord4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertex4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttrib4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs1hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs2hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs3hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexAttribs4hvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glVertexWeighthvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glPointParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerOutputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterfvNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameteriNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glCombinerParameterivNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  [BOX64] Warning, function glFinalCombinerInputNV not found in lib libGL.so.1
+[18:29:13]  00e8:fixme:dxgi:dxgi_output_GetDisplayModeList iface 000000026CC191A0, format DXGI_FORMAT_R8G8B8A8_UNORM, flags 0, mode_count 00000000800DEA70, modes 0000000000000000 partial stub!
+[18:29:13]  00e8:fixme:dxgi:dxgi_output_GetDisplayModeList iface 000000026CC191A0, format DXGI_FORMAT_R8G8B8A8_UNORM, flags 0, mode_count 00000000800DEA70, modes 00000001F0000010 partial stub!
+[18:29:13]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:13]  00e8:fixme:dwmapi:DwmGetWindowAttribute attribute 1 not implemented.
+[18:29:13]  00e8:fixme:dxgi:dxgi_output_GetDesc1 iface 000000026CC190E0, desc 00000000800DE940 semi-stub!
+[18:29:13]  00e8:fixme:dxgi:wined3d_swapchain_flags_from_dxgi Unhandled flags 0x840.
+[18:29:13]  00e8:fixme:d3d:wined3d_swapchain_init The application requested more than one back buffer, this is not properly supported.
+[18:29:13]  Please configure the application to use double buffering (1 back buffer) if possible.
+[18:29:13]  00e8:fixme:d3d:wined3d_swapchain_init Unimplemented swap effect 0x3.
+[18:29:13]  00e8:fixme:dxgi:d3d11_swapchain_GetDesc Ignoring ScanlineOrdering and Scaling.
+[18:29:13]  00e8:fixme:dxgi:d3d11_swapchain_ResizeBuffers Ignoring flags 0x842.
+[18:29:13]  00e8:fixme:dxgi:d3d11_swapchain_GetFrameLatencyWaitableObject iface 00000000802B8000 stub!
+[18:29:13]  00e8:fixme:dxgi:d3d11_swapchain_GetMaximumFrameLatency iface 00000000802B8000, max_latency 00000000800DE828 stub!
+[18:29:13]  017c:fixme:d3d:wined3d_render_target_view_gl_cs_init Swapchain views not supported.
+[18:29:13]  Xlib:  extension "SHAPE" missing on display ":0".
+[18:29:14]  00e8:fixme:win:RegisterTouchWindow hwnd 0000000000020084, flags 0 stub!
+[18:29:14]  0180:fixme:d3d11:d3d_rasterizer_state_init Ignoring MultisampleEnable 0x1.
+[18:29:14]  017c:fixme:d3d:state_linepattern_w Setting line patterns is not supported in OpenGL core contexts.
+[18:29:17]  [BOX64] Parsing volatile metadata of file steam_api64.dll loaded at 0x27b300000
+[18:29:17]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:29:17]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:29:17]  0198:fixme:kernelbase:AppPolicyGetThreadInitializationType FFFFFFFFFFFFFFFA, 000000026FD3FF50
+[18:29:23]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:23]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:23]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:24]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:24]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:24]  00e8:fixme:ntdll:EtwEventSetInformation (deadbeef, 2, 000000027B1E6110, 43) stub
+[18:29:24]  00e8:fixme:file:NtLockFile I/O completion on lock not implemented yet
+[18:29:24]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:24]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:24]  00e8:fixme:file:CopyFileExW cancel_ptr is not supported
+[18:29:24]  [BOX64] Parsing volatile metadata of file fmodstudio.dll loaded at 0x27ac70000
+[18:29:24]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winealsa.so
+[18:29:24]  [BOX64] Using native(wrapped) libasound.so.2
+[18:29:25]  01ac:fixme:kernelbase:AppPolicyGetThreadInitializationType FFFFFFFFFFFFFFFA, 000000027318FF50
+[18:30:19]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:30:19]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:31:21]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:31:21]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:32:23]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:32:23]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:33:25]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:33:25]  0060:err:nsi:update_if_table if_nameindex failed, errno 13.
+[18:33:40]  X connection to :0 broken (explicit kill or server shutdown).
+[18:33:40]  X connection to :0 broken (explicit kill or server shutdown).
+[18:33:40]  X connection to :0 broken (explicit kill or server shutdown).
+[18:33:40]  00c8:err:winediag:x11drv_init_thread_data x11drv: Can't open display: :0. Please ensure that your X server is running and that $DISPLAY is set correctly.
+[18:33:40]  [BOX64] Sigfault/Segbus while quitting, exiting silently
