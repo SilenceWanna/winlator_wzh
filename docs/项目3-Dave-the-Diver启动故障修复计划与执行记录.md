@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；Duckov A-D 均黑屏且问题收敛到游戏包保存配置，当前转入 T1-PAL-A
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；Palworld 当前无法测试，替代主测选定《合金装备5：原爆点》，备用为《师父》
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -469,8 +469,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 ## 五、用户当前需要执行的步骤
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
-2. Duckov A-D 对照已完成并停止继续扩大变量；按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”新建 Palworld 独立容器并执行 T1-PAL-A。
-3. 不要复用 Duckov prefix，也不要更改 Dave 成功容器；Palworld 首轮只使用 VKD3D 3.0.1 从 `Palworld.exe` 启动。
+2. Duckov A-D 对照已完成并停止继续扩大变量；Palworld 当前无法测试，按任务1文档准备《合金装备5：原爆点》的合法、干净 PC 副本。
+3. 游戏下载解压后先由仓库侧静态检查，不要直接运行；主候选不可用时才启用《师父》备用。
 
 ## 六、进度记录
 
@@ -806,6 +806,12 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - A-D 结果共同说明：当前 Duckov 游戏包的保存/选项配置在 Winlator 映射路径下不兼容；现有证据不支持修改 Winlator 公共图形、Wine 或 Box64 代码。停止 Duckov 变量扩展，转入 Palworld 覆盖。
 - D 轮三份日志已归档：Winlator 日志 `61,768` bytes、SHA-256 `B2977CDD3C3202BA4AC05FFC8702D82141B33420DB547793D2B4F56BA05873CF`；启动日志 `1,321` bytes、SHA-256 `2D66581606A454531A362D9FBFEFB6FCE33163AAB0E615A10E3C1B2785C7FC19`；Player 日志 `2,562` bytes、SHA-256 `66271A03CC1F3B0B7929474BE5587870996EB9369C1B269D8BC469862BD87DB4`。
 
+### 2026-08-13：Palworld 替代候选与 PDF 归档
+
+- 用户确认 Palworld 当前无法测试，并提供 17 页图片型候选游戏列表。PDF 已原样归档，大小 `2,326,954` bytes、SHA-256 `A504EED183B6E8ABC35562D59E0480E53D8E1337A1FD376CC82676AFB139E902`。
+- 按“非 Unity、64 位、D3D11、体积较小、启动链简单”筛选，主测选为 Fox Engine 的《合金装备5：原爆点》；官方要求 DirectX 11、约 4 GB 存储。备用选为 Unreal Engine 的《师父》；最低 DirectX 11、约 22 GB。
+- 候选 PDF 中存在非官方修改标签，测试只接受用户合法持有的干净 PC 副本作为可外推证据。下一步先下载解压但不运行，由仓库侧完成 PE、主程序、引擎和第三方 DLL 静态检查。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -847,6 +853,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | T1-DUCKOV-B | WineD3D 黑屏三日志归档、D3D11 初始化证据与缺失保存目录定位 | A 轮 DXVK 无首帧后执行图形封装层对照 | 已完成，`FAIL-BLACK`，进入 C 轮（2026-08-11） |
 | T1-DUCKOV-C | 补齐 `E:\Saves`、归档新脚本异常并制定 DXVK 受控复测 | B 轮定位到保存父目录缺失 | 已完成，目录异常推进但仍 `FAIL-BLACK`（2026-08-13） |
 | T1-DUCKOV-D | 保留 Saves 的 DXVK 复测、A-D 对照结论、停止 Duckov 变量扩展 | C 轮消除目录缺失但仍黑屏 | 已完成，游戏包保存配置兼容性候选（2026-08-13） |
+| T1-GAME-SELECT | 候选 PDF 归档、Palworld 替代选型与干净副本门槛 | 用户确认 Palworld 当前无法测试 | 已完成，主测《原爆点》、备用《师父》（2026-08-13） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
