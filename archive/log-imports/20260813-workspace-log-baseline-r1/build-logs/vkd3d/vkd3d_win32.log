@@ -1,0 +1,543 @@
+ninja: Entering directory `build.win32'
+[1/216] Generating vkd3d_version.h with a custom command
+[2/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_types.cpp.obj
+[3/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_disasm.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_disasm.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_disasm.h:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_parser.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[4/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_types.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_types.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_types.h:9:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[5/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_disasm.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_disasm.cpp:5:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_disasm.h:5:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_parser.h:7:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_types.h:9:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[6/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_container.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_container.cpp:2:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_parser.h:7:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_types.h:9:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[7/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_interface.cpp.obj
+[8/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_registers.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_registers.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_registers.h:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_parser.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[9/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_api.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_api.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_api.h:5:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.h:4:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_control_flow.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[10/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_signature.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_signature.cpp:4:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_signature.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[11/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir_divergence.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_divergence.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_divergence.h:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_builder.h:11:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[12/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.cpp:1:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[13/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir_builder.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_builder.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_builder.h:11:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[14/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_parser.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_parser.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_parser.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[15/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir_legalize.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_legalize.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_legalize.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[16/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir_dominance.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_dominance.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_dominance.h:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_builder.h:11:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[17/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir_serialize.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_serialize.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_serialize.h:5:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_builder.h:11:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[18/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_spec_constants.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_spec_constants.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_spec_constants.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[19/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir_utils.cpp.obj
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_utils.cpp:166:30: warning: captured structured bindings are a C++20 extension [-Wc++20-extensions]
+  166 |     auto operand = [dstType, normalizedInt, normalizedFloat] {
+      |                              ^
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_utils.cpp:128:11: note: 'normalizedInt' declared here
+  128 |     auto [normalizedInt, normalizedFloat] = [src, srcType] {
+      |           ^
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_utils.cpp:166:45: warning: captured structured bindings are a C++20 extension [-Wc++20-extensions]
+  166 |     auto operand = [dstType, normalizedInt, normalizedFloat] {
+      |                                             ^
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_utils.cpp:128:26: note: 'normalizedFloat' declared here
+  128 |     auto [normalizedInt, normalizedFloat] = [src, srcType] {
+      |                          ^
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_utils.cpp:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_utils.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+3 warnings generated.
+[20/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_cse.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_cse.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_cse.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[21/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_parser.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_parser.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_parser.h:7:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_types.h:9:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[22/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_cfg_convert.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_cfg_convert.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_cfg_convert.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[23/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_cfg_cleanup.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_cfg_cleanup.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_cfg_cleanup.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[24/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_ir_disasm.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_disasm.cpp:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_disasm.h:8:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir_builder.h:11:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[25/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_buffer_kind.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_buffer_kind.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_buffer_kind.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[26/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_lower_consume.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_lower_consume.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_lower_consume.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[27/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_lower_min16.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_lower_min16.cpp:4:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_lower_min16.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[28/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_scalarize.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_scalarize.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_scalarize.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[29/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_resources.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_resources.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.h:4:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_control_flow.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[30/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/util_util_float16.cpp.obj
+[31/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_derivative.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_derivative.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_derivative.h:7:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[32/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_descriptor_indexing.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_descriptor_indexing.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_descriptor_indexing.h:5:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir_builder.h:11:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[33/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_remove_unused.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_remove_unused.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_remove_unused.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[34/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_propagate_resource_types.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_propagate_resource_types.cpp:4:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_propagate_resource_types.h:6:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[35/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_sync.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_sync.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_sync.h:6:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[36/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_function.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_function.cpp:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_function.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[37/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_registers.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_registers.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_registers.h:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_parser.h:7:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_types.h:9:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[38/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_io_map.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_io_map.cpp:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_converter.h:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_parser.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[39/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/util_util_log.cpp.obj
+[40/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_metadata.cpp.obj
+[41/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/util_util_md5.cpp.obj
+[42/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/util_util_swizzle.cpp.obj
+[43/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_propagate_types.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_propagate_types.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_propagate_types.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[44/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_context.cpp.obj
+[45/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_function.cpp.obj
+[46/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_resources.cpp.obj
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_resources.cpp:134:35: warning: unused parameter 'op' [-Wunused-parameter]
+  134 |     const Instruction&            op,
+      |                                   ^
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_resources.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_resources.h:5:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_parser.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+2 warnings generated.
+[47/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_lower_io.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_lower_io.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_lower_io.h:6:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[48/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/sm3_sm3_converter.cpp.obj
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_converter.cpp:248:59: warning: unused parameter 'shaderType' [-Wunused-parameter]
+  248 | bool Converter::finalize(ir::Builder& builder, ShaderType shaderType) {
+      |                                                           ^
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_converter.cpp:1208:98: warning: unused parameter 'instruction' [-Wunused-parameter]
+ 1208 | ir::SsaDef Converter::applyDstModifiers(ir::Builder& builder, ir::SsaDef def, const Instruction& instruction, const Operand& operand) {
+      |                                                                                                  ^
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_converter.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_converter.h:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/sm3_parser.h:8:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/sm3/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+3 warnings generated.
+[49/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_instruction.cpp.obj
+[50/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_ssa.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_ssa.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_ssa.h:7:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_ssa_utils.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[51/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_scratch.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_scratch.cpp:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_scratch.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[52/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_type.cpp.obj
+[53/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/third_party_glslang-spirv_InReadableOrder.cpp.obj
+[54/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/llvm_bitcode_parser.cpp.obj
+[55/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_value.cpp.obj
+[56/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_io_map.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_io_map.cpp:3:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.h:4:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_control_flow.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[57/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/third_party_glslang-spirv_Logger.cpp.obj
+[58/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_disassembler.cpp.obj
+[59/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/memory_stream.cpp.obj
+[60/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/node_pool.cpp.obj
+[61/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/spirv_spirv_mapping.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/spirv/spirv_mapping.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/spirv/spirv_mapping.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/spirv/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[62/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/descriptor_qa.cpp.obj
+[63/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/spirv_module_instrumentation.cpp.obj
+[64/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/third_party_bc-decoder_llvm_decoder.cpp.obj
+[65/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_compute.cpp.obj
+[66/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_common.cpp.obj
+[67/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_arithmetic.cpp.obj
+[68/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_nvapi.cpp.obj
+[69/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/node.cpp.obj
+[70/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/dxil_parser.cpp.obj
+[71/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_pixel_ops.cpp.obj
+[72/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgibase.h'
+[73/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxcapi.h'
+[74/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgi.h'
+[75/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgi1_4.h'
+[76/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgi1_3.h'
+[77/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_d3d12sdklayers.h'
+[78/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_geometry.cpp.obj
+[79/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_d3d12.h'
+[80/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_d3dcommon.h'
+[81/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgi1_5.h'
+[82/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_resources.cpp.obj
+[83/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgi1_2.h'
+[84/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_ags.cpp.obj
+[85/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/dxil_spirv_c.cpp.obj
+[86/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/dxbc_dxbc_converter.cpp.obj
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.cpp:1206:45: warning: lambda capture 'builder' is not used [-Wunused-lambda-capture]
+ 1206 |   ir::Op result = [opCode, boolType, a, b, &builder] {
+      |                                          ~~~^~~~~~~
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.cpp:1278:45: warning: lambda capture 'builder' is not used [-Wunused-lambda-capture]
+ 1278 |   ir::Op result = [opCode, dstType, value, &builder] {
+      |                                          ~~~^~~~~~~
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.cpp:1630:45: warning: lambda capture 'builder' is not used [-Wunused-lambda-capture]
+ 1630 |   ir::Op result = [opCode, boolType, a, b, &builder] {
+      |                                          ~~~^~~~~~~
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.cpp:1:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_converter.h:4:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/dxbc_control_flow.h:3:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/dxbc/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+4 warnings generated.
+[87/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/spirv_module.cpp.obj
+[88/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/ir_passes_ir_pass_arithmetic.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_arithmetic.cpp:5:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/ir_pass_arithmetic.h:6:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/ir/passes/../ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[89/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_tessellation.cpp.obj
+[90/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_mesh.cpp.obj
+[91/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/debug_logging.cpp.obj
+[92/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/third_party_glslang-spirv_SpvBuilder.cpp.obj
+[93/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_device_vkd3d_ext.h'
+[94/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/util_thread_local_allocator.cpp.obj
+[95/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_command_list_vkd3d_ext.h'
+[96/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_swapchain_factory.h'
+[97/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_core_interface.h'
+[98/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgitype.h'
+[99/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_command_queue_vkd3d_ext.h'
+[100/216] Generating 'libs\\vkd3d-common\\libvkd3d_common.a.p\\vkd3d_dxgiformat.h'
+[101/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_ray_tracing.cpp.obj
+[102/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/bc_module.cpp.obj
+[103/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_workgraph.cpp.obj
+[104/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_buffer_uint.h'
+[105/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_buffer.cpp.obj
+[106/216] Compiling C object libs/vkd3d-common/libvkd3d_common.a.p/memory.c.obj
+[107/216] Compiling C object libs/vkd3d-common/libvkd3d_common.a.p/utf8.c.obj
+[108/216] Compiling C object libs/vkd3d-common/libvkd3d_common.a.p/debug.c.obj
+[109/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_sampling.cpp.obj
+[110/216] Compiling C object libs/vkd3d-common/libvkd3d_common.a.p/file_utils.c.obj
+[111/216] Compiling C object libs/vkd3d-common/libvkd3d_common.a.p/profiling.c.obj
+[112/216] Compiling C object libs/vkd3d-shader/libvkd3d-shader.a.p/dxil.c.obj
+[113/216] Compiling C object libs/vkd3d-shader/libvkd3d-shader.a.p/dxbc.c.obj
+[114/216] Compiling C object libs/vkd3d-common/libvkd3d_common.a.p/platform.c.obj
+[115/216] Compiling C object libs/vkd3d-common/libvkd3d_common.a.p/string.c.obj
+[116/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_dxil_dxil_waveops.cpp.obj
+[117/216] Compiling C object libs/vkd3d-shader/libvkd3d-shader.a.p/vkd3d_shader_main.c.obj
+[118/216] Compiling C object libs/vkd3d-shader/libvkd3d-shader.a.p/checksum.c.obj
+[119/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_empty.h'
+[120/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_1d_array_uint.h'
+[121/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_buffer_float.h'
+[122/216] Compiling C object libs/vkd3d-shader/libvkd3d-shader.a.p/3rdparty_md5_md5.c.obj
+[123/216] Linking static target libs/vkd3d-common/libvkd3d_common.a
+[124/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_buffer_raw.h'
+[125/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_1d_array_float.h'
+[126/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_1d_float.h'
+[127/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_2d_array_uint.h'
+[128/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_2d_uint.h'
+[129/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_3d_uint.h'
+[130/216] Linking static target libs/vkd3d-shader/libvkd3d-shader.a
+[131/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_3d_float.h'
+[132/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_1d_uint.h'
+[133/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_opcodes_dxil_builtins.cpp.obj
+[134/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_2d_array_float.h'
+[135/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_clear_uav_image_2d_float.h'
+[136/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_emit_nv_memory_decompression_regions.h'
+[137/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_emit_nv_memory_decompression_workgroups.h'
+[138/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\vs_fullscreen.h'
+[139/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_resolve_query.h'
+[140/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/opcodes_opcodes_llvm_builtins.cpp.obj
+[141/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_copy_image_stencil.h'
+[142/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_copy_image_float.h'
+[143/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_copy_image_uint.h'
+[144/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_copy_image_stencil_no_export.h'
+[145/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_resolve_predicate.h'
+[146/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\gs_fullscreen.h'
+[147/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_swapchain_fullscreen.h'
+[148/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\vs_fullscreen_layer.h'
+[149/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_execute_indirect_patch.h'
+[150/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_execute_indirect_patch_debug_ring.h'
+[151/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_execute_indirect_multi_dispatch.h'
+[152/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\vs_swapchain_fullscreen.h'
+[153/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_sampler_feedback_decode_buffer_min_mip.h'
+[154/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_resolve_binary_queries.h'
+[155/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_predicate_command.h'
+[156/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_sampler_feedback_encode_buffer_min_mip.h'
+[157/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_sampler_feedback_encode_image_min_mip.h'
+[158/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_resolve_color_float.h'
+[159/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_resolve_color_uint.h'
+[160/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_resolve_color_sint.h'
+[161/216] Compiling C++ object subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a.p/spirv_spirv_builder.cpp.obj
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/spirv/spirv_builder.cpp:7:
+In file included from ../subprojects/dxil-spirv/subprojects/dxbc-spirv/spirv/spirv_builder.h:5:
+../subprojects/dxil-spirv/subprojects/dxbc-spirv/spirv/../ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[162/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_sampler_feedback_decode_image_mip_used.h'
+[163/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_sampler_feedback_decode_image_min_mip.h'
+[164/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_sampler_feedback_encode_image_mip_used.h'
+[165/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_resolve_color_float.h'
+[166/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_resolve_color_sint.h'
+[167/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_workgraph_distribute_workgroups.h'
+[168/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_workgraph_distribute_payload_offsets.h'
+[169/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_resolve_depth.h'
+[170/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_resolve_stencil.h'
+[171/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\fs_resolve_stencil_no_export.h'
+[172/216] Linking static target subprojects/dxil-spirv/subprojects/dxbc-spirv/libdxbc_spv.a
+[173/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_resolve_color_uint.h'
+[174/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_gdeflate.h'
+[175/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_workgraph_complete_compaction.h'
+[176/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_workgraph_setup_gpu_input.h'
+[177/216] Generating 'libs\\vkd3d\\libvkd3d-proton.a.p\\cs_gdeflate_prepare.h'
+[178/216] Compiling C object libs/d3d12/d3d12.dll.p/main.c.obj
+[179/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/dxil_converter.cpp.obj
+[180/216] Compiling C++ object subprojects/dxil-spirv/libdxbc_spv_module.a.p/bc_module_dxbc_ir.cpp.obj
+In file included from ../subprojects/dxil-spirv/bc/module_dxbc_ir.cpp:37:
+..\subprojects\dxil-spirv\subprojects\dxbc-spirv/ir/ir.h:273:11: warning: private field 'm_reserved' is not used [-Wunused-private-field]
+  273 |   uint8_t m_reserved   : 1;
+      |           ^
+1 warning generated.
+[181/216] Linking target libs/d3d12/d3d12.dll
+[182/216] Linking static target subprojects/dxil-spirv/libdxbc_spv_module.a
+[183/216] Compiling C object libs/d3d12core/d3d12core.dll.p/debug.c.obj
+[184/216] Generating vkd3d_build.h with a custom command
+[185/216] Compiling C object libs/d3d12core/d3d12core.dll.p/main.c.obj
+[186/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/command_list_vkd3d_ext.c.obj
+[187/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/d3dkmt.c.obj
+[188/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/meta_commands.c.obj
+[189/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/acceleration_structure.c.obj
+[190/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/command_queue_vkd3d_ext.c.obj
+[191/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/opacity_micromap.c.obj
+[192/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/heap.c.obj
+[193/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/vkd3d_main.c.obj
+[194/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/raytracing_pipeline.c.obj
+[195/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/va_map.c.obj
+[196/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/utils.c.obj
+[197/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/debug_ring.c.obj
+[198/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/state_object_common.c.obj
+[199/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/bundle.c.obj
+[200/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/queue_timeline.c.obj
+[201/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/address_binding_tracker.c.obj
+[202/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/device_vkd3d_ext.c.obj
+[203/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/swapchain.c.obj
+[204/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/shared_metadata.c.obj
+[205/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/meta.c.obj
+[206/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/workgraphs.c.obj
+[207/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/memory.c.obj
+[208/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/state.c.obj
+[209/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/cache.c.obj
+[210/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/resource.c.obj
+[211/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/device.c.obj
+[212/216] Compiling C++ object subprojects/dxil-spirv/libdxil-spirv.a.p/cfg_structurizer.cpp.obj
+[213/216] Linking static target subprojects/dxil-spirv/libdxil-spirv.a
+[214/216] Compiling C object libs/vkd3d/libvkd3d-proton.a.p/command.c.obj
+[215/216] Linking static target libs/vkd3d/libvkd3d-proton.a
+[216/216] Linking target libs/d3d12core/d3d12core.dll

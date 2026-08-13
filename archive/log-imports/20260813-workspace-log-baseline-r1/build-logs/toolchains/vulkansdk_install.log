@@ -1,0 +1,24 @@
+已找到 Vulkan SDK [KhronosGroup.VulkanSDK] 版本 1.4.350.0
+此应用程序由其所有者授权给你。
+Microsoft 对第三方程序包概不负责，也不向第三方程序包授予任何许可证。
+的协议 Vulkan SDK [KhronosGroup.VulkanSDK] 版本 1.4.350.0
+版本: 1.4.350.0
+发布者: LunarG Inc.
+发布服务器 URL: https://www.lunarg.com/
+发布服务器支持 URL: https://vulkan.lunarg.com/issue/home
+作者: LunarG, Inc.
+主页: https://vulkan.lunarg.com/sdk/home
+许可证: MIT 或 Apache-2.0
+许可证 URL: https://vulkan.lunarg.com/license/
+隐私 URL: https://vulkan.lunarg.com/content/privacy_policy.html
+版权所有: Copyright (c) 2016-2026 LunarG Inc.
+协议：
+  Vulkan SDK License Summary: https://vulkan.lunarg.com/license/
+
+此包需要以下依赖项：
+  - 程序包
+      Microsoft.VCRedist.2015+.x64
+正在下载 https://sdk.lunarg.com/sdk/download/1.4.350.0/windows/vulkansdk-windows-X64-1.4.350.0.exe
+已成功验证安装程序哈希
+正在启动程序包安装...
+安装程序失败，退出代码为: 3221225477

@@ -1,0 +1,15 @@
+Processing triggers for install-info (6.8-4build1) ...
+Turn off this advice by setting config variable advice.detachedHead to false
+
+In External/spirv-tools/external/spirv-headers: ['git', 'checkout', '3f17b2af6784bfa2c5aa5dbb8e0e74a607dd8b3b']
+b''
+
+
+-- Configuring incomplete, errors occurred!
+ninja: Entering directory `build'
+ninja: error: loading 'build.ninja': No such file or directory
+ninja: Entering directory `build'
+ninja: error: loading 'build.ninja': No such file or directory
+=== 版本确认 ===
+/mnt/c/Users/WANGZI~1.360/AppData/Local/Temp/wsl_glslang.sh: line 21: /usr/local/bin/glslang: No such file or directory
+GLSLANG_BUILD_OK

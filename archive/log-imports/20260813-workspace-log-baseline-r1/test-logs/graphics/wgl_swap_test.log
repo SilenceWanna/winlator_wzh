@@ -1,0 +1,7 @@
+WGL swap test starting
+ChoosePixelFormat=7
+wglCreateContext=0000000000010000
+GL_VENDOR=Intel
+GL_RENDERER=Intel(R) UHD Graphics
+GL_VERSION=4.6.0 - Build 32.0.101.7026
+progress frame=60 swap_successes=60 swap_failures=0

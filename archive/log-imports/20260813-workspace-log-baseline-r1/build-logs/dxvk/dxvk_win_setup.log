@@ -1,0 +1,127 @@
+﻿The Meson build system
+Version: 1.11.2
+Source dir: C:\Users\wangzihe.18.360BUYAD\AppData\Local\Temp\dxvk_src
+Build dir: C:\Users\wangzihe.18.360BUYAD\AppData\Local\Temp\dxvk_src\build.win64
+Build type: cross build
+Project name: dxvk
+Project version: 3.0.2
+C compiler for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+C linker for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe ld.lld 22.1.8
+C++ compiler for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+C++ linker for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe ld.lld 22.1.8
+C compiler for the build machine: cc (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+C linker for the build machine: cc ld.lld 22.1.8
+C++ compiler for the build machine: c++ (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+C++ linker for the build machine: c++ ld.lld 22.1.8
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Target machine cpu family: x86_64
+Target machine cpu: x86_64
+Found pkg-config: NO
+Found CMake: NO
+Run-time dependency libdisplay-info found: NO  (tried pkg-config and cmake)
+Looking for a fallback subproject for the dependency libdisplay-info
+
+Executing subproject libdisplay-info 
+
+libdisplay-info| Project name: libdisplay-info
+libdisplay-info| Project version: 0.0.0
+libdisplay-info| C compiler for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+libdisplay-info| C linker for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe ld.lld 22.1.8
+libdisplay-info| C compiler for the build machine: cc (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+libdisplay-info| C linker for the build machine: cc ld.lld 22.1.8
+libdisplay-info| Program tool/gen-search-table.py found: YES (C:\Users\wangzihe.18.360BUYAD\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\wangzihe.18.360BUYAD\AppData\Local\Temp\dxvk_src\subprojects\libdisplay-info\tool/gen-search-table.py)
+libdisplay-info| Library m found: YES
+libdisplay-info| Compiler for C supports arguments -Wundef: YES
+libdisplay-info| Compiler for C supports arguments -Wmissing-prototypes: YES
+libdisplay-info| Compiler for C supports arguments -Walloca: YES
+libdisplay-info| Compiler for C supports arguments -Wdeclaration-after-statement: YES
+libdisplay-info| Compiler for C supports arguments -Wconversion: YES
+libdisplay-info| Compiler for C supports arguments -Wno-unused-parameter: YES
+libdisplay-info| Compiler for C supports arguments -Wno-missing-field-initializers: YES
+libdisplay-info| Compiler for C supports arguments -Werror=implicit: YES
+libdisplay-info| Build targets in project: 2
+libdisplay-info| Subproject libdisplay-info finished.
+
+Dependency libdisplay-info for host machine from subproject subprojects/libdisplay-info found: YES 0.0.0
+Library d3d9 found: YES
+Library d3d11 found: YES
+Library dxgi found: YES
+Library gdi32 found: YES
+Library version found: YES
+Program windres found: YES
+
+Executing subproject dxbc-spirv 
+
+dxbc-spirv| Project name: dxbc-spirv
+dxbc-spirv| Project version: 0.1.0
+dxbc-spirv| C++ compiler for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+dxbc-spirv| C++ linker for the host machine: C:/Users/wangzihe.18.360BUYAD/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260616-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe ld.lld 22.1.8
+dxbc-spirv| C++ compiler for the build machine: c++ (clang 22.1.8 "clang version 22.1.8 (https://github.com/llvm/llvm-project.git ca7933e47d3a3451d81e72ac174dcb5aa28b59d1)")
+dxbc-spirv| C++ linker for the build machine: c++ ld.lld 22.1.8
+dxbc-spirv| Build targets in project: 3
+dxbc-spirv| Subproject dxbc-spirv finished.
+
+Compiler for C++ supports arguments -msse: YES 
+Compiler for C++ supports arguments -msse2: YES 
+Compiler for C++ supports arguments -msse3: YES 
+Compiler for C++ supports arguments -mfpmath=sse: YES 
+Compiler for C++ supports arguments -Wimplicit-fallthrough: YES 
+Compiler for C++ supports arguments -Wno-missing-field-initializers: YES 
+Compiler for C++ supports arguments -Wno-unused-parameter: YES 
+Compiler for C++ supports arguments -Wno-misleading-indentation: YES 
+Compiler for C++ supports arguments -Wno-cast-function-type: YES 
+Compiler for C++ supports arguments -Wno-unused-private-field: YES 
+Compiler for C++ supports arguments -Wno-microsoft-exception-spec: YES 
+Compiler for C++ supports arguments -Wno-extern-c-compat: YES 
+Compiler for C++ supports arguments -Wno-unused-const-variable: YES 
+Compiler for C++ supports arguments -Wno-missing-braces: YES 
+Compiler for C++ supports arguments -DNOMINMAX: YES 
+Compiler for C++ supports arguments -D_WIN32_WINNT=0xa00: YES 
+Compiler for C++ supports arguments -DDXVK_WSI_WIN32: YES 
+Compiler for C supports arguments -msse: YES 
+Compiler for C supports arguments -msse2: YES 
+Compiler for C supports arguments -msse3: YES 
+Compiler for C supports arguments -mfpmath=sse: YES 
+Compiler for C supports arguments -Wimplicit-fallthrough: YES 
+Compiler for C supports arguments -Wno-missing-field-initializers: YES (cached)
+Compiler for C supports arguments -Wno-unused-parameter: YES (cached)
+Compiler for C supports arguments -Wno-misleading-indentation: YES 
+Compiler for C supports arguments -Wno-cast-function-type: YES 
+Compiler for C supports arguments -Wno-unused-private-field: YES 
+Compiler for C supports arguments -Wno-microsoft-exception-spec: YES 
+Compiler for C supports arguments -Wno-extern-c-compat: YES 
+Compiler for C supports arguments -Wno-unused-const-variable: YES 
+Compiler for C supports arguments -Wno-missing-braces: YES 
+Compiler for C supports arguments -DNOMINMAX: YES 
+Compiler for C supports arguments -D_WIN32_WINNT=0xa00: YES 
+Compiler for C supports arguments -DDXVK_WSI_WIN32: YES 
+Compiler for C++ supports link arguments -static: YES 
+Compiler for C++ supports link arguments -static-libgcc: YES 
+Compiler for C++ supports link arguments -static-libstdc++: YES 
+Compiler for C++ supports link arguments -Wl,--file-alignment=4096: YES 
+Compiler for C supports link arguments -static: YES 
+Compiler for C supports link arguments -static-libgcc: YES 
+Compiler for C supports link arguments -static-libstdc++: YES 
+Compiler for C supports link arguments -Wl,--file-alignment=4096: YES 
+Program glslang found: YES (C:\VulkanSDK\1.4.350.0\Bin\glslang.EXE)
+Configuring buildenv.h using configuration
+Library setupapi found: YES
+Run-time dependency threads found: YES
+Dependency threads for host machine found: YES unknown (cached)
+Library version found: YES
+Build targets in project: 14
+
+dxvk 3.0.2
+
+  Subprojects
+    dxbc-spirv     : YES
+    libdisplay-info: YES
+
+  User defined options
+    Cross files    : build-win64-llvm.txt
+    buildtype      : release
+
+Found ninja-1.10.2 at C:\Users\wangzihe.18.360BUYAD\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.EXE
