@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；Duckov A/B/C 均黑屏，当前执行 T1-DUCKOV-D DXVK 受控复测
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；Duckov A-D 均黑屏且问题收敛到游戏包保存配置，当前转入 T1-PAL-A
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -469,8 +469,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 ## 五、用户当前需要执行的步骤
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
-2. 按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”复用 Duckov 容器并执行 T1-DUCKOV-D。
-3. 保留 C 轮的 `E:\Saves`，本轮只把 WineD3D 回切为 DXVK 3.0.2 并输出新的 Player 日志；不要同时测试 Palworld，也不要更改 Dave 成功容器。
+2. Duckov A-D 对照已完成并停止继续扩大变量；按 `docs/项目3-任务1-多游戏运行测试计划与执行记录.md` 的“当前操作步骤”新建 Palworld 独立容器并执行 T1-PAL-A。
+3. 不要复用 Duckov prefix，也不要更改 Dave 成功容器；Palworld 首轮只使用 VKD3D 3.0.1 从 `Palworld.exe` 启动。
 
 ## 六、进度记录
 
@@ -799,6 +799,13 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - WineD3D 的 swap effect、frame-latency object 和 swapchain view 未实现警告仍存在。下一轮保留 Saves 与日志参数，只回切 DXVK 3.0.2，取得可与 C 轮比较的 Unity Player 日志；D 轮后停止继续扩大 Duckov 变量并转入 Palworld 覆盖。
 - C 轮三份日志已归档：Winlator 日志 `165,410` bytes、SHA-256 `FB1B175BF6527F5375E8382205EF70096DE382483731AD2E8FDC096B49845508`；启动日志 `1,324` bytes、SHA-256 `D0F5DC64154C3A44190CE24E93633A5A868D0C9C1A850CAFC81B134241E5B8B6`；Player 日志 `2,551` bytes、SHA-256 `13C5EEADC7BB02B09E6F3E21E118C266086B64D59479AD809A1ABE17055A96D5`。
 
+### 2026-08-13：T1-DUCKOV-D DXVK 受控复测仍黑屏
+
+- D 轮只回切 DXVK 3.0.2，并保留 `E:\Saves`。Unity Player 日志确认 Turnip Adreno 725 的 D3D11 feature level 11.1 设备创建成功，D3D11 初始化层没有失败。
+- `DirectoryNotFoundException` 不再出现，但 Easy Save 3 的 `ES3.CreateBackup()` 仍抛出空路径 `ArgumentException`；该停点与 C 轮一致。Winlator 日志没有运行中崩溃或 X 会话断开，分类为 `FAIL-BLACK`。
+- A-D 结果共同说明：当前 Duckov 游戏包的保存/选项配置在 Winlator 映射路径下不兼容；现有证据不支持修改 Winlator 公共图形、Wine 或 Box64 代码。停止 Duckov 变量扩展，转入 Palworld 覆盖。
+- D 轮三份日志已归档：Winlator 日志 `61,768` bytes、SHA-256 `B2977CDD3C3202BA4AC05FFC8702D82141B33420DB547793D2B4F56BA05873CF`；启动日志 `1,321` bytes、SHA-256 `2D66581606A454531A362D9FBFEFB6FCE33163AAB0E615A10E3C1B2785C7FC19`；Player 日志 `2,562` bytes、SHA-256 `66271A03CC1F3B0B7929474BE5587870996EB9369C1B269D8BC469862BD87DB4`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -839,6 +846,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | T1-DUCKOV-A | Duckov DXVK 黑屏日志归档、失败分类与 WineD3D 对照计划 | G3-P2 输入门槛通过后首轮新游戏覆盖 | 已完成，`FAIL-BLACK`，进入 B 轮（2026-08-11） |
 | T1-DUCKOV-B | WineD3D 黑屏三日志归档、D3D11 初始化证据与缺失保存目录定位 | A 轮 DXVK 无首帧后执行图形封装层对照 | 已完成，`FAIL-BLACK`，进入 C 轮（2026-08-11） |
 | T1-DUCKOV-C | 补齐 `E:\Saves`、归档新脚本异常并制定 DXVK 受控复测 | B 轮定位到保存父目录缺失 | 已完成，目录异常推进但仍 `FAIL-BLACK`（2026-08-13） |
+| T1-DUCKOV-D | 保留 Saves 的 DXVK 复测、A-D 对照结论、停止 Duckov 变量扩展 | C 轮消除目录缺失但仍黑屏 | 已完成，游戏包保存配置兼容性候选（2026-08-13） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
 所有节点推送到 `origin/main`（`https://github.com/SilenceWanna/winlator_wzh.git`）。提交前先检查工作树和远程差异，不覆盖用户改动；游戏本体、临时解包目录和超大 APK 不进入 Git。
