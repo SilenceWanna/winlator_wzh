@@ -2,14 +2,23 @@
 
 本记录只描述本地文件的静态检查结果。检查期间没有运行游戏 EXE，也没有把商业游戏文件或第三方修改组件复制到仓库。
 
-## 结论
+## 初始静态结论
 
 | ID | 本地目录 | 静态结论 | 任务1处理 |
 |---|---|---|---|
-| T1-MGSVGZ | `D:\agent\Winlator\games\MetalGearSolidVGroundZeroes` | 存在 ALI213 Steam 模拟层及相关配置，不是干净发行副本 | `BLOCKED-PACKAGE`，不执行真机测试 |
-| T1-SIFU | `D:\agent\Winlator\games\SIFU Deluxe Edition` | 存在 RUNE Steam 模拟配置、重命名原 DLL 和第三方分发标记；当前 Steam API DLL 签名为 `HashMismatch` | `BLOCKED-PACKAGE`，不执行真机测试 |
+| T1-MGSVGZ | `D:\agent\Winlator\games\MetalGearSolidVGroundZeroes` | 存在 ALI213 Steam 模拟层及相关配置，不是干净发行副本 | 初始为 `BLOCKED-PACKAGE` |
+| T1-SIFU | `D:\agent\Winlator\games\SIFU Deluxe Edition` | 存在 RUNE Steam 模拟配置、重命名原 DLL 和第三方分发标记；当前 Steam API DLL 签名为 `HashMismatch` | 初始为 `BLOCKED-PACKAGE` |
 
-这两项不能记为 Winlator 启动失败或游戏兼容性失败。Steam API 替换层会改变授权、存档路径、用户身份、网络与覆盖层初始化，足以独立造成黑屏、闪退或存档异常。
+按官方发行版兼容性口径，这两项不能直接记为 Winlator 公共缺陷。Steam API 替换层会改变授权、存档路径、用户身份、网络与覆盖层初始化，足以独立造成黑屏、闪退或存档异常。
+
+## 方案2范围决策
+
+用户于 2026-08-14 确认这两个目录符合本次研究要求，并选择把它们作为“精确包体指纹限定的研究样本”继续测试。状态因此从公共发行版口径的 `BLOCKED-PACKAGE` 改为 `READY-PACKAGE-SCOPED`：
+
+1. 可以执行启动、输入、稳定性和性能测试，并计入本项目由用户定义的多游戏样本矩阵。
+2. 每个结果必须引用本文及 `local-games-20260814.csv` 中的 SHA-256，结论只覆盖当前文件集合。
+3. 失败可以按 `FAIL-START`、`FAIL-BLACK`、`FAIL-CRASH`、`FAIL-INPUT` 或 `PERF-CANDIDATE` 分类，但同时必须带 `PACKAGE-SCOPED` 限定。
+4. 不修改、删除、替换或传播现有 Steam 模拟组件；本项目只观察其在 Winlator 中的行为。
 
 ## T1-MGSVGZ
 
@@ -18,7 +27,7 @@
 - 图形路径：入口导入 `dxgi.dll` 与 `d3d11.dll`，符合 64 位 D3D11/Fox Engine 测试目标。
 - 包体风险：根目录存在 `SteamConfig.ini`、`ali213.bin`、`ali213\ali213.dll` 和 `Profile\VALVE`；配置包含多种 Steam 模拟存档类型和 Steam stub 处理选项。
 - 关键指纹：`SteamConfig.ini` 为 `441953C91E3F3F87ED683CE442079B0CBA133422229C9A9598A792650F2BC9D4`，`ali213.bin` 为 `FF4A5880BC29F2A035DCBCE5CE67C6420680D4A0124CF0007AA221BB7C5D5A83`，`ali213\ali213.dll` 为 `2315268210E82398C640B6967AB45B1BF21C4869F9AE86AA5246DBEB4503A365`。
-- 决策：架构和 API 适合作为候选，但当前包未通过来源完整性门槛，不生成首轮 Winlator 配置。
+- 决策：架构和 API 适合作为候选；按方案2以 `READY-PACKAGE-SCOPED` 身份进入首轮 Winlator 测试。
 
 ## T1-SIFU
 
@@ -27,9 +36,9 @@
 - 引擎与图形路径：目录结构为 Unreal Engine 4；Shipping 程序导入 D3D11/D3D12、DXGI、Steamworks、PhysX 与音频组件。
 - 包体风险：Steamworks 目录存在 `steam_emu.ini`、`steam_api64.rne` 和替换后的 `steam_api64.dll`；配置含 `RUNE` 存档路径及 `[Crack]` 段，目录中另有第三方分发标记。
 - 关键指纹：`steam_emu.ini` 为 `89BAB38C6ED1FD817A6A183CCE8C2A1457F43A32A88A785169220421B3F5B0B9`，`steam_api64.dll` 为 `51425709B07D703F2B675828520C8D38AF2D014F40D175695BC299C32B37F685`，`steam_api64.rne` 为 `728D0D3A8DF8E5BEA3A5FE5BDBE826F2A3F9FB6A397BC8A3AC716C3E2CE9C944`。当前 DLL 的 Authenticode 检查显示 Valve 签名元数据但文件哈希不匹配。
-- 决策：引擎覆盖有价值，但当前包未通过来源完整性门槛，不生成首轮 Winlator 配置。
+- 决策：引擎覆盖有价值；按方案2以 `READY-PACKAGE-SCOPED` 身份在原爆点之后进入独立 Winlator 测试。
 
-## 恢复准入的条件
+## 官方发行版口径的恢复条件
 
 1. 使用用户合法账户通过官方客户端重新下载或执行文件完整性校验，并输出到新的干净目录；不要在当前目录上手工删改模拟层文件。
 2. 原爆点新目录不得再出现 `ali213*`、模拟层 `SteamConfig.ini` 或 `Profile\VALVE`。
