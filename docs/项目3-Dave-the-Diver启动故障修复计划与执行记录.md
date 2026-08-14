@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；原爆点 A 轮主进程创建但无窗口，且 6 秒内重复启动、观察不足 5 分钟，当前执行 T1-MGSVGZ-B 单次启动控制
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；原爆点 B 轮在用户单次双击后仍产生两个相隔 6 秒的进程，文件管理器约 7 分 23 秒无变化，形成第 4/5 个有效样本；当前执行 T1-MGSVGZ-C 首页快捷方式启动
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -470,7 +470,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
 2. Duckov A-D 对照已完成并停止继续扩大变量；Palworld 当前无法测试。原爆点与师父按方案2进入 `PACKAGE-SCOPED` 测试，静态风险保留但不再阻断。
-3. 当前只执行任务1文档中的 T1-MGSVGZ-B：复用容器 10 和 A 轮配置，彻底重启容器后只双击一次游戏，完整等待 5 分钟并导出日志；不要开始师父。
+3. 当前只执行任务1文档中的 T1-MGSVGZ-C：保持容器 10 配置不变，从 Winlator 首页“快捷方式”页面单击启动一次，完整等待 5 分钟并导出日志；不要从 WFM 双击，也不要开始师父。
 
 ## 六、进度记录
 
@@ -836,6 +836,12 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 会话从第一次游戏启动到用户结束约 3 分 49 秒。重复实例与不足 5 分钟使本轮不能直接计入有效失败覆盖，暂定 `FAIL-NO-WINDOW + PACKAGE-SCOPED`，总覆盖保持 3/5。
 - 两份日志已由持续归档脚本保存到 `archive/log-imports/20260814-t1-mgsvgz-a-no-window-r1/`，合计 `61,220` bytes；下一轮不改任何兼容设置，只执行一次启动并等待满 5 分钟。
 
+### 2026-08-14：原爆点 B 轮有效无窗口失败
+
+- 用户仅双击一次并等待满 5 分钟，文件管理器页面始终没有变化；日志记录 7 分 23 秒观察期，仍自动出现两个相隔 6 秒、argv 相同的原爆点进程。
+- 两个进程都未记录明确崩溃；第二个进程加载到 Wine Vulkan，但没有 D3D11/DXVK 设备或可见窗口。B 轮正式分类为 `FAIL-NO-WINDOW + PACKAGE-SCOPED`，任务1覆盖达到 4/5。
+- 两份新日志已归档到 `archive/log-imports/20260814-t1-mgsvgz-b-repeat-launch-r1/`，合计 `66,046` bytes。下一轮只改启动入口：从 Winlator 首页快捷方式单击启动，绕过 WFM 双击路径。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -881,6 +887,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | T1-PACKAGE-GATE | 两款候选目录静态检查、文件指纹、包体风险分类和干净副本计划 | 用户准备好原爆点与师父目录 | 已完成，两者均为 `BLOCKED-PACKAGE`（2026-08-14） |
 | T1-PACKAGE-SCOPE | 方案2范围调整、五游戏矩阵和原爆点 A 轮唯一配置 | 用户确认当前两款包符合研究要求 | 已完成，两者改为 `READY-PACKAGE-SCOPED`（2026-08-14） |
 | T1-MGSVGZ-A | 原爆点无窗口日志、重复启动识别与单次启动控制计划 | 用户反馈没有启动并导出日志 | 已完成诊断归档，暂不计入有效覆盖（2026-08-14） |
+| T1-MGSVGZ-B | 单次双击无窗口、重复进程复现、快捷方式启动计划 | 用户等待满 5 分钟且页面无变化 | 已完成，`FAIL-NO-WINDOW + PACKAGE-SCOPED`（2026-08-14） |
 | LOG-ARCHIVE | 全量日志哈希核对、增量快照、清单与持续归档脚本 | 用户要求日志作为开发记录持续推送 | 已完成（2026-08-13） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
