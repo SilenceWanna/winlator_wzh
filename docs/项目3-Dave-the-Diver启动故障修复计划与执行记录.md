@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；Palworld 当前无法测试，替代主测选定《合金装备5：原爆点》，备用为《师父》
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；长按无振动及性能 CSV 采样不足作为后续工具问题保留，不阻塞项目3任务1；Palworld 当前无法测试；《合金装备5：原爆点》和《师父》候选包均因第三方 Steam 模拟/修改层未通过静态准入，等待官方客户端校验后的干净副本
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -469,8 +469,8 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 ## 五、用户当前需要执行的步骤
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
-2. Duckov A-D 对照已完成并停止继续扩大变量；Palworld 当前无法测试，按任务1文档准备《合金装备5：原爆点》的合法、干净 PC 副本。
-3. 游戏下载解压后先由仓库侧静态检查，不要直接运行；主候选不可用时才启用《师父》备用。
+2. Duckov A-D 对照已完成并停止继续扩大变量；Palworld 当前无法测试。当前原爆点与师父目录都未通过包体准入，不要在 Winlator 或 Windows 中运行。
+3. 使用合法账户对应的官方客户端把原爆点（优先）或师父重新下载/校验到新目录；不要覆盖当前目录，也不要靠删除模拟层文件处理。新目录准备好后先由仓库侧复检。
 
 ## 六、进度记录
 
@@ -818,6 +818,12 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 新增 `scripts/archive-development-logs.ps1`。后续每次日志导出与分析完成后必须运行该脚本；常见凭据扫描或 95 MiB 单文件保护检查失败时停止上传。
 - 完整商业游戏文件不进入开源仓库。开发记录保留游戏清单与校验值、容器/组件配置、日志、现象、结论和下一步计划，以满足问题复查与结果复现。
 
+### 2026-08-14：替代候选包静态准入阻断
+
+- 原爆点与师父均完成了只读静态检查，没有运行 EXE。两者的主程序架构和图形 API 原本适合补充 Fox Engine/Unreal Engine 覆盖，但实际目录都不是干净发行副本。
+- 原爆点存在 ALI213 Steam 模拟层；师父存在 RUNE `steam_emu.ini`、`[Crack]` 配置、重命名原 DLL 和签名哈希不匹配的 Steam API DLL。两者均标记为 `BLOCKED-PACKAGE`，不计入任务1第四个真机样本。
+- 详细文件指纹写入 `archive/game-inventory/candidate-package-static-gate-20260814.md`，并生成 `local-games-20260814.csv`。下一步是用官方客户端取得/校验一个新目录，再做第二次静态准入；通过前不生成容器配置。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -860,6 +866,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | T1-DUCKOV-C | 补齐 `E:\Saves`、归档新脚本异常并制定 DXVK 受控复测 | B 轮定位到保存父目录缺失 | 已完成，目录异常推进但仍 `FAIL-BLACK`（2026-08-13） |
 | T1-DUCKOV-D | 保留 Saves 的 DXVK 复测、A-D 对照结论、停止 Duckov 变量扩展 | C 轮消除目录缺失但仍黑屏 | 已完成，游戏包保存配置兼容性候选（2026-08-13） |
 | T1-GAME-SELECT | 候选 PDF 归档、Palworld 替代选型与干净副本门槛 | 用户确认 Palworld 当前无法测试 | 已完成，主测《原爆点》、备用《师父》（2026-08-13） |
+| T1-PACKAGE-GATE | 两款候选目录静态检查、文件指纹、包体风险分类和干净副本计划 | 用户准备好原爆点与师父目录 | 已完成，两者均为 `BLOCKED-PACKAGE`（2026-08-14） |
 | LOG-ARCHIVE | 全量日志哈希核对、增量快照、清单与持续归档脚本 | 用户要求日志作为开发记录持续推送 | 已完成（2026-08-13） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
