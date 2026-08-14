@@ -1,0 +1,883 @@
+[11:05:42]  [startup] STARTUP BEGIN
+[11:05:42]  [startup] rootfs=/data/user/0/com.winlator/files/rootfs, version=23, container=10
+[11:05:42]  [startup] graphics=turnip,zink, dxwrapper=dxvk, audio=alsa
+[11:05:42]  [startup] BEGIN setup_wine_system_files
+[11:05:42]  [startup] BEGIN setup_wine_system_files.apply_general_patches
+[11:05:43]  [startup] END setup_wine_system_files.apply_general_patches
+[11:05:43]  [startup] BEGIN setup_wine_system_files.verify_user_registry
+[11:05:43]  [startup] END setup_wine_system_files.verify_user_registry
+[11:05:43]  [startup] BEGIN setup_wine_system_files.extract_dxwrapper_files
+[11:05:43]  [startup] END setup_wine_system_files.extract_dxwrapper_files
+[11:05:43]  [startup] BEGIN setup_wine_system_files.extract_wincomponent_files
+[11:05:45]  [startup] END setup_wine_system_files.extract_wincomponent_files
+[11:05:45]  [startup] BEGIN setup_wine_system_files.apply_desktop_theme
+[11:05:45]  [startup] END setup_wine_system_files.apply_desktop_theme
+[11:05:45]  [startup] BEGIN setup_wine_system_files.create_start_menu
+[11:05:45]  [startup] END setup_wine_system_files.create_start_menu
+[11:05:45]  [startup] BEGIN setup_wine_system_files.create_dosdevices_symlinks
+[11:05:45]  [startup] END setup_wine_system_files.create_dosdevices_symlinks
+[11:05:45]  [startup] BEGIN setup_wine_system_files.change_services_status
+[11:05:46]  [startup] END setup_wine_system_files.change_services_status
+[11:05:46]  [startup] BEGIN setup_wine_system_files.change_browser_registry
+[11:05:46]  [startup] END setup_wine_system_files.change_browser_registry
+[11:05:46]  [startup] END setup_wine_system_files
+[11:05:46]  [startup] BEGIN extract_graphics_driver_files
+[11:05:46]  [startup] END extract_graphics_driver_files
+[11:05:46]  [startup] BEGIN change_wine_audio_driver
+[11:05:46]  [startup] END change_wine_audio_driver
+[11:05:46]  [startup] BEGIN setup_x_environment
+[11:05:46]  [startup] END setup_x_environment
+[11:05:46]  [startup] STARTUP COMPLETE
+[11:05:46]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:46]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:46]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:46]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:46]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[11:05:46]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:46]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:46]  [BOX64] Detected running wine with "explorer"
+[11:05:46]  [BOX64] Counted 79 Env var
+[11:05:46]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:46]  [BOX64] Library search path: 
+[11:05:46]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:46]  [BOX64] Looking for wine
+[11:05:46]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:46]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:46]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:46]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:46]  	BOX64_DYNAREC_FORWARD=128
+[11:05:46]  	BOX64_DYNAREC_MISSING=1
+[11:05:46]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:46]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:46]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:46]  	BOX64_DYNAREC_WAIT=1
+[11:05:46]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:46]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:46]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:46]  	BOX64_LOG=1
+[11:05:46]  	BOX64_NOBANNER=0
+[11:05:46]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:46]  	BOX64_UNITYPLAYER=0
+[11:05:46]  	BOX64_DYNAREC=1
+[11:05:46]  	BOX64_DYNAREC_CALLRET=0
+[11:05:46]  [BOX64] argv[1]="explorer"
+[11:05:46]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[11:05:46]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[11:05:46]  [BOX64] argv[4]="/dir"
+[11:05:46]  [BOX64] argv[5]="C:\windows"
+[11:05:46]  [BOX64] argv[6]=""wfm.exe""
+[11:05:46]  [BOX64] Rename process to "wine"
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:46]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:46]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:46]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:46]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/bin/../lib/wine/x86_64-unix/ntdll.so
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:46]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:46]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:46]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:46]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:46]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:46]  [BOX64] Wine64 detected, WINEPRELOADRESERVE=""
+[11:05:46]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:46]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:46]  [BOX64] Detected running wine with "explorer"
+[11:05:46]  [BOX64] Counted 80 Env var
+[11:05:46]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:46]  [BOX64] Library search path: 
+[11:05:46]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:46]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:46]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:46]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:46]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:46]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:46]  	BOX64_DYNAREC_FORWARD=128
+[11:05:46]  	BOX64_DYNAREC_MISSING=1
+[11:05:46]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:46]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:46]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:46]  	BOX64_DYNAREC_WAIT=1
+[11:05:46]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:46]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:46]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:46]  	BOX64_LOG=1
+[11:05:46]  	BOX64_NOBANNER=0
+[11:05:46]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:46]  	BOX64_UNITYPLAYER=0
+[11:05:46]  	BOX64_DYNAREC=1
+[11:05:46]  	BOX64_DYNAREC_CALLRET=0
+[11:05:46]  [BOX64] argv[1]="explorer"
+[11:05:46]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[11:05:46]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[11:05:46]  [BOX64] argv[4]="/dir"
+[11:05:46]  [BOX64] argv[5]="C:\windows"
+[11:05:46]  [BOX64] argv[6]=""wfm.exe""
+[11:05:46]  [BOX64] Rename process to "wine"
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:46]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:46]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:46]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:46]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:46]  [BOX64] posix_spawn(0x75b20fd68c, "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", (nil), (nil), 0x75b20fd690["/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", "", ...], 0x75b20fda48), IsX64=1, IsX86=0 IsScript=0 IsPython=0 envp is context->envv
+[11:05:46]  [BOX64]  => posix_spawn(0x75b20fd68c, "/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", (nil), (nil), 0x7fec07f340 ["/data/user/0/com.winlator/files/rootfs/usr/local/bin/box64", "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver", ""...:1], 0x7fec07fb68)
+[11:05:46]  [BOX64] posix_spawn returned 0
+[11:05:46]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:46]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:46]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:46]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:46]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:46]  [BOX64] Counted 79 Env var
+[11:05:46]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:46]  [BOX64] Library search path: 
+[11:05:46]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:46]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/../../bin/wineserver
+[11:05:46]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:46]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:46]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:46]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:46]  	BOX64_DYNAREC_FORWARD=128
+[11:05:46]  	BOX64_DYNAREC_MISSING=1
+[11:05:46]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:46]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:46]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:46]  	BOX64_DYNAREC_WAIT=1
+[11:05:46]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:46]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:46]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:46]  	BOX64_LOG=1
+[11:05:46]  	BOX64_NOBANNER=0
+[11:05:46]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:46]  	BOX64_UNITYPLAYER=0
+[11:05:46]  	BOX64_DYNAREC=1
+[11:05:46]  	BOX64_DYNAREC_CALLRET=0
+[11:05:46]  [BOX64] Rename process to "wineserver"
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:46]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:46]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:46]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:46]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:46]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:46]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:46]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:46]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:46]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:46]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140024000"
+[11:05:46]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:46]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x140000000:0x140024000 done
+[11:05:46]  [BOX64] Detected running wine with "wineboot.exe"
+[11:05:46]  [BOX64] Counted 82 Env var
+[11:05:46]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:46]  [BOX64] Library search path: 
+[11:05:46]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:46]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:46]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:46]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:46]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:46]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:46]  	BOX64_DYNAREC_FORWARD=128
+[11:05:46]  	BOX64_DYNAREC_MISSING=1
+[11:05:46]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:46]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:46]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:46]  	BOX64_DYNAREC_WAIT=1
+[11:05:46]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:46]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:46]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:46]  	BOX64_LOG=1
+[11:05:46]  	BOX64_NOBANNER=0
+[11:05:46]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:46]  	BOX64_UNITYPLAYER=0
+[11:05:46]  	BOX64_DYNAREC=1
+[11:05:46]  	BOX64_DYNAREC_CALLRET=0
+[11:05:46]  [BOX64] argv[1]="C:\windows\system32\wineboot.exe"
+[11:05:46]  [BOX64] argv[2]="--init"
+[11:05:46]  [BOX64] Rename process to "wine"
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:46]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:46]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:46]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:46]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[11:05:46]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:46]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:46]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:46]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:46]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:46]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140029000"
+[11:05:46]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:46]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:46]  [BOX64] WINE prereserve of 0x140000000:0x140029000 done
+[11:05:46]  [BOX64] Detected running wine with "winemenubuilder.exe"
+[11:05:46]  [BOX64] Counted 82 Env var
+[11:05:46]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:46]  [BOX64] Library search path: 
+[11:05:46]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:46]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:46]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:46]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:46]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:46]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:46]  	BOX64_DYNAREC_FORWARD=128
+[11:05:46]  	BOX64_DYNAREC_MISSING=1
+[11:05:46]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:46]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:46]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:46]  	BOX64_DYNAREC_WAIT=1
+[11:05:46]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:46]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:46]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:46]  	BOX64_LOG=1
+[11:05:46]  	BOX64_NOBANNER=0
+[11:05:46]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:46]  	BOX64_UNITYPLAYER=0
+[11:05:46]  	BOX64_DYNAREC=1
+[11:05:46]  	BOX64_DYNAREC_CALLRET=0
+[11:05:46]  [BOX64] argv[1]="C:\windows\system32\winemenubuilder.exe"
+[11:05:46]  [BOX64] argv[2]="-a"
+[11:05:46]  [BOX64] argv[3]="-r"
+[11:05:46]  [BOX64] Rename process to "wine"
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:46]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:46]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:46]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:46]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:46]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:46]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:46]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:47]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:47]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:47]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:47]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:47]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:47]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140017000"
+[11:05:47]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:47]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x140000000:0x140017000 done
+[11:05:47]  [BOX64] Detected running wine with "services.exe"
+[11:05:47]  [BOX64] Counted 82 Env var
+[11:05:47]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:47]  [BOX64] Library search path: 
+[11:05:47]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:47]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:47]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:47]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:47]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:47]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:47]  	BOX64_DYNAREC_FORWARD=128
+[11:05:47]  	BOX64_DYNAREC_MISSING=1
+[11:05:47]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:47]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:47]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:47]  	BOX64_DYNAREC_WAIT=1
+[11:05:47]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:47]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:47]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:47]  	BOX64_LOG=1
+[11:05:47]  	BOX64_NOBANNER=0
+[11:05:47]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:47]  	BOX64_UNITYPLAYER=0
+[11:05:47]  	BOX64_DYNAREC=1
+[11:05:47]  	BOX64_DYNAREC_CALLRET=0
+[11:05:47]  [BOX64] argv[1]="C:\windows\system32\services.exe"
+[11:05:47]  [BOX64] Rename process to "wine"
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:47]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:47]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:47]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:47]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:05:47]  [BOX64] Using native(wrapped) libm.so.6
+[11:05:47]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:05:47]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:47]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:47]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:47]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:47]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:47]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[11:05:47]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:47]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[11:05:47]  [BOX64] Detected running wine with "winedevice.exe"
+[11:05:47]  [BOX64] Counted 82 Env var
+[11:05:47]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:47]  [BOX64] Library search path: 
+[11:05:47]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:47]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:47]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:47]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:47]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:47]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:47]  	BOX64_DYNAREC_FORWARD=128
+[11:05:47]  	BOX64_DYNAREC_MISSING=1
+[11:05:47]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:47]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:47]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:47]  	BOX64_DYNAREC_WAIT=1
+[11:05:47]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:47]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:47]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:47]  	BOX64_LOG=1
+[11:05:47]  	BOX64_NOBANNER=0
+[11:05:47]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:47]  	BOX64_UNITYPLAYER=0
+[11:05:47]  	BOX64_DYNAREC=1
+[11:05:47]  	BOX64_DYNAREC_CALLRET=0
+[11:05:47]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[11:05:47]  [BOX64] Rename process to "wine"
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:47]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:47]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:47]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:47]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/mountmgr.so
+[11:05:47]  [[31mBOX64[0m] Error initializing native libdbus-1.so.3 (last dlerror is libdbus-1.so.3: cannot open shared object file: No such file or directory)
+[11:05:47]  [BOX64] Error loading needed lib libdbus-1.so.3
+[11:05:47]  [BOX64] Warning: Cannot dlopen("libdbus-1.so.3"/0x3f03006270, 2)
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/nsiproxy.so
+[11:05:47]  0068:err:nsi:poll_events bind failed, errno 13.
+[11:05:47]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:47]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:47]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:47]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:47]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:47]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[11:05:47]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:47]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[11:05:47]  [BOX64] Detected running wine with "winedevice.exe"
+[11:05:47]  [BOX64] Counted 82 Env var
+[11:05:47]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:47]  [BOX64] Library search path: 
+[11:05:47]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:47]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:47]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:47]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:47]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:47]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:47]  	BOX64_DYNAREC_FORWARD=128
+[11:05:47]  	BOX64_DYNAREC_MISSING=1
+[11:05:47]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:47]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:47]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:47]  	BOX64_DYNAREC_WAIT=1
+[11:05:47]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:47]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:47]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:47]  	BOX64_LOG=1
+[11:05:47]  	BOX64_NOBANNER=0
+[11:05:47]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:47]  	BOX64_UNITYPLAYER=0
+[11:05:47]  	BOX64_DYNAREC=1
+[11:05:47]  	BOX64_DYNAREC_CALLRET=0
+[11:05:47]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[11:05:47]  [BOX64] Rename process to "wine"
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:47]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:47]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:47]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:47]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebus.so
+[11:05:47]  [[31mBOX64[0m] Error initializing native libudev.so.1 (last dlerror is libudev.so.0: cannot open shared object file: No such file or directory)
+[11:05:47]  [BOX64] Error loading needed lib libudev.so.1
+[11:05:47]  [BOX64] Error loading one of needed lib
+[11:05:47]  [BOX64] Error initializing needed lib /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebus.so
+[11:05:47]  0078:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebus": c0000135
+[11:05:47]  003c:fixme:service:scmdatabase_autostart_services Auto-start service L"winebus" failed to start: 126
+[11:05:47]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:47]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:47]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:47]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:47]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:47]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14000a000"
+[11:05:47]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:47]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:47]  [BOX64] WINE prereserve of 0x140000000:0x14000a000 done
+[11:05:47]  [BOX64] Detected running wine with "winedevice.exe"
+[11:05:47]  [BOX64] Counted 82 Env var
+[11:05:47]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:47]  [BOX64] Library search path: 
+[11:05:47]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:47]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:47]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:47]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:47]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:47]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:47]  	BOX64_DYNAREC_FORWARD=128
+[11:05:47]  	BOX64_DYNAREC_MISSING=1
+[11:05:47]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:47]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:47]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:47]  	BOX64_DYNAREC_WAIT=1
+[11:05:47]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:47]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:47]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:47]  	BOX64_LOG=1
+[11:05:47]  	BOX64_NOBANNER=0
+[11:05:47]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:47]  	BOX64_UNITYPLAYER=0
+[11:05:47]  	BOX64_DYNAREC=1
+[11:05:47]  	BOX64_DYNAREC_CALLRET=0
+[11:05:47]  [BOX64] argv[1]="C:\windows\system32\winedevice.exe"
+[11:05:47]  [BOX64] Rename process to "wine"
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:47]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:47]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:47]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:47]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:47]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:47]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winebth.so
+[11:05:47]  [[31mBOX64[0m] Error initializing native libdbus-1.so.3 (last dlerror is libdbus-1.so.3: cannot open shared object file: No such file or directory)
+[11:05:47]  [BOX64] Error loading needed lib libdbus-1.so.3
+[11:05:47]  [BOX64] Warning: Cannot dlopen("libdbus-1.so.3"/0x3f0301441b, 2)
+[11:05:47]  0098:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c00000e5
+[11:05:47]  003c:fixme:service:scmdatabase_autostart_services Auto-start service L"winebth" failed to start: 1359
+[11:05:47]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:05:47]  [BOX64] Using native(wrapped) libm.so.6
+[11:05:47]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:05:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:05:48]  [BOX64] Using native(wrapped) libm.so.6
+[11:05:48]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:05:48]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:48]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:48]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:48]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:48]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:48]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140022000"
+[11:05:48]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:48]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:48]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:48]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:48]  [BOX64] WINE prereserve of 0x140000000:0x140022000 done
+[11:05:48]  [BOX64] Detected running wine with "explorer.exe"
+[11:05:48]  [BOX64] Counted 82 Env var
+[11:05:48]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:48]  [BOX64] Library search path: 
+[11:05:48]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:48]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:48]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:48]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:48]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:48]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:48]  	BOX64_DYNAREC_FORWARD=128
+[11:05:48]  	BOX64_DYNAREC_MISSING=1
+[11:05:48]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:48]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:48]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:48]  	BOX64_DYNAREC_WAIT=1
+[11:05:48]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:48]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:48]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:48]  	BOX64_LOG=1
+[11:05:48]  	BOX64_NOBANNER=0
+[11:05:48]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:48]  	BOX64_UNITYPLAYER=0
+[11:05:48]  	BOX64_DYNAREC=1
+[11:05:48]  	BOX64_DYNAREC_CALLRET=0
+[11:05:48]  [BOX64] argv[1]="C:\windows\system32\explorer.exe"
+[11:05:48]  [BOX64] argv[2]="/desktop=shell,1280x720"
+[11:05:48]  [BOX64] argv[3]="C:\windows\winhandler.exe"
+[11:05:48]  [BOX64] argv[4]="/dir"
+[11:05:48]  [BOX64] argv[5]="C:\windows"
+[11:05:48]  [BOX64] argv[6]=""wfm.exe""
+[11:05:48]  [BOX64] Rename process to "wine"
+[11:05:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:48]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:48]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:48]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:48]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:48]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:48]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:05:48]  [BOX64] Using native(wrapped) libm.so.6
+[11:05:48]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:05:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[11:05:48]  [BOX64] Using native(wrapped) libXext.so.6
+[11:05:48]  [BOX64] Using native(wrapped) libX11.so.6
+[11:05:48]  [BOX64] Using native(wrapped) libxcb.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libXau.so.6
+[11:05:48]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[11:05:48]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[11:05:48]  [BOX64] Error loading needed lib libXinerama.so.1
+[11:05:48]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0405e8e1, 2)
+[11:05:48]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libXrender.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libXrandr.so.2
+[11:05:48]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libXi.so.6
+[11:05:48]  [BOX64] Using native(wrapped) libvulkan.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libXcursor.so.1
+[11:05:48]  [BOX64] Using native(wrapped) libXfixes.so.3
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:49]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:49]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:49]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:49]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:49]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:49]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-140014000"
+[11:05:49]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:49]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:49]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:49]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:49]  [BOX64] WINE prereserve of 0x140000000:0x140014000 done
+[11:05:49]  [BOX64] Detected running wine with "winhandler.exe"
+[11:05:49]  [BOX64] Counted 82 Env var
+[11:05:49]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:49]  [BOX64] Library search path: 
+[11:05:49]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:49]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:49]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:49]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:49]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:49]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:49]  	BOX64_DYNAREC_FORWARD=128
+[11:05:49]  	BOX64_DYNAREC_MISSING=1
+[11:05:49]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:49]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:49]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:49]  	BOX64_DYNAREC_WAIT=1
+[11:05:49]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:49]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:49]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:49]  	BOX64_LOG=1
+[11:05:49]  	BOX64_NOBANNER=0
+[11:05:49]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:49]  	BOX64_UNITYPLAYER=0
+[11:05:49]  	BOX64_DYNAREC=1
+[11:05:49]  	BOX64_DYNAREC_CALLRET=0
+[11:05:49]  [BOX64] argv[1]="C:\windows\winhandler.exe"
+[11:05:49]  [BOX64] argv[2]="/dir"
+[11:05:49]  [BOX64] argv[3]="C:\windows"
+[11:05:49]  [BOX64] argv[4]=""wfm.exe""
+[11:05:49]  [BOX64] Rename process to "wine"
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:49]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:49]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:49]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:49]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:49]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:49]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:49]  00ac:err:ole:start_rpcss Failed to start RpcSs service
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:05:49]  [BOX64] Using native(wrapped) libm.so.6
+[11:05:49]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[11:05:49]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:05:49]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:49]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:49]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:49]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:05:49]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-14004c000"
+[11:05:49]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:05:49]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:05:49]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:05:49]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:05:49]  [BOX64] WINE prereserve of 0x140000000:0x14004c000 done
+[11:05:49]  [BOX64] Detected running wine with "wfm.exe"
+[11:05:49]  [BOX64] Counted 82 Env var
+[11:05:49]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:05:49]  [BOX64] Library search path: 
+[11:05:49]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:05:49]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:05:49]  [BOX64] Applied settings from rcfile
+[11:05:49]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:05:49]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:05:49]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:05:49]  [BOX64] BOX64ENV: Variables overridden:
+[11:05:49]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:05:49]  	BOX64_DYNAREC_FASTNAN=1
+[11:05:49]  	BOX64_DYNAREC_FASTROUND=0
+[11:05:49]  	BOX64_DYNAREC_FORWARD=128
+[11:05:49]  	BOX64_DYNAREC_MISSING=1
+[11:05:49]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:05:49]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:05:49]  	BOX64_DYNAREC_STRONGMEM=0
+[11:05:49]  	BOX64_DYNAREC_WAIT=1
+[11:05:49]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:05:49]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:05:49]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:05:49]  	BOX64_LOG=1
+[11:05:49]  	BOX64_NOBANNER=0
+[11:05:49]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:05:49]  	BOX64_UNITYPLAYER=0
+[11:05:49]  	BOX64_DYNAREC=0
+[11:05:49]  	BOX64_DYNAREC_CALLRET=0
+[11:05:49]  [BOX64] argv[1]="C:\windows\wfm.exe"
+[11:05:49]  [BOX64] Rename process to "wine"
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:05:49]  [BOX64] Using native(wrapped) libdl.so.2
+[11:05:49]  [BOX64] Using native(wrapped) libc.so.6
+[11:05:49]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:05:49]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:05:49]  [BOX64] Using native(wrapped) libutil.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:05:49]  [BOX64] Using native(wrapped) librt.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:05:49]  [BOX64] Using native(wrapped) libm.so.6
+[11:05:49]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:05:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[11:05:49]  [BOX64] Using native(wrapped) libXext.so.6
+[11:05:49]  [BOX64] Using native(wrapped) libX11.so.6
+[11:05:49]  [BOX64] Using native(wrapped) libxcb.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libXau.so.6
+[11:05:49]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[11:05:49]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[11:05:49]  [BOX64] Error loading needed lib libXinerama.so.1
+[11:05:49]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0405e8e1, 2)
+[11:05:49]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libXrender.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libXrandr.so.2
+[11:05:49]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libXi.so.6
+[11:05:49]  [BOX64] Using native(wrapped) libXcursor.so.1
+[11:05:49]  [BOX64] Using native(wrapped) libXfixes.so.3
+[11:05:50]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:50]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:50]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:50]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:55]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:05:55]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:06:42]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:06:42]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:06:42]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:06:42]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:06:42]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:06:42]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-1420d6000"
+[11:06:42]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:06:42]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:06:42]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:06:42]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:06:42]  [BOX64] WINE prereserve of 0x140000000:0x1420d6000 done
+[11:06:42]  [BOX64] Detected running wine with "MgsGroundZeroes.exe"
+[11:06:42]  [BOX64] Counted 82 Env var
+[11:06:42]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:06:42]  [BOX64] Library search path: 
+[11:06:42]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:06:42]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:06:42]  [BOX64] BOX64ENV: Variables overridden:
+[11:06:42]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:06:42]  	BOX64_DYNAREC_FASTNAN=1
+[11:06:42]  	BOX64_DYNAREC_FASTROUND=0
+[11:06:42]  	BOX64_DYNAREC_FORWARD=128
+[11:06:42]  	BOX64_DYNAREC_MISSING=1
+[11:06:42]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:06:42]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:06:42]  	BOX64_DYNAREC_STRONGMEM=0
+[11:06:42]  	BOX64_DYNAREC_WAIT=1
+[11:06:42]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:06:42]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:06:42]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:06:42]  	BOX64_LOG=1
+[11:06:42]  	BOX64_NOBANNER=0
+[11:06:42]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:06:42]  	BOX64_UNITYPLAYER=0
+[11:06:42]  	BOX64_DYNAREC=1
+[11:06:42]  	BOX64_DYNAREC_CALLRET=0
+[11:06:42]  [BOX64] argv[1]="E:\MetalGearSolidVGroundZeroes\MgsGroundZeroes.exe"
+[11:06:42]  [BOX64] Rename process to "wine"
+[11:06:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:06:42]  [BOX64] Using native(wrapped) libdl.so.2
+[11:06:42]  [BOX64] Using native(wrapped) libc.so.6
+[11:06:42]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:06:42]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:06:42]  [BOX64] Using native(wrapped) libutil.so.1
+[11:06:42]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:06:42]  [BOX64] Using native(wrapped) librt.so.1
+[11:06:42]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:06:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:06:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:06:42]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:06:42]  [BOX64] Using native(wrapped) libm.so.6
+[11:06:42]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:06:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[11:06:43]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/bcrypt.so
+[11:06:43]  [BOX64] Using native(wrapped) libgnutls.so.30
+[11:06:44]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[11:06:44]  [BOX64] Using native(wrapped) libXext.so.6
+[11:06:44]  [BOX64] Using native(wrapped) libX11.so.6
+[11:06:44]  [BOX64] Using native(wrapped) libxcb.so.1
+[11:06:44]  [BOX64] Using native(wrapped) libXau.so.6
+[11:06:44]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[11:06:44]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[11:06:44]  [BOX64] Error loading needed lib libXinerama.so.1
+[11:06:44]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0605e8e1, 2)
+[11:06:44]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[11:06:44]  [BOX64] Using native(wrapped) libXrender.so.1
+[11:06:44]  [BOX64] Using native(wrapped) libXrandr.so.2
+[11:06:44]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[11:06:44]  [BOX64] Using native(wrapped) libXi.so.6
+[11:06:44]  [BOX64] Using native(wrapped) libXcursor.so.1
+[11:06:44]  [BOX64] Using native(wrapped) libXfixes.so.3
+[11:06:44]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/dnsapi.so
+[11:06:48]  [BOX64] Box64 arm64 v0.4.5 372739d with Dynarec built on Aug  4 2026 10:30:45
+[11:06:48]  [BOX64] Dynarec for ARM64, with extension: ASIMD AES CRC32 PMULL ATOMICS SHA1 SHA2 USCAT FLAGM FLAGM2 FRINT
+[11:06:48]  [BOX64] Running on Unknown CPU with 8 cores, pagesize: 4096
+[11:06:48]  [BOX64] Will use hardware counter measured at 19.2 MHz emulating 2.4 GHz
+[11:06:48]  [BOX64] Wine preloader detected, loading "/data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine" directly
+[11:06:48]  [BOX64] Wine64 detected, WINEPRELOADRESERVE="140000000-1420d6000"
+[11:06:48]  [BOX64] Didn't detect 48bits of address space, considering it's 39bits
+[11:06:48]  [BOX64] WINE prereserve of 0x10000:0x8000 done
+[11:06:48]  [BOX64] WINE prereserve of 0x110000:0x30000000 done
+[11:06:48]  [BOX64] WINE prereserve of 0x7f000000:0x3000000 done
+[11:06:48]  [BOX64] WINE prereserve of 0x140000000:0x1420d6000 done
+[11:06:48]  [BOX64] Detected running wine with "MgsGroundZeroes.exe"
+[11:06:48]  [BOX64] Counted 83 Env var
+[11:06:48]  [BOX64] BOX64 trying to Preload /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so 
+[11:06:48]  [BOX64] Library search path: 
+[11:06:48]  [BOX64] Binary search path: ./:bin/:/data/user/0/com.winlator/files/rootfs/opt/wine/bin/:/data/user/0/com.winlator/files/rootfs/usr/local/bin/:/data/user/0/com.winlator/files/rootfs/usr/bin/
+[11:06:48]  [BOX64] Looking for /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/wine
+[11:06:48]  [BOX64] BOX64ENV: Variables overridden:
+[11:06:48]  	BOX64_DYNAREC_BIGBLOCK=2
+[11:06:48]  	BOX64_DYNAREC_FASTNAN=1
+[11:06:48]  	BOX64_DYNAREC_FASTROUND=0
+[11:06:48]  	BOX64_DYNAREC_FORWARD=128
+[11:06:48]  	BOX64_DYNAREC_MISSING=1
+[11:06:48]  	BOX64_DYNAREC_NATIVEFLAGS=0
+[11:06:48]  	BOX64_DYNAREC_SAFEFLAGS=2
+[11:06:48]  	BOX64_DYNAREC_STRONGMEM=0
+[11:06:48]  	BOX64_DYNAREC_WAIT=1
+[11:06:48]  	BOX64_DYNAREC_WEAKBARRIER=2
+[11:06:48]  	BOX64_DYNAREC_X87DOUBLE=1
+[11:06:48]  	BOX64_LD_LIBRARY_PATH=/data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu
+[11:06:48]  	BOX64_LOG=1
+[11:06:48]  	BOX64_NOBANNER=0
+[11:06:48]  	BOX64_RCFILE=/data/user/0/com.winlator/files/rootfs/etc/config.box64rc
+[11:06:48]  	BOX64_UNITYPLAYER=0
+[11:06:48]  	BOX64_DYNAREC=1
+[11:06:48]  	BOX64_DYNAREC_CALLRET=0
+[11:06:48]  [BOX64] argv[1]="E:\MetalGearSolidVGroundZeroes\MgsGroundZeroes.exe"
+[11:06:48]  [BOX64] Rename process to "wine"
+[11:06:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/usr/lib/libwinlator-xkb-core.so
+[11:06:48]  [BOX64] Using native(wrapped) libdl.so.2
+[11:06:48]  [BOX64] Using native(wrapped) libc.so.6
+[11:06:48]  [BOX64] Using native(wrapped) ld-linux-x86-64.so.2
+[11:06:48]  [BOX64] Using native(wrapped) libpthread.so.0
+[11:06:48]  [BOX64] Using native(wrapped) libutil.so.1
+[11:06:48]  [BOX64] Using native(wrapped) libresolv.so.2
+[11:06:48]  [BOX64] Using native(wrapped) librt.so.1
+[11:06:48]  [BOX64] Using native(wrapped) libbsd.so.0
+[11:06:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ntdll.so
+[11:06:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/lib/x86_64-linux-gnu/libgcc_s.so.1
+[11:06:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/win32u.so
+[11:06:48]  [BOX64] Using native(wrapped) libm.so.6
+[11:06:48]  [BOX64] Using native(wrapped) libfreetype.so.6
+[11:06:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/ws2_32.so
+[11:06:48]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/bcrypt.so
+[11:06:48]  [BOX64] Using native(wrapped) libgnutls.so.30
+[11:06:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winex11.so
+[11:06:49]  [BOX64] Using native(wrapped) libXext.so.6
+[11:06:49]  [BOX64] Using native(wrapped) libX11.so.6
+[11:06:49]  [BOX64] Using native(wrapped) libxcb.so.1
+[11:06:49]  [BOX64] Using native(wrapped) libXau.so.6
+[11:06:49]  [BOX64] Using native(wrapped) libXdmcp.so.6
+[11:06:49]  [[31mBOX64[0m] Error initializing native libXinerama.so.1 (last dlerror is libXinerama.so: cannot open shared object file: No such file or directory)
+[11:06:49]  [BOX64] Error loading needed lib libXinerama.so.1
+[11:06:49]  [BOX64] Warning: Cannot dlopen("libXinerama.so.1"/0x3f0605e8e1, 2)
+[11:06:49]  [BOX64] Using native(wrapped) libXxf86vm.so.1
+[11:06:49]  [BOX64] Using native(wrapped) libXrender.so.1
+[11:06:49]  [BOX64] Using native(wrapped) libXrandr.so.2
+[11:06:49]  [BOX64] Using native(wrapped) libXcomposite.so.1
+[11:06:49]  [BOX64] Using native(wrapped) libXi.so.6
+[11:06:49]  [BOX64] Using native(wrapped) libXcursor.so.1
+[11:06:49]  [BOX64] Using native(wrapped) libXfixes.so.3
+[11:06:49]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/dnsapi.so
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  [BOX64] Using native(wrapped) libvulkan.so.1
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  [BOX64] Using emulated /data/user/0/com.winlator/files/rootfs/opt/wine/lib/wine/x86_64-unix/winevulkan.so
+[11:06:53]  Xlib:  extension "SHAPE" missing on display ":0".
+[11:06:53]  0058:err:nsi:update_if_table if_nameindex failed, errno 13.
+[11:10:31]  X connection to :0 broken (explicit kill or server shutdown).
+[11:10:31]  00d0:fixme:x11drv:X11DRV_DestroyNotify window 0x10060/1400002 destroyed from the outside
