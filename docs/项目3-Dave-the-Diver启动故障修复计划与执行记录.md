@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；原爆点 D 轮确认 WineD3D 生效并推进到 DXGI/GLX 枚举，但双实例和闪退仍存在，分类为 `FAIL-CRASH + PACKAGE-SCOPED`；停止扩大原爆点变量，当前执行 T1-SIFU-A 独立样本
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；原爆点已停止扩大变量；首次师父操作实际仍在容器 10 启动原爆点并追加 `-dx11`，标记为 `INVALID-WRONG-SHORTCUT`；当前在独立新容器重新执行 T1-SIFU-A
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -470,7 +470,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
 2. Duckov A-D 对照已完成并停止继续扩大变量；Palworld 当前无法测试。原爆点与师父按方案2进入 `PACKAGE-SCOPED` 测试，静态风险保留但不再阻断。
-3. 当前只执行任务1文档中的 T1-SIFU-A：新建独立容器，直接为 `Sifu-Win64-Shipping.exe` 创建首页快捷方式，固定 DXVK 3.0.2 与 `-dx11`，完成启动、输入、稳定性观察并导出日志；不要再扩大原爆点变量。
+3. 当前重新执行任务1文档中的 T1-SIFU-A：必须新建容器 ID（不能为 10），从 `SIFU Deluxe Edition\Sifu\Binaries\Win64` 的实际 Shipping 主程序创建新快捷方式，并在启动前核对容器、工作目录和 EXE；不要编辑原爆点快捷方式。
 
 ## 六、进度记录
 
@@ -855,6 +855,12 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - WineD3D 比 C 轮 DXVK 推进得更深但没有解决问题，故快速退出不专属于 Vulkan/DXVK，现有证据也不足以把具体根因归给 Winlator 公共图形代码。D 轮分类为 `FAIL-CRASH + PACKAGE-SCOPED`，停止扩大原爆点变量并转入师父 A 轮。
 - 两份日志归档到 `archive/log-imports/20260814-t1-mgsvgz-d-wined3d-crash-r1/`，合计 `268,708` bytes；Winlator 日志 SHA-256 为 `34BDAB02F7C19576211D271F8F7B1E1ADB3956F8009E94E86BCAB499769B41BD`，启动日志 SHA-256 为 `816685B78E8630CC22B8AF97823DB0F974FABD65260725E9FB43D95064939DB4`。
 
+### 2026-08-14：师父 A0 误用原爆点快捷方式
+
+- 导出日志仍显示 `container=10` 和 `E:\MetalGearSolidVGroundZeroes\MgsGroundZeroes.exe`，没有任何 `Sifu`、Shipping 或 UE4 进程；实际操作只是给原爆点快捷方式追加 `-dx11` 并切回 DXVK。
+- 两个原爆点实例及约 17 秒闪退再次复现，但这不是师父结果。该轮标记为 `INVALID-WRONG-SHORTCUT`，覆盖保持 4/5；下一轮必须新建独立容器并从实际 `Sifu-Win64-Shipping.exe` 创建新快捷方式。
+- 两份日志归档到 `archive/log-imports/20260814-t1-sifu-a-invalid-wrong-shortcut-r1/`，合计 `61,291` bytes；Winlator 日志 SHA-256 为 `BA59239D111BBD5629031110B092116C9CF1C50D38AE7CAFDF7818C79DD47141`，启动日志 SHA-256 为 `9A8C2ECEB1E8B32FD82DE139DB5D30380314DE8F727F88B25FB1BD29B7413938`。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -903,6 +909,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | T1-MGSVGZ-B | 单次双击无窗口、重复进程复现、快捷方式启动计划 | 用户等待满 5 分钟且页面无变化 | 已完成，`FAIL-NO-WINDOW + PACKAGE-SCOPED`（2026-08-14） |
 | T1-MGSVGZ-C | 首页快捷方式闪退日志、WFM 排除和 WineD3D 计划 | 用户从快捷方式启动后闪退 | 已完成，`FAIL-CRASH + PACKAGE-SCOPED`（2026-08-14） |
 | T1-MGSVGZ-D | WineD3D 闪退日志、DXVK 对照结论和停止变量扩展 | 用户切换 WineD3D 后仍闪退 | 已完成，`FAIL-CRASH + PACKAGE-SCOPED`（2026-08-14） |
+| T1-SIFU-A0 | 错误快捷方式日志、无师父进程证明和重新执行门槛 | 首次师父操作后导出日志 | 已归档，`INVALID-WRONG-SHORTCUT`，不计覆盖（2026-08-14） |
 | LOG-ARCHIVE | 全量日志哈希核对、增量快照、清单与持续归档脚本 | 用户要求日志作为开发记录持续推送 | 已完成（2026-08-13） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
