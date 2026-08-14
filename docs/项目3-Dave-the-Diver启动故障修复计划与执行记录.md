@@ -1,7 +1,7 @@
 # 项目3：Dave the Diver 启动故障修复计划与执行记录
 
 > 建立日期：2026-08-05  
-> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；原爆点 B 轮在用户单次双击后仍产生两个相隔 6 秒的进程，文件管理器约 7 分 23 秒无变化，形成第 4/5 个有效样本；当前执行 T1-MGSVGZ-C 首页快捷方式启动
+> 当前状态：Dave 启动、键盘输入与 G3-P2 鼠标回归均已闭环；原爆点 C 轮首页快捷方式已绕过 WFM，但仍双进程并在 Wine Vulkan 加载后约 4 秒结束会话，分类为 `FAIL-CRASH + PACKAGE-SCOPED`；当前执行 T1-MGSVGZ-D WineD3D 单变量对照
 > 测试对象：`D:\agent\Winlator\games\Dave the Diver\DaveTheDiver.exe`  
 > 初始日志：`D:\agent\Winlator\logs\dave-the-diver\logs.txt`  
 > 工作仓库：`D:\agent\Winlator\winlator_wzh_new`
@@ -470,7 +470,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 
 1. G3-P2 已通过，不再重复 Dave 输入回归。
 2. Duckov A-D 对照已完成并停止继续扩大变量；Palworld 当前无法测试。原爆点与师父按方案2进入 `PACKAGE-SCOPED` 测试，静态风险保留但不再阻断。
-3. 当前只执行任务1文档中的 T1-MGSVGZ-C：保持容器 10 配置不变，从 Winlator 首页“快捷方式”页面单击启动一次，完整等待 5 分钟并导出日志；不要从 WFM 双击，也不要开始师父。
+3. 当前只执行任务1文档中的 T1-MGSVGZ-D：保留首页快捷方式与全部配置，只把 DX wrapper 从 DXVK 3.0.2 改为 WineD3D，单击启动并导出日志；不要开始师父。
 
 ## 六、进度记录
 
@@ -842,6 +842,12 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 - 两个进程都未记录明确崩溃；第二个进程加载到 Wine Vulkan，但没有 D3D11/DXVK 设备或可见窗口。B 轮正式分类为 `FAIL-NO-WINDOW + PACKAGE-SCOPED`，任务1覆盖达到 4/5。
 - 两份新日志已归档到 `archive/log-imports/20260814-t1-mgsvgz-b-repeat-launch-r1/`，合计 `66,046` bytes。下一轮只改启动入口：从 Winlator 首页快捷方式单击启动，绕过 WFM 双击路径。
 
+### 2026-08-14：原爆点 C 轮快捷方式闪退
+
+- C 轮日志确认 `/desktop=nogui` 且没有 WFM，首页快捷方式变量生效；但游戏仍在 6 秒内创建两个实例，因此重复启动来自游戏当前包体或更下层启动链。
+- 第二个实例加载 Wine Vulkan 后约 4 秒，X 会话在首次游戏进程创建后约 15 秒结束；没有可见的 Box64/Wine 崩溃调用栈。结合用户看到闪退，分类为 `FAIL-CRASH + PACKAGE-SCOPED`。
+- 两份日志归档到 `archive/log-imports/20260814-t1-mgsvgz-c-shortcut-crash-r1/`，合计 `61,075` bytes。下一轮仅把快捷方式 DX wrapper 从 DXVK 3.0.2 切到 WineD3D。
+
 ## 七、Git 关键节点
 
 | 节点 | 推送内容 | 触发条件 | 状态 |
@@ -888,6 +894,7 @@ T2-B 结果：`startup.log` 再次记录 `STARTUP COMPLETE`；Winlator 日志从
 | T1-PACKAGE-SCOPE | 方案2范围调整、五游戏矩阵和原爆点 A 轮唯一配置 | 用户确认当前两款包符合研究要求 | 已完成，两者改为 `READY-PACKAGE-SCOPED`（2026-08-14） |
 | T1-MGSVGZ-A | 原爆点无窗口日志、重复启动识别与单次启动控制计划 | 用户反馈没有启动并导出日志 | 已完成诊断归档，暂不计入有效覆盖（2026-08-14） |
 | T1-MGSVGZ-B | 单次双击无窗口、重复进程复现、快捷方式启动计划 | 用户等待满 5 分钟且页面无变化 | 已完成，`FAIL-NO-WINDOW + PACKAGE-SCOPED`（2026-08-14） |
+| T1-MGSVGZ-C | 首页快捷方式闪退日志、WFM 排除和 WineD3D 计划 | 用户从快捷方式启动后闪退 | 已完成，`FAIL-CRASH + PACKAGE-SCOPED`（2026-08-14） |
 | LOG-ARCHIVE | 全量日志哈希核对、增量快照、清单与持续归档脚本 | 用户要求日志作为开发记录持续推送 | 已完成（2026-08-13） |
 | G3 | 性能基线、单变量优化矩阵和项目3最终报告 | G2.5-B 完成启动闭环 | 进行中（2026-08-07） |
 
