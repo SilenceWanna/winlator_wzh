@@ -1,0 +1,4 @@
+﻿"SourcePath","Bytes","SHA256","GitBlob","Status","ArchivePath"
+"logs/sifu/input-events-20260824-152612-816.log","190","D1AC34BB9AE409EADFB83554744B7C59A73006AF4E164552FA5E6832A6660EB4","47782c548e7792985583b90c1535ffd2fe5522b0","copied","archive/log-imports/20260824-t1-sifu-a0-invalid-shortcut-r1/runtime-logs/sifu/input-events-20260824-152612-816.log"
+"logs/sifu/logs.txt","35146","3A20497B2A89FB5FF84A51880EB50DB6A7D8B9238B097663937F55BC23669896","aaf39f4617c0b221b01d134847b9ee216898b1d9","copied","archive/log-imports/20260824-t1-sifu-a0-invalid-shortcut-r1/runtime-logs/sifu/logs.txt"
+"logs/sifu/startup.log","1321","BF0922FE47FA9BCD9AD8F562B87AE01EEA74FBE45B8150157582E76CEA407B55","ca6c5ce41be2f9d1540ba2c0fe92cab4115f7302","copied","archive/log-imports/20260824-t1-sifu-a0-invalid-shortcut-r1/runtime-logs/sifu/startup.log"

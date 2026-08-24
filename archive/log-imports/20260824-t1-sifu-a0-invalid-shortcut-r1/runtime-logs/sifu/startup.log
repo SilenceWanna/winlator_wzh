@@ -1,0 +1,20 @@
+[2026-08-24 15:26:12.SSS] STARTUP BEGIN
+[2026-08-24 15:26:12.SSS] rootfs=/data/user/0/com.winlator/files/rootfs, version=23, container=1
+[2026-08-24 15:26:12.SSS] graphics=turnip,zink, dxwrapper=dxvk, audio=alsa
+[2026-08-24 15:26:12.SSS] BEGIN setup_wine_system_files
+[2026-08-24 15:26:12.SSS] BEGIN setup_wine_system_files.verify_user_registry
+[2026-08-24 15:26:12.SSS] END setup_wine_system_files.verify_user_registry
+[2026-08-24 15:26:12.SSS] BEGIN setup_wine_system_files.extract_dxwrapper_files
+[2026-08-24 15:26:12.SSS] END setup_wine_system_files.extract_dxwrapper_files
+[2026-08-24 15:26:12.SSS] BEGIN setup_wine_system_files.create_start_menu
+[2026-08-24 15:26:12.SSS] END setup_wine_system_files.create_start_menu
+[2026-08-24 15:26:12.SSS] BEGIN setup_wine_system_files.create_dosdevices_symlinks
+[2026-08-24 15:26:12.SSS] END setup_wine_system_files.create_dosdevices_symlinks
+[2026-08-24 15:26:12.SSS] END setup_wine_system_files
+[2026-08-24 15:26:12.SSS] BEGIN extract_graphics_driver_files
+[2026-08-24 15:26:12.SSS] END extract_graphics_driver_files
+[2026-08-24 15:26:12.SSS] BEGIN change_wine_audio_driver
+[2026-08-24 15:26:12.SSS] END change_wine_audio_driver
+[2026-08-24 15:26:12.SSS] BEGIN setup_x_environment
+[2026-08-24 15:26:13.SSS] END setup_x_environment
+[2026-08-24 15:26:13.SSS] STARTUP COMPLETE
